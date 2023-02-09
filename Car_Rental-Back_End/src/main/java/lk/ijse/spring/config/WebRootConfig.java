@@ -14,6 +14,6 @@ import org.springframework.context.annotation.Configuration;
 public class WebRootConfig {
     public WebRootConfig() {
         System.out.println("web root config");
-        System.out.println("jjjjj");
+
     }
 }
