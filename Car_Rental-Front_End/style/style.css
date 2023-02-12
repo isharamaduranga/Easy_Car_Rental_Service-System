@@ -131,3 +131,25 @@ body {
     border-radius: 20px;
     /* background-image: linear-gradient(to right, #1194e7, #0159e8);*/
 }
+
+
+/****************  --- AboutUs section styles---  *******************/
+
+#about_us{
+    background: #f8f9fa;
+    padding-bottom: 50px;
+    padding-top: 50px;
+}
+.about_title{
+    font-size:40px ;
+    font-weight: 600;
+    margin-top: 8%;
+}
+#about_us ul li{
+    margin: 10px 0;
+}
+
+#about_us ul {
+    margin-left: 20px;
+
+}
