@@ -45,3 +45,36 @@ body {
 .navbar-toggler {
     outline: none !important;
 }
+
+
+/****************  --- Banner section styles---  *******************/
+
+#banner {
+    background-image: linear-gradient(to right, #1194e7, #0159e8);
+    color: #fff;
+    padding-top: 5%;
+}
+
+.pTitle {
+    font-size: 40px;
+    font-weight: 600;
+    margin-top: 100px;
+}
+
+.play-btn {
+    width: 45px;
+    margin: 20px;
+}
+
+#banner a {
+    color: white;
+    text-decoration: none;
+}
+
+.img-fluid {
+    width: 500px;
+}
+
+.bottom_img {
+    width: 100%;
+}
