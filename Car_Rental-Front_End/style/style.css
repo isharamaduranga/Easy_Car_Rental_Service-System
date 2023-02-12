@@ -1,10 +1,19 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&family=Ubuntu:wght@400;500;700&display=swap');
+
 * {
     margin: 0;
     padding: 0;
+    box-sizing: border-box;
 }
 
 body {
-    font-family: sans-serif;
+    ont-family: 'Ubuntu', sans-serif;
+}
+
+.stats {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
 }
 
 #nav_bar {
@@ -43,14 +52,13 @@ body {
 }
 
 .navbar-toggler {
-    outline: none !important;
 }
 
 
 /****************  --- Banner section styles---  *******************/
 
 #banner {
-    background-image: linear-gradient(to right, #1194e7, #0159e8);
+    background-image: linear-gradient(to right, #434444, #000000);
     color: #fff;
     padding-top: 5%;
 }
@@ -101,7 +109,7 @@ body {
 
 .title::before {
     content: '';
-    background: #0159e8;
+    background: #7f00ff;
     height: 5px;
     width: 200px;
     margin-left: auto;
@@ -113,7 +121,7 @@ body {
 
 .title::after {
     content: '';
-    background: #0159e8;
+    background: #7f00ff;
     height: 10px;
     width: 50px;
     margin-left: auto;
@@ -135,85 +143,200 @@ body {
 
 /****************  --- AboutUs section styles---  *******************/
 
-#about_us{
+#about_us {
     background: #f8f9fa;
     padding-bottom: 50px;
     padding-top: 50px;
+    z-index: 1;
 }
-.about_title{
-    font-size:40px ;
+
+.about_title {
+    font-size: 40px;
     font-weight: 600;
     margin-top: 8%;
 }
-#about_us ul li{
+
+#about_us ul li {
     margin: 10px 0;
 }
 
 #about_us ul {
     margin-left: 20px;
+}
+
+/*stat section*/
+.car-stats {
+    padding: 5em 1em;
+}
+
+.stats {
+    text-align: center;
+    max-width: 700px;
+    margin: 0 auto;
+    margin-right: 10px;
+}
+
+.stats > div {
+    margin-bottom: 1em;
+    position: relative;
+    min-width: 10em;
 
 }
+
+
+.stats > div h1:nth-child(2) {
+    color: rgba(96, 93, 93, 0.3);
+    position: absolute;
+    top: -10%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 1;
+    font-size: 2em;
+    font-weight: 700;
+}
+
+.stats h5 {
+    font-weight: 400;
+    text-transform: uppercase;
+    font-size: 0.9em
+}
+
+.counter {
+    margin: 0.1em 0;
+}
+
+.car_design {
+    padding: 2em 1em 4em 6em;
+    margin-top: 3em;
+}
+
+.circle {
+    border: 2px #e5114d solid;
+    border-radius: 50%;
+    width: 100%;
+    max-width: 700px;
+    margin: 0 auto;
+    position: relative;
+    background: #161616;
+    animation: glow 4s ease-in-out infinite;
+    aspect-ratio: 3/1;
+}
+
+
+.car_design img {
+    width: 70%;
+    position: absolute;
+    top: -50%;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 3;
+}
+
+.circle div {
+    border: inherit;
+    border-radius: inherit;
+    background: inherit;
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    animation: inherit;
+}
+
+.circle .inner-md-circle {
+    width: 75%;
+    height: 75%;
+    top: 10%;
+    animation-delay: 3s;
+}
+
+.circle .inner-sm-circle {
+    width: 50%;
+    height: 50%;
+    top: 20%;
+    animation-delay: 6s;
+}
+
+@keyframes glow {
+    0% {
+        box-shadow: none;
+    }
+    50% {
+        box-shadow: 0 0 1.5em #7f00ff;
+    }
+    100%{
+        box-shadow: none;
+    }
+}
+
 
 /****************  --- Testimonials section styles---  *******************/
-#testimonials{
+#testimonials {
     margin: 100px 0;
 }
-.testimonials{
+
+.testimonials {
     border-left: 4px solid #0159e8;
     margin-top: 50px;
     margin-bottom: 50px;
 }
 
-.testimonials img{
-    height:100px ;
+.testimonials img {
+    height: 100px;
     width: 100px;
     border-radius: 50%;
     margin: 0 10px;
 }
-.user_details{
+
+.user_details {
     display: inline-block;
     font-size: 14px;
 }
 
 
 /****************  --- Social Media section styles---  *******************/
-#social_media{
+#social_media {
     background: #f8f9fa;
     padding: 100px 0;
 }
-#social_media p{
+
+#social_media p {
     font-size: 36px;
     font-weight: 600;
     margin-bottom: 30px;
 }
-.social_icons img{
+
+.social_icons img {
     width: 80px;
     transition: 0.5s;
 }
-.social_icons a:hover img{
+
+.social_icons a:hover img {
     transform: translateY(-10px);
 }
 
 /****************  --- Footer section styles---  *******************/
 
-#footer{
-    background-image: linear-gradient(to right, #1194e7, #0159e8);
+#footer {
+    background-image: linear-gradient(to right, #3C3F41, #2B2B2B);
     color: #fff;
+
 }
 
-.footer_img{
+.footer_img {
     width: 100%;
+
 }
-.footer-box{
+
+.footer-box {
     padding: 20px;
 }
-.footer-box img{
+
+.footer-box img {
     width: 120px;
     margin-bottom: 20px;
 }
 
-.footer-box  .fa-solid
-{
+.footer-box .fa-solid {
     margin-right: 8px;
     font-size: 25px;
     height: 40px;
@@ -224,28 +347,30 @@ body {
     background-image: linear-gradient(to right, #1194e7, #0159e8);
 }
 
-.footer-box .form-control{
-    box-shadow: none;!important;
+.footer-box .form-control {
+    box-shadow: none;
+!important;
     border: none;
     border-radius: 25px;
     margin-top: 0;
     max-width: 250px;
 }
 
-.footer-box .btn-primary
-{
+.footer-box .btn-primary {
     background: #1194e7;
-    box-shadow: none;!important;
+    box-shadow: none;
+!important;
     border: none;
     border-radius: 5px;
     margin-top: 30px;
 }
 
-hr{
+hr {
     background-color: ghostwhite;
     height: 1.5px;
 }
-.copyRight{
+
+.copyRight {
     margin-bottom: 0;
     padding-bottom: 20px;
     text-align: center;
