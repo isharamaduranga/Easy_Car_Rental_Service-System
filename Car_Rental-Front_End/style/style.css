@@ -334,7 +334,7 @@ body {
 
 
 
-ion-icon {
+/*ion-icon {
     display: block;
 }
 
@@ -353,7 +353,7 @@ li {
 
 a {
     text-decoration: none;
-}
+}*/
 
 
 .featured-car .title-wrapper {
@@ -792,16 +792,28 @@ form .btn:hover{
 }
 
 
+/* Customer Register Form Styles */
 #RegisterPage{
-    min-height: 100vh;
-    width: 100vw;
-    position: fixed;
-    top: 0;
-    left: 0;
-    background-color: rgba(0,0,0,.4);
-    background-size: cover;
-    transform: scale(0);
-    z-index: 6;
+    padding: 30px;
+    display: none;
+}
+#RegisterPage .container{
+    background: rgb(209, 226, 245);
+    border-radius: 40px;
+
+}
+
+#RegisterPage .container .row{
+ margin: 20px;
+}
+
+#RegisterPage .container label>span{
+    color: red;
+    font-weight: bold;
+}
+#RegisterPage .container h1{
+    color: #434444;
+    padding: 25px;
 }
 
 
