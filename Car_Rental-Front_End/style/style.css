@@ -816,7 +816,30 @@ form .btn:hover{
     padding: 25px;
 }
 
+/* Driver Register Form Styles */
 
+#RegisterDriver{
+    padding: 30px;
+    display: none;
+}
+#RegisterDriver .container{
+    background: rgb(209, 226, 245);
+    border-radius: 40px;
+
+}
+
+#RegisterDriver .container .row{
+    margin: 20px;
+}
+
+#RegisterDriver .container label>span{
+    color: red;
+    font-weight: bold;
+}
+#RegisterDriver .container h1{
+    color: #434444;
+    padding: 25px;
+}
 
 
 

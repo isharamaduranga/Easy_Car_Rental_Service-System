@@ -94,10 +94,9 @@
 
                                 <ul class="dropdown-menu dropdown-menu-dark">
 
-                                    <li>
-                                        <button class="dropdown-item" id="btnOpenRegisterForm">As a Customer</button>
-                                    </li>
-                                    <li><a class="dropdown-item" href="#">As a Driver</a></li>
+                                    <li><button class="dropdown-item" id="btnOpenRegisterForm">As a Customer</button></li>
+
+                                    <li><button class="dropdown-item" id="btnOpenDriver_Sign_Form">As a Driver</button></li>
                                 </ul>
                             </li>
                         </ul>
@@ -976,7 +975,7 @@
 </section>
 
 
-<!--Customer Register Window-->
+<!--Customer Sign Up Window-->
 
 <section id="RegisterPage" style="margin-top: 20px;">
     <div class="container ">
@@ -996,27 +995,27 @@
 
                 <div class="row">
                     <div class="col-6">
-                        <label for="name"><span>*</span> Full Name</label>
-                        <input class="form-control" id="name" placeholder="Enter Full Name" type="text">
+                        <label for="customername"><span>*</span> Full Name</label>
+                        <input class="form-control" id="customername" placeholder="Enter Full Name" type="text">
                     </div>
 
                     <div class="col-6">
-                        <label for="con_number"><span>*</span> Contact Number</label>
-                        <input class="form-control" id="con_number" placeholder=" Enter Contact Number" type="text">
+                        <label for="contactnumber"><span>*</span> Contact Number</label>
+                        <input class="form-control" id="contactnumber" placeholder=" Enter Contact Number" type="text">
                     </div>
                 </div>
 
 
                 <div class="row">
                     <div class="col">
-                        <label for="address"><span>*</span> Address</label>
-                        <input class="form-control" id="address" placeholder=" Enter Address" type="text">
+                        <label for="customeraddress"><span>*</span> Address</label>
+                        <input class="form-control" id="customeraddress" placeholder=" Enter Address" type="text">
                     </div>
                 </div>
                 <div class="row">
                     <div class="form-group col">
-                        <label for="InputEmail1"><span>*</span> Email address</label>
-                        <input aria-describedby="emailHelp" class="form-control" id="InputEmail1" placeholder="Enter email"
+                        <label for="email"><span>*</span> Email address</label>
+                        <input aria-describedby="emailHelp" class="form-control" id="email" placeholder="Enter email"
                                type="email">
                         <small class="form-text text-muted" id="emailHelp">We'll never share your email with anyone
                             else.</small>
@@ -1030,8 +1029,8 @@
                     </div>
 
                     <div class="col-6">
-                        <label for="LiNumber"><span>*</span> License Number</label>
-                        <input class="form-control" id="LiNumber" placeholder=" Enter License Number" type="text">
+                        <label for="drivinglicense"><span>*</span> License Number</label>
+                        <input class="form-control" id="drivinglicense" placeholder=" Enter License Number" type="text">
                     </div>
                 </div>
 
@@ -1074,8 +1073,8 @@
 
             </div>
             <div class="row row-cols-5 text-center" style="justify-content: center">
-                <button class="btn bg-success" style="font-weight: 600; color: white; padding: 8px; margin-right: 25px;" id="btnSaveCustomer" type="button">Submit Register Form</button>
-                <button class="btn bg-danger" style="font-weight: 600; color: white; padding: 8px" id="btnCancelCustomer" type="button">Cancel..</button>
+                <button class="btn bg-success" style="font-weight: 600; color: white; padding: 8px; margin-right: 25px;" id="btnRegister" type="button">Submit Register Form</button>
+                <button class="btn bg-danger" style="font-weight: 600; color: white; padding: 8px" id="btnRegisterCancel" type="button">Cancel..</button>
             </div>
 
         </div>
@@ -1083,6 +1082,53 @@
     </div>
 </section>
 
+<!--Driver Sign Up Window-->
+<section id="RegisterDriver" style="margin-top: 20px;">
+    <div class="container ">
+        <h1 class="text-center">Driver Register</h1>
+        <div class="row">
+            <div class="col">
+                <div class="row">
+                    <div class="col-6">
+                        <label for="driverName"><span>*</span> Driver Name</label>
+                        <input class="form-control" id="driverName" placeholder=" Enter driver Name" type="text">
+                    </div>
+                    <div class="col-6">
+                        <label for="driverAddress"><span>*</span> Driver Address</label>
+                        <input class="form-control" id="driverAddress" placeholder="Enter address" type="text">
+                    </div>
+                </div>
+
+                <div class="row">
+                    <div class="col-6">
+                        <label for="driverAge"><span>*</span> Age</label>
+                        <input class="form-control" id="driverAge" placeholder="Enter age" type="text">
+                    </div>
+
+                    <div class="col-6">
+                        <label for="driver_con"><span>*</span> Contact Number</label>
+                        <input class="form-control" id="driver_con" placeholder=" Enter Contact Number" type="text">
+                    </div>
+                </div>
+
+
+                <div class="row">
+                    <div class="col-8">
+                        <label for="address"><span>*</span> Address</label>
+                        <input class="form-control" id="address" placeholder=" Enter Address" type="text">
+                    </div>
+                </div>
+            </div>
+
+            <div class="row row-cols-5 text-center" style="justify-content: center">
+                <button class="btn bg-success" style="font-weight: 600; color: white; padding: 8px; margin-right: 25px;" id="btnSaveDriver" type="button"> Register</button>
+                <button class="btn bg-danger" style="font-weight: 600; color: white; padding: 8px" id="btnCancelDriver" type="button">Cancel..</button>
+            </div>
+
+        </div>
+    </div>
+    </div>
+</section>
 
 <!--Import Bootstrap cdn links-->
 <script crossorigin="anonymous"
