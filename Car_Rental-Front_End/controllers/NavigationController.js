@@ -1,0 +1,3 @@
+$("#btnOpenRegisterForm").click(function () {
+    openRegisterForm();
+});

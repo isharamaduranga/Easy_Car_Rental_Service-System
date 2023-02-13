@@ -82,6 +82,7 @@ body {
 
 .navbar-nav {
     margin-left: auto;
+    z-index: 10;
 }
 
 .navbar {
@@ -94,7 +95,7 @@ body {
 }
 
 .navbar-nav li {
-    padding: 0 10px;
+    padding: 0 15px;
 }
 
 .navbar-nav li a {
@@ -791,7 +792,17 @@ form .btn:hover{
 }
 
 
-
+#RegisterPage{
+    min-height: 100vh;
+    width: 100vw;
+    position: fixed;
+    top: 0;
+    left: 0;
+    background-color: rgba(0,0,0,.4);
+    background-size: cover;
+    transform: scale(0);
+    z-index: 6;
+}
 
 
 
