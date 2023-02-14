@@ -29,8 +29,42 @@ public class UserController {
         return new ResponseUtil(200, "Successfully Registered.",null);
     }
 
+    @GetMapping(path = "/{id}",produces = MediaType.APPLICATION_JSON_VALUE)
+    public ResponseUtil searchUser(@PathVariable String id){
+        return new ResponseUtil(200, "Ok.",userService.searchUser(id));
+    }
+
+    @PutMapping(consumes = MediaType.APPLICATION_JSON_VALUE)
+    public ResponseUtil updateUser(@RequestBody UsersDTO usersDTO){
+        userService.updateUser(usersDTO);
+        return new ResponseUtil(200, "Successfully Updated.",null);
+    }
+
+    @DeleteMapping(params = {"id"},produces = MediaType.APPLICATION_JSON_VALUE)
+    public ResponseUtil deleteUser(@RequestParam String id){
+        userService.deleteUser(id);
+        return new ResponseUtil(200, "Successfully Deleted.", null);
+    }
+
+    @GetMapping(produces = MediaType.APPLICATION_JSON_VALUE)
+    public ResponseUtil getAllUsers(){
+        return new ResponseUtil(200, "Ok", userService.getAllUsers());
+    }
+
     @GetMapping(params = {"test"})
     public ResponseUtil generateUserIds(@RequestParam String test) {
         return new ResponseUtil(200, "Ok", userService.generateUserIds());
     }
+
+    @GetMapping(path ="/{password}/{username}")
+    public ResponseUtil findByPasswordAndUsername(@PathVariable("password") String password, @PathVariable("username") String username){
+        return new ResponseUtil(200, "Ok", userService.findByPasswordAndUsername(password,username));
+    }
+
+    @GetMapping(path ="/FIND/{uname}")
+    public ResponseUtil findByUsername(@PathVariable("uname") String uname){
+        return new ResponseUtil(200, "Ok", userService.findByUsername(uname));
+    }
+
+
 }

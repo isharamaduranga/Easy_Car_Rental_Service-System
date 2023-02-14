@@ -1,5 +1,5 @@
 
-
+log = "Not Logged";
 
 $("#btnOpenRegisterForm,#btnRegisterInLoginPage").click(function () {
     openRegisterForm();
