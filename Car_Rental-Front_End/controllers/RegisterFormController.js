@@ -189,7 +189,6 @@ $("#btnRegister").click(function () {
         $("#contactnumber").val() == "" || $("#email").val() == "" || $("#nic").val() == "" || $("#drivinglicense").val() == "" ){
         alert("All Fields Are Required !");
     }else {
-        if ($('#loginCheck').is(':checked')){
             if ($('#uploadmyimage').get(0).files.length === 0 || $('#uploadnicimage').get(0).files.length === 0 || $('#uploaddrivinglicence').get(0).files.length === 0) {
                 alert("No Images Inserted !");
             }else {
@@ -201,9 +200,7 @@ $("#btnRegister").click(function () {
                     register();
                 }
             }
-        }else {
-            alert("You Must Accept Our Terms And Conditions Before Register");
-        }
+
     }
 });
 

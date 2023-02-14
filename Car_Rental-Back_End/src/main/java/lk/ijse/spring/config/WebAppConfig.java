@@ -27,12 +27,16 @@ public class WebAppConfig implements WebMvcConfigurer {
     public ModelMapper modelMapper(){
         return new ModelMapper();
     }
-
+    /*
+     * You have to override this method and allocate the url and location for uploaded resources
+     * */
     @Bean
     public MultipartResolver multipartResolver() {
         return new StandardServletMultipartResolver();
     }
-
+    /*
+     * You have to override this method and allocate the url and location for uploaded resources
+     * */
     @Override
     public void addResourceHandlers(ResourceHandlerRegistry registry) {
         registry.addResourceHandler("/uploads/**").addResourceLocations("/uploads/");
