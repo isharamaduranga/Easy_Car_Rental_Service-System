@@ -61,6 +61,6 @@ public class CustomerServiceImpl implements CustomerService {
 
     @Override
     public String generateCustomerIds() {
-        return null;
+        return repo.generateCustomerId();
     }
 }

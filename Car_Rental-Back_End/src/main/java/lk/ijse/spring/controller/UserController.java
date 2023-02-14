@@ -28,4 +28,9 @@ public class UserController {
         userService.saveUser(usersDTO);
         return new ResponseUtil(200, "Successfully Registered.",null);
     }
+
+    @GetMapping(params = {"test"})
+    public ResponseUtil generateUserIds(@RequestParam String test) {
+        return new ResponseUtil(200, "Ok", userService.generateUserIds());
+    }
 }

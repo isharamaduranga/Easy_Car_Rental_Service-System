@@ -28,4 +28,9 @@ public class CustomerController {
         return new ResponseUtil(200, "Successfully Registered.", null);
     }
 
+    @GetMapping(params = {"test"})
+    public ResponseUtil generateCustomersIds(@RequestParam String test) {
+        return new ResponseUtil(200, "Ok", customerService.generateCustomerIds());
+    }
+
 }

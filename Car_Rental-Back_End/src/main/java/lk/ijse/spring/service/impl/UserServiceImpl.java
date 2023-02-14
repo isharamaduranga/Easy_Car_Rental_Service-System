@@ -29,11 +29,11 @@ public class UserServiceImpl implements UserService {
     ModelMapper mapper;
 
     @Override
-    public void saveUser(UsersDTO user) {
-        if (!userRepo.existsById(user.getUserId())){
-            userRepo.save(mapper.map(user, Users.class));
+    public void saveUser(UsersDTO usersDTO) {
+        if (!userRepo.existsById(usersDTO.getUserId())){
+            userRepo.save(mapper.map(usersDTO, Users.class));
         }else {
-            throw new RuntimeException(user.getUserId() + " " + "User Already Exists..!");
+            throw new RuntimeException(usersDTO.getUserId() + " " + "User Already Exists..!");
         }
     }
 
@@ -59,6 +59,6 @@ public class UserServiceImpl implements UserService {
 
     @Override
     public String generateUserIds() {
-        return null;
+        return userRepo.generateUserId();
     }
 }

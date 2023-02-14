@@ -95,8 +95,14 @@ function openRegisterForm(){
     $("#footer").css('display','none');
 }
 
-$("#btnRegisterCancel,#btnCancelToSystem,#btnCancelToDLogin,#btnCancelToAdmin").click(function () {
+$("#btnCancelToSystem,#btnCancelToDLogin,#btnCancelToAdmin").click(function () {
   registerCancelEvent();
+});
+
+
+
+$("#btnRegisterCancel").click(function () {
+    registerToSystem();
 });
 
 $("#btnCancelDriver").click(function () {
@@ -106,12 +112,29 @@ $("#btnCancelToAdmin").click(function () {
   registerCancelEvent();
 });
 
+function registerToSystem() {
+    generateRegisterIds();
+    generateUserIds();
+    $('#logInCustomer').css('display','block');
+    $("#nav_bar").css('display','block');
 
+    $('#RegisterPage').css('display','none');
+    $('#RegisterDriver').css('display','none');
+    $('#logInDriver').css('display','none');
+    $('#logInAdmin').css('display','none');
+    $("#banner").css('display','none');
+    $("#services").css('display','none');
+    $("#about_us").css('display','none');
+    $("#featured-car").css('display','none');
+    $("#testimonials").css('display','none');
+    $("#Contact_Page").css('display','none');
+    $("#social_media").css('display','none');
+    $("#footer").css('display','none');
+}
 
 
 function registerCancelEvent() {
-    generateRegisterIds();
-    generateUserIds();
+
     $('#RegisterPage').css('display','none');
     $('#RegisterDriver').css('display','none');
     $('#logInCustomer').css('display','none');
