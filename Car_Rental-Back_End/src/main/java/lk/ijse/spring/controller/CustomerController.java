@@ -9,19 +9,23 @@
 package lk.ijse.spring.controller;
 
 import lk.ijse.spring.dto.CustomerDTO;
+import lk.ijse.spring.service.CustomerService;
 import lk.ijse.spring.util.ResponseUtil;
-import org.springframework.web.bind.annotation.CrossOrigin;
-import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.web.bind.annotation.*;
 
 @RestController
 @CrossOrigin
 @RequestMapping("customer")
 public class CustomerController {
 
-    public ResponseUtil saveCustomer(@RequestBody CustomerDTO dto){
+    @Autowired
+    CustomerService customerService;
 
+    @PostMapping
+    public ResponseUtil saveCustomer(@RequestBody CustomerDTO dto) {
+        customerService.saveCustomer(dto);
+        return new ResponseUtil(200, "Successfully Registered.", null);
     }
 
 }
