@@ -71,13 +71,13 @@
                                 </button>
                                 <ul class="dropdown-menu dropdown-menu-dark">
                                     <li>
-                                        <button class="dropdown-item" href="#">As a Customer</button>
+                                        <button class="dropdown-item" id="btnOpenCusLoginForm" >As a Customer</button>
                                     </li>
                                     <li>
-                                        <button class="dropdown-item" href="#">As a Driver</button>
+                                        <button class="dropdown-item" id="btnOpenDriverLoginForm">As a Driver</button>
                                     </li>
                                     <li>
-                                        <button class="dropdown-item" href="#">As a Admin</button>
+                                        <button class="dropdown-item" id="btnOpenAdminLoginForm">As a Admin</button>
                                     </li>
                                 </ul>
                             </li>
@@ -1154,13 +1154,17 @@
                     </div>
                     <div class="col-6">
                         <!-- Simple link -->
-                        <a href="#ForgotPasswordPage"  id="btnForgotPW"  style="font-family: 'sans-serif', cursive;font-size: 18px;color: #d7151f;text-decoration: none">Forgot password?</a>
+                        <a href="#"  id="btnForgotPW"  style="font-family: 'sans-serif', cursive;font-size: 18px;color: #d7151f;text-decoration: none">Forgot password?</a>
                     </div>
                 </div>
 
                 <div class="row">
                         <!-- Submit button -->
+                    <div class="col-6">
+
+                    </div>
                     <button type="button" id="btnLogToSystem" class="btn btn-block text-center text-white btn-primary shadow"  style="display: inline;position: relative;left: 0;right: 0; margin: auto;">Log in</button>
+                    <button type="button" id="btnCancelToSystem" class="btn btn-block text-center text-white btn-danger shadow"  style="display: inline;position: relative;left: 0;right: 0; margin: auto; top: 10px">Cancel</button>
                 </div>
 
                 <div class="row">
@@ -1192,6 +1196,67 @@
 
 
 
+<!--Driver Log In Window-->
+<section id="logInDriver" style="margin-top: 20px;">
+    <div class="container ">
+        <h1 class="text-center">Driver Log In</h1>
+        <div class="row">
+            <div class="col">
+                <div class="row">
+                    <label for="logindrivername"><span>*</span> User Name</label>
+                    <input class="form-control" id="logindrivername" placeholder=" Enter User Name" type="text">
+                </div>
+
+                <div class="row">
+                    <label for="logindriverpassword"><span>*</span> Password</label>
+                    <input class="form-control" id="logindriverpassword" placeholder="Enter Password" type="password">
+                </div>
+
+
+                <div class="row">
+                    <!-- Submit button -->
+                    <div class="col-6">
+
+                    </div>
+                    <br>
+                    <button type="button" id="btnLogToDriver" class="btn btn-block text-center text-white btn-primary shadow"  style="display: inline;position: relative;left: 0;right: 0; margin: auto;">Log in</button>
+                    <button type="button" id="btnCancelToDLogin" class="btn btn-block text-center text-white btn-danger shadow"  style="display: inline;position: relative;left: 0;right: 0; margin: auto; top: 10px">Cancel</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!--Admin Log In Window-->
+<section id="logInAdmin" style="margin-top: 20px;">
+    <div class="container ">
+        <h1 class="text-center">Admin Log In</h1>
+        <div class="row">
+            <div class="col">
+                <div class="row">
+                    <label for="loginAdminname"><span>*</span> User Name</label>
+                    <input class="form-control" id="loginAdminname" placeholder=" Enter User Name" type="text">
+                </div>
+
+                <div class="row">
+                    <label for="loginAdminpassword"><span>*</span> Password</label>
+                    <input class="form-control" id="loginAdminpassword" placeholder="Enter Password" type="password">
+                </div>
+
+
+                <div class="row">
+                    <!-- Submit button -->
+                    <div class="col-6">
+
+                    </div>
+                    <br>
+                    <button type="button" id="btnLogToAdmin" class="btn btn-block text-center text-white btn-primary shadow"  style="display: inline;position: relative;left: 0;right: 0; margin: auto;">Log in</button>
+                    <button type="button" id="btnCancelToAdmin" class="btn btn-block text-center text-white btn-danger shadow"  style="display: inline;position: relative;left: 0;right: 0; margin: auto; top: 10px">Cancel</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
 
 
 <!--Import Bootstrap cdn links-->

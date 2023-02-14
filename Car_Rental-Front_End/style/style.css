@@ -843,13 +843,12 @@ form .btn:hover{
 
 /* Customer Log in Form Styles */
 #logInCustomer{
-    padding: 30px;
-
+    padding: 20px;
     margin: 0;
-   /* display: none;*/
+    display: none;
 }
 #logInCustomer .container{
-    width: 40vw;
+    width: 35vw;
     background: rgb(219, 195, 245);
     border-radius: 40px;
 
@@ -865,6 +864,61 @@ form .btn:hover{
     font-weight: bold;
 }
 #logInCustomer .container h1{
+    color: #434444;
+    padding: 25px;
+}
+
+
+/* Driver Log in Form Styles */
+#logInDriver{
+    padding: 10px;
+    margin: 0;
+    display: none;
+}
+#logInDriver .container{
+    width: 30vw;
+    height: 60vh;
+    background: rgb(199, 245, 184);
+    border-radius: 40px;
+
+}
+
+#logInDriver .container .row{
+    margin: 20px;
+}
+
+#logInDriver .container label>span{
+    color: red;
+    font-weight: bold;
+}
+#logInDriver .container h1{
+    color: #434444;
+    padding: 25px;
+}
+
+/* Admin Log in Form Styles */
+#logInAdmin{
+    padding: 10px;
+    margin: 0;
+    display: none;
+}
+#logInAdmin .container{
+    width: 30vw;
+    height: 60vh;
+    background: rgb(253, 233, 150);
+    border-radius: 40px;
+
+}
+
+#logInAdmin .container .row{
+    margin: 20px;
+}
+
+#logInAdmin .container label>span{
+    color: red;
+    font-weight: bold;
+}
+#logInAdmin .container h1{
     color: #434444;
     padding: 25px;
 }
