@@ -280,7 +280,7 @@ function loadAllCustomer() {
 
             $("#tblCustomers tbody").empty();
             for (var responseKey of response.data) {
-                let raw = `<tr><td> ${responseKey.registeredDate} </td><td> ${responseKey.customerId} </td><td> 
+               /* let raw = `<tr><td> ${responseKey.registeredDate} </td><td> ${responseKey.customerId} </td><td>
                                 <div class="d-flex align-items-center">
                                 <img src="https://mdbootstrap.com/img/new/avatars/8.jpg" alt="" style="width: 45px; height: 45px" class="rounded-circle"/>
                                 </div>  
@@ -291,7 +291,7 @@ function loadAllCustomer() {
                                 <img src="https://mdbootstrap.com/img/new/avatars/8.jpg" alt="" style="width: 45px; height: 45px" class="rounded-circle"/>
                                 </div>   
                                 </td></tr>`;
-                $("#tblCustomers tbody").append(raw);
+                $("#tblCustomers tbody").append(raw);*/
             }
         },
         error: function (ob) {

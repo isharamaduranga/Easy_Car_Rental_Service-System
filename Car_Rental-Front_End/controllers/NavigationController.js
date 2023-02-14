@@ -77,8 +77,8 @@ function openCusLoginForm() {
 
 
 function openRegisterForm(){
-/*    generateRegisterIds();
-    generateUserIds();*/
+    generateRegisterIds();
+    generateUserIds();
 
     $('#RegisterPage').css('display','block');
 
@@ -110,6 +110,8 @@ $("#btnCancelToAdmin").click(function () {
 
 
 function registerCancelEvent() {
+    generateRegisterIds();
+    generateUserIds();
     $('#RegisterPage').css('display','none');
     $('#RegisterDriver').css('display','none');
     $('#logInCustomer').css('display','none');
