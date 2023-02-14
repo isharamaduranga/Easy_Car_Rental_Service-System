@@ -982,27 +982,31 @@
         <h1 class="text-center">Customer Register</h1>
         <div class="row">
             <div class="col-7">
-                <form>
+                <form id="customerForm">
                 <div class="row">
                     <div class="col-6">
                         <label for="userName"><span>*</span> User Name</label>
-                        <input class="form-control" id="userName" placeholder=" Enter User Name" type="text">
+                        <input class="form-control  border border-2 border-white bg-light rounded-3" id="userName" placeholder=" Enter User Name" type="text">
+                        <p><small id="errorUsername" class="text-danger fs-8 pl-1 mt-0 mb-0"></small></p>
                     </div>
                     <div class="col-6">
                         <label for="password"><span>*</span> Password</label>
-                        <input class="form-control" id="password" placeholder="Enter Password" type="password">
+                        <input class="form-control  border border-2 border-white bg-light" id="password" placeholder="Enter Password" type="password">
+                        <p><small id="errorPassword" class="text-danger fs-8 pl-1 mt-0 mb-0"></small></p>
                     </div>
                 </div>
 
                 <div class="row">
                     <div class="col-6">
                         <label for="customername"><span>*</span> Full Name</label>
-                        <input class="form-control" id="customername" placeholder="Enter Full Name" type="text">
+                        <input class="form-control border border-2 border-white bg-light rounded-3" id="customername" placeholder="Enter Full Name" type="text">
+                        <p><small id="errorFullName" class="text-danger fs-8 pl-1 mt-0 mb-0"></small></p>
                     </div>
 
                     <div class="col-6">
                         <label for="contactnumber"><span>*</span> Contact Number</label>
-                        <input class="form-control" id="contactnumber" placeholder=" Enter Contact Number" type="text">
+                        <input class="form-control border border-2 border-white bg-light rounded-3" id="contactnumber" placeholder=" Enter Contact Number" type="text">
+                        <p><small id="errorContact" class="text-danger fs-8 pl-1 mt-0 mb-0"></small></p>
                     </div>
                 </div>
 
@@ -1010,26 +1014,30 @@
                 <div class="row">
                     <div class="col">
                         <label for="customeraddress"><span>*</span> Address</label>
-                        <input class="form-control" id="customeraddress" placeholder=" Enter Address" type="text">
+                        <input class="form-control border border-2 border-white bg-light rounded-3" id="customeraddress" placeholder=" Enter Address" type="text">
+                        <p><small id="errorAddress" class="text-danger fs-8 pl-1 mt-0 mb-0"></small></p>
                     </div>
                 </div>
                 <div class="row">
                     <div class="form-group col">
                         <label for="email"><span>*</span> Email address</label>
-                        <input aria-describedby="emailHelp" class="form-control" id="email" placeholder="Enter email"
+                        <input aria-describedby="emailHelp" class="form-control border border-2 border-white bg-light rounded-3" id="email" placeholder="Enter email"
                                type="email">
+                        <p><small id="errorEmail" class="text-danger fs-8 pl-1 mt-0 mb-0"></small></p>
                     </div>
                 </div>
 
                 <div class="row">
                     <div class="col-6">
                         <label for="nic"><span>*</span> NIC Number</label>
-                        <input class="form-control" id="nic" placeholder=" Enter National Identity Number" type="text">
+                        <input class="form-control border border-2 border-white bg-light rounded-3" id="nic" placeholder=" Enter National Identity Number" type="text">
+                        <p><small id="errorNIC" class="text-danger fs-8 pl-1 mt-0 mb-0"></small></p>
                     </div>
 
                     <div class="col-6">
                         <label for="drivinglicense"><span>*</span> License Number</label>
-                        <input class="form-control" id="drivinglicense" placeholder=" Enter License Number" type="text">
+                        <input class="form-control border border-2 border-white bg-light rounded-3" id="drivinglicense" placeholder=" Enter License Number" type="text">
+                        <p><small id="errorDrivingLicense" class="text-danger fs-8 pl-1 mt-0 mb-0"></small></p>
                     </div>
                 </div>
                 </form>
@@ -1037,7 +1045,7 @@
             <div class="col-5">
                 <div class="row">
                     <div class="col">
-                        <form>
+                        <form  style="border: 1px solid white; width: 450px; height: 125px;;position: relative; top: 50px;">
                             <div class="form-group">
                                 <label for="uploadmyimage"><span>*</span> Upload Your Image</label>
                                 <input class="form-control-file bg-info" id="uploadmyimage" name="file" type="file">
@@ -1048,7 +1056,7 @@
 
                 <div class="row">
                     <div class="col">
-                        <form>
+                        <form  style="border: 2px solid white; width: 450px; height: 125px;;position: relative; top: 50px;">
                             <div class="form-group">
                                 <label for="uploadnicimage"><span>*</span> Add National Identity image</label>
                                 <input class="form-control-file bg-info" id="uploadnicimage" name="file" type="file">
@@ -1060,7 +1068,7 @@
 
                 <div class="row">
                     <div class="col">
-                        <form>
+                        <form  style="border: 2px solid white; width: 450px; height: 125px;;position: relative; top: 50px;">
                             <div class="form-group ">
                                 <label for="uploaddrivinglicence"><span>*</span> Add License image</label>
                                 <input class="form-control-file bg-info" id="uploaddrivinglicence" name="file" type="file" style="border: none">
