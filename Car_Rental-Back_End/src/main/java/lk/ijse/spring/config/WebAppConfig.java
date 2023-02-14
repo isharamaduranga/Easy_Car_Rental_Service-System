@@ -28,7 +28,15 @@ public class WebAppConfig implements WebMvcConfigurer {
         return new ModelMapper();
     }
 
+    @Bean
+    public MultipartResolver multipartResolver() {
+        return new StandardServletMultipartResolver();
+    }
 
+    @Override
+    public void addResourceHandlers(ResourceHandlerRegistry registry) {
+        registry.addResourceHandler("/uploads/**").addResourceLocations("/uploads/");
+    }
 
 
 }
