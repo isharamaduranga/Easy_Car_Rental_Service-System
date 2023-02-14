@@ -8,10 +8,21 @@
 
 package lk.ijse.spring.entity;
 
+import lombok.AllArgsConstructor;
+import lombok.Data;
+import lombok.NoArgsConstructor;
+import lombok.ToString;
+
+import javax.persistence.CascadeType;
 import javax.persistence.Entity;
 import javax.persistence.Id;
+import javax.persistence.OneToOne;
 import java.time.LocalDate;
 
+@NoArgsConstructor
+@AllArgsConstructor
+@Data
+@ToString
 @Entity
 public class Customer {
     @Id
@@ -25,4 +36,9 @@ public class Customer {
     private String customerDrivingLicenseNo;
     private String NICImage;
     private String DrivingLicenseImage;
+
+    /**Customer is a Already User (One To One relation) */
+    @OneToOne(cascade = CascadeType.ALL)
+    private Users users;
+
 }
