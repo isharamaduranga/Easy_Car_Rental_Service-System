@@ -1090,6 +1090,49 @@
     </div>
 </section>
 
+<!--Forgot Password Page-->
+<section id="ForgotPasswordPage" style="margin-top: 10px;">
+    <div class="container ">
+        <h1 class="text-center">Reset Passowrd</h1>
+        <div class="row">
+            <form>
+            <div class="col">
+                <div class="row">
+                    <label for="enterusername"><span>*</span> User Name</label>
+                    <input class="form-control" id="enterusername" placeholder=" Enter User Name" type="text">
+                </div>
+
+                <div class="row">
+                    <label for="newpassword"><span>*</span>New Password</label>
+                    <input class="form-control" id="newpassword" placeholder="Enter New Password" type="password">
+                    <p><small id="errorNewPW" class="text-danger fs-8 pl-1 mt-0 mb-0"></small></p>
+                </div>
+
+                <div class="row">
+                    <label for="confirmpassword"><span>*</span>Confirm password</label>
+                    <input class="form-control" id="confirmpassword" placeholder="Enter Confirm password" type="password">
+                    <p><small id="errorConfirmPW" class="text-danger fs-8 pl-1 mt-0 mb-0"></small></p>
+                </div>
+
+                <div class="row">
+
+                    <div class="col-6">
+                        <!-- Submit button -->
+                        <button type="button" id="btnResetPW" class="btn btn-primary shadow"  style="display: inline;position: relative;left: 0;right: 10px;">Reset</button>
+                    </div>
+                    <div class="col-6">
+                        <button type="button" id="btnCancelPW" class="btn btn-danger shadow"  style="display: inline;position: relative;left: 10px;right: 0; ">Cancel</button>
+                    </div>
+                    <!-- Submit button -->
+
+                </div>
+            </div>
+            </form>
+        </div>
+    </div>
+</section>
+
+
 <!--Driver Sign Up Window-->
 <section id="RegisterDriver" style="margin-top: 20px;">
     <div class="container ">
@@ -1164,7 +1207,10 @@
                     </div>
                     <div class="col-6">
                         <!-- Simple link -->
-                        <a href="#"  id="btnForgotPW"  style="font-family: 'sans-serif', cursive;font-size: 18px;color: #d7151f;text-decoration: none">Forgot password?</a>
+                        <button id="fwBtn">
+                            <a href="#"  id="btnForgotPW"  style="font-family: 'sans-serif', cursive;font-size: 18px;color: #d7151f;text-decoration: none">Forgot password?</a>
+                        </button>
+
                     </div>
                 </div>
 
@@ -1283,6 +1329,7 @@
 <!--import & linked front end Controller js files-->
 <script src="./controllers/NavigationController.js"></script>
 <script src="./controllers/RegisterFormController.js"></script>
+<script src="./controllers/ResetPasswordController.js"></script>
 
 
 <!-- - iron-icon link-->

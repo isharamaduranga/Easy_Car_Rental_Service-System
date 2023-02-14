@@ -924,3 +924,39 @@ form .btn:hover{
 }
 
 
+/* Reset Password for Forget password Form Styles */
+#ForgotPasswordPage{
+    padding: 10px;
+    margin: 0;
+    display: none;
+}
+#ForgotPasswordPage .container{
+    width: 30vw;
+    height: 70vh;
+    background: rgba(239, 142, 170, 0.4);
+    border-radius: 40px;
+
+}
+
+#ForgotPasswordPage .container .row{
+    margin: 20px;
+}
+
+#ForgotPasswordPage .container label>span{
+    color: red;
+    font-weight: bold;
+}
+#ForgotPasswordPage .container h1{
+    color: #434444;
+    padding: 25px;
+}
+
+#fwBtn,input[type="submit"], input[type="reset"] {
+    background: none;
+    color: inherit;
+    border: none;
+    padding: 0;
+    font: inherit;
+    cursor: pointer;
+    outline: inherit;
+}

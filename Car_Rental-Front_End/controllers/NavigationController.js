@@ -1,4 +1,6 @@
 
+
+
 $("#btnOpenRegisterForm,#btnRegisterInLoginPage").click(function () {
     openRegisterForm();
 });
@@ -95,7 +97,7 @@ function openRegisterForm(){
     $("#footer").css('display','none');
 }
 
-$("#btnCancelToSystem,#btnCancelToDLogin,#btnCancelToAdmin").click(function () {
+$("#btnCancelToSystem,#btnCancelToDLogin,#btnCancelToAdmin,#btnCancelPW").click(function () {
   registerCancelEvent();
 });
 
@@ -117,12 +119,12 @@ function registerToSystem() {
     generateUserIds();
     $('#logInCustomer').css('display','block');
     $("#nav_bar").css('display','block');
+    $("#banner").css('display','none');
 
     $('#RegisterPage').css('display','none');
     $('#RegisterDriver').css('display','none');
     $('#logInDriver').css('display','none');
     $('#logInAdmin').css('display','none');
-    $("#banner").css('display','none');
     $("#services").css('display','none');
     $("#about_us").css('display','none');
     $("#featured-car").css('display','none');
@@ -140,6 +142,7 @@ function registerCancelEvent() {
     $('#logInCustomer').css('display','none');
     $('#logInDriver').css('display','none');
     $('#logInAdmin').css('display','none');
+    $('#ForgotPasswordPage').css('display','none');
 
     $("#nav_bar").css('display','block');
     $("#banner").css('display','block');
@@ -167,3 +170,22 @@ function openDriverForm() {
     $("#social_media").css('display','none');
     $("#footer").css('display','none');
 }
+
+$("#fwBtn").click(function () {
+    $('#ForgotPasswordPage').css('display','block');
+    $("#nav_bar").css('display','block');
+    $('#RegisterPage').css('display','none');
+    $('#RegisterDriver').css('display','none');
+    $('#logInCustomer').css('display','none');
+    $('#logInDriver').css('display','none');
+    $('#logInAdmin').css('display','none');
+
+    $("#banner").css('display','none');
+    $("#services").css('display','none');
+    $("#about_us").css('display','none');
+    $("#featured-car").css('display','none');
+    $("#testimonials").css('display','none');
+    $("#Contact_Page").css('display','none');
+    $("#social_media").css('display','none');
+    $("#footer").css('display','none');
+})

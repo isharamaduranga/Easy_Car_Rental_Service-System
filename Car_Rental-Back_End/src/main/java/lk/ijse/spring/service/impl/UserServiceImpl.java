@@ -30,11 +30,10 @@ public class UserServiceImpl implements UserService {
 
     @Override
     public void saveUser(UsersDTO usersDTO) {
-        if (!userRepo.existsById(usersDTO.getUserId())){
-            userRepo.save(mapper.map(usersDTO, Users.class));
-        }else {
-            throw new RuntimeException(usersDTO.getUserId() + " " + "User Already Exists..!");
+        if (userRepo.existsById(usersDTO.getUserId())) {
+            throw new RuntimeException(usersDTO.getUserId() + "  User Already Exists..!");
         }
+        userRepo.save(mapper.map(usersDTO, Users.class));
     }
 
     @Override
