@@ -794,7 +794,7 @@ form .btn:hover{
 
 /* Customer Register Form Styles */
 #RegisterPage{
-    padding: 30px;
+    padding: 20px;
     display: none;
 }
 #RegisterPage .container{
@@ -804,7 +804,7 @@ form .btn:hover{
 }
 
 #RegisterPage .container .row{
- margin: 20px;
+    margin-bottom: 20px;
 }
 
 #RegisterPage .container label>span{
@@ -813,7 +813,7 @@ form .btn:hover{
 }
 #RegisterPage .container h1{
     color: #434444;
-    padding: 25px;
+    padding: 20px;
 }
 
 /* Driver Register Form Styles */
@@ -841,5 +841,32 @@ form .btn:hover{
     padding: 25px;
 }
 
+/* Customer Log in Form Styles */
+#logInCustomer{
+    padding: 30px;
+
+    margin: 0;
+   /* display: none;*/
+}
+#logInCustomer .container{
+    width: 40vw;
+    background: rgb(219, 195, 245);
+    border-radius: 40px;
+
+}
+
+#logInCustomer .container .row{
+    margin: 20px;
+    padding: 0 20px 0 20px ;
+}
+
+#logInCustomer .container label>span{
+    color: red;
+    font-weight: bold;
+}
+#logInCustomer .container h1{
+    color: #434444;
+    padding: 25px;
+}
 
 
