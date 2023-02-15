@@ -34,7 +34,7 @@ $("#btnLogToAdminPanel").click(function () {
     let nameAdmin = $("#loginAdminname").val();
     let pwdAdmin = $("#loginAdminpassword").val();
 
-    if ("admin" === nameAdmin && "1234" === pwdAdmin) {
+    if ("" === nameAdmin && "" === pwdAdmin) {
         alert("success to login admin panel..")
 
         // Login Admin panel

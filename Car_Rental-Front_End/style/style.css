@@ -885,7 +885,7 @@ form .btn:hover{
 #logInDriver .container{
     width: 30vw;
     height: 60vh;
-    background: rgba(82, 120, 217, 0.48);
+    background: rgba(82, 120, 217, 0.39);
     border-radius: 40px;
 
 }
@@ -940,7 +940,7 @@ form .btn:hover{
 #ForgotPasswordPage .container{
     width: 30vw;
     height: 70vh;
-    background: rgba(239, 142, 170, 0.4);
+    background: rgba(239, 142, 170, 0.55);
     border-radius: 40px;
 
 }
