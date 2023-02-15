@@ -1,6 +1,25 @@
 
 log = "Not Logged";
 
+function DefaultHomePage(){
+    $('#logInCustomer').css('display','none');
+    $('#RegisterPage').css('display','none');
+    $('#RegisterDriver').css('display','none');
+    $('#logInDriver').css('display','none');
+    $('#logInAdmin').css('display','none');
+    $('#ForgotPasswordPage').css('display','none');
+
+    $("#nav_bar").css('display','block');
+    $("#banner").css('display','block');
+    $("#services").css('display','block');
+    $("#about_us").css('display','block');
+    $("#featured-car").css('display','block');
+    $("#testimonials").css('display','block');
+    $("#Contact_Page").css('display','block');
+    $("#social_media").css('display','block');
+    $("#footer").css('display','block');
+}
+
 $("#btnOpenRegisterForm,#btnRegisterInLoginPage").click(function () {
     openRegisterForm();
 });
