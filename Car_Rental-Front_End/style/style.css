@@ -794,22 +794,28 @@ form .btn:hover{
 
 /* Customer Register Form Styles */
 #RegisterPage{
-    padding: 20px;
     display: none;
 }
 #RegisterPage .container{
-    background: rgb(209, 226, 245);
+    background: rgb(209, 226, 245);!important;
+    border: 2px solid lime;
     border-radius: 40px;
+    padding: 10px;
+
 
 }
 
 #RegisterPage .container .row{
-    margin-bottom: 20px;
+    margin-bottom: 17.4px;
 }
 
 #RegisterPage .container label>span{
     color: red;
     font-weight: bold;
+}
+#RegisterPage .container label{
+    color: #fff;
+    font-weight: 500;
 }
 #RegisterPage .container h1{
     color: #434444;
@@ -821,6 +827,7 @@ form .btn:hover{
 #RegisterDriver{
     padding: 30px;
     display: none;
+
 }
 #RegisterDriver .container{
     background: rgb(209, 226, 245);
@@ -849,14 +856,14 @@ form .btn:hover{
 }
 #logInCustomer .container{
     width: 35vw;
-    background: rgb(219, 195, 245);
+    background: rgba(219, 195, 245, 0.59);
     border-radius: 40px;
 
 }
 
 #logInCustomer .container .row{
-    margin: 20px;
-    padding: 0 20px 0 20px ;
+    margin: 15px;
+    padding: 0 15px 0 20px ;
 }
 
 #logInCustomer .container label>span{
@@ -878,7 +885,7 @@ form .btn:hover{
 #logInDriver .container{
     width: 30vw;
     height: 60vh;
-    background: rgb(199, 245, 184);
+    background: rgba(82, 120, 217, 0.48);
     border-radius: 40px;
 
 }
@@ -892,7 +899,7 @@ form .btn:hover{
     font-weight: bold;
 }
 #logInDriver .container h1{
-    color: #434444;
+    color: rgba(0, 0, 0, 0.62);
     padding: 25px;
 }
 
@@ -904,8 +911,8 @@ form .btn:hover{
 }
 #logInAdmin .container{
     width: 30vw;
-    height: 60vh;
-    background: rgb(253, 233, 150);
+    height: 65vh;
+    background: rgba(99, 110, 114, 0.53);
     border-radius: 40px;
 
 }
@@ -951,7 +958,7 @@ form .btn:hover{
     padding: 25px;
 }
 
-#fwBtn,input[type="submit"], input[type="reset"] {
+#forgetPasswordBtn,input[type="submit"], input[type="reset"] {
     background: none;
     color: inherit;
     border: none;
@@ -959,4 +966,9 @@ form .btn:hover{
     font: inherit;
     cursor: pointer;
     outline: inherit;
+}
+
+/* Admin Panel styles.. */
+#admin_screen{
+    display: none;
 }

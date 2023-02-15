@@ -36,6 +36,15 @@ $("#btnLogToAdminPanel").click(function () {
 
     if ("admin" === nameAdmin && "1234" === pwdAdmin) {
         alert("success to login admin panel..")
+
+        // Login Admin panel
+
+        $("#admin_screen").css('display','block');
+        $("#logInAdmin").css('display', 'none')
+
+
+
+
     }else{
         alert("Wrong login check all fields are correct !!!..")
     }

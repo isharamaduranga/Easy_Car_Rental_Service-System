@@ -7,6 +7,7 @@ var regExEmail = /^[0-9A-Z a-z$&#]{3,10}(@gmail.com)|(@yahoo.com)$/;
 var regExNIC = /^[0-9]{9}(v)$/;
 var regExDrivingLNO = /^[1-9]{1,10}$/;
 
+
 $("#username").keyup(function (event) {
     let username = $("#username").val();
     if (regExUserName.test(username)) {

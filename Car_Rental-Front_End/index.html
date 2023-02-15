@@ -58,6 +58,7 @@
                         </ul>
                     </div>
 
+
                     <li class="nav-item">
                         <a class="nav-link" href="#Contact_Page">CONTACT</a>
                     </li>
@@ -71,7 +72,7 @@
                                 </button>
                                 <ul class="dropdown-menu dropdown-menu-dark">
                                     <li>
-                                        <button class="dropdown-item" id="btnOpenCusLoginForm" >As a Customer</button>
+                                        <button class="dropdown-item" id="btnOpenCusLoginForm">As a Customer</button>
                                     </li>
                                     <li>
                                         <button class="dropdown-item" id="btnOpenDriverLoginForm">As a Driver</button>
@@ -94,9 +95,13 @@
 
                                 <ul class="dropdown-menu dropdown-menu-dark">
 
-                                    <li><button class="dropdown-item" id="btnOpenRegisterForm">As a Customer</button></li>
+                                    <li>
+                                        <button class="dropdown-item" id="btnOpenRegisterForm">As a Customer</button>
+                                    </li>
 
-                                    <li><button class="dropdown-item" id="btnOpenDriver_Sign_Form">As a Driver</button></li>
+                                    <li>
+                                        <button class="dropdown-item" id="btnOpenDriver_Sign_Form">As a Driver</button>
+                                    </li>
                                 </ul>
                             </li>
                         </ul>
@@ -969,7 +974,8 @@
              <input type="email" class="form-control" placeholder="Your Email ..">
              <button type="button" class="btn btn-primary"> Subscribe</button>-->
         <hr>
-        <p class="copyRight"> <small> CopyRight © 2023 All Right Reserved . <br> ~ Website Developed by Ishara Maduranga. ~ </small></p>
+        <p class="copyRight"><small> CopyRight © 2023 All Right Reserved . <br> ~ Website Developed by Ishara Maduranga.
+            ~ </small></p>
     </div>
 
 </section>
@@ -977,78 +983,88 @@
 
 <!--Customer Sign Up Window-->
 
-<section id="RegisterPage" style="margin-top: 20px;">
-    <div class="container ">
+<section id="RegisterPage" style="background:rgba(99,110,114,0.85);">
+    <div class="container" style="background: url(assets/images/car_bg_home/car_a.png) no-repeat center;">
         <h1 class="text-center">Customer Register</h1>
         <div class="row">
             <div class="col-7">
                 <form id="customerForm">
-                <div class="row">
-                    <div class="col-6">
-                        <label for="username"><span>*</span> User Name</label>
-                        <input class="form-control  border border-2 border-white bg-light rounded-3" id="username" placeholder=" Enter User Name" type="text">
-                        <p><small id="errorUsername" class="text-danger fs-8 pl-1 mt-0 mb-0"></small></p>
-                    </div>
-                    <div class="col-6">
-                        <label for="password"><span>*</span> Password</label>
-                        <input class="form-control  border border-2 border-white bg-light" id="password" placeholder="Enter Password" type="password">
-                        <p><small id="errorPassword" class="text-danger fs-8 pl-1 mt-0 mb-0"></small></p>
-                    </div>
-                </div>
-
-                <div class="row">
-                    <div class="col-6">
-                        <label for="customername"><span>*</span> Full Name</label>
-                        <input class="form-control border border-2 border-white bg-light rounded-3" id="customername" placeholder="Enter Full Name" type="text">
-                        <p><small id="errorFullName" class="text-danger fs-8 pl-1 mt-0 mb-0"></small></p>
+                    <div class="row">
+                        <div class="col-6">
+                            <label for="username"><span>*</span> User Name</label>
+                            <input class="form-control  border border-2 border-white bg-light rounded-3" id="username"
+                                   placeholder=" Enter User Name" type="text">
+                            <p><small class="text-danger fs-8 pl-1 mt-0 mb-0" id="errorUsername"></small></p>
+                        </div>
+                        <div class="col-6">
+                            <label for="password"><span>*</span> Password</label>
+                            <input class="form-control  border border-2 border-white bg-light" id="password"
+                                   placeholder="Enter Password" type="password">
+                            <p><small class="text-danger fs-8 pl-1 mt-0 mb-0" id="errorPassword"></small></p>
+                        </div>
                     </div>
 
-                    <div class="col-6">
-                        <label for="contactnumber"><span>*</span> Contact Number</label>
-                        <input class="form-control border border-2 border-white bg-light rounded-3" id="contactnumber" placeholder=" Enter Contact Number" type="text">
-                        <p><small id="errorContact" class="text-danger fs-8 pl-1 mt-0 mb-0"></small></p>
+                    <div class="row">
+                        <div class="col-6">
+                            <label for="customername"><span>*</span> Full Name</label>
+                            <input class="form-control border border-2 border-white bg-light rounded-3"
+                                   id="customername" placeholder="Enter Full Name" type="text">
+                            <p><small class="text-danger fs-8 pl-1 mt-0 mb-0" id="errorFullName"></small></p>
+                        </div>
+
+                        <div class="col-6">
+                            <label for="contactnumber"><span>*</span> Contact Number</label>
+                            <input class="form-control border border-2 border-white bg-light rounded-3"
+                                   id="contactnumber" placeholder=" Enter Contact Number" type="text">
+                            <p><small class="text-danger fs-8 pl-1 mt-0 mb-0" id="errorContact"></small></p>
+                        </div>
                     </div>
-                </div>
 
 
-                <div class="row">
-                    <div class="col">
-                        <label for="customeraddress"><span>*</span> Address</label>
-                        <input class="form-control border border-2 border-white bg-light rounded-3" id="customeraddress" placeholder=" Enter Address" type="text">
-                        <p><small id="errorAddress" class="text-danger fs-8 pl-1 mt-0 mb-0"></small></p>
+                    <div class="row">
+                        <div class="col">
+                            <label for="customeraddress"><span>*</span> Address</label>
+                            <input class="form-control border border-2 border-white bg-light rounded-3"
+                                   id="customeraddress" placeholder=" Enter Address" type="text">
+                            <p><small class="text-danger fs-8 pl-1 mt-0 mb-0" id="errorAddress"></small></p>
+                        </div>
                     </div>
-                </div>
-                <div class="row">
-                    <div class="form-group col">
-                        <label for="email"><span>*</span> Email address</label>
-                        <input aria-describedby="emailHelp" class="form-control border border-2 border-white bg-light rounded-3" id="email" placeholder="Enter email"
-                               type="email">
-                        <p><small id="errorEmail" class="text-danger fs-8 pl-1 mt-0 mb-0"></small></p>
-                    </div>
-                </div>
-
-                <div class="row">
-                    <div class="col-6">
-                        <label for="nic"><span>*</span> NIC Number</label>
-                        <input class="form-control border border-2 border-white bg-light rounded-3" id="nic" placeholder=" Enter National Identity Number" type="text">
-                        <p><small id="errorNIC" class="text-danger fs-8 pl-1 mt-0 mb-0"></small></p>
+                    <div class="row">
+                        <div class="form-group col">
+                            <label for="email"><span>*</span> Email address</label>
+                            <input aria-describedby="emailHelp"
+                                   class="form-control border border-2 border-white bg-light rounded-3" id="email"
+                                   placeholder="Enter email"
+                                   type="email">
+                            <p><small class="text-danger fs-8 pl-1 mt-0 mb-0" id="errorEmail"></small></p>
+                        </div>
                     </div>
 
-                    <div class="col-6">
-                        <label for="drivinglicense"><span>*</span> License Number</label>
-                        <input class="form-control border border-2 border-white bg-light rounded-3" id="drivinglicense" placeholder=" Enter License Number" type="text">
-                        <p><small id="errorDrivingLicense" class="text-danger fs-8 pl-1 mt-0 mb-0"></small></p>
+                    <div class="row">
+                        <div class="col-6">
+                            <label for="nic"><span>*</span> NIC Number</label>
+                            <input class="form-control border border-2 border-white bg-light rounded-3" id="nic"
+                                   placeholder=" Enter National Identity Number" type="text">
+                            <p><small class="text-danger fs-8 pl-1 mt-0 mb-0" id="errorNIC"></small></p>
+                        </div>
+
+                        <div class="col-6">
+                            <label for="drivinglicense"><span>*</span> License Number</label>
+                            <input class="form-control border border-2 border-white bg-light rounded-3"
+                                   id="drivinglicense" placeholder=" Enter License Number" type="text">
+                            <p><small class="text-danger fs-8 pl-1 mt-0 mb-0" id="errorDrivingLicense"></small></p>
+                        </div>
                     </div>
-                </div>
                 </form>
             </div>
             <div class="col-5">
                 <div class="row">
                     <div class="col">
-                        <form  style="border: 2px solid white; width: 450px; height: 125px;;position: relative; top: 50px;">
+                        <form style="border: 2px solid #ffff00; width: 450px; height: 125px;;position: relative; top: 50px;">
                             <div class="form-group">
                                 <label for="uploadmyimage"><span>*</span> Upload Your Image</label>
-                                <input class="form-control-file bg-info" id="uploadmyimage" name="file" type="file">
+                                <input class="form-control-file text-white " id="uploadmyimage" name="file" style="border: none; background:rgba(0,0,0,0.73);"
+                                       type="file">
                             </div>
                         </form>
                     </div>
@@ -1056,10 +1072,11 @@
 
                 <div class="row">
                     <div class="col">
-                        <form  style="border: 2px solid white; width: 450px; height: 125px;;position: relative; top: 50px;">
+                        <form style="border: 2px solid #ffff00; width: 450px; height: 125px;;position: relative; top: 50px;">
                             <div class="form-group">
                                 <label for="uploadnicimage"><span>*</span> Add National Identity image</label>
-                                <input class="form-control-file bg-info" id="uploadnicimage" name="file" type="file">
+                                <input class="form-control-file text-white " id="uploadnicimage" name="file" style="border: none; background:rgba(0,0,0,0.73);"
+                                       type="file">
                             </div>
                         </form>
                     </div>
@@ -1068,10 +1085,11 @@
 
                 <div class="row">
                     <div class="col">
-                        <form  style="border: 2px solid white; width: 450px; height: 125px;;position: relative; top: 50px;">
+                        <form style="border: 2px solid #ffff00; width: 450px; height: 125px;;position: relative; top: 50px;">
                             <div class="form-group ">
                                 <label for="uploaddrivinglicence"><span>*</span> Add License image</label>
-                                <input class="form-control-file bg-info" id="uploaddrivinglicence" name="file" type="file" style="border: none">
+                                <input class="form-control-file text-white" id="uploaddrivinglicence" name="file"
+                                       style="border: none; background:rgba(0,0,0,0.73);" type="file">
                             </div>
                         </form>
                     </div>
@@ -1079,10 +1097,16 @@
 
             </div>
             <div class="row row-cols-5 text-center" style="justify-content: center">
-                <button class="btn bg-success" style="font-weight: 600; color: white; padding: 8px; margin-right: 25px;" id="btnRegister" type="button">Submit Register Form</button>
+                <button id="btnRegister"
+                        style="font-weight: 600; background:red;color: white;border: none; border-radius: 10px; padding: 8px; margin-right: 25px;"
+                        type="button">Submit Register Form
+                </button>
                 <label class="form-label text-danger visually-hidden" id="generateCusId"></label>
                 <label class="form-label text-danger visually-hidden" id="generateUserId"></label>
-                <button class="btn bg-danger" style="font-weight: 600; color: white; padding: 8px" id="btnRegisterCancel" type="button">Cancel..</button>
+                <button id="btnRegisterCancel"
+                        style="font-weight: 600; background:limegreen; border: none; border-radius: 10px; color: white; padding: 8px"
+                        type="button">Cancel..
+                </button>
             </div>
 
         </div>
@@ -1096,37 +1120,44 @@
         <h1 class="text-center">Reset Passowrd</h1>
         <div class="row">
             <form>
-            <div class="col">
-                <div class="row">
-                    <label for="enterusername"><span>*</span> User Name</label>
-                    <input class="form-control" id="enterusername" placeholder=" Enter User Name" type="text">
-                </div>
+                <div class="col">
+                    <div class="row">
+                        <label for="enterusername"><span>*</span> User Name</label>
+                        <input class="form-control" id="enterusername" placeholder=" Enter User Name" type="text">
+                    </div>
 
-                <div class="row">
-                    <label for="newpassword"><span>*</span>New Password</label>
-                    <input class="form-control" id="newpassword" placeholder="Enter New Password" type="password">
-                    <p><small id="errorNewPW" class="text-danger fs-8 pl-1 mt-0 mb-0"></small></p>
-                </div>
+                    <div class="row">
+                        <label for="newpassword"><span>*</span>New Password</label>
+                        <input class="form-control" id="newpassword" placeholder="Enter New Password" type="password">
+                        <p><small class="text-danger fs-8 pl-1 mt-0 mb-0" id="errorNewPW"></small></p>
+                    </div>
 
-                <div class="row">
-                    <label for="confirmpassword"><span>*</span>Confirm password</label>
-                    <input class="form-control" id="confirmpassword" placeholder="Enter Confirm password" type="password">
-                    <p><small id="errorConfirmPW" class="text-danger fs-8 pl-1 mt-0 mb-0"></small></p>
-                </div>
+                    <div class="row">
+                        <label for="confirmpassword"><span>*</span>Confirm password</label>
+                        <input class="form-control" id="confirmpassword" placeholder="Enter Confirm password"
+                               type="password">
+                        <p><small class="text-danger fs-8 pl-1 mt-0 mb-0" id="errorConfirmPW"></small></p>
+                    </div>
 
-                <div class="row">
+                    <div class="row">
 
-                    <div class="col-6">
+                        <div class="col-6">
+                            <!-- Submit button -->
+                            <button class="btn btn-primary shadow" id="btnResetPW"
+                                    style="display: inline;position: relative;left: 0;right: 10px;"
+                                    type="button">Reset
+                            </button>
+                        </div>
+                        <div class="col-6">
+                            <button class="btn btn-danger shadow" id="btnCancelPW"
+                                    style="display: inline;position: relative;left: 10px;right: 0; "
+                                    type="button">Cancel
+                            </button>
+                        </div>
                         <!-- Submit button -->
-                        <button type="button" id="btnResetPW" class="btn btn-primary shadow"  style="display: inline;position: relative;left: 0;right: 10px;">Reset</button>
-                    </div>
-                    <div class="col-6">
-                        <button type="button" id="btnCancelPW" class="btn btn-danger shadow"  style="display: inline;position: relative;left: 10px;right: 0; ">Cancel</button>
-                    </div>
-                    <!-- Submit button -->
 
+                    </div>
                 </div>
-            </div>
             </form>
         </div>
     </div>
@@ -1134,47 +1165,52 @@
 
 
 <!--Driver Sign Up Window-->
-<section id="RegisterDriver" style="margin-top: 20px;">
+<section id="RegisterDriver" style="margin-top: 20px; ">
     <div class="container ">
         <h1 class="text-center">Driver Register</h1>
         <div class="row">
             <form>
-            <div class="col">
-                <div class="row">
-                    <div class="col-6">
-                        <label for="driverName"><span>*</span> Driver Name</label>
-                        <input class="form-control" id="driverName" placeholder=" Enter driver Name" type="text">
+                <div class="col">
+                    <div class="row">
+                        <div class="col-6">
+                            <label for="driverName"><span>*</span> Driver Name</label>
+                            <input class="form-control" id="driverName" placeholder=" Enter driver Name" type="text">
+                        </div>
+                        <div class="col-6">
+                            <label for="driverAddress"><span>*</span> Driver Address</label>
+                            <input class="form-control" id="driverAddress" placeholder="Enter address" type="text">
+                        </div>
                     </div>
-                    <div class="col-6">
-                        <label for="driverAddress"><span>*</span> Driver Address</label>
-                        <input class="form-control" id="driverAddress" placeholder="Enter address" type="text">
+
+                    <div class="row">
+                        <div class="col-6">
+                            <label for="driverAge"><span>*</span> Age</label>
+                            <input class="form-control" id="driverAge" placeholder="Enter age" type="text">
+                        </div>
+
+                        <div class="col-6">
+                            <label for="driver_con"><span>*</span> Contact Number</label>
+                            <input class="form-control" id="driver_con" placeholder=" Enter Contact Number" type="text">
+                        </div>
+                    </div>
+
+
+                    <div class="row">
+                        <div class="col-8">
+                            <label for="address"><span>*</span> Address</label>
+                            <input class="form-control" id="address" placeholder=" Enter Address" type="text">
+                        </div>
                     </div>
                 </div>
-
-                <div class="row">
-                    <div class="col-6">
-                        <label for="driverAge"><span>*</span> Age</label>
-                        <input class="form-control" id="driverAge" placeholder="Enter age" type="text">
-                    </div>
-
-                    <div class="col-6">
-                        <label for="driver_con"><span>*</span> Contact Number</label>
-                        <input class="form-control" id="driver_con" placeholder=" Enter Contact Number" type="text">
-                    </div>
-                </div>
-
-
-                <div class="row">
-                    <div class="col-8">
-                        <label for="address"><span>*</span> Address</label>
-                        <input class="form-control" id="address" placeholder=" Enter Address" type="text">
-                    </div>
-                </div>
-            </div>
             </form>
             <div class="row row-cols-5 text-center" style="justify-content: center">
-                <button class="btn bg-success" style="font-weight: 600; color: white; padding: 8px; margin-right: 25px;" id="btnSaveDriver" type="button"> Register</button>
-                <button class="btn bg-danger" style="font-weight: 600; color: white; padding: 8px" id="btnCancelDriver" type="button">Cancel..</button>
+                <button class="btn bg-success" id="btnSaveDriver"
+                        style="font-weight: 600; color: white; padding: 8px; margin-right: 25px;" type="button">
+                    Register
+                </button>
+                <button class="btn bg-danger" id="btnCancelDriver" style="font-weight: 600; color: white; padding: 8px"
+                        type="button">Cancel..
+                </button>
             </div>
 
         </div>
@@ -1184,64 +1220,81 @@
 
 <!--Customer Log In Window-->
 
-<section id="logInCustomer" style="margin-top: 20px;">
+<section id="logInCustomer"
+         style="margin-top: 20px; background: url(assets/images/car_bg_home/car_a.png) no-repeat center;">
     <div class="container ">
         <h1 class="text-center">Customer Log In</h1>
         <div class="row">
             <div class="col">
 
                 <div class="row">
-                    <label for="loginusername"><span>*</span> User Name</label>
+                    <label for="loginusername" style="color: rgba(0,0,0,0.95); font-weight: bold"><span>*</span> User
+                        Name</label>
                     <input class="form-control" id="loginusername" placeholder=" Enter User Name" type="text">
                 </div>
 
                 <div class="row">
-                    <label for="loginpassword"><span>*</span> Password</label>
+                    <label for="loginpassword" style="color: rgba(0,0,0,0.95); font-weight: bold"><span>*</span>
+                        Password</label>
                     <input class="form-control" id="loginpassword" placeholder="Enter Password" type="password">
                 </div>
 
                 <div class="row">
                     <!-- Checkbox -->
                     <div class="form-check col-6">
-                        <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault" />
-                        <label class="form-check-label text-black" for="flexCheckDefault" style="font-family: 'Edu VIC WA NT Beginner', cursive;font-size: 18px">Remember me</label>
+                        <input class="form-check-input" id="flexCheckDefault" type="checkbox" value=""/>
+                        <label class="form-check-label " for="flexCheckDefault"
+                               style="font-family: 'Edu VIC WA NT Beginner', cursive; color:greenyellow; font-size: 18px">Remember
+                            me</label>
                     </div>
                     <div class="col-6">
                         <!-- Simple link -->
-                        <button id="fwBtn">
-                            <a href="#"  id="btnForgotPW"  style="font-family: 'sans-serif', cursive;font-size: 18px;color: #d7151f;text-decoration: none">Forgot password?</a>
+                        <button id="forgetPasswordBtn">
+                            <a href="#" id="btnForgotPW"
+                               style="font-family: 'sans-serif', cursive;font-size: 18px;color: red;text-decoration: none">Forgot
+                                password?</a>
                         </button>
 
                     </div>
                 </div>
 
                 <div class="row">
-                        <!-- Submit button -->
+                    <!-- Submit button -->
                     <div class="col-6">
 
                     </div>
-                    <button type="button" id="btnLogToSystem" class="btn btn-block text-center text-white btn-primary shadow"  style="display: inline;position: relative;left: 0;right: 0; margin: auto;">Log in</button>
-                    <button type="button" id="btnCancelToSystem" class="btn btn-block text-center text-white btn-danger shadow"  style="display: inline;position: relative;left: 0;right: 0; margin: auto; top: 10px">Cancel</button>
+                    <button class="btn btn-block text-center text-white btn-primary shadow" id="btnLogToSystem"
+                            style="display: inline;position: relative;left: 0;right: 0; margin: auto;"
+                            type="button">Log in
+                    </button>
+                    <button class="btn btn-block text-center text-white btn-danger shadow" id="btnCancelToSystem"
+                            style="display: inline;position: relative;left: 0;right: 0; margin: auto; top: 10px"
+                            type="button">Cancel
+                    </button>
                 </div>
 
                 <div class="row">
                     <!-- Register buttons -->
                     <div class="text-center">
-                        <p class="text-black" style="font-family: 'Edu VIC WA NT Beginner', cursive;font-size: 18px">Not a member? <a href="#RegisterPage" id="btnRegisterInLoginPage" style="font-family: 'sans-serif', cursive;font-size: 20px;color: #e70042;text-decoration: none"> Register</a></p>
-                        <p class="text-black" style="font-family: 'Edu VIC WA NT Beginner', cursive;font-size: 18px">or sign up with:</p>
-                        <button type="button" class="btn btn-primary btn-floating mx-1">
+                        <p class="text-black" style="font-family: 'Edu VIC WA NT Beginner', cursive;font-size: 18px">Not
+                            a member? <a href="#RegisterPage" id="btnRegisterInLoginPage"
+                                         style="font-family: 'sans-serif', cursive;font-size: 20px;color: #e70042;text-decoration: none">
+                                Register</a></p>
+                        <p class="text-black" style="font-family: 'Edu VIC WA NT Beginner', cursive;font-size: 18px">or
+                            sign up with:</p>
+                        <button class="btn btn-primary btn-floating mx-1" type="button">
                             <i class="fab fa-facebook-f"></i>
                         </button>
 
-                        <button type="button" class="btn btn-danger btn-floating mx-1">
+                        <button class="btn btn-danger btn-floating mx-1" type="button">
                             <i class="fab fa-google"></i>
                         </button>
 
-                        <button type="button" class="btn btn-success btn-floating mx-1">
+                        <button class="btn btn-success btn-floating mx-1" type="button">
                             <i class="fab fa-twitter"></i>
                         </button>
 
-                        <button type="button" class="btn btn-secondary btn-floating mx-1">
+                        <button class="btn btn-secondary btn-floating mx-1" type="button">
                             <i class="fab fa-github"></i>
                         </button>
                     </div>
@@ -1252,20 +1305,21 @@
 </section>
 
 
-
 <!--Driver Log In Window-->
-<section id="logInDriver" style="margin-top: 20px;">
+<section id="logInDriver"
+         style="margin-top: 20px;background: url(assets/images/car_bg_home/car_c.png) no-repeat center;">
     <div class="container ">
         <h1 class="text-center">Driver Log In</h1>
         <div class="row">
             <div class="col">
                 <div class="row">
-                    <label for="logindrivername"><span>*</span> User Name</label>
+                    <label for="logindrivername" style="color: greenyellow; font-weight: bold"><span>*</span> User Name</label>
                     <input class="form-control" id="logindrivername" placeholder=" Enter User Name" type="text">
                 </div>
 
                 <div class="row">
-                    <label for="logindriverpassword"><span>*</span> Password</label>
+                    <label for="logindriverpassword" style="color: greenyellow; font-weight: bold"><span>*</span>
+                        Password</label>
                     <input class="form-control" id="logindriverpassword" placeholder="Enter Password" type="password">
                 </div>
 
@@ -1276,8 +1330,14 @@
 
                     </div>
                     <br>
-                    <button type="button" id="btnLogToDriver" class="btn btn-block text-center text-white btn-primary shadow"  style="display: inline;position: relative;left: 0;right: 0; margin: auto;">Log in</button>
-                    <button type="button" id="btnCancelToDLogin" class="btn btn-block text-center text-white btn-danger shadow"  style="display: inline;position: relative;left: 0;right: 0; margin: auto; top: 10px">Cancel</button>
+                    <button class="btn btn-block text-center text-white btn-primary shadow" id="btnLogToDriver"
+                            style="display: inline;position: relative;left: 0;right: 0; margin: auto;"
+                            type="button">Log in
+                    </button>
+                    <button class="btn btn-block text-center text-white btn-danger shadow" id="btnCancelToDLogin"
+                            style="display: inline;position: relative;left: 0;right: 0; margin: auto; top: 10px"
+                            type="button">Cancel
+                    </button>
                 </div>
             </div>
         </div>
@@ -1285,18 +1345,21 @@
 </section>
 
 <!--Admin Log In Window-->
-<section id="logInAdmin" style="margin-top: 20px;">
+<section id="logInAdmin"
+         style="margin-top: 20px; background: url(assets/images/car_bg_home/car_b.png) no-repeat center;">
     <div class="container ">
         <h1 class="text-center">Admin Log In</h1>
         <div class="row">
             <div class="col">
                 <div class="row">
-                    <label for="loginAdminname"><span>*</span> User Name</label>
+                    <label for="loginAdminname" style="color: greenyellow; font-weight: bold"><span>*</span> User
+                        Name</label>
                     <input class="form-control" id="loginAdminname" placeholder=" Enter User Name" type="text">
                 </div>
 
                 <div class="row">
-                    <label for="loginAdminpassword"><span>*</span> Password</label>
+                    <label for="loginAdminpassword" style="color: greenyellow; font-weight: bold"><span>*</span>
+                        Password</label>
                     <input class="form-control" id="loginAdminpassword" placeholder="Enter Password" type="password">
                 </div>
 
@@ -1307,9 +1370,63 @@
 
                     </div>
                     <br>
-                    <button type="button" id="btnLogToAdminPanel" class="btn btn-block text-center text-white btn-primary shadow"  style="display: inline;position: relative;left: 0;right: 0; margin: auto;">Log in</button>
-                    <button type="button" id="btnCancelToAdmin" class="btn btn-block text-center text-white btn-danger shadow"  style="display: inline;position: relative;left: 0;right: 0; margin: auto; top: 10px">Cancel</button>
+                    <button class="btn btn-block text-center text-white btn-primary shadow" id="btnLogToAdminPanel"
+                            style="display: inline;position: relative;left: 0;right: 0; margin: auto;"
+                            type="button">Log in
+                    </button>
+                    <button class="btn btn-block text-center text-white btn-danger shadow" id="btnCancelToAdmin"
+                            style="display: inline;position: relative;left: 0;right: 0; margin: auto; top: 10px"
+                            type="button">Cancel
+                    </button>
                 </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+
+<!--admin dashboard Panel-->
+<section id="admin_screen" style="height: 99vh;">
+    <div class="d-flex" style="height: 100%; width: 100%;">
+        <div class="d-flex flex-column justify-content-between"
+             style="height: 100%; width: 15%; background-color: rgb(237, 237, 237);">
+            <div><h1>Admin DashBoard</h1></div>
+            <div class="d-flex flex-column justify-content-center">
+                <button class="mt-2" id="btn_dashboard" style="height: 40px">Dashboard</button>
+                <button class="mt-2" id="btn_car" style="height: 40px">Car</button>
+                <button class="mt-2" id="btn_driver" style="height: 40px">Driver</button>
+                <button class="mt-2" id="btn_customer" style="height: 40px">Customer</button>
+                <button class="mt-2" id="btn_reservation" style="height: 40px">Reservations</button>
+                <button class="mt-2" id="btn_payment" style="height: 40px">Payment</button>
+                <button class="mt-2" id="btn_income" style="height: 40px">Income Report</button>
+            </div>
+            <div>
+                <button class="mt-2" id="admin_logout" style="height: 40px">logout</button>
+            </div>
+        </div>
+        <div style="height: 100%; width: 85%;">
+            <!--            dashboard-->
+            <div id="admin_dashboard" style="height: 100%;">
+                <div id="bar-chart"></div>
+            </div>
+            <!--          admin car dashboard-->
+            <div id="car_dashboard" style="height: 100%; background-color: red">
+
+            </div>
+            <!--           admin driver dashboard -->
+            <div id="driver_dashboard" style="height: 100%; background-color: green">
+            </div>
+            <!--          admin customer dashboard-->
+            <div id="customer_dashboard" style="height: 100%; background-color: aqua">
+            </div>
+            <!--          admin Reservations dashboard-->
+            <div id="reservation_dashboard" style="height: 100%; background-color: red">
+            </div>
+            <!--          admin Payment dashboard-->
+            <div id="payment_dashboard" style="height: 100%; background-color: green">
+            </div>
+            <!--          admin income dashboard-->
+            <div id="income_dashboard" style="height: 100%; background-color: #021002">
             </div>
         </div>
     </div>
@@ -1322,7 +1439,7 @@
         src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
 
 <!--Import js for jQuery-->
-<script SRC="./assets/jquery/jquery-3.6.1.min.js"></script>
+<script src="./assets/jquery/jquery-3.6.1.min.js"></script>
 
 <!--Import style .js file link-->
 <script src="style/style.js"></script>
