@@ -6,7 +6,7 @@ html {
 }
 
 
-:root{
+:root {
     /**
       * colors
       */
@@ -324,14 +324,13 @@ body {
     50% {
         box-shadow: 0 0 1.5em #7f00ff;
     }
-    100%{
+    100% {
         box-shadow: none;
     }
 }
 
 
 /****************  --- featured-car section styles---  *******************/
-
 
 
 /*ion-icon {
@@ -374,16 +373,22 @@ a {
     font-size: var(--fs-6);
 }
 
-.featured-car-link span { transition: var(--transition); }
+.featured-car-link span {
+    transition: var(--transition);
+}
 
-.featured-car-link:is(:hover, :focus) span { color: var(--space-cadet); }
+.featured-car-link:is(:hover, :focus) span {
+    color: var(--space-cadet);
+}
 
 .featured-car-link ion-icon {
     margin-top: 3px;
     transition: var(--transition);
 }
 
-.featured-car-link:is(:hover, :focus) ion-icon { color: var(--carolina-blue); }
+.featured-car-link:is(:hover, :focus) ion-icon {
+    color: var(--carolina-blue);
+}
 
 .featured-car-list {
     display: grid;
@@ -411,7 +416,9 @@ a {
     object-fit: cover;
 }
 
-.featured-car-card .card-content { padding: 20px 10px 10px; }
+.featured-car-card .card-content {
+    padding: 20px 10px 10px;
+}
 
 .featured-car-card .card-title-wrapper {
     display: flex;
@@ -421,7 +428,9 @@ a {
     margin-bottom: 15px;
 }
 
-.featured-car-card .card-title { width: calc(100% - 60px); }
+.featured-car-card .card-title {
+    width: calc(100% - 60px);
+}
 
 .featured-car-card .card-title > a {
     color: inherit;
@@ -431,7 +440,9 @@ a {
     text-overflow: ellipsis;
 }
 
-.featured-car-card .card-title > a:is(:hover, :focus) { color: var(--carolina-blue); }
+.featured-car-card .card-title > a:is(:hover, :focus) {
+    color: var(--carolina-blue);
+}
 
 .featured-car-card .year {
     font-family: var(--ff-nunito);
@@ -500,7 +511,9 @@ a {
     --shadow-2: none;
 }
 
-.featured-car-card .fav-btn ion-icon { font-size: 18px; }
+.featured-car-card .fav-btn ion-icon {
+    font-size: 18px;
+}
 
 .featured-car-card .fav-btn:is(:hover, :focus) {
     --background: var(--lavender-blush);
@@ -508,23 +521,12 @@ a {
 }
 
 
-
-
-
-
-
-
-
-
-
-
-
 /****************  --- Testimonials section styles---  *******************/
 #testimonials {
     margin: 100px 0;
 }
 
-.testimonials>p{
+.testimonials > p {
     line-height: 30px;
     padding-bottom: 30px;
 }
@@ -631,7 +633,7 @@ hr {
     text-align: center;
 }
 
- /* ===================== Contact page Styles ===========================*/
+/* ===================== Contact page Styles ===========================*/
 
 #Contact_Page {
     /*  height: 100vh;*/
@@ -640,7 +642,7 @@ hr {
 
 }
 
-.contact_bg{
+.contact_bg {
     height: 650px;
     background: #45494b;
     border-radius: 140px;
@@ -650,7 +652,7 @@ hr {
 }
 
 
-.contact_box{
+.contact_box {
     display: flex;
     position: absolute;
     margin: auto;
@@ -663,73 +665,77 @@ hr {
     justify-content: space-evenly;
 
 }
-.contact_box>div{
+
+.contact_box > div {
     width: 28vw;
-    height:527.8px;
+    height: 527.8px;
 }
 
-.contact-01{
+.contact-01 {
     display: flex;
-    width:30vw ;
-    flex-direction:column;
+    width: 30vw;
+    flex-direction: column;
 }
 
-.contact-01>div{
+.contact-01 > div {
     font-family: 'poppins', sans-serif;
     color: whitesmoke;
     position: relative;
-    margin-top:2vw;
+    margin-top: 2vw;
     width: 26vw;
     /*   height:12vh;*/
-    height:90.48px;
+    height: 90.48px;
 }
-.contact-01 .title1>h3{
+
+.contact-01 .title1 > h3 {
 
     font-size: 20px;
     position: absolute;
     left: 57px;
 }
-.contact-01 .title1>h4{
+
+.contact-01 .title1 > h4 {
     font-size: 16px;
     position: absolute;
     left: 57px;
 }
-.contact-01 .title1>i{
+
+.contact-01 .title1 > i {
     font-size: 22px;
     padding-left: 20px;
     padding-right: 20px;
     color: #1194e7;
 }
 
-.contact-03 .title_map{
+.contact-03 .title_map {
     color: #1194e7;
     font-family: 'poppins', sans-serif;
     font-weight: 600;
     text-align: center;
-    padding-bottom: 25px ;
+    padding-bottom: 25px;
 }
 
-.contact-02{
+.contact-02 {
 
     padding-top: 20px;
 }
 
-.contact-03{
+.contact-03 {
     width: 100%;
     height: 100%;
 }
 
-.container_contact{
+.container_contact {
     /*  border: 2px solid deeppink;*/
     width: 100%;
-    height:100%;
+    height: 100%;
     display: flex;
     align-items: center;
     justify-content: center;
 }
 
 
-form{
+form {
     font-family: 'poppins', sans-serif;
     display: flex;
     flex-direction: column;
@@ -740,7 +746,7 @@ form{
 }
 
 
-form h3{
+form h3 {
     color: #1194e7;
     font-weight: 600;
     text-align: center;
@@ -748,56 +754,60 @@ form h3{
 }
 
 
-form input, form textarea{
+form input, form textarea {
     border: 0;
     margin: 10px 0;
     padding: 12px;
     border-radius: 25px;
     outline: none;
-    background:#f5f5f5 ;
+    background: #f5f5f5;
     font-size: 16px;
 }
 
 
-form .btn{
+form .btn {
     padding: 10px;
     color: #fff;
     font-size: 20px;
     border: 0;
     outline: none;
     cursor: pointer;
-    width:180px;
+    width: 180px;
     margin: 15px auto 0;
     border-radius: 30px;
     transition: all 1s;
 
 }
 
-form .btn:hover{
+form .btn:hover {
     background: #079b07;
     transform: scale(1.05);
     transition: all 1s;
 }
 
-.gif:hover >h3{
+.gif:hover > h3 {
     cursor: pointer;
     color: crimson;
 }
+
 /*  secureToken: "c682276c-e363-4d3d-b924-e78ce706af53",*/
-.btn>i{
+.btn > i {
     padding-right: 7px;
 }
-.btn:hover i{
+
+.btn:hover i {
     color: #ffff00;
 }
 
 
 /* Customer Register Form Styles */
-#RegisterPage{
+#RegisterPage {
     display: none;
 }
-#RegisterPage .container{
-    background: rgb(209, 226, 245);!important;
+
+#RegisterPage .container {
+    background: rgb(209, 226, 245);
+!important;
     border: 2px solid lime;
     border-radius: 40px;
     padding: 10px;
@@ -805,84 +815,91 @@ form .btn:hover{
 
 }
 
-#RegisterPage .container .row{
+#RegisterPage .container .row {
     margin-bottom: 17.4px;
 }
 
-#RegisterPage .container label>span{
+#RegisterPage .container label > span {
     color: red;
     font-weight: bold;
 }
-#RegisterPage .container label{
+
+#RegisterPage .container label {
     color: #fff;
     font-weight: 500;
 }
-#RegisterPage .container h1{
+
+#RegisterPage .container h1 {
     color: #434444;
     padding-top: 5px;
 }
 
 /* Driver Register Form Styles */
 
-#RegisterDriver{
+#RegisterDriver {
     padding: 30px;
     display: none;
 
 }
-#RegisterDriver .container{
+
+#RegisterDriver .container {
     background: rgb(209, 226, 245);
     border-radius: 40px;
 
 }
 
-#RegisterDriver .container .row{
+#RegisterDriver .container .row {
     margin: 20px;
 }
 
-#RegisterDriver .container label>span{
+#RegisterDriver .container label > span {
     color: red;
     font-weight: bold;
 }
-#RegisterDriver .container h1{
+
+#RegisterDriver .container h1 {
     color: #434444;
     padding: 25px;
 }
 
 /* Customer Log in Form Styles */
-#logInCustomer{
+#logInCustomer {
     padding: 20px;
     margin: 0;
     display: none;
 }
-#logInCustomer .container{
+
+#logInCustomer .container {
     width: 35vw;
     background: rgba(219, 195, 245, 0.59);
     border-radius: 40px;
 
 }
 
-#logInCustomer .container .row{
+#logInCustomer .container .row {
     margin: 15px;
-    padding: 0 15px 0 20px ;
+    padding: 0 15px 0 20px;
 }
 
-#logInCustomer .container label>span{
+#logInCustomer .container label > span {
     color: red;
     font-weight: bold;
 }
-#logInCustomer .container h1{
+
+#logInCustomer .container h1 {
     color: #434444;
     padding: 25px;
 }
 
 
 /* Driver Log in Form Styles */
-#logInDriver{
+#logInDriver {
     padding: 10px;
     margin: 0;
     display: none;
 }
-#logInDriver .container{
+
+#logInDriver .container {
     width: 30vw;
     height: 60vh;
     background: rgba(82, 120, 217, 0.39);
@@ -890,26 +907,28 @@ form .btn:hover{
 
 }
 
-#logInDriver .container .row{
+#logInDriver .container .row {
     margin: 20px;
 }
 
-#logInDriver .container label>span{
+#logInDriver .container label > span {
     color: red;
     font-weight: bold;
 }
-#logInDriver .container h1{
+
+#logInDriver .container h1 {
     color: rgba(0, 0, 0, 0.62);
     padding: 25px;
 }
 
 /* Admin Log in Form Styles */
-#logInAdmin{
+#logInAdmin {
     padding: 10px;
     margin: 0;
     display: none;
 }
-#logInAdmin .container{
+
+#logInAdmin .container {
     width: 30vw;
     height: 65vh;
     background: rgba(99, 110, 114, 0.53);
@@ -917,27 +936,29 @@ form .btn:hover{
 
 }
 
-#logInAdmin .container .row{
+#logInAdmin .container .row {
     margin: 20px;
 }
 
-#logInAdmin .container label>span{
+#logInAdmin .container label > span {
     color: red;
     font-weight: bold;
 }
-#logInAdmin .container h1{
+
+#logInAdmin .container h1 {
     color: #434444;
     padding: 25px;
 }
 
 
 /* Reset Password for Forget password Form Styles */
-#ForgotPasswordPage{
+#ForgotPasswordPage {
     padding: 10px;
     margin: 0;
     display: none;
 }
-#ForgotPasswordPage .container{
+
+#ForgotPasswordPage .container {
     width: 30vw;
     height: 70vh;
     background: rgba(239, 142, 170, 0.55);
@@ -945,20 +966,21 @@ form .btn:hover{
 
 }
 
-#ForgotPasswordPage .container .row{
+#ForgotPasswordPage .container .row {
     margin: 20px;
 }
 
-#ForgotPasswordPage .container label>span{
+#ForgotPasswordPage .container label > span {
     color: red;
     font-weight: bold;
 }
-#ForgotPasswordPage .container h1{
+
+#ForgotPasswordPage .container h1 {
     color: #434444;
     padding: 25px;
 }
 
-#forgetPasswordBtn,input[type="submit"], input[type="reset"] {
+#forgetPasswordBtn, input[type="submit"], input[type="reset"] {
     background: none;
     color: inherit;
     border: none;
@@ -969,6 +991,34 @@ form .btn:hover{
 }
 
 /* Admin Panel styles.. */
-#admin_screen{
+#admin_screen {
     display: none;
+    font-family: 'poppins', sans-serif;
+}
+
+#adminPanel_btn > button  {
+    background: #636e72;
+    border-style: none;
+    margin: 10px;
+    border-radius: 20px;
+    font-weight: 500;
+}
+
+#adminPanel_btn > button:hover {
+    background: #000;
+    color: crimson;
+}
+
+#admin_logout{
+    margin: auto;
+    background: gold;
+    font-weight: 600;
+    border-style: none;
+    padding-left: 10px;
+    padding-right: 10px;
+    border-radius: 20px;
+}
+#admin_logout:hover{
+    background: orangered;
+
 }

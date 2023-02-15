@@ -51,6 +51,13 @@ $("#btnLogToAdminPanel").click(function () {
 
 });
 
+
+/*===============================================*/
+/** tempory this delete after my workk */
+$("#admin_screen").css('display','block');
+/*===============================================*/
+
+
 function isExistsAdmin(val, val2) {
     $.ajax({
         url: "http://localhost:8080/Car_Rental_System_war/admin/" + password +"/"+username,
