@@ -1,5 +1,5 @@
 
-log = "Not Logged";
+logStatus = "Not Logged";
 
 function DefaultHomePage(){
     $('#logInCustomer').css('display','none');

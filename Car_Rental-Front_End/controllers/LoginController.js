@@ -53,20 +53,6 @@ function isExists( username, password) {
     });
 }
 
-/** Scan username password Admin table */
-function searchAdminTable(userId) {
-    $.ajax({
-        url: "http://localhost:8080/Car_Rental_System_war/admin/USER/" + userId,
-        method: "GET",
-        success: function (response) {
-            logStatus = "Logged";
-            //logToAdminDashBoard();
-        },
-        error: function (ob) {
-            alert(ob.responseJSON.message);
-        }
-    });
-}
 
 /** Scan username password Customer table */
 function searchCustomerTable(userId) {
