@@ -17,7 +17,4 @@ import org.springframework.web.bind.annotation.RestController;
 @CrossOrigin
 public class AdminController {
 
-    public AdminController() {
-        System.out.println("admin controller..");
-    }
 }

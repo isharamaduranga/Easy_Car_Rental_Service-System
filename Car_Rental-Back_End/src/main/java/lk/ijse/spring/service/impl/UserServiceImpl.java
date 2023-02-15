@@ -33,8 +33,9 @@ public class UserServiceImpl implements UserService {
     public void saveUser(UsersDTO usersDTO) {
         if (!userRepo.existsById(usersDTO.getUserId())){
             userRepo.save(mapper.map(usersDTO, Users.class));
+            System.out.println("successs user........");
         }else {
-            throw new RuntimeException(usersDTO.getUserId() + " " + "User Already Exists..!");
+            //throw new RuntimeException(usersDTO.getUserId() + " " + "User Already Exists..!");
         }
     }
 

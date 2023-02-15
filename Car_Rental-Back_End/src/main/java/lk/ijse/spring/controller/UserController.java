@@ -65,6 +65,4 @@ public class UserController {
     public ResponseUtil findByUsername(@PathVariable("uname") String uname){
         return new ResponseUtil(200, "Ok", userService.findByUsername(uname));
     }
-
-
 }

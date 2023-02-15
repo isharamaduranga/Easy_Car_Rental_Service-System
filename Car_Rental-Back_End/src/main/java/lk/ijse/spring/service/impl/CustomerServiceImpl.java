@@ -13,6 +13,7 @@ import lk.ijse.spring.entity.Customer;
 import lk.ijse.spring.repo.CustomerRepo;
 import lk.ijse.spring.service.CustomerService;
 import org.modelmapper.ModelMapper;
+import org.modelmapper.TypeToken;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
@@ -41,26 +42,63 @@ public class CustomerServiceImpl implements CustomerService {
 
     @Override
     public void updateCustomer(CustomerDTO customer) {
-
+        if (repo.existsById(customer.getCustomerId())){
+            repo.save(mapper.map(customer, Customer.class));
+        }else {
+            throw new RuntimeException(customer.getCustomerId() + " " + "No Such Customer..! Please Check The Correct Id..!");
+        }
     }
 
     @Override
     public void deleteCustomer(String id) {
-
+        if (repo.existsById(id)){
+            repo.deleteById(id);
+        }else {
+            throw new RuntimeException(id + " " + "No Such Customer..! Please Check The Correct Id..!");
+        }
     }
 
     @Override
     public CustomerDTO searchCustomer(String id) {
-        return null;
+        if (repo.existsById(id)){
+            Customer customer = repo.findById(id).get();
+            return mapper.map(customer, CustomerDTO.class);
+        }else {
+            throw new RuntimeException(id + " " + "No Such Customer..! Please Check The Id..!");
+        }
     }
 
     @Override
     public List<CustomerDTO> getAllCustomers() {
-        return null;
+        List<Customer> all = repo.findAll();
+        return mapper.map(all, new TypeToken<List<CustomerDTO>>(){
+        }.getType());
     }
 
     @Override
     public String generateCustomerIds() {
         return repo.generateCustomerId();
+    }
+
+    @Override
+    public int countRegisteredCustomers() {
+        return repo.countRegisteredCustomers();
+    }
+
+    @Override
+    public int countDailyRegisteredCustomers(String date) {
+        return repo.countDailyRegisteredCustomers(date);
+    }
+
+    @Override
+    public CustomerDTO searchUserFromCustomer(String id) {
+        Customer customer = repo.searchUserFromCustomer(id);
+        return mapper.map(customer,CustomerDTO.class);
+    }
+
+    @Override
+    public CustomerDTO findCustomerToReserve(String nic) {
+        Customer customer = repo.findCustomerToReserve(nic);
+        return mapper.map(customer,CustomerDTO.class);
     }
 }

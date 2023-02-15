@@ -17,4 +17,12 @@ public interface CustomerService {
     List<CustomerDTO> getAllCustomers();
 
     String generateCustomerIds();
+
+    int countRegisteredCustomers();
+
+    int countDailyRegisteredCustomers(String date);
+
+    CustomerDTO searchUserFromCustomer(String id);
+
+    CustomerDTO findCustomerToReserve(String nic);
 }
