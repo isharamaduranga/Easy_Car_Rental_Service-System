@@ -2043,7 +2043,7 @@
 
                         <div class="text-center" style="position: relative;top: 116px;">
                             <h1 class="mt-1 fw-light" style="font-family: 'PT Serif', serif; font-size: 25px">
-                                <i class="fas fa-taxi fa-1x"></i>
+                                <i class="fas fa-taxi fa-1x text-success"></i>
                                 Car Information
                                 <button class="btn btn-success ms-5" id="btnAddCar">
                                     <i class="fas fa-plus-circle"></i>
@@ -2110,7 +2110,7 @@
 
                         <div class="text-center" style="position: relative;top: 81px;">
                             <h1 class="mt-1 fw-light" style="font-family: 'PT Serif', serif; font-size: 25px">
-                                <i class="fad fa-steering-wheel fa-1x"></i>
+                                <i class="fa-solid fa-people-group text-warning fa-1x"></i>
                                 Driver Information
                                 <button class="btn btn-success ms-5" id="btnAddDriver">
                                     <i class="fas fa-plus-circle"></i>
@@ -2147,7 +2147,55 @@
                 </section>
             </div>
 
+            <!--   admin customer dashboard-->
+            <div id="customer_dashboard" style="height: 100%;">
 
+                <!--View Customer Details Page-->
+                <section id="ViewCustomerInformationPage" style="width: 100%;height: 100vh ; ">
+
+                    <div >
+
+                        <div class="text-center" style="position: relative;top: 80px">
+                            <h1 class="mt-1 fw-light" style="font-family: 'PT Serif', serif;">~ Customer Details ~</h1>
+                        </div>
+
+                        <div class="text-center" style="position: relative;top: 116px;">
+                            <h1 class="mt-1 fw-light" style="font-family: 'PT Serif', serif; font-size: 25px">
+                                <i class="fas fa-user-friends text-primary"></i>
+                                Customer Information
+                            </h1>
+
+                        </div>
+
+                        <div style="width: 80vw; height: 65vh;position: relative; top: 90px;right: 0;bottom: 0;left: 0;margin: auto"  class="table-responsive text-nowrap">
+
+                            <table id="tblCustomers" class="table align-middle mb-0 bg-white table table-hover table-bordered" style="position: relative;left: -1px;top: 44px;">
+                                <thead class="bg-light text-primary">
+                                <tr>
+                                    <th>Registered Date</th>
+                                    <th>Customer Id</th>
+                                    <th>Customer Image</th>
+                                    <th>Customer Name</th>
+                                    <th>Customer Address</th>
+                                    <th>Customer Contact</th>
+                                    <th>Customer NIC NO</th>
+                                    <th>Customer Driving Licence NO</th>
+                                    <th>NIC Image</th>
+                                    <th>Driving Licence Image</th>
+                                </tr>
+                                </thead>
+                                <tbody>
+
+                                </tbody>
+                            </table>
+
+                        </div>
+
+                    </div>
+
+                </section>
+
+            </div>
 
             <!--   admin Reservations dashboard-->
             <div id="reservation_dashboard" style="height: 100%; background-color: red">
