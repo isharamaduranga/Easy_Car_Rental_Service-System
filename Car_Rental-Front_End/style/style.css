@@ -1003,7 +1003,9 @@ hr {
     background: #636e72;
     color: white;
     border-style: none;
-    margin: 10px;
+    margin-bottom: 5px;
+    margin-left: 12px;
+    margin-right: 12px;
     border-radius: 20px;
     font-weight: 500;
 }
@@ -1052,5 +1054,28 @@ hr {
     background-size: cover;
     transform: scale(1);
     z-index: 6;
+}
+
+#ChangeDriver{
+    min-height: 100vh;
+    width: 100vw;
+    position: fixed;
+    top: 0;
+    left: 0;
+    background-color: rgba(0,0,0,.4);
+    background-size: cover;
+    transform: scale(1);
+    z-index: 6;
+}
+#PaymentAddPage{
+    min-height: 100vh;
+    width: 100vw;
+    position: fixed;
+    top: 0;
+    left: 0;
+    background-color: rgba(0,0,0,.4);
+    background-size: cover;
+    transform: scale(1);
+    z-index: 7;
 }
 

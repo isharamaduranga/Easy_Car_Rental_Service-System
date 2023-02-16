@@ -1753,6 +1753,284 @@
 
 </section>
 
+
+<!--Change Driver Page-->
+<section id="ChangeDriver" style="width: 100%; height: 100vh ;background-color: rgba(0, 0, 0, 0.6);">
+
+    <div class="h-75 border border-3 border-white rounded-1 shadow bg-white" style="width: 500px; position: relative;top: 70px;bottom: 0;right: -10px;left: 0;margin: auto;">
+
+        <div class="mb-0 text-center  border-bottom border-2 " style="position: relative;top: 10px;">
+            <h1 class="mt-1 text-dark fw-bold " style="font-family: 'PT Serif', serif;">~ Change Driver ~</h1>
+        </div>
+
+        <div class=" mt-0 ms-2 me-2">
+            <form class="ms-4 me-5" style="position: relative; top: 50px;">
+
+                <div class="row">
+                    <div class="col">
+                        <!-- select reservation number -->
+                        <div class="form-outline mb-2 ms-4 me-2">
+                            <label class="form-label text-dark fw-light " for="chooseReservationIds">* Reservation Ids</label>
+                            <select aria-label="Default select example" class="form-select " style="height: 38px" id="chooseReservationIds">
+                                <option selected value="0">None</option>
+                            </select>
+                        </div>
+                    </div>
+
+                    <div class="col">
+                        <div class="form-outline mb-2 ms-4 w-100">
+                            <label class="form-label text-dark fw-light " for="CarIds">* Car Ids</label>
+                            <select aria-label="Default select example" class="form-select " style="height: 37px" id="CarIds">
+                                <option selected value="0"></option>
+                            </select>
+
+                        </div>
+                    </div>
+                </div>
+
+                <div class="row">
+                    <div class="col">
+                        <!-- selected driver id -->
+                        <div class="form-outline mb-2 ms-4  mt-3">
+                            <label class="form-label text-dark fw-light " for="selectedDriverId">* Old Driver Id</label>
+                            <input type="text" id="selectedDriverId" class="form-control bg-white rounded-3" />
+                        </div>
+                    </div>
+
+                    <div class="col">
+                        <!-- selected driver name -->
+                        <div class="form-outline mb-2 ms-4  mt-3">
+                            <label class="form-label text-dark fw-light " for="selectedDriverName">* Old Name</label>
+                            <input type="text" id="selectedDriverName" class="form-control bg-white rounded-3" />
+                        </div>
+                    </div>
+                </div>
+
+
+                <div class="row">
+                    <!-- select new driver id -->
+                    <div class="form-outline mb-2 ms-4 me-4 mt-3">
+                        <label class="form-label text-dark fw-light " for="chooseNewDriverIds">* Choose New Driver</label>
+                        <select aria-label="Default select example" class="form-select " style="height: 38px" id="chooseNewDriverIds">
+                            <option selected value="0">None</option>
+                        </select>
+                    </div>
+                </div>
+
+                <div class="row">
+                    <div class="col">
+                        <!-- new driver name -->
+                        <div class="form-outline mb-2 ms-4  mt-3">
+                            <label class="form-label text-dark fw-light " for="changedNewDriverName">* New Driver Name</label>
+                            <input type="text" id="changedNewDriverName" class="form-control bg-white rounded-3" />
+                        </div>
+                    </div>
+
+                    <div class="col">
+                        <!-- new driver contact -->
+                        <div class="form-outline mb-2 ms-4  mt-3">
+                            <label class="form-label text-dark fw-light " for="changedNewDriverContact">* New Driver Contact</label>
+                            <input type="text" id="changedNewDriverContact" class="form-control bg-white rounded-3" />
+                        </div>
+                    </div>
+                </div>
+
+                <!--button panel-->
+                <div class="row mt-4">
+                    <div class="col text-center">
+
+                    </div>
+                    <div class="col text-center ">
+                        <div class="col" style="width: 250px;">
+                            <button type="button" class="btn btn-success  btn-floating ms-2 me-2 shadow">
+                                <i class="fa-solid fa-pen-nib text-white"></i>
+                                Change
+                            </button>
+                            <button type="button" class="btn btn-danger  btn-floating ms-2 me-2 shadow" id="btnCancelChangeDriver">
+                                <i class="fas fa-times"></i>
+                                Cancel
+                            </button>
+                        </div>
+                    </div>
+                    <div class="col text-center">
+
+                    </div>
+                </div>
+
+            </form>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!--Make Payment Page-->
+<section id="PaymentAddPage" style="width: 100%; height: 100vh ;background-color: rgba(0, 0, 0, 0.6);">
+
+    <div class="border border-3 border-white rounded-1 shadow bg-white" style="width: 50%; position: relative;top: 70px;bottom: 0;right: 0;left: 0;margin: auto;height: 88%;">
+
+        <div class="mb-0 text-center  border-bottom border-2 " style="position: relative;top: 20px;">
+            <h1 class="mt-1 text-dark fw-bold  " style="font-family: 'PT Serif', serif;">~ Make Payment ~</h1>
+        </div>
+
+        <div class=" mt-0 ms-2 me-5">
+            <form class="ms-5 me-5" style="position: relative; top: 45px;">
+
+                <div class="row">
+                    <div class="col">
+                        <!-- payment id -->
+                        <div class="form-outline  ms-4 me-4">
+                            <label class="form-label text-dark fw-light " for="paymentId">* Payment Id</label>
+                            <input type="text" id="paymentId" class="form-control bg-white rounded-3" style="height: 35px" />
+                        </div>
+                    </div>
+
+                    <div class="col">
+                        <!-- payment date -->
+                        <div class="form-outline  ms-4 me-4">
+                            <label class="form-label text-dark fw-light " for="paymentDate" >* Payment Date</label>
+                            <div class="input-group date" >
+                                <input type="text" id="paymentDate" class="form-control bg-white rounded-3" style="height: 35px">
+                                <span class="input-group-addon"><i class="glyphicon glyphicon-calendar"></i></span>
+                                <p><small id="errorPaymentDate" class="text-danger  pl-1 mt-0 mb-0"></small></p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="row">
+                    <div class="col">
+                        <!-- rent fee -->
+                        <div class="form-outline  ms-4 me-4 mt-1">
+                            <label class="form-label text-dark fw-light " for="rentFee">* Rent Fee</label>
+                            <input type="text" id="rentFee" class="form-control bg-white rounded-3" style="height: 35px" />
+                            <p><small id="errorRentFee" class="text-danger fs-5 pl-1 mt-0 mb-0"></small></p>
+                        </div>
+                    </div>
+
+                    <div class="col">
+                        <!-- driver fee -->
+                        <div class="form-outline  ms-4 me-4 mt-1">
+                            <label class="form-label text-dark fw-light " for="driverFee">* Driver Fee</label>
+                            <input type="text" id="driverFee" class="form-control bg-white rounded-3" style="height: 35px" />
+                            <p><small id="errorDriverFee" class="text-danger fs-5 pl-1 mt-0 mb-0"></small></p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="row">
+                    <div class="col">
+                        <!-- lose damage payment -->
+                        <div class="form-outline  ms-4 me-4 mt-1">
+                            <label class="form-label text-dark fw-light " for="loseDamageWaiverPayment">* Lose Damage Waiver Payment</label>
+                            <input type="text" id="loseDamageWaiverPayment" class="form-control bg-white rounded-3" style="height: 35px" />
+                            <p><small id="errorDamagePayment" class="text-danger fs-5 pl-1 mt-0 mb-0"></small></p>
+                        </div>
+                    </div>
+
+                    <div class="col">
+                        <!-- reduced lose damage payment -->
+                        <div class="form-outline  ms-4 me-4 mt-1">
+                            <label class="form-label text-dark fw-light " for="reducedLoseDamageWaiverPayment">* Reduced Lose Damage Payment</label>
+                            <input type="text" id="reducedLoseDamageWaiverPayment" class="form-control bg-white rounded-3" style="height: 35px" />
+                            <p><small id="errorReduceDamagePayment" class="text-danger fs-5 pl-1 mt-0 mb-0"></small></p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="row">
+                    <div class="col">
+                        <!-- car harm or not -->
+                        <div class="form-outline  ms-4 me-4 mt-1">
+                            <label class="form-label text-dark fw-light " for="carHarmOrNot">* Harm Or Not</label>
+                            <select aria-label="Default select example" class="form-select " style="height: 35px" id="carHarmOrNot">
+                                <option selected value="0">None</option>
+                                <option value="1">Harm</option>
+                                <option value="2">Not Harm</option>
+                            </select>
+                        </div>
+                    </div>
+
+                    <div class="col">
+                        <!-- travelled distance -->
+                        <div class="form-outline  ms-4 me-4 mt-1">
+                            <label class="form-label text-dark fw-light " for="travelledDistance">* Travelled Distance</label>
+                            <input type="number" id="travelledDistance" class="form-control bg-white rounded-3 " style="height: 35px" />
+                            <p><small id="errorTravelledDistance" class="text-danger fs-5 pl-1 mt-0 mb-0"></small></p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="row">
+                    <div class="col">
+                        <!-- extra km -->
+                        <div class="form-outline  ms-4 me-4 mt-1">
+                            <label class="form-label text-dark fw-light " for="extraKm" >* Extra KM</label>
+                            <input type="number" id="extraKm" class="form-control bg-white rounded-3" style="height: 35px"/>
+                            <p><small id="errorTravelledExtraKM" class="text-danger fs-5 pl-1 mt-0 mb-0"></small></p>
+                        </div>
+                    </div>
+
+                    <div class="col">
+                        <!-- price for extra km -->
+                        <div class="form-outline  ms-4 me-4 mt-1">
+                            <label class="form-label text-dark fw-light " for="priceForTravelledExtraKm">* Price For Extra KM</label>
+                            <input type="text" id="priceForTravelledExtraKm" class="form-control bg-white rounded-3" style="height: 34px"/>
+                            <p><small id="errorPriceExtraKM" class="text-danger fs-5 pl-1 mt-0 mb-0"></small></p>
+                        </div>
+                    </div>
+                </div>
+
+
+                <div class="row">
+                    <div class="col">
+                        <div class="col">
+                            <button style="font-weight: 600" type="button" class="btn btn-warning btn-floating  me-2 shadow w-100 mt-4" id="calculateFullIncome">
+                                <i class="fas fa-plus-circle text-white"></i>
+                                Find Total Price
+                            </button>
+                        </div>
+                    </div>
+
+                    <div class="col">
+                        <!-- full payment -->
+                        <div class="form-outline  ms-4 me-4 ">
+                            <label class="form-label text-dark fw-light " for="fullPayment">* Full Payment</label>
+                            <input type="text" id="fullPayment" class="form-control bg-white rounded-3" style="height: 35px" />
+                        </div>
+                    </div>
+                </div>
+
+                <!--button panel-->
+                <div class="row mt-2">
+                    <div class="col text-center">
+
+                    </div>
+                    <div class="col text-center ">
+                        <div class="col" style="width: 250px;">
+                            <button type="button" class="btn btn-success w-25 btn-lg btn-floating ms-2 me-2 shadow ">
+                                <i class="fas fa-pen-nib"></i>
+                            </button>
+                            <button type="button" class="btn btn-danger w-25 btn-lg btn-floating ms-2 me-2 shadow" id="btnCancelAddPayment">
+                                <i class="fas fa-times"></i>
+                            </button>
+                        </div>
+                    </div>
+                    <div class="col text-center">
+
+                    </div>
+                </div>
+
+            </form>
+
+        </div>
+
+    </div>
+
+</section>
+
 <!--  *********************************************************************************** -->
 
 
@@ -1763,10 +2041,10 @@
 
 
 <!--admin dashboard Panel-->
-<section id="admin_screen" style="height: 92vh;">
+<section id="admin_screen" style="height: 90vh;">
     <div class="d-flex" style="height: 100%; width: 100%;">
         <div class="d-flex flex-column justify-content-between"
-             style="height: 92%; width: 15%; background-color: rgb(222,220,220);">
+             style="height: 91%; width: 15%; background-color: rgb(222,220,220); border-right: 1px solid black">
 
             <div style="text-align: center;">
                 <h5>Admin Profile</h5>
@@ -1777,18 +2055,19 @@
 
             <hr>
             <div class="d-flex flex-column justify-content-center" id="adminPanel_btn">
-                <button class="mt-2" id="btn_dashboard" style="height: 35px">DASHBOARD</button>
-                <button class="mt-2" id="btn_profile" style="height: 35px">ADMIN PROFILE</button>
-                <button class="mt-2" id="btn_car" style="height: 35px">CAR DETAILS</button>
-                <button class="mt-2" id="btn_driver" style="height: 35px">DRIVER DETAILS</button>
-                <button class="mt-2" id="btn_customer" style="height: 35px">CUSTOMER DETAILS</button>
-                <button class="mt-2" id="btn_reservation" style="height: 35px">RENTAL DETAILS</button>
-                <button class="mt-2" id="btn_payment" style="height: 35px">PAYMENT DETAILS</button>
-                <button class="mt-2" id="btn_income" style="height: 35px">INCOME DETAILS</button>
+                <button class="mt-2" id="btn_dashboard" style="height: 33px">DASHBOARD</button>
+                <button class="mt-2" id="btn_profile" style="height: 33px">ADMIN PROFILE</button>
+                <button class="mt-2" id="btn_car" style="height: 33px">CAR DETAILS</button>
+                <button class="mt-2" id="btn_driver" style="height: 33px">DRIVER DETAILS</button>
+                <button class="mt-2" id="btn_customer" style="height: 33px">CUSTOMER DETAILS</button>
+                <button class="mt-2" id="btn_reservation" style="height: 33px">RENTAL DETAILS</button>
+                <button class="mt-2" id="btn_shedule" style="height: 33px">SCHEDULE DETAILS</button>
+                <button class="mt-2" id="btn_payment" style="height: 33px">PAYMENT DETAILS</button>
+                <button class="mt-2" id="btn_income" style="height: 33px">INCOME DETAILS</button>
             </div>
-            <hr>
-            <div style="text-align: center;">
-                <button class="mt-2" id="admin_logout" style="height: 35px;"><i
+            <hr style="border-right: 1px solid black">
+            <div  style="text-align: center; border-right: 1px solid black ">
+                <button class="mt-2" id="admin_logout" style="height: 33px;"><i
                         class="fa-solid fa-right-from-bracket"></i> LOG OUT
                 </button>
             </div>
@@ -1796,7 +2075,7 @@
 
         <div style="height: 98%; width: 85%;">
             <!--   Main  dashboard-->
-            <div id="admin_dashboard" style="height: 100%;">
+            <div id="admin_dashboard" style="height: 96%;">
                 <section id="mainForm">
                     <div id="main" style="margin-top: 45px;width: 98%;">
                         <div class="container  me-3 ms-3">
@@ -1996,7 +2275,7 @@
                                     </div>
                                 </div>
                                 <div class="row">
-                                    <div class="col-12 mb-4 bg-success">
+                                    <div class="col-12  bg-success">
                                         <div class="card ">
                                             <div class="card-body">
                                                 <div class="d-flex justify-content-between p-md-1 ">
@@ -2033,7 +2312,7 @@
             <!--   admin car details dashboard-->
             <div id="car_dashboard" style="height: 100%;">
 
-                <section id="CarDetailsPage" style="width: 100%; height: 100vh ;">
+                <section id="CarDetailsPage" style="width: 100%; height: 90vh ;">
 
                     <div>
 
@@ -2100,7 +2379,7 @@
             <div id="driver_dashboard" style="height: 100%;">
 
                 <!--View Driver Details Page-->
-                <section id="DriverDetailsPage" style="width: 100%; height: 100vh ;">
+                <section id="DriverDetailsPage" style="width: 100%; height: 90vh ;">
 
                     <div >
 
@@ -2151,7 +2430,7 @@
             <div id="customer_dashboard" style="height: 100%;">
 
                 <!--View Customer Details Page-->
-                <section id="ViewCustomerInformationPage" style="width: 100%;height: 100vh ; ">
+                <section id="ViewCustomerInformationPage" style="width: 100%;height: 90vh ; ">
 
                     <div >
 
@@ -2200,7 +2479,7 @@
             <!--   admin Reservations dashboard-->
             <div id="reservation_dashboard" style="height: 100%;">
 
-                <section id="ViewReserveDetailsPage" style="width: 100%; height: 100vh ;">
+                <section id="ViewReserveDetailsPage" style="width: 100%; height: 90vh ;">
 
                     <div >
 
@@ -2208,12 +2487,13 @@
                             <h1 class="mt-1 fw-light" style="font-family: 'PT Serif', serif;">~ Reservations ~</h1>
                         </div>
 
-                        <div class="text-center" style="position: relative;top: 116px;">
+
+                        <div class="text-center" style="position: relative;top: 103px; right: 110px;">
                             <h1 class="mt-1 fw-light" style="font-family: 'PT Serif', serif; font-size: 25px">
                                 <i class="fas fa-list-alt text-danger"></i>
                                 Reservation Information
                             </h1>
-                            <button class="btn ms-5 btn-warning" style="left: 246px;position: relative;top: -35px;" id="btnChangeDriver">
+                            <button class="btn ms-5 btn-warning" style="left: 246px;position: relative;top: -42px;" id="btnChangeDriver">
                                 <i class="fas fa-edit text-primary"></i>
                                 Change Driver</button>
 
@@ -2222,7 +2502,7 @@
                         <div style="width: 80vw; height: 60vh;position: relative; top: 67px;right: 0;bottom: 0;left: 0;margin: auto"  class="table-responsive text-nowrap">
 
                             <table id="tblReserve" class="table align-middle mb-0 bg-white table table-hover table-bordered" style="position: relative;left: 5px;top: 44px;">
-                                <thead class="bg-light">
+                                <thead class="bg-light text-primary">
                                 <tr>
                                     <th>Reserve Date</th>
                                     <th>Reserve Id</th>
@@ -2253,12 +2533,112 @@
 
             </div>
 
+            <!--   schedule Details dashboard-->
+            <div id="schedule_dashboard" style="height: 100%;">
+
+                <!--View Schedule Page-->
+                <section id="SchedulePage" style="width: 100%; height: 90vh ;">
+
+                    <div >
+
+                        <div class="text-center" style="position: relative;top: 80px">
+                            <h1 class="mt-1 fw-light" style="font-family: 'PT Serif', serif;">~ Schedule ~</h1>
+                        </div>
+
+                        <div class="text-center" style="position: relative;top: 116px;">
+                            <h1 class="mt-1 fw-light" style="font-family: 'PT Serif', serif; font-size: 25px">
+                                <i class="fas fa-list-ul text-info"></i>
+                                Schedule Details
+                            </h1>
+                        </div>
+
+                        <div style="width: 82vw; height: 65vh;position: relative; top: 90px;right: 0;bottom: 0;left: 0;margin: auto" class="table-responsive text-nowrap">
+
+                            <table class="tblSchedule table align-middle mb-0 bg-white table table-hover table-bordered" style="position: relative;left: 5px;top: 44px;">
+                                <thead class="bg-light text-primary">
+                                <tr>
+                                    <th>Schedule Id</th>
+                                    <th>Reserve Id</th>
+                                    <th>Car Id</th>
+                                    <th>Driver Id</th>
+                                    <th>Pickup Date</th>
+                                    <th>Pickup Time</th>
+                                    <th>Pickup Venue</th>
+                                    <th>Return Date</th>
+                                    <th>Return Time</th>
+                                    <th>Return Venue</th>
+                                    <th>Release Or Not</th>
+                                </tr>
+                                </thead>
+                                <tbody>
+
+                                </tbody>
+                            </table>
+
+                        </div>
+
+                    </div>
+
+                </section>
+
+            </div>
+
+
             <!--   admin Payment dashboard-->
-            <div id="payment_dashboard" style="height: 100%; background-color: green">
+            <div id="payment_dashboard" style="height: 100%;">
+                <section id="PaymentPage" style="width: 100%; height: 90vh ;">
+
+                    <div >
+
+                        <div class="text-center" style="position: relative;top: 70px">
+                            <h1 class="mt-1 fw-light" style="font-family: 'PT Serif', serif;">~ Payment ~</h1>
+                        </div>
+
+                        <div class="text-center" style="position: relative;top: 95px;">
+                            <h1 class="mt-1 ms-5 fw-light" style="font-family: 'PT Serif', serif; font-size: 25px">
+                                <i class="fas fa-hand-holding-usd text-warning"></i>
+                                Payment Details
+                                <button class="btn btn-info ms-5" id="btnAddPayment">
+                                    <i class="fas fa-plus-circle text-white"></i>
+                                    Make Payment</button>
+                            </h1>
+                        </div>
+
+                        <div style="width: 82vw; height: 62vh;position: relative; top: 90px;right: 0;bottom: 0;left: 0;margin: auto" class="table-responsive text-nowrap">
+
+                            <table id="tblPayment" class="table align-middle mb-0 bg-white table table-hover table-bordered" style="position: relative;left: 5px;top: 44px;">
+                                <thead class="bg-light text-primary">
+                                <tr>
+                                    <th>Payment Id</th>
+                                    <th>Payment Date</th>
+                                    <th>Rent Fee</th>
+                                    <th>Driver Fee</th>
+                                    <th>Lose Damage Waiver Fee</th>
+                                    <th>Reduced Lose Damage Fee</th>
+                                    <th>Harm Or Not</th>
+                                    <th>Travelled Distance</th>
+                                    <th>Extra KM</th>
+                                    <th>Price For Extra KM</th>
+                                    <th>Full Payment</th>
+                                    <th>Update</th>
+                                </tr>
+                                </thead>
+                                <tbody>
+
+                                </tbody>
+                            </table>
+
+                        </div>
+
+                    </div>
+
+                </section>
+
             </div>
 
             <!--   admin income dashboard-->
             <div id="income_dashboard" style="height: 100%; background-color: #021002">
+
             </div>
         </div>
     </div>
