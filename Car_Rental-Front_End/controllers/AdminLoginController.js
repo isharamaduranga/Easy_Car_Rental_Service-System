@@ -54,7 +54,7 @@ $("#btnLogToAdminPanel").click(function () {
 
 /*===============================================*/
 /** tempory this delete after my workk */
-/*$("#admin_screen").css('display','block');*/
+$("#admin_screen").css('display','block');
 /*===============================================*/
 
 
