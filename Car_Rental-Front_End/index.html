@@ -2198,7 +2198,59 @@
             </div>
 
             <!--   admin Reservations dashboard-->
-            <div id="reservation_dashboard" style="height: 100%; background-color: red">
+            <div id="reservation_dashboard" style="height: 100%;">
+
+                <section id="ViewReserveDetailsPage" style="width: 100%; height: 100vh ;">
+
+                    <div >
+
+                        <div class="text-center" style="position: relative;top: 80px">
+                            <h1 class="mt-1 fw-light" style="font-family: 'PT Serif', serif;">~ Reservations ~</h1>
+                        </div>
+
+                        <div class="text-center" style="position: relative;top: 116px;">
+                            <h1 class="mt-1 fw-light" style="font-family: 'PT Serif', serif; font-size: 25px">
+                                <i class="fas fa-list-alt text-danger"></i>
+                                Reservation Information
+                            </h1>
+                            <button class="btn ms-5 btn-warning" style="left: 246px;position: relative;top: -35px;" id="btnChangeDriver">
+                                <i class="fas fa-edit text-primary"></i>
+                                Change Driver</button>
+
+                        </div>
+
+                        <div style="width: 80vw; height: 60vh;position: relative; top: 67px;right: 0;bottom: 0;left: 0;margin: auto"  class="table-responsive text-nowrap">
+
+                            <table id="tblReserve" class="table align-middle mb-0 bg-white table table-hover table-bordered" style="position: relative;left: 5px;top: 44px;">
+                                <thead class="bg-light">
+                                <tr>
+                                    <th>Reserve Date</th>
+                                    <th>Reserve Id</th>
+                                    <th>Customer</th>
+                                    <th>Pickup Date</th>
+                                    <th>Pickup Time</th>
+                                    <th>Pickup Venue</th>
+                                    <th>Return Date</th>
+                                    <th>Return Time</th>
+                                    <th>Return Venue</th>
+                                    <th>Destination</th>
+                                    <th>Duration</th>
+                                    <th>Request Accept Or Deny</th>
+                                    <th>View</th>
+                                </tr>
+                                </thead>
+                                <tbody>
+
+                                </tbody>
+                            </table>
+
+                        </div>
+
+                    </div>
+
+                </section>
+
+
             </div>
 
             <!--   admin Payment dashboard-->

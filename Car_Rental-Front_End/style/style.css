@@ -1035,7 +1035,7 @@ hr {
     background-color: rgba(0,0,0,.4);
     background-size: cover;
     transform: scale(1);
-    z-index: 7;
+    z-index: 6;
 }
 
 #CarManagePage>label{
@@ -1051,6 +1051,6 @@ hr {
     background-color: rgba(0,0,0,.4);
     background-size: cover;
     transform: scale(1);
-    z-index: 7;
-
+    z-index: 6;
 }
+
