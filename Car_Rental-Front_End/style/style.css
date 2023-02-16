@@ -863,33 +863,7 @@ hr {
     padding-top: 5px;
 }
 
-/* Driver Register Form Styles */
 
-#RegisterDriver {
-    padding: 30px;
-    display: none;
-
-}
-
-#RegisterDriver .container {
-    background: rgb(209, 226, 245);
-    border-radius: 40px;
-
-}
-
-#RegisterDriver .container .row {
-    margin: 20px;
-}
-
-#RegisterDriver .container label > span {
-    color: red;
-    font-weight: bold;
-}
-
-#RegisterDriver .container h1 {
-    color: #434444;
-    padding: 25px;
-}
 
 /* Customer Log in Form Styles */
 #logInCustomer {
@@ -1066,4 +1040,17 @@ hr {
 
 #CarManagePage>label{
     color: cornflowerblue;
+}
+
+#DriverManagePage{
+    min-height: 100vh;
+    width: 100vw;
+    position: fixed;
+    top: 0;
+    left: 0;
+    background-color: rgba(0,0,0,.4);
+    background-size: cover;
+    transform: scale(1);
+    z-index: 7;
+
 }
