@@ -400,6 +400,7 @@ $("#btn_income").click(function () {
 
 $("#btnAddCar").click(function () {
     generateVehicleIds();
+    clearFieldsFromCarPage()
 
     $('#CarManagePage').css('transform','scale(1)');
     $("#car_dashboard").css('display', 'block');
