@@ -2308,32 +2308,37 @@
 
                 <div class="container" id="container_admin">
                     <h1>Admin Form</h1>
-                    <form>
+                    <form id="adminForm">
                         <div class="row">
                             <div class="mb-3 col-6">
                                 <label for="adminId" class="form-label">Admin ID</label>
-                                <input type="text" class="form-control" id="adminId" name="adminId">
+                                <input type="text" class="form-control admin_form" id="adminId" placeholder="ADM-001 "name="id">
+
                             </div>
                             <div class="mb-3 col-6">
                                 <label for="adminName" class="form-label">Admin Name</label>
-                                <input type="text" class="form-control" id="adminName" name="adminName">
+                                <input type="text" class="form-control admin_form" id="adminName" placeholder="Ishara Maduranga" name="name">
+                                <span class="control-error" id="lblAdminName"></span>
                             </div>
                         </div>
                         <div class="row">
                             <div class="mb-3 col-6">
                                 <label for="adminPassword" class="form-label">Admin Password</label>
-                                <input type="password" class="form-control" id="adminPassword" name="adminPassword">
+                                <input type="password" class="form-control admin_form" id="adminPassword" placeholder="******" name="password">
+                                <span class="control-error" id="lblAdminAddress"></span>
                             </div>
                             <div class="mb-3 col-6">
                                 <label for="adminContact" class="form-label">Admin Contact</label>
-                                <input type="text" class="form-control" id="adminContact" name="adminContact">
+                                <input type="text" class="form-control admin_form" id="adminContact" placeholder="0776127572" name="contact">
+                                <span class="control-error" id="lblAdminContact"></span>
                             </div>
                         </div>
 
-                        <button type="submit" class="btn btn-primary" id="addBtn">Add</button>
-                        <button type="submit" class="btn btn-secondary" id="updateBtn">Update</button>
-                        <button type="submit" class="btn btn-danger" id="deleteBtn">Delete</button>
-                        <button type="submit" class="btn btn-success" id="getAllBtn">Get All</button>
+                        <button  class="btn btn-primary" id="addBtn">Add</button>
+                        <button  class="btn btn-secondary" id="updateBtn">Update</button>
+                        <button  class="btn btn-danger" id="deleteBtn">Delete</button>
+                        <button  class="btn btn-success" id="getAllBtn">Get All</button>
+                        <button  class="btn btn-warning" id="clearBtn">Clear</button>
                     </form>
                     <div class="container" id="container_admin_table">
                         <table class="table table-striped">
@@ -2345,7 +2350,7 @@
                                 <th>Contact</th>
                             </tr>
                             </thead>
-                            <tbody>
+                            <tbody id="adminTable">
                             <tr>
                                 <td>1</td>
                                 <td>John Doe</td>
@@ -2880,7 +2885,7 @@
 <script src="./controllers/ResetPasswordController.js"></script>
 <script src="./controllers/LoginController.js"></script>
 <script src="./controllers/AdminLoginController.js"></script>
-<script src="./controllers/AdminLoginController.js"></script>
+<script src="./controllers/AdminPanelController.js"></script>
 
 
 <!-- - iron-icon link-->
