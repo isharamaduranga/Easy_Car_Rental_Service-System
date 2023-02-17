@@ -1,4 +1,8 @@
 package lk.ijse.spring.repo;
 
-public interface AdminRepo {
+import lk.ijse.spring.entity.Admin;
+import org.springframework.data.jpa.repository.JpaRepository;
+
+public interface AdminRepo extends JpaRepository<Admin,String> {
+
 }
