@@ -968,11 +968,11 @@
 
 <!--Customer Sign Up Window-->
 
-<section id="RegisterPage" style="background:rgba(99,110,114,0.85);">
+<section id="RegisterPage" >
     <div class="container" style="background: url(assets/images/car_bg_home/car_a.png) no-repeat center;">
         <h1 class="text-center">Customer Register</h1>
-        <div class="row">
-            <div class="col-7">
+        <div class="row" style="    background: rgba(8,98,194,0.56);!important: ;border-radius: 40px;padding: 20px;width: 73vw;margin: auto;">
+            <div class="col-6">
                 <form id="customerForm">
                     <div class="row">
                         <div class="col-6">
@@ -983,7 +983,7 @@
                         </div>
                         <div class="col-6">
                             <label for="password"><span>*</span> Password</label>
-                            <input class="form-control  border border-2 border-white bg-light" id="password"
+                            <input class="form-control  border border-2 border-white bg-light rounded-3"  id="password"
                                    placeholder="Enter Password" type="password">
                             <p><small class="text-danger fs-8 pl-1 mt-0 mb-0" id="errorPassword"></small></p>
                         </div>
@@ -1042,45 +1042,35 @@
                     </div>
                 </form>
             </div>
-            <div class="col-5">
+            <div class="col-6">
+
                 <div class="row">
-                    <div class="col">
-                        <form id="cus_second_form" style="border: 2px solid #ffff00; width: 450px; height: 125px;;position: relative; top: 50px;">
-                            <div class="form-group">
-                                <label for="uploadmyimage"><span>*</span> Upload Your Image</label>
-                                <input class="form-control-file text-white " id="uploadmyimage" name="file"
-                                       style="border: none; background:rgba(0,0,0,0.73);"
-                                       type="file">
-                            </div>
-                        </form>
-                    </div>
+                    <form  style="border: 2px solid white; width: 510px; height: 120px;position: relative; top: 50px;">
+                        <label class="form-label mt-4 text-white  fw-light" for="uploadmyimage" style="font-family: 'poppins', sans-serif; font-size: 18px"><span>*</span>Upload your image</label>
+                        <input type="file" class="form-control rounded-5 bg-success" id="uploadmyimage" />
+                    </form>
                 </div>
 
                 <div class="row">
-                    <div class="col">
-                        <form style="border: 2px solid #ffff00; width: 450px; height: 125px;;position: relative; top: 50px;">
-                            <div class="form-group">
-                                <label for="uploadnicimage"><span>*</span> Add National Identity image</label>
-                                <input class="form-control-file text-white " id="uploadnicimage" name="file"
-                                       style="border: none; background:rgba(0,0,0,0.73);"
-                                       type="file">
-                            </div>
+                    <form  style="border: 2px solid white; width: 510px; height: 120px;position: relative; top: 84px;">
+                        <form  style="border: 2px solid white; border-radius: 20px;!important; width: 530px; height: 104px;;position: relative; top: 50px;">
+                            <label class="form-label mt-4 text-white  fw-light" for="uploadnicimage" style="font-family: 'poppins', sans-serif; font-size: 18px"><span>*</span>Upload your NIC image</label>
+                            <input type="file" class="form-control rounded-5 bg-warning" id="uploadnicimage" />
                         </form>
-                    </div>
-
+                    </form>
                 </div>
 
                 <div class="row">
-                    <div class="col">
-                        <form style="border: 2px solid #ffff00; width: 450px; height: 125px;;position: relative; top: 50px;">
-                            <div class="form-group ">
-                                <label for="uploaddrivinglicence"><span>*</span> Add License image</label>
-                                <input class="form-control-file text-white" id="uploaddrivinglicence" name="file"
-                                       style="border: none; background:rgba(0,0,0,0.73);" type="file">
-                            </div>
+                    <form  style="border: 2px solid white; width: 510px; height: 120px;;position: relative; top: 120px;">
+                        <form  style="border: 2px solid white; width: 530px; height: 104px;;position: relative; top: 50px;">
+                            <label class="form-label mt-4 text-white fw-light" for="uploaddrivinglicence" style="font-family: 'poppins', sans-serif; font-size: 18px"><span>*</span>Upload your Driving Licence image</label>
+                            <input type="file" class="form-control rounded-5 bg-info" id="uploaddrivinglicence" />
                         </form>
-                    </div>
+                    </form>
                 </div>
+
+
+
 
             </div>
             <div class="row row-cols-5 text-center" style="justify-content: center">
@@ -1280,7 +1270,7 @@
 
 <!--Admin Log In Window-->
 <section id="logInAdmin"
-         style="margin-top: 20px; background: url(assets/images/car_bg_home/car_b.png) no-repeat center;">
+         style="margin-top: 62px; background: url(assets/images/car_bg_home/car_b.png) no-repeat center;">
     <div class="container ">
         <h1 class="text-center">Admin Log In</h1>
         <div class="row">
@@ -2086,7 +2076,7 @@
                             <section>
                                 <div class="row">
                                     <div class="col-xl-3 col-sm-6 col-12 mb-4">
-                                        <div class="card border-2 border-primary">
+                                        <div class="card border-2 border-primary card_dash">
                                             <div class="card-body">
                                                 <div class="d-flex justify-content-between px-md-1">
                                                     <div class="align-self-center">
@@ -2103,7 +2093,7 @@
                                         </div>
                                     </div>
                                     <div class="col-xl-3 col-sm-6 col-12 mb-4">
-                                        <div class="card border-2 border-success">
+                                        <div class="card border-2 border-success card_dash">
                                             <div class="card-body">
                                                 <div class="d-flex justify-content-between px-md-1">
                                                     <div class="align-self-center">
@@ -2118,7 +2108,7 @@
                                         </div>
                                     </div>
                                     <div class="col-xl-3 col-sm-6 col-12 mb-4">
-                                        <div class="card border-2 border-warning">
+                                        <div class="card border-2 border-warning card_dash">
                                             <div class="card-body">
                                                 <div class="d-flex justify-content-between px-md-1">
                                                     <div class="align-self-center">
@@ -2133,7 +2123,7 @@
                                         </div>
                                     </div>
                                     <div class="col-xl-3 col-sm-6 col-12 mb-4">
-                                        <div class="card border-2 border-warning">
+                                        <div class="card border-2 border-warning card_dash">
                                             <div class="card-body">
                                                 <div class="d-flex justify-content-between px-md-1">
 
@@ -2152,7 +2142,7 @@
                                 </div>
                                 <div class="row">
                                     <div class="col-xl-3 col-sm-6 col-12 mb-4">
-                                        <div class="card border-2 border-success">
+                                        <div class="card border-2 border-success card_dash">
                                             <div class="card-body">
                                                 <div class="d-flex justify-content-between px-md-1">
                                                     <div class="align-self-center">
@@ -2169,7 +2159,7 @@
                                         </div>
                                     </div>
                                     <div class="col-xl-3 col-sm-6 col-12 mb-4">
-                                        <div class="card border-2 border-danger">
+                                        <div class="card border-2 border-danger card_dash">
                                             <div class="card-body">
                                                 <div class="d-flex justify-content-between px-md-1">
                                                     <div class="align-self-center">
@@ -2184,7 +2174,7 @@
                                         </div>
                                     </div>
                                     <div class="col-xl-3 col-sm-6 col-12 mb-4">
-                                        <div class="card  border-2 border-success">
+                                        <div class="card  border-2 border-success card_dash">
                                             <div class="card-body">
                                                 <div class="d-flex justify-content-between px-md-1">
                                                     <div class="align-self-center">
@@ -2200,7 +2190,7 @@
                                         </div>
                                     </div>
                                     <div class="col-xl-3 col-sm-6 col-12 mb-4">
-                                        <div class="card border-2 border-info">
+                                        <div class="card border-2 border-info card_dash">
                                             <div class="card-body">
                                                 <div class="d-flex justify-content-between px-md-1">
                                                     <div class="align-self-center">
@@ -2216,7 +2206,7 @@
                                         </div>
                                     </div>
                                     <div class="col-xl-3 col-sm-6 col-12 mb-4">
-                                        <div class="card border-2 border-info">
+                                        <div class="card border-2 border-info card_dash">
                                             <div class="card-body">
                                                 <div class="d-flex justify-content-between px-md-1">
                                                     <div class="align-self-center">
@@ -2232,7 +2222,7 @@
                                         </div>
                                     </div>
                                     <div class="col-xl-3 col-sm-6 col-12 mb-4">
-                                        <div class="card border-2 border-warning">
+                                        <div class="card border-2 border-warning card_dash">
                                             <div class="card-body">
                                                 <div class="d-flex justify-content-between px-md-1">
                                                     <div class="align-self-center">
@@ -2254,7 +2244,7 @@
                             <section>
                                 <div class="row ">
                                     <div class="col-12 mb-4 bg-warning">
-                                        <div class="card">
+                                        <div class="card card_dash">
                                             <div class="card-body">
                                                 <div class="d-flex justify-content-between p-md-1">
                                                     <div class="d-flex flex-row">
@@ -2276,7 +2266,7 @@
                                 </div>
                                 <div class="row">
                                     <div class="col-12  bg-success">
-                                        <div class="card ">
+                                        <div class="card card_dash">
                                             <div class="card-body">
                                                 <div class="d-flex justify-content-between p-md-1 ">
                                                     <div class="d-flex flex-row">
@@ -2305,8 +2295,8 @@
 
             <!--   Admin profile  dashboard-->
             <div id="admin_profile" style="height: 100%;">
-
                 <div class="container" id="container_admin">
+
                     <h1>Admin Form</h1>
                     <form id="adminForm">
                         <div class="row">
@@ -2343,12 +2333,14 @@
                     <div class="container" id="container_admin_table">
                         <table class="table table-striped table-bordered table-hover">
                             <thead class="bg-secondary text-white">
+
                             <tr>
                                 <th>ID</th>
                                 <th>Name</th>
                                 <th>Password</th>
                                 <th>Contact</th>
                             </tr>
+
                             </thead>
                             <tbody class="table-light" id="adminTable">
 
