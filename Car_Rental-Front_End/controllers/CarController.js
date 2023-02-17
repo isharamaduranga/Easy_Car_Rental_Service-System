@@ -145,5 +145,50 @@ function generateVehicleIds() {
 
 
 
+$("#btnAddNewCar").click(function () {
+    $("#tblCars tbody > tr").off("click");
 
+    let text = "Do you want to Add this car ?";
 
+    if (confirm(text) == true) {
+        if ($("#brand option:selected").val() == "" || $("#colour option:selected").val() == "" || $("#type option:selected").val() == "" ||
+            $("#fuelType option:selected").val() == "" || $("#registrationNo").val() == "" || $("#noOfPassengers").val() == "" ||
+            $("#transmissionType option:selected").val() == "" || $("#dailyRatePrice").val() == "" || $("#monthlyRatePrice").val() == "" ||
+            $("#freeKMPerDay").val() == "" || $("#freeKMPerMonth").val() == "" || $("#priceForExtraKM").val() == "" || $("#damageOrNot option:selected").val() == "" ||
+            $("#underMaintainOrNot option:selected").val() == "" || $("#totalDistanceTravelled").val() == "" ||  $("#availableOrNot option:selected").val() == ""){
+            alert("All Fields Are Required !");
+        }else {
+            if ($("#errorRegNo").text() != "" || $("#errorPassengers").text() != "" || $("#errorDailyRate").text() != "" || $("#errorMonthlyRate").text() != "" ||
+                $("#errorFeeKMDay").text() != "" || $("#errorFreeKMMonth").text() != "" || $("#errorExtraKMPrice").text() != "" || $("#errorTotalDistance").text() != ""){
+                alert("Check Input Fields Whether Correct !");
+            }else {
+                if ($('#uploadFrontView').get(0).files.length === 0 || $('#uploadBackView').get(0).files.length === 0 || $('#uploadSideView').get(0).files.length === 0 || $('#uploadInteriorView').get(0).files.length === 0) {
+                    alert("No Images Inserted !");
+                }else {
+                    isExistsRegistrationNumber();
+                }
+            }
+        }
+    }else {}
+});
+
+function isExistsRegistrationNumber() {
+    $.ajax({
+        url: baseURL+"car/SEARCH/" + $("#registrationNo").val(),
+        method: "GET",
+        success: function (response) {
+            if (response.data == $("#registrationNo").val()){
+                alert("Duplicate Registration Number . Please Check !");
+            }else {
+                saveNewCar();
+            }
+        },
+        error: function (ob) {
+            alert(ob.responseJSON.message);
+        }
+    });
+}
+
+function saveNewCar(){
+
+}
