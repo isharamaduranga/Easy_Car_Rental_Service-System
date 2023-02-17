@@ -43,7 +43,6 @@ function isExists( username, password) {
         success: function (response) {
             if (response.data.username == $("#loginusername").val() && response.data.password == $("#loginpassword").val()) {
                 searchCustomerTable(response.data.userId);
-                searchCustomerTable(response.data.userId);
                 searchDriverTable(response.data.userId);
             }
         },

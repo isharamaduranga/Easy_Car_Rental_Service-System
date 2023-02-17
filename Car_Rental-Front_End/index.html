@@ -2304,7 +2304,116 @@
             </div>
 
             <!--   Admin profile  dashboard-->
-            <div id="admin_profile" style="height: 100%; background-color: lime">
+            <div id="admin_profile" style="height: 100%; background-color: rgba(99,110,114,0.67)">
+
+                <div class="container" id="container_admin">
+                    <h1>Admin Form</h1>
+                    <form>
+                        <div class="row">
+                            <div class="mb-3 col-6">
+                                <label for="adminId" class="form-label">Admin ID</label>
+                                <input type="text" class="form-control" id="adminId" name="adminId">
+                            </div>
+                            <div class="mb-3 col-6">
+                                <label for="adminName" class="form-label">Admin Name</label>
+                                <input type="text" class="form-control" id="adminName" name="adminName">
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="mb-3 col-6">
+                                <label for="adminPassword" class="form-label">Admin Password</label>
+                                <input type="password" class="form-control" id="adminPassword" name="adminPassword">
+                            </div>
+                            <div class="mb-3 col-6">
+                                <label for="adminContact" class="form-label">Admin Contact</label>
+                                <input type="text" class="form-control" id="adminContact" name="adminContact">
+                            </div>
+                        </div>
+
+                        <button type="submit" class="btn btn-primary" id="addBtn">Add</button>
+                        <button type="submit" class="btn btn-secondary" id="updateBtn">Update</button>
+                        <button type="submit" class="btn btn-danger" id="deleteBtn">Delete</button>
+                        <button type="submit" class="btn btn-success" id="getAllBtn">Get All</button>
+                    </form>
+                    <div class="container" id="container_admin_table">
+                        <table class="table table-striped">
+                            <thead>
+                            <tr>
+                                <th>ID</th>
+                                <th>Name</th>
+                                <th>Password</th>
+                                <th>Contact</th>
+                            </tr>
+                            </thead>
+                            <tbody>
+                            <tr>
+                                <td>1</td>
+                                <td>John Doe</td>
+                                <td>*********</td>
+                                <td>123-456-7890</td>
+                            </tr>
+                            <tr>
+                                <td>2</td>
+                                <td>Jane Smith</td>
+                                <td>*********</td>
+                                <td>987-654-3210</td>
+                            </tr>
+                            <tr>
+                                <td>1</td>
+                                <td>John Doe</td>
+                                <td>*********</td>
+                                <td>123-456-7890</td>
+                            </tr>
+                            <tr>
+                                <td>2</td>
+                                <td>Jane Smith</td>
+                                <td>*********</td>
+                                <td>987-654-3210</td>
+                            </tr>
+                            <tr>
+                                <td>1</td>
+                                <td>John Doe</td>
+                                <td>*********</td>
+                                <td>123-456-7890</td>
+                            </tr>
+                            <tr>
+                                <td>2</td>
+                                <td>Jane Smith</td>
+                                <td>*********</td>
+                                <td>987-654-3210</td>
+                            </tr>
+                            <tr>
+                                <td>1</td>
+                                <td>John Doe</td>
+                                <td>*********</td>
+                                <td>123-456-7890</td>
+                            </tr>
+                            <tr>
+                                <td>2</td>
+                                <td>Jane Smith</td>
+                                <td>*********</td>
+                                <td>987-654-3210</td>
+                            </tr>
+
+                            <tr>
+                                <td>1</td>
+                                <td>John Doe</td>
+                                <td>*********</td>
+                                <td>123-456-7890</td>
+                            </tr>
+                            <tr>
+                                <td>2</td>
+                                <td>Jane Smith</td>
+                                <td>*********</td>
+                                <td>987-654-3210</td>
+                            </tr>
+
+
+                            <!-- Add more rows here as needed -->
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
 
 
             </div>
@@ -2637,7 +2746,116 @@
             </div>
 
             <!--   admin income dashboard-->
-            <div id="income_dashboard" style="height: 100%; background-color: #021002">
+            <div id="income_dashboard" style="height: 100%;">
+                <!--Income Page-->
+                <section id="IncomePage" style="width: 100%; height: 90vh ;background-color: white">
+
+                    <div>
+
+                        <div class="text-center" style="position: relative;top: 52px">
+                            <h1 class="mt-1 fw-light" style="font-family: 'PT Serif', serif;">Income Report</h1>
+                        </div>
+
+                    </div>
+
+                    <div class="container-fluid" style="position: relative;top: 80px;left: 260px;width: 87vw;height: 50px">
+                        <div class="row center-block" style="width: 61%;">
+                            <div class="col mb-0 img-responsive">
+                                <div class="btn-group btn-group-xm center-block center-block" role="group" aria-label="Basic example">
+                                    <button type="button" class="btn btn-primary btn-lg">Daily Income</button>
+                                    <button type="button" class="btn btn-success btn-lg">Weekly Income</button>
+                                    <button type="button" class="btn btn-danger btn-lg">Monthly Income</button>
+                                    <button type="button" class="btn btn-warning btn-lg">Annually Income</button>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row" style="position: relative; right: 100px;">
+                            <div class="col-6 mt-2 bg-white img-responsive mb-0 ">
+                                <label style="font-size: 15px" for="startDate" class="text-black">Start Date</label>
+                                <div class="input-group date" style="width: 220px">
+                                    <input type="date" id="startDate" class="form-control" placeholder="Start Date">
+                                    <span class="input-group-addon"><i class="glyphicon glyphicon-calendar"></i></span>
+                                </div>
+
+                            </div>
+                            <div class="col-6 mt-2 img-responsive mb-0 ">
+                                <label style="font-size: 15px" for="endDate" class="text-black">End Date</label>
+                                <div class="input-group date" style="width: 220px">
+                                    <input type="date" id="endDate" class="form-control" placeholder="End Date">
+                                    <span class="input-group-addon"><i class="glyphicon glyphicon-calendar"></i></span>
+                                </div>
+
+                            </div>
+                        </div>
+                    </div>
+
+                    <div style="width: 82vw; height: 55vh;position: relative; top: 140px;right: 0;bottom: 0;left: 0;margin: auto" class="table-responsive text-nowrap">
+
+                        <table class="table align-middle mb-0 bg-white table table-hover table-bordered" style="position: relative;left: 10px;top: 44px;">
+                            <thead class="bg-light">
+                            <tr>
+                                <th>Reserve Id</th>
+                                <th>Customer Id</th>
+                                <th>Reserve Date</th>
+                                <th>Rent Fee</th>
+                                <th>Driver Fee</th>
+                                <th>Lose Damage Waiver Payment</th>
+                                <th>Full Payment</th>
+                            </tr>
+                            </thead>
+                            <tbody>
+
+                            <tr>
+                                <td>
+                                    R00-0001
+                                </td>
+                                <td>
+                                    C00-0001
+                                </td>
+                                <td>
+                                    2023-02-18
+                                </td>
+                                <td>
+                                    55000.00
+                                </td>
+                                <td>
+                                    1000.00
+                                </td>
+                                <td>
+                                    1500.00
+                                </td>
+                                <td>
+                                    45000.00
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    R00-0001
+                                </td>
+                                <td>
+                                    C00-0001
+                                </td>
+                                <td>
+                                    2023-02-18
+                                </td>
+                                <td>
+                                    55000.00
+                                </td>
+                                <td>
+                                    1000.00
+                                </td>
+                                <td>
+                                    1500.00
+                                </td>
+                                <td>
+                                    45000.00
+                                </td>
+                            </tr>
+                            </tbody>
+                        </table>
+
+                    </div>
+                </section>
 
             </div>
         </div>
@@ -2661,6 +2879,7 @@
 <script src="./controllers/RegisterFormController.js"></script>
 <script src="./controllers/ResetPasswordController.js"></script>
 <script src="./controllers/LoginController.js"></script>
+<script src="./controllers/AdminLoginController.js"></script>
 <script src="./controllers/AdminLoginController.js"></script>
 
 
