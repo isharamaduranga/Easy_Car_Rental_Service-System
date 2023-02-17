@@ -254,8 +254,8 @@ $("#updateBtn").click(function () {
     var admin = {
         id: AdmId,
         name: AdmName,
-        address: AdmPassword,
-        salary: AdmContact
+        password: AdmPassword,
+        contact: AdmContact
     }
 
     $.ajax({
