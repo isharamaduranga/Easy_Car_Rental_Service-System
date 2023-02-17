@@ -189,6 +189,71 @@ function isExistsRegistrationNumber() {
     });
 }
 
+function clearFieldsFromCarPage() {
+    generateVehicleIds();
+
+    $("#registrationNo").val("");
+    $("#noOfPassengers").val("");
+    $("#freeKMPerDay").val("");
+    $("#freeKMPerMonth").val("");
+    $("#priceForExtraKM").val("");
+    $("#dailyRatePrice").val("");
+    $("#monthlyRatePrice").val("");
+    $("#totalDistanceTravelled").val("");
+
+    $("#registrationNo").css('border', '1px solid #e9ecef');
+    $("#noOfPassengers").css('border', '1px solid #e9ecef');
+    $("#freeKMPerDay").css('border', '1px solid #e9ecef');
+    $("#freeKMPerMonth").css('border', '1px solid #e9ecef');
+    $("#priceForExtraKM").css('border', '1px solid #e9ecef');
+    $("#dailyRatePrice").css('border', '1px solid #e9ecef');
+    $("#monthlyRatePrice").css('border', '1px solid #e9ecef');
+    $("#totalDistanceTravelled").css('border', '1px solid #e9ecef');
+}
+
 function saveNewCar(){
+    var newCarData = {
+        carId: $("#carId").val(),
+        registrationNo:$("#registrationNo").val(),
+        colour: $("#colour option:selected").text(),
+        brand: $("#brand option:selected").text(),
+        type: $("#type option:selected").text(),
+        fuelType: $("#fuelType option:selected").text(),
+        transmissionType: $("#transmissionType option:selected").text(),
+        noOfPassengers: $("#noOfPassengers").val(),
+        freeKmForDay: $("#freeKMPerDay").val(),
+        freeKmForMonth: $("#freeKMPerMonth").val(),
+        pricePerExtraKM: $("#priceForExtraKM").val(),
+        dailyRatePrice: $("#dailyRatePrice").val(),
+        monthlyRatePrice: $("#monthlyRatePrice").val(),
+        totalDistanceTraveled: $("#totalDistanceTravelled").val(),
+        availableOrNot:$("#availableOrNot option:selected").text(),
+        damageOrNot: $("#damageOrNot option:selected").text(),
+        underMaintainOrNot: $("#underMaintainOrNot option:selected").text(),
+        fontViewImage: null,
+        backViewImage: null,
+        sideViewImage: null,
+        interiorViewImage: null
+    }
+
+    $.ajax({
+        url: "http://localhost:8080/Car_Rental_System_war/car",
+        method: "POST",
+        contentType: "application/json",
+        data: JSON.stringify(newCarData),
+        success: function (response) {
+            if (response.code == 200){
+                alert($("#carId").val() + " "+ response.message);
+                clearFieldsFromCarPage();
+                loadAllCars();
+            }
+        },
+        error: function (ob) {
+            alert(ob.responseJSON.message);
+        }
+    });
+}
+
+function loadAllCars(){
 
 }
