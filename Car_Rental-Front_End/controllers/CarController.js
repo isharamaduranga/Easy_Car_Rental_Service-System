@@ -142,3 +142,8 @@ function generateVehicleIds() {
         }
     });
 }
+
+
+
+
+
