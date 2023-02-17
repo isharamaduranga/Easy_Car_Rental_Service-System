@@ -1,3 +1,7 @@
+
+/** Back end Request URL */
+let baseURL ="http://localhost:8080/Car_Rental_Back_End_war/"
+
 var regExUserName = /^[A-Z|a-z\s]{3,20}$/;
 var regExPassword = /^[A-Z|a-z\s|@|#|$|0-9]{6,10}$/;
 var regExFullName = /^[A-Z|a-z\s]{3,20}$/;
@@ -134,7 +138,7 @@ function generateRegisterIds() {
 
     $.ajax({
 
-        url: "http://localhost:8080/Car_Rental_Back_End_war/customer?test="+test,
+        url: baseURL+"customer?test="+test,
         method: "GET",
         success: function (response) {
             var customerId = response.data;
@@ -161,7 +165,7 @@ function generateUserIds() {
     var test = "id";
 
     $.ajax({
-        url: "http://localhost:8080/Car_Rental_Back_End_war/user?test="+test,
+        url: baseURL+"user?test="+test,
         method: "GET",
         success: function (response) {
             var userId = response.data;
@@ -228,7 +232,7 @@ function register() {
     }
 
     $.ajax({
-        url: "http://localhost:8080/Car_Rental_Back_End_war/customer",
+        url: baseURL+"customer",
         method: "POST",
         contentType: "application/json",
         data: JSON.stringify(cusDetail),
@@ -255,7 +259,7 @@ function registerUser(users) {
     }
 
     $.ajax({
-        url: "http://localhost:8080/Car_Rental_Back_End_war/user",
+        url: baseURL+"user",
         method: "POST",
         contentType: "application/json",
         data: JSON.stringify(user),
@@ -275,7 +279,7 @@ function registerUser(users) {
 function loadAllCustomer() {
 
     $.ajax({
-        url: "http://localhost:8080/Car_Rental_Back_End_war/customer",
+        url: baseURL+"customer",
         method: "GET",
         success: function (response) {
 

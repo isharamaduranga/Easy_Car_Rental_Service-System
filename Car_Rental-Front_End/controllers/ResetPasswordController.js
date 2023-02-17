@@ -1,3 +1,7 @@
+
+/** Back end Request URL */
+let baseURL ="http://localhost:8080/Car_Rental_Back_End_war/"
+
 var regExPassword = /^[A-Z|a-z\s|@|#|$|0-9]{6,10}$/;
 
 $("#newpassword").keyup(function (event) {
@@ -45,7 +49,7 @@ $("#btnResetPW").click(function () {
 function findUserId( username) {
 
     $.ajax({
-        url: "http://localhost:8080/Car_Rental_Back_End_war/user/FIND/" +username,
+        url: baseURL+"user/FIND/" +username,
         method: "GET",
         success: function (response) {
             if (response.data.username == $("#enterusername").val()) {
@@ -66,7 +70,7 @@ function resetNewPW(userId) {
     }
 
     $.ajax({
-        url: "http://localhost:8080/Car_Rental_Back_End_war/user",
+        url: baseURL+"user",
         method: "PUT",
         contentType: "application/json",
         data: JSON.stringify(pwDetails),

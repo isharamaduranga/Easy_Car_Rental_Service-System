@@ -1,3 +1,7 @@
+
+/** Back end Request URL */
+let baseURL ="http://localhost:8080/Car_Rental_Back_End_war/"
+
 var regExLoginUserName = /^[A-Z|a-z\s]{3,20}$/;
 var regExLoginPassword = /^[A-Z|a-z\s|@|#|$|0-9]{6,10}$/;
 
@@ -60,7 +64,7 @@ $("#btnLogToAdminPanel").click(function () {
 
 function isExistsAdmin(val, val2) {
     $.ajax({
-        url: "http://localhost:8080/Car_Rental_System_war/admin/" + password +"/"+username,
+        url: baseURL+"admin/" + password +"/"+username,
         method: "GET",
         success: function (response) {
             if (response.data.username == $("#loginAdminname").val() && response.data.password == $("#loginAdminpassword").val()) {

@@ -1,3 +1,6 @@
+/** Back end Request URL */
+let baseURL ="http://localhost:8080/Car_Rental_Back_End_war/"
+
 const adminIdRegEx = /^(ADM-)[0-9]{1,3}$/;
 const adminNameRegEx = /^[A-z ]{5,20}$/;
 var adminPwdRegEx = /^[A-Z|a-z\s|@|#|$|0-9]{6,10}$/;
@@ -172,7 +175,7 @@ function clearTextFields() {
 }
 
 
-let baseURL ="http://localhost:8080/Car_Rental_Back_End_war/"
+
 
 loadAllAdmins();
 
