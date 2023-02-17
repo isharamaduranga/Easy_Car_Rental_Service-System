@@ -16,53 +16,53 @@ import org.modelmapper.ModelMapper;
 import org.modelmapper.TypeToken;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
 
-import javax.transaction.Transactional;
 import java.util.List;
 
 @Service
 @Transactional
 public class UserServiceImpl implements UserService {
     @Autowired
-    UserRepo userRepo;
+    private UserRepo userRepo;
 
     @Autowired
-    ModelMapper mapper;
+    private ModelMapper mapper;
 
     @Override
     public void saveUser(UsersDTO usersDTO) {
-        if (!userRepo.existsById(usersDTO.getUserId())){
+        if (!userRepo.existsById(usersDTO.getUserId())) {
             userRepo.save(mapper.map(usersDTO, Users.class));
-            System.out.println("successs user........");
-        }else {
-            //throw new RuntimeException(usersDTO.getUserId() + " " + "User Already Exists..!");
+
+        } else {
+            throw new RuntimeException(usersDTO.getUserId() + " " + "User Already Exists..!");
         }
     }
 
     @Override
     public void updateUser(UsersDTO usersDTO) {
-        if (userRepo.existsById(usersDTO.getUserId())){
+        if (userRepo.existsById(usersDTO.getUserId())) {
             userRepo.save(mapper.map(usersDTO, Users.class));
-        }else {
+        } else {
             throw new RuntimeException(usersDTO.getUserId() + " " + "No Such User..! Please Check The Correct Id..!");
         }
     }
 
     @Override
     public void deleteUser(String id) {
-        if (userRepo.existsById(id)){
+        if (userRepo.existsById(id)) {
             userRepo.deleteById(id);
-        }else {
+        } else {
             throw new RuntimeException(id + " " + "No Such User..! Please Check The Correct Id..!");
         }
     }
 
     @Override
     public UsersDTO searchUser(String id) {
-        if (userRepo.existsById(id)){
+        if (userRepo.existsById(id)) {
             Users users = userRepo.findById(id).get();
             return mapper.map(users, UsersDTO.class);
-        }else {
+        } else {
             throw new RuntimeException(id + " " + "No Such User..! Please Check The Id..!");
         }
     }
@@ -70,7 +70,7 @@ public class UserServiceImpl implements UserService {
     @Override
     public List<UsersDTO> getAllUsers() {
         List<Users> all = userRepo.findAll();
-        return mapper.map(all, new TypeToken<List<UsersDTO>>(){
+        return mapper.map(all, new TypeToken<List<UsersDTO>>() {
         }.getType());
     }
 
@@ -82,12 +82,12 @@ public class UserServiceImpl implements UserService {
     @Override
     public UsersDTO findByPasswordAndUsername(String password, String username) {
         Users data = userRepo.findByPasswordAndUsername(password, username);
-        return mapper.map(data,UsersDTO.class);
+        return mapper.map(data, UsersDTO.class);
     }
 
     @Override
     public UsersDTO findByUsername(String username) {
         Users users = userRepo.findByUsername(username);
-        return mapper.map(users,UsersDTO.class);
+        return mapper.map(users, UsersDTO.class);
     }
 }

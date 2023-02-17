@@ -25,45 +25,45 @@ import java.util.List;
 public class CustomerServiceImpl implements CustomerService {
 
     @Autowired
-    CustomerRepo repo;
+    private CustomerRepo repo;
 
     @Autowired
-    ModelMapper mapper;
+    private ModelMapper mapper;
 
 
     @Override
     public void saveCustomer(CustomerDTO customer) {
         if (!repo.existsById(customer.getCustomerId())) {
             repo.save(mapper.map(customer, Customer.class));
-        }else {
+        } else {
             throw new RuntimeException(customer.getCustomerId() + " Customer Already Exists !!!");
         }
     }
 
     @Override
     public void updateCustomer(CustomerDTO customer) {
-        if (repo.existsById(customer.getCustomerId())){
+        if (repo.existsById(customer.getCustomerId())) {
             repo.save(mapper.map(customer, Customer.class));
-        }else {
+        } else {
             throw new RuntimeException(customer.getCustomerId() + " " + "No Such Customer..! Please Check The Correct Id..!");
         }
     }
 
     @Override
     public void deleteCustomer(String id) {
-        if (repo.existsById(id)){
+        if (repo.existsById(id)) {
             repo.deleteById(id);
-        }else {
+        } else {
             throw new RuntimeException(id + " " + "No Such Customer..! Please Check The Correct Id..!");
         }
     }
 
     @Override
     public CustomerDTO searchCustomer(String id) {
-        if (repo.existsById(id)){
+        if (repo.existsById(id)) {
             Customer customer = repo.findById(id).get();
             return mapper.map(customer, CustomerDTO.class);
-        }else {
+        } else {
             throw new RuntimeException(id + " " + "No Such Customer..! Please Check The Id..!");
         }
     }
@@ -71,7 +71,7 @@ public class CustomerServiceImpl implements CustomerService {
     @Override
     public List<CustomerDTO> getAllCustomers() {
         List<Customer> all = repo.findAll();
-        return mapper.map(all, new TypeToken<List<CustomerDTO>>(){
+        return mapper.map(all, new TypeToken<List<CustomerDTO>>() {
         }.getType());
     }
 
@@ -93,12 +93,12 @@ public class CustomerServiceImpl implements CustomerService {
     @Override
     public CustomerDTO searchUserFromCustomer(String id) {
         Customer customer = repo.searchUserFromCustomer(id);
-        return mapper.map(customer,CustomerDTO.class);
+        return mapper.map(customer, CustomerDTO.class);
     }
 
     @Override
     public CustomerDTO findCustomerToReserve(String nic) {
         Customer customer = repo.findCustomerToReserve(nic);
-        return mapper.map(customer,CustomerDTO.class);
+        return mapper.map(customer, CustomerDTO.class);
     }
 }
