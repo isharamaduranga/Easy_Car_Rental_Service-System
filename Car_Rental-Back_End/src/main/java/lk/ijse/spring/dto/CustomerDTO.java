@@ -13,6 +13,8 @@ import lombok.Data;
 import lombok.NoArgsConstructor;
 import lombok.ToString;
 
+import java.time.LocalDate;
+
 @NoArgsConstructor
 @AllArgsConstructor
 @Data
@@ -25,7 +27,7 @@ public class CustomerDTO {
     private UsersDTO users;
 
     private String customerName;
-    private String registeredDate;
+    private LocalDate registeredDate;
     private String customerAddress;
     private String customerContact;
     private String customerEmail;

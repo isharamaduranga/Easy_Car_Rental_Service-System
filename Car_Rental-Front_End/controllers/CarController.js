@@ -3,9 +3,10 @@ let baseURLCarControle ="http://localhost:8080/Car_Rental_Back_End_war/"
 
 var regExRegisterNO = /^(R00-)[0-9]{4}$/;
 var regPassengers = /^[1-9]{1,2}$/;
-var regExPrice = /^[0-9]{1,10}(.)[0-9]{2}$/;
-var regFKmDay = /^[1-9]{1,5}$/;
-var regFKmMonth = /^[1-9]{1,6}$/;
+var regExtraPrice = /^[0-9]{1,}[.]?[0-9]{1,2}$/;
+var regDailyRatePrice = /^[0-9]{1,}[.]?[0-9]{1,2}$/;
+var regFKmDay = /^[0-9]{1,7}$/;
+var regFKmMonth = /^[0-9]{1,7}$/;
 var regExDistance = /^[0-9]{1,5}$/;
 
 $("#registrationNo").keyup(function (event) {
@@ -38,7 +39,7 @@ $("#noOfPassengers").keyup(function (event) {
 
 $("#dailyRatePrice").keyup(function (event) {
     let dailyRate = $("#dailyRatePrice").val();
-    if (regExPrice.test(dailyRate)) {
+    if (regDailyRatePrice.test(dailyRate)) {
         $("#dailyRatePrice").css('border', '2px solid #31d2f2');
         $("#errorDailyRate").text("");
         if (event.key == "Enter") {
@@ -52,7 +53,7 @@ $("#dailyRatePrice").keyup(function (event) {
 
 $("#monthlyRatePrice").keyup(function (event) {
     let monthlyRate = $("#monthlyRatePrice").val();
-    if (regExPrice.test(monthlyRate)) {
+    if (regDailyRatePrice.test(monthlyRate)) {
         $("#monthlyRatePrice").css('border', '2px solid #31d2f2');
         $("#errorMonthlyRate").text("");
         if (event.key == "Enter") {
@@ -65,8 +66,8 @@ $("#monthlyRatePrice").keyup(function (event) {
 });
 
 $("#freeKMPerDay").keyup(function (event) {
-    let freekm = $("#freeKMPerDay").val();
-    if (regFKmDay.test(freekm)) {
+    let freekms = $("#freeKMPerDay").val();
+    if (regFKmDay.test(freekms)) {
         $("#freeKMPerDay").css('border', '2px solid #31d2f2');
         $("#errorFeeKMDay").text("");
         if (event.key == "Enter") {
@@ -79,8 +80,8 @@ $("#freeKMPerDay").keyup(function (event) {
 });
 
 $("#freeKMPerMonth").keyup(function (event) {
-    let freeKMMonth = $("#freeKMPerMonth").val();
-    if (regFKmMonth.test(freeKMMonth)) {
+    let freeKMMonths = $("#freeKMPerMonth").val();
+    if (regFKmMonth.test(freeKMMonths)) {
         $("#freeKMPerMonth").css('border', '2px solid #31d2f2');
         $("#errorFreeKMMonth").text("");
         if (event.key == "Enter") {
@@ -93,8 +94,8 @@ $("#freeKMPerMonth").keyup(function (event) {
 });
 
 $("#priceForExtraKM").keyup(function (event) {
-    let priceExtraKm = $("#priceForExtraKM").val();
-    if (regExPrice.test(priceExtraKm)) {
+    let priceExtraKms = $("#priceForExtraKM").val();
+    if (regExtraPrice.test(priceExtraKms)) {
         $("#priceForExtraKM").css('border', '2px solid #31d2f2');
         $("#errorExtraKMPrice").text("");
         if (event.key == "Enter") {
@@ -278,9 +279,9 @@ function loadAllCars(){
                             ${responseKey.freeKmForDay} </td><td> 
                             ${responseKey.freeKmForMonth} </td><td> 
                             ${responseKey.pricePerExtraKM} </td><td>
-                            <span class="badge badge-success rounded-pill d-inline">${responseKey.availableOrNot}</span></td><td> 
-                            <span class="badge badge-success rounded-pill d-inline">${responseKey.damageOrNot}</span></td><td> 
-                            <span class="badge badge-success rounded-pill d-inline">${responseKey.underMaintainOrNot}</span> </td><td> 
+                            <span class="text-success">${responseKey.availableOrNot}</span></td><td> 
+                            <span class="text-danger">${responseKey.damageOrNot}</span></td><td> 
+                            <span class="text-info">${responseKey.underMaintainOrNot}</span> </td><td> 
                             ${responseKey.totalDistanceTraveled} </td><td>
                             <div class="d-flex align-items-center">
                                 <img src="../assets/images/panel2.jpg" alt="" style="width: 45px; height: 45px" class="rounded-circle"/>
@@ -289,7 +290,7 @@ function loadAllCars(){
                                 <img src="../assets/images/panel1.jpg" alt="" style="width: 45px; height: 45px" class="rounded-circle"/>
                              </div></td><td>
                              <div class="d-flex align-items-center">
-                                <img src="../assets/images/panel3.jpg" alt="" style="width: 45px; height: 45px" class="rounded-circle"/>
+                                <img src="../assets/images/panel3.png" alt="" style="width: 45px; height: 45px" class="rounded-circle"/>
                              </div></td><td>
                              <div class="d-flex align-items-center">
                                 <img src="../assets/images/panel4.jpg" alt="" style="width: 45px; height: 45px" class="rounded-circle"/>

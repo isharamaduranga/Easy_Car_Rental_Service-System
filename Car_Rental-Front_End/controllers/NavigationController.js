@@ -405,6 +405,7 @@ $("#btnAddCar").click(function () {
     generateVehicleIds();
     clearFieldsFromCarPage()
 
+
     $('#CarManagePage').css('transform','scale(1)');
     $("#car_dashboard").css('display', 'block');
 
@@ -423,7 +424,9 @@ $("#btnAddCar").click(function () {
 });
 
 $("#btnCancelAddCar").click(function () {
-    clearFieldsAfterUpdate();
+
+    clearFieldsFromCarPage();
+    loadAllCars();
     $('#CarManagePage').css('transform','scale(0)');
     $("#car_dashboard").css('display', 'block');
 

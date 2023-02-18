@@ -80,4 +80,9 @@ public class CarServiceImpl implements CarService {
     public String generateCarIds() {
       return carRepo.generateCarId();
     }
+
+    @Override
+    public String searchRegNumberIsExists(String reg) {
+        return carRepo.searchRegNumberIsExists(reg);
+    }
 }

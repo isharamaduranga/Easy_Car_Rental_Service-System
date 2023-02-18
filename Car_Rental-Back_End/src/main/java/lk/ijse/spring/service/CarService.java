@@ -16,4 +16,6 @@ public interface CarService {
     List<CarDTO> getAllCars();
 
     String generateCarIds();
+
+    String searchRegNumberIsExists(String reg);
 }

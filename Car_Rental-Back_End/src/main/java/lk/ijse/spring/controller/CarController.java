@@ -55,4 +55,9 @@ public class CarController {
         return new ResponseUtil(200, "Ok", carService.generateCarIds());
     }
 
+    @GetMapping(path = "/SEARCH/{reg}",produces = MediaType.APPLICATION_JSON_VALUE)
+    public ResponseUtil searchRegNumberIsDuplicate(@PathVariable("reg") String reg){
+        return new ResponseUtil(200, "Ok", carService.searchRegNumberIsExists(reg));
+    }
+
 }
