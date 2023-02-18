@@ -1,52 +1,77 @@
-
 /** Back end Request URL */
-let baseURLLogin ="http://localhost:8080/Car_Rental_Back_End_war/"
+let baseURLLogin = "http://localhost:8080/Car_Rental_Back_End_war/"
 
 var regExLoginUserName = /^[A-Z|a-z\s]{3,20}$/;
 var regExLoginPassword = /^[A-Z|a-z\s|@|#|$|0-9]{6,10}$/;
 
 
-$("#loginusername").keyup(function (event) {
-    let username = $("#loginusername").val();
+$("#loginusername, #logindrivername").keyup(function (event) {
+    let username = $(this).val();
     if (regExLoginUserName.test(username)) {
-        $("#loginusername").css('border', '2px solid #31d2f2');
+        $(this).css('border', '2px solid #31d2f2');
         if (event.key == "Enter") {
             $("#loginpassword").focus();
+            $("#logindriverpassword").focus();
         }
     } else {
-        $("#loginusername").css('border', '2px solid red');
+        $(this).css('border', '2px solid red');
     }
 });
 
-$("#loginpassword").keyup(function (event) {
-    let password = $("#loginpassword").val();
+$("#loginpassword, #logindriverpassword").keyup(function (event) {
+    let password = $(this).val();
     if (regExLoginPassword.test(password)) {
-        $("#loginpassword").css('border', '2px solid #31d2f2');
-
+        $(this).css('border', '2px solid #31d2f2');
     } else {
-        $("#loginpassword").css('border', '2px solid red');
+        $(this).css('border', '2px solid red');
     }
 });
 
 var logStatus;
 
+/** For Customer Login the System*/
 $("#btnLogToSystem").click(function () {
 
-    if ($("#loginusername").val() == "" || $("#loginpassword").val() == ""){
+    if ($("#loginusername").val() == "" || $("#loginpassword").val() == "") {
         alert("All Fields Are Required To Log !");
-    }else {
-        isExists($("#loginusername").val(),$("#loginpassword").val());
+    } else {
+        isExistsCus($("#loginusername").val(), $("#loginpassword").val());
     }
 
 });
 
-function isExists( username, password) {
+/** For Driver Login the System*/
+$("#btnLogToDriver").click(function () {
+
+    if ($("#logindrivername").val() == "" || $("#logindriverpassword").val() == "") {
+        alert("All Fields Are Required To Log !");
+    } else {
+        isExistsDriver($("#logindrivername").val(), $("#logindriverpassword").val());
+    }
+
+});
+
+function isExistsCus(username, password) {
     $.ajax({
-        url: baseURLLogin+"user/" + password +"/"+username,
+        url: baseURLLogin + "user/" + password + "/" + username,
         method: "GET",
         success: function (response) {
             if (response.data.username == $("#loginusername").val() && response.data.password == $("#loginpassword").val()) {
                 searchCustomerTable(response.data.userId);
+            }
+        },
+        error: function (error) {
+            alert("Wrong Username And Password !");
+        }
+    });
+}
+
+function isExistsDriver(username, password) {
+    $.ajax({
+        url: baseURLLogin + "user/" + password + "/" + username,
+        method: "GET",
+        success: function (response) {
+            if (response.data.username == $("#logindrivername").val() && response.data.password == $("#logindriverpassword").val()) {
                 searchDriverTable(response.data.userId);
             }
         },
@@ -60,28 +85,36 @@ function isExists( username, password) {
 /** Scan username password Customer table */
 function searchCustomerTable(userId) {
     $.ajax({
-        url: baseURLLogin+"customer/USER/" + userId,
+        url: baseURLLogin + "customer/USER/" + userId,
         method: "GET",
         success: function (response) {
             logStatus = "Logged";
-            alert("Successfully Login ....")
+            alert("Successfully Login Customer Table....")
 
- /*  =======================Log in Customer car booking=========================================*/
-           /* DefaultHomePage();*/
+            /*  =======================Log in Customer car booking=========================================*/
+
+            /*     ***************************************************************       */
         },
         error: function (error) {
             alert(JSON.parse(error.responseText).message);
         }
     });
 }
+
+
 /** Scan username password Driver table */
 function searchDriverTable(userId) {
     $.ajax({
-        url: baseURLLogin+"driver/USER/" + userId,
+        url: baseURLLogin + "driver/USER/" + userId,
         method: "GET",
         success: function (response) {
             logStatus = "Logged";
-           // searchDriverSchedule();
+
+            /*  =======================Log in Driver schedules=========================================*/
+            // searchDriverSchedule();
+            /*     ***************************************************************       */
+
+            alert("Successfully Login Driver Table....")
         },
         error: function (error) {
             alert(JSON.parse(error.responseText).message);

@@ -9,9 +9,11 @@
 package lk.ijse.spring.service.impl;
 
 import lk.ijse.spring.dto.DriverDTO;
+import lk.ijse.spring.entity.Driver;
 import lk.ijse.spring.repo.DriverRepo;
 import lk.ijse.spring.service.DriverService;
 import org.modelmapper.ModelMapper;
+import org.modelmapper.TypeToken;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
@@ -31,31 +33,58 @@ public class DriverServiceImpl implements DriverService {
 
     @Override
     public void saveDriver(DriverDTO driver) {
-
+        if (!driverRepo.existsById(driver.getDriverId())){
+            driverRepo.save(mapper.map(driver, Driver.class));
+        }else {
+            throw new RuntimeException(driver.getDriverId() + " " + "Driver Already Exists..!");
+        }
     }
 
     @Override
     public void updateDriver(DriverDTO driver) {
-
+        if (driverRepo.existsById(driver.getDriverId())){
+            driverRepo.save(mapper.map(driver, Driver.class));
+        }else {
+            throw new RuntimeException(driver.getDriverId() + " " + "No Such Driver..! Please Check The Correct Id..!");
+        }
     }
 
     @Override
     public void deleteDriver(String id) {
-
+        if (driverRepo.existsById(id)){
+            driverRepo.deleteById(id);
+        }else {
+            throw new RuntimeException(id + " " + "No Such Driver..! Please Check The Correct Id..!");
+        }
     }
 
     @Override
     public DriverDTO searchDriver(String id) {
-        return null;
+        if (driverRepo.existsById(id)){
+            Driver driver = driverRepo.findById(id).get();
+            return mapper.map(driver, DriverDTO.class);
+        }else {
+            throw new RuntimeException(id + " " + "No Such Driver..! Please Check The Id..!");
+        }
     }
 
     @Override
     public List<DriverDTO> getAllDrivers() {
-        return null;
+        List<Driver> all = driverRepo.findAll();
+        return mapper.map(all, new TypeToken<List<DriverDTO>>(){
+        }.getType());
     }
 
     @Override
     public String generateDriverIds() {
-        return null;
+        return driverRepo.generateDriverId();
     }
+
+    @Override
+    public DriverDTO searchUserFromDriver(String id) {
+        Driver driver = driverRepo.searchUserFromDriver(id);
+        return mapper.map(driver,DriverDTO.class);
+    }
+
+
 }

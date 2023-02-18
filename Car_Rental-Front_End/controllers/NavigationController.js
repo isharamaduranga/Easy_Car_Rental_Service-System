@@ -167,7 +167,7 @@ $("#forgetPasswordBtn").click(function () {
 });
 
 
-$("#btnCancelToSystem,#btnCancelToDLogin,#btnCancelToAdmin,#btnCancelPW").click(function () {
+$("#btnCancelToSystem,#btnCancelToDLogin,#btnCancelToAdmin,#btnCancelPW,#admin_logout").click(function () {
     $('#RegisterPage').css('display', 'none');
     $('#RegisterDriver').css('display', 'none');
     $('#logInCustomer').css('display', 'none');
@@ -297,6 +297,7 @@ $("#btn_car").click(function () {
 });
 
 $("#btn_driver").click(function () {
+    loadAllDrivers();
     $("#driver_dashboard").css('display', 'block');
     $('#admin_dashboard').css('display', 'none');
     $("#car_dashboard").css('display', 'none');
@@ -449,13 +450,14 @@ $("#btnAddDriver").click(function () {
 
     generateDriverIds();
     generateUserIds();
+    clearDriverFields();
 
     $('#DriverManagePage').css('transform','scale(1)');
+    $("#driver_dashboard").css('display', 'block');
 
-    $("#car_dashboard").css('display', 'block');
-
+    $("#car_dashboard").css('display', 'none');
     $('#admin_dashboard').css('display', 'none');
-    $("#driver_dashboard").css('display', 'none');
+
     $("#customer_dashboard").css('display', 'none');
     $("#reservation_dashboard").css('display', 'none');
     $("#payment_dashboard").css('display', 'none');
@@ -469,6 +471,7 @@ $("#btnAddDriver").click(function () {
 });
 
 $("#btnCancelAddDriver").click(function () {
+    clearDriverAfterUpdate();
 
     $('#CarManagePage').css('transform','scale(0)');
     $("#driver_dashboard").css('display', 'block');

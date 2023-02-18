@@ -17,4 +17,6 @@ public interface DriverService {
 
     String generateDriverIds();
 
+    DriverDTO searchUserFromDriver(String id);
+
 }
