@@ -398,6 +398,7 @@ $("#btn_income").click(function () {
     $('#PaymentAddPage').css('transform','scale(0)');
 });
 
+
 $("#btnAddCar").click(function () {
     generateVehicleIds();
     clearFieldsFromCarPage()

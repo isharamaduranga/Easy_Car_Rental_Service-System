@@ -183,8 +183,8 @@ function isExistsRegistrationNumber() {
                 saveNewCar();
             }
         },
-        error: function (ob) {
-            alert(ob.responseJSON.message);
+        error: function (error) {
+            alert(JSON.parse(error.responseText).message);
         }
     });
 }
@@ -248,11 +248,13 @@ function saveNewCar(){
                 loadAllCars();
             }
         },
-        error: function (ob) {
-            alert(ob.responseJSON.message);
+        error: function (error) {
+            alert(JSON.parse(error.responseText).message);
         }
     });
 }
+
+
 
 function loadAllCars(){
     $.ajax({
@@ -298,11 +300,61 @@ function loadAllCars(){
             }
 
             generateVehicleIds();
-            clickEvent();
+            BindRowClickEvent();
             clearFieldsFromCarPage();
         },
-        error: function (ob) {
-            alert(ob.responseJSON.message);
+        error: function (error) {
+            alert(JSON.parse(error.responseText).message);
         }
+    });
+}
+
+var tblClickRow = -1;
+function BindRowClickEvent() {
+
+    $("#tblCars tbody > tr").click(function () {
+
+        tblClickRow = $(this);
+
+        let msg = "Do you want to Edit cars ?";
+        if (confirm(msg) == true) {
+            $('#CarManagePage').css('transform','scale(1)');
+
+            var carId = $.trim(tblCarRow.children(':nth-child(1)').text());
+            var regNo = $.trim(tblCarRow.children(':nth-child(5)').text());
+            var passengers = $.trim(tblCarRow.children(':nth-child(8)').text());
+            var dailyRate = $.trim(tblCarRow.children(':nth-child(9)').text());
+            var monthlyRate = $.trim(tblCarRow.children(':nth-child(10)').text());
+            var freeKMDay = $.trim(tblCarRow.children(':nth-child(11)').text());
+            var freeKmMonth = $.trim(tblCarRow.children(':nth-child(12)').text());
+            var extraKm = $.trim(tblCarRow.children(':nth-child(13)').text());
+            var totalDistance = $.trim(tblCarRow.children(':nth-child(17)').text());
+            var frontView = $.trim(tblCarRow.children(':nth-child(18)').text());
+            var backView = $.trim(tblCarRow.children(':nth-child(19)').text());
+            var sideView = $.trim(tblCarRow.children(':nth-child(20)').text());
+            var interiorView = $.trim(tblCarRow.children(':nth-child(21)').text());
+
+            $("#brand").append($("<option selected></option>").attr("value", 14).text($.trim(tblCarRow.children(':nth-child(2)').text())));
+            $("#colour").append($("<option selected></option>").attr("value", 11).text($.trim(tblCarRow.children(':nth-child(3)').text())));
+            $("#type").append($("<option selected></option>").attr("value", 4).text($.trim(tblCarRow.children(':nth-child(4)').text())));
+            $("#transmissionType").append($("<option selected></option>").attr("value", 3).text($.trim(tblCarRow.children(':nth-child(7)').text())));
+            $("#fuelType").append($("<option selected></option>").attr("value", 3).text($.trim(tblCarRow.children(':nth-child(6)').text())));
+            $("#availableOrNot").append($("<option selected></option>").attr("value", 3).text($.trim(tblCarRow.children(':nth-child(14)').text())));
+            $("#damageOrNot").append($("<option selected></option>").attr("value", 3).text($.trim(tblCarRow.children(':nth-child(15)').text())));
+            $("#underMaintainOrNot").append($("<option selected></option>").attr("value", 3).text($.trim(tblCarRow.children(':nth-child(16)').text())));
+
+            $("#carId").val(carId);
+            $("#registrationNo").val(regNo);
+            $("#noOfPassengers").val(passengers);
+            $("#dailyRatePrice").val(dailyRate);
+            $("#monthlyRatePrice").val(monthlyRate);
+            $("#freeKMPerDay").val(freeKMDay);
+            $("#freeKMPerMonth").val(freeKmMonth);
+            $("#priceForExtraKM").val(extraKm);
+            $("#totalDistanceTravelled").val(totalDistance);
+            $("#transmissionType option:selected").val($.trim(tblCarRow.children(':nth-child(7)').text()));
+
+        } else {}
+
     });
 }

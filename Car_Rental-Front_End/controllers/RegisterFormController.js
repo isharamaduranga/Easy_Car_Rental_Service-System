@@ -245,8 +245,8 @@ function register() {
                 generateUserIds();
             }
         },
-        error: function (ob) {
-            alert(ob.responseJSON.message);
+        error: function (error) {
+            alert(JSON.parse(error.responseText).message);
         }
     });
 }
@@ -269,8 +269,8 @@ function registerUser(users) {
                 clearRegisterFields();
             }
         },
-        error: function (ob) {
-            alert(ob.responseJSON.message);
+        error: function (error) {
+            alert(JSON.parse(error.responseText).message);
         }
     });
 
@@ -299,8 +299,8 @@ function loadAllCustomer() {
                 $("#tblCustomers tbody").append(raw);*/
             }
         },
-        error: function (ob) {
-            alert(ob.responseJSON.message);
+        error: function (error) {
+            alert(JSON.parse(error.responseText).message);
         }
     });
 

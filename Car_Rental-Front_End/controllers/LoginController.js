@@ -50,7 +50,7 @@ function isExists( username, password) {
                 searchDriverTable(response.data.userId);
             }
         },
-        error: function (ob) {
+        error: function (error) {
             alert("Wrong Username And Password !");
         }
     });
@@ -69,8 +69,8 @@ function searchCustomerTable(userId) {
  /*  =======================Log in Customer car booking=========================================*/
            /* DefaultHomePage();*/
         },
-        error: function (ob) {
-            alert(ob.responseJSON.message);
+        error: function (error) {
+            alert(JSON.parse(error.responseText).message);
         }
     });
 }
@@ -83,8 +83,8 @@ function searchDriverTable(userId) {
             logStatus = "Logged";
            // searchDriverSchedule();
         },
-        error: function (ob) {
-            alert(ob.responseJSON.message);
+        error: function (error) {
+            alert(JSON.parse(error.responseText).message);
         }
     });
 }
