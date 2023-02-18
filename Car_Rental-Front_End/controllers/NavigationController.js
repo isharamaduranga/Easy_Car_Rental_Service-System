@@ -421,6 +421,7 @@ $("#btnAddCar").click(function () {
 });
 
 $("#btnCancelAddCar").click(function () {
+    clearFieldsAfterUpdate();
     $('#CarManagePage').css('transform','scale(0)');
     $("#car_dashboard").css('display', 'block');
 

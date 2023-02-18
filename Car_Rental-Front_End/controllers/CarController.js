@@ -358,3 +358,32 @@ function BindRowClickEvent() {
 
     });
 }
+
+function clearFieldsAfterUpdate() {
+    $("#registrationNo").val("");
+    $("#noOfPassengers").val("");
+    $("#freeKMPerDay").val("");
+    $("#freeKMPerMonth").val("");
+    $("#priceForExtraKM").val("");
+    $("#dailyRatePrice").val("");
+    $("#monthlyRatePrice").val("");
+    $("#totalDistanceTravelled").val("");
+
+    $('#brand').find('option:last').remove();
+    $('#colour').find('option:last').remove();
+    $('#type').find('option:last').remove();
+    $('#fuelType').find('option:last').remove();
+    $('#transmissionType').find('option:last').remove();
+    $('#availableOrNot').find('option:last').remove();
+    $('#damageOrNot').find('option:last').remove();
+    $('#underMaintainOrNot').find('option:last').remove();
+
+    $("#registrationNo").css('border', '1px solid #e9ecef');
+    $("#noOfPassengers").css('border', '1px solid #e9ecef');
+    $("#freeKMPerDay").css('border', '1px solid #e9ecef');
+    $("#freeKMPerMonth").css('border', '1px solid #e9ecef');
+    $("#priceForExtraKM").css('border', '1px solid #e9ecef');
+    $("#dailyRatePrice").css('border', '1px solid #e9ecef');
+    $("#monthlyRatePrice").css('border', '1px solid #e9ecef');
+    $("#totalDistanceTravelled").css('border', '1px solid #e9ecef');
+}
