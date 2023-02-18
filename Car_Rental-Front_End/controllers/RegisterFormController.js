@@ -1,6 +1,6 @@
 
 /** Back end Request URL */
-let baseURL ="http://localhost:8080/Car_Rental_Back_End_war/"
+let baseURLRegister ="http://localhost:8080/Car_Rental_Back_End_war/"
 
 var regExUserName = /^[A-Z|a-z\s]{3,20}$/;
 var regExPassword = /^[A-Z|a-z\s|@|#|$|0-9]{6,10}$/;
@@ -138,7 +138,7 @@ function generateRegisterIds() {
 
     $.ajax({
 
-        url: baseURL+"customer?test="+test,
+        url: baseURLRegister+"customer?test="+test,
         method: "GET",
         success: function (response) {
             var customerId = response.data;
@@ -165,7 +165,7 @@ function generateUserIds() {
     var test = "id";
 
     $.ajax({
-        url: baseURL+"user?test="+test,
+        url: baseURLRegister+"user?test="+test,
         method: "GET",
         success: function (response) {
             var userId = response.data;
@@ -232,7 +232,7 @@ function register() {
     }
 
     $.ajax({
-        url: baseURL+"customer",
+        url: baseURLRegister+"customer",
         method: "POST",
         contentType: "application/json",
         data: JSON.stringify(cusDetail),
@@ -259,7 +259,7 @@ function registerUser(users) {
     }
 
     $.ajax({
-        url: baseURL+"user",
+        url: baseURLRegister+"user",
         method: "POST",
         contentType: "application/json",
         data: JSON.stringify(user),
@@ -279,24 +279,24 @@ function registerUser(users) {
 function loadAllCustomer() {
 
     $.ajax({
-        url: baseURL+"customer",
+        url: baseURLRegister+"customer",
         method: "GET",
         success: function (response) {
 
             $("#tblCustomers tbody").empty();
             for (var responseKey of response.data) {
-               /* let raw = `<tr><td> ${responseKey.registeredDate} </td><td> ${responseKey.customerId} </td><td>
+                let raw = `<tr><td> ${responseKey.registeredDate} </td><td> ${responseKey.customerId} </td><td>
                                 <div class="d-flex align-items-center">
-                                <img src="https://mdbootstrap.com/img/new/avatars/8.jpg" alt="" style="width: 45px; height: 45px" class="rounded-circle"/>
+                                <img src="https://images.pexels.com/photos/2646119/pexels-photo-2646119.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1" alt="" style="width: 45px; height: 45px" class="rounded-circle"/>
                                 </div>  
                                 </td><td> ${responseKey.customerName} </td><td> ${responseKey.customerAddress} </td><td> ${responseKey.customerContact} </td><td> ${responseKey.customerNicNo} </td><td> ${responseKey.customerDrivingLicenseNo} </td><td><div class="d-flex align-items-center">
-                                <img src="https://mdbootstrap.com/img/new/avatars/8.jpg" alt="" style="width: 45px; height: 45px" class="rounded-circle"/>
+                                <img src="https://images.pexels.com/photos/2646119/pexels-photo-2646119.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1" alt="" style="width: 45px; height: 45px" class="rounded-circle"/>
                                 </div>   
                                 </td><td> <div class="d-flex align-items-center">
-                                <img src="https://mdbootstrap.com/img/new/avatars/8.jpg" alt="" style="width: 45px; height: 45px" class="rounded-circle"/>
+                                <img src="https://images.pexels.com/photos/2646119/pexels-photo-2646119.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1" alt="" style="width: 45px; height: 45px" class="rounded-circle"/>
                                 </div>   
                                 </td></tr>`;
-                $("#tblCustomers tbody").append(raw);*/
+                $("#tblCustomers tbody").append(raw);
             }
         },
         error: function (error) {

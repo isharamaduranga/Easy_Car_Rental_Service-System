@@ -1,5 +1,5 @@
 /** Back end Request URL */
-let baseURL ="http://localhost:8080/Car_Rental_Back_End_war/"
+let baseURLAdminCrud ="http://localhost:8080/Car_Rental_Back_End_war/"
 
 const adminIdRegEx = /^(ADM-)[0-9]{1,3}$/;
 const adminNameRegEx = /^[A-z ]{5,20}$/;
@@ -184,7 +184,7 @@ function saveAdmins() {
     let formdata = $("#adminForm").serialize();
 
     $.ajax({
-        url: baseURL + "admin",
+        url: baseURLAdminCrud + "admin",
         method: "post",
         dataType: "json",
         data: formdata,
@@ -215,7 +215,7 @@ function loadAllAdmins() {
 
     $("#adminTable").empty();
     $.ajax({
-        url: baseURL + "admin",
+        url: baseURLAdminCrud + "admin",
         dataType: "json",
 
         success: function (resp) {
@@ -234,7 +234,7 @@ function loadAllAdmins() {
 $("#deleteBtn").click(function () {
     let admId = $("#adminId").val();
     $.ajax({
-        url: baseURL + "admin?id=" + admId,
+        url: baseURLAdminCrud + "admin?id=" + admId,
         method: "delete",
         dataType: "json",
         success: function (resp) {
@@ -262,7 +262,7 @@ $("#updateBtn").click(function () {
     }
 
     $.ajax({
-        url: baseURL + "admin",
+        url: baseURLAdminCrud + "admin",
         method: "put",
         dataType: "json",
         contentType: "application/json",

@@ -1,10 +1,11 @@
 /** Back end Request URL */
-let baseURL ="http://localhost:8080/Car_Rental_Back_End_war/"
+let baseURLCarControle ="http://localhost:8080/Car_Rental_Back_End_war/"
 
 var regExRegisterNO = /^(R00-)[0-9]{4}$/;
 var regPassengers = /^[1-9]{1,2}$/;
 var regExPrice = /^[0-9]{1,10}(.)[0-9]{2}$/;
-var regExKm = /^[1-9]{1,5}$/;
+var regFKmDay = /^[1-9]{1,5}$/;
+var regFKmMonth = /^[1-9]{1,6}$/;
 var regExDistance = /^[0-9]{1,5}$/;
 
 $("#registrationNo").keyup(function (event) {
@@ -65,7 +66,7 @@ $("#monthlyRatePrice").keyup(function (event) {
 
 $("#freeKMPerDay").keyup(function (event) {
     let freekm = $("#freeKMPerDay").val();
-    if (regExKm.test(freekm)) {
+    if (regFKmDay.test(freekm)) {
         $("#freeKMPerDay").css('border', '2px solid #31d2f2');
         $("#errorFeeKMDay").text("");
         if (event.key == "Enter") {
@@ -79,7 +80,7 @@ $("#freeKMPerDay").keyup(function (event) {
 
 $("#freeKMPerMonth").keyup(function (event) {
     let freeKMMonth = $("#freeKMPerMonth").val();
-    if (regExKm.test(freeKMMonth)) {
+    if (regFKmMonth.test(freeKMMonth)) {
         $("#freeKMPerMonth").css('border', '2px solid #31d2f2');
         $("#errorFreeKMMonth").text("");
         if (event.key == "Enter") {
@@ -122,7 +123,7 @@ function generateVehicleIds() {
     var test = "id";
 
     $.ajax({
-        url: baseURL+"car?test="+test,
+        url: baseURLCarControle+"car?test="+test,
         method: "GET",
         success: function (response) {
             var carId = response.data;
@@ -174,7 +175,7 @@ $("#btnAddNewCar").click(function () {
 
 function isExistsRegistrationNumber() {
     $.ajax({
-        url: baseURL+"car/SEARCH/" + $("#registrationNo").val(),
+        url: baseURLCarControle+"car/SEARCH/" + $("#registrationNo").val(),
         method: "GET",
         success: function (response) {
             if (response.data == $("#registrationNo").val()){
@@ -237,7 +238,7 @@ function saveNewCar(){
     }
 
     $.ajax({
-        url: baseURL+"car",
+        url: baseURLCarControle+"car",
         method: "POST",
         contentType: "application/json",
         data: JSON.stringify(newCarData),
@@ -258,7 +259,7 @@ function saveNewCar(){
 
 function loadAllCars(){
     $.ajax({
-        url: baseURL+"car",
+        url: baseURLCarControle+"car",
         method: "GET",
         success: function (response) {
 
@@ -385,7 +386,7 @@ function updateCar() {
     }
 
     $.ajax({
-        url: baseURL+"car",
+        url: baseURLCarControle+"car",
         method: "PUT",
         contentType: "application/json",
         data: JSON.stringify(carDetails),

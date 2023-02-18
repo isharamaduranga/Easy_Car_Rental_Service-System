@@ -279,6 +279,7 @@ $("#btn_profile").click(function () {
 });
 
 $("#btn_car").click(function () {
+    loadAllCars();
     $("#car_dashboard").css('display', 'block');
     $('#admin_dashboard').css('display', 'none');
     $("#driver_dashboard").css('display', 'none');
@@ -313,6 +314,7 @@ $("#btn_driver").click(function () {
 });
 
 $("#btn_customer").click(function () {
+    loadAllCustomer();
     $("#customer_dashboard").css('display', 'block');
     $('#admin_dashboard').css('display', 'none');
     $("#car_dashboard").css('display', 'none');
