@@ -258,7 +258,7 @@ function saveNewCar(){
 
 function loadAllCars(){
     $.ajax({
-        url: "http://localhost:8080/Car_Rental_System_war/car",
+        url: baseURL+"car",
         method: "GET",
         success: function (response) {
 
@@ -282,16 +282,16 @@ function loadAllCars(){
                             <span class="badge badge-success rounded-pill d-inline">${responseKey.underMaintainOrNot}</span> </td><td> 
                             ${responseKey.totalDistanceTraveled} </td><td>
                             <div class="d-flex align-items-center">
-                                <img src="assets/images/1_rangerover_tracking.jpg" alt="" style="width: 45px; height: 45px" class="rounded-circle"/>
+                                <img src="../assets/images/panel2.jpg" alt="" style="width: 45px; height: 45px" class="rounded-circle"/>
                              </div></td><td>
                              <div class="d-flex align-items-center">
-                                <img src="assets/images/1_rangerover_tracking.jpg" alt="" style="width: 45px; height: 45px" class="rounded-circle"/>
+                                <img src="../assets/images/panel1.jpg" alt="" style="width: 45px; height: 45px" class="rounded-circle"/>
                              </div></td><td>
                              <div class="d-flex align-items-center">
-                                <img src="assets/images/1_rangerover_tracking.jpg" alt="" style="width: 45px; height: 45px" class="rounded-circle"/>
+                                <img src="../assets/images/panel3.jpg" alt="" style="width: 45px; height: 45px" class="rounded-circle"/>
                              </div></td><td>
                              <div class="d-flex align-items-center">
-                                <img src="assets/images/1_rangerover_tracking.jpg" alt="" style="width: 45px; height: 45px" class="rounded-circle"/>
+                                <img src="../assets/images/panel4.jpg" alt="" style="width: 45px; height: 45px" class="rounded-circle"/>
                              </div></td> 
                              <td><button type="button" id="btnEditCar"  class="btn btn-warning btn-sm px-3" data-ripple-color="dark">
                                 <i class="fas fa-pen-alt"></i>
@@ -320,28 +320,28 @@ function BindRowClickEvent() {
         if (confirm(msg) == true) {
             $('#CarManagePage').css('transform','scale(1)');
 
-            var carId = $.trim(tblCarRow.children(':nth-child(1)').text());
-            var regNo = $.trim(tblCarRow.children(':nth-child(5)').text());
-            var passengers = $.trim(tblCarRow.children(':nth-child(8)').text());
-            var dailyRate = $.trim(tblCarRow.children(':nth-child(9)').text());
-            var monthlyRate = $.trim(tblCarRow.children(':nth-child(10)').text());
-            var freeKMDay = $.trim(tblCarRow.children(':nth-child(11)').text());
-            var freeKmMonth = $.trim(tblCarRow.children(':nth-child(12)').text());
-            var extraKm = $.trim(tblCarRow.children(':nth-child(13)').text());
-            var totalDistance = $.trim(tblCarRow.children(':nth-child(17)').text());
-            var frontView = $.trim(tblCarRow.children(':nth-child(18)').text());
-            var backView = $.trim(tblCarRow.children(':nth-child(19)').text());
-            var sideView = $.trim(tblCarRow.children(':nth-child(20)').text());
-            var interiorView = $.trim(tblCarRow.children(':nth-child(21)').text());
+            var carId = $.trim(tblClickRow.children(':nth-child(1)').text());
+            var regNo = $.trim(tblClickRow.children(':nth-child(5)').text());
+            var passengers = $.trim(tblClickRow.children(':nth-child(8)').text());
+            var dailyRate = $.trim(tblClickRow.children(':nth-child(9)').text());
+            var monthlyRate = $.trim(tblClickRow.children(':nth-child(10)').text());
+            var freeKMDay = $.trim(tblClickRow.children(':nth-child(11)').text());
+            var freeKmMonth = $.trim(tblClickRow.children(':nth-child(12)').text());
+            var extraKm = $.trim(tblClickRow.children(':nth-child(13)').text());
+            var totalDistance = $.trim(tblClickRow.children(':nth-child(17)').text());
+            var frontView = $.trim(tblClickRow.children(':nth-child(18)').text());
+            var backView = $.trim(tblClickRow.children(':nth-child(19)').text());
+            var sideView = $.trim(tblClickRow.children(':nth-child(20)').text());
+            var interiorView = $.trim(tblClickRow.children(':nth-child(21)').text());
 
-            $("#brand").append($("<option selected></option>").attr("value", 14).text($.trim(tblCarRow.children(':nth-child(2)').text())));
-            $("#colour").append($("<option selected></option>").attr("value", 11).text($.trim(tblCarRow.children(':nth-child(3)').text())));
-            $("#type").append($("<option selected></option>").attr("value", 4).text($.trim(tblCarRow.children(':nth-child(4)').text())));
-            $("#transmissionType").append($("<option selected></option>").attr("value", 3).text($.trim(tblCarRow.children(':nth-child(7)').text())));
-            $("#fuelType").append($("<option selected></option>").attr("value", 3).text($.trim(tblCarRow.children(':nth-child(6)').text())));
-            $("#availableOrNot").append($("<option selected></option>").attr("value", 3).text($.trim(tblCarRow.children(':nth-child(14)').text())));
-            $("#damageOrNot").append($("<option selected></option>").attr("value", 3).text($.trim(tblCarRow.children(':nth-child(15)').text())));
-            $("#underMaintainOrNot").append($("<option selected></option>").attr("value", 3).text($.trim(tblCarRow.children(':nth-child(16)').text())));
+            $("#brand").append($("<option selected></option>").attr("value", 14).text($.trim(tblClickRow.children(':nth-child(2)').text())));
+            $("#colour").append($("<option selected></option>").attr("value", 11).text($.trim(tblClickRow.children(':nth-child(3)').text())));
+            $("#type").append($("<option selected></option>").attr("value", 4).text($.trim(tblClickRow.children(':nth-child(4)').text())));
+            $("#transmissionType").append($("<option selected></option>").attr("value", 3).text($.trim(tblClickRow.children(':nth-child(7)').text())));
+            $("#fuelType").append($("<option selected></option>").attr("value", 3).text($.trim(tblClickRow.children(':nth-child(6)').text())));
+            $("#availableOrNot").append($("<option selected></option>").attr("value", 3).text($.trim(tblClickRow.children(':nth-child(14)').text())));
+            $("#damageOrNot").append($("<option selected></option>").attr("value", 3).text($.trim(tblClickRow.children(':nth-child(15)').text())));
+            $("#underMaintainOrNot").append($("<option selected></option>").attr("value", 3).text($.trim(tblClickRow.children(':nth-child(16)').text())));
 
             $("#carId").val(carId);
             $("#registrationNo").val(regNo);
@@ -352,7 +352,7 @@ function BindRowClickEvent() {
             $("#freeKMPerMonth").val(freeKmMonth);
             $("#priceForExtraKM").val(extraKm);
             $("#totalDistanceTravelled").val(totalDistance);
-            $("#transmissionType option:selected").val($.trim(tblCarRow.children(':nth-child(7)').text()));
+            $("#transmissionType option:selected").val($.trim(tblClickRow.children(':nth-child(7)').text()));
 
         } else {}
 
@@ -360,7 +360,46 @@ function BindRowClickEvent() {
 }
 
 function updateCar() {
+    var carDetails = {
+        carId: $("#carId").val(),
+        registrationNo:$("#registrationNo").val(),
+        colour: $("#colour option:selected").text(),
+        brand: $("#brand option:selected").text(),
+        type: $("#type option:selected").text(),
+        fuelType: $("#fuelType option:selected").text(),
+        transmissionType: $("#transmissionType option:selected").text(),
+        noOfPassengers: $("#noOfPassengers").val(),
+        freeKmForDay: $("#freeKMPerDay").val(),
+        freeKmForMonth: $("#freeKMPerMonth").val(),
+        pricePerExtraKM: $("#priceForExtraKM").val(),
+        dailyRatePrice: $("#dailyRatePrice").val(),
+        monthlyRatePrice: $("#monthlyRatePrice").val(),
+        totalDistanceTraveled: $("#totalDistanceTravelled").val(),
+        availableOrNot:$("#availableOrNot option:selected").text(),
+        damageOrNot: $("#damageOrNot option:selected").text(),
+        underMaintainOrNot: $("#underMaintainOrNot option:selected").text(),
+        fontViewImage: null,
+        backViewImage: null,
+        sideViewImage: null,
+        interiorViewImage: null
+    }
 
+    $.ajax({
+        url: baseURL+"car",
+        method: "PUT",
+        contentType: "application/json",
+        data: JSON.stringify(carDetails),
+        success: function (response) {
+            if (response.code == 200) {
+                alert($("#carId").val() + " " + response.message);
+            }
+            clearFieldsFromCarPage()
+            loadAllCars();
+        },
+        error: function (error) {
+            alert(JSON.parse(error.responseText).message);
+        }
+    });
 }
 
 $("#btnUpdateCar").click(function () {
@@ -385,9 +424,7 @@ $("#btnUpdateCar").click(function () {
                 }
             }
         }
-    }else {
-
-    }
+    }else {}
 });
 
 function clearFieldsAfterUpdate() {
