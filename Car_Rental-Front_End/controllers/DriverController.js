@@ -90,3 +90,30 @@ $("#driverContact").keyup(function (event) {
     }
 });
 
+function generateDriverIds() {
+    $("#driverId").val("D00-0001");
+    var test = "id";
+
+    $.ajax({
+        url: baseURLDriverControl+"driver?test="+test,
+        method: "GET",
+        success: function (response) {
+            var driverId = response.data;
+            var tempId = parseInt(driverId.split("-")[1]);
+            tempId = tempId + 1;
+            if (tempId <= 9) {
+                $("#driverId").val("D00-000" + tempId);
+            } else if (tempId <= 99) {
+                $("#driverId").val("D00-00" + tempId);
+            } else if (tempId <= 999) {
+                $("#driverId").val("D00-0" + tempId);
+            } else {
+                $("#driverId").val("D00-" + tempId);
+            }
+
+        },
+        error: function (ob, statusText, error) {
+        }
+
+    });
+}
