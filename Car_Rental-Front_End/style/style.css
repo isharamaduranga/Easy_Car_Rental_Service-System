@@ -1107,3 +1107,16 @@ hr {
     0px 30px 60px -30px,
     rgba(10, 37, 64, 0.35) 0px -2px 6px 0px inset;
 }
+
+#BookingPage{
+    display: none;
+}
+
+.chooseData{
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    top: 0;
+    margin: auto;
+}

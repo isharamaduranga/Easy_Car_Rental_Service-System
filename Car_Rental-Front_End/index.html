@@ -2024,11 +2024,6 @@
 
 
 
-
-
-
-
-
 <!--admin dashboard Panel-->
 <section id="admin_screen" style="height: 90vh;">
     <div class="d-flex" style="height: 100%; width: 100%;">
@@ -2794,6 +2789,173 @@
 
             </div>
         </div>
+    </div>
+</section>
+
+
+<!--View Schedule For Driver-->
+<section id="SchedulePageForDriver" style="width: 100%; height: 85vh ;">
+
+    <div >
+        <button class="btn btn-outline-danger border border-3 border-danger mt-3 ms-3" id="btnLogOutFromDriverSchedule">Log Out</button>
+
+        <div class="text-center" style="position: relative;">
+            <h1 class="mt-1 fw-light" style="font-family: 'poppins', sans-serif;">~ Driver Schedule ~</h1>
+        </div>
+
+        <div class="" style="position: relative;top: 20px;width: 100vw">
+            <h1 class="mt-1 fw-light text-center" style="font-family: 'PT Serif', serif; font-size: 25px">
+                <i class="fas fa-list-ul text-warning"></i>
+                Schedule Details
+            </h1>
+        </div>
+
+        <div style="width: 98vw; height: 61vh;position: relative; top: 70px;right: 0;bottom: 0;left: 0;margin: auto">
+
+            <table class="tblSchedule table align-middle mb-0 bg-white table table-bordered table-hover table-striped " style="position: relative;left: 0;top: 0">
+                <thead class="bg-secondary text-white">
+                <tr>
+                    <th>Schedule Id</th>
+                    <th>Reserve Id</th>
+                    <th>Car Id</th>
+                    <th>Driver Id</th>
+                    <th>Pickup Date</th>
+                    <th>Pickup Time</th>
+                    <th>Pickup Venue</th>
+                    <th>Return Date</th>
+                    <th>Return Time</th>
+                    <th>Return Venue</th>
+                    <th>Release Or Not</th>
+                </tr>
+                </thead>
+                <tbody class="table-light">
+
+                </tbody>
+            </table>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!--Welcome Page-->
+<section id="BookingPage" style="width: 100%;"><dfn id="homePage"></dfn>
+
+    <div class="heading d-flex justify-content-center align-items-center" style="position: absolute; left: 0; right: 0; z-index: 2; top: 110px;">
+        <p class="text-white mb-0" style="font-size: 45px; font-weight: 650; color: lightseagreen !important; font-family:'poppins', sans-serif;">FIND THE RIGHT CAR FOR YOU</p>
+    </div>
+
+    <div class="chooseData shadow-lg" style="z-index: 5; width: 80%;height:45%;background-color: rgba(255,255,255,0.49); border-radius: 40px; " >
+
+        <form class="g-3 ms-5 mt-5">
+            <div class="row">
+                <div class="col w-50 mt-3 ">
+                    <div class="container">
+                        <div class="input-group date" style="width: 90%">
+                            <input type="date" id="pickUpDate" class="form-control form-control-lg form-floating" placeholder="Pickup date" required/>
+                            <span class="input-group-addon bg-dark"><i class="glyphicon glyphicon-calendar text-white"></i></span>
+                            <p><small id="errorPickupDate" class="text-danger pl-1 mt-0 mb-0" style="font-size: 10%"></small></p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col w-50 mt-3">
+                    <div class="container">
+                        <div style="position: relative;width: 90%" >
+                            <input class="form-control form-control-lg" type="time" id="pickUpTime" placeholder="Pickup time" required/>
+                            <p><small id="errorPickupTime" class="text-danger fs-5 pl-1 mt-0 mb-0"></small></p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col w-50 mt-3">
+                    <div class="container">
+                        <div class="input-group date" style="width: 90%">
+                            <input type="date" id="returnDate" class="form-control form-control-lg" placeholder="Return date" required/>
+                            <span class="input-group-addon bg-dark"><i class="fa-solid fa-calendar-lines-pen"></i></span>
+                            <p><small id="errorReturnDate" class="text-danger fs-5 pl-1 mt-0 mb-0"></small></p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col w-50 mt-3">
+                    <div class="container">
+                        <div style="position: relative;width: 90%" >
+                            <input class="form-control form-control-lg" type="time" id="returnTime" placeholder="Return time" required/>
+                            <p><small id="errorReturnTime" class="text-danger fs-5 pl-1 mt-0 mb-0"></small></p>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+
+            <div class="row" style="margin-left: 15px;">
+
+                <div class="col w-50 mt-3">
+                    <div class="form-outline me-5">
+                        <input type="text" id="pickUpLocation" class="form-control form-control-lg" placeholder="Your pickup location"/>
+                        <p><small id="errorPickupLocation" class="text-danger fs-5 pl-1 mt-0 mb-0" ></small></p>
+                    </div>
+                </div>
+
+                <div class="col w-50 mt-3">
+                    <div class="form-outline me-5">
+                        <input type="text" id="returnLocation" class="form-control form-control-lg" placeholder="Your drop-off location"/>
+                        <p><small id="errorReturnLocation" class="text-danger fs-5 pl-1 mt-0 mb-0"></small></p>
+                    </div>
+                </div>
+
+                <div class="col w-50 mt-3">
+                    <div class="form-outline me-5">
+                        <input type="text" id="destination" class="form-control form-control-lg" placeholder="Your destination"/>
+                        <p><small id="errorDestination" class="text-danger fs-5 pl-1 mt-0 mb-0"></small></p>
+                    </div>
+                </div>
+
+                <div class="col w-50 mt-3">
+                    <div class="form-outline me-5">
+                        <input type="text" id="duration" class="form-control form-control-lg" placeholder="Journey duration"/>
+                        <p><small id="errorDuration" class="text-danger fs-3 pl-1 mt-0 mb-0"></small></p>
+                    </div>
+                </div>
+
+            </div>
+
+            <div class="d-flex justify-content-center">
+                <button type="button" id="btnSearchForRent" class="btn btn-info btn-lg rounded-4 w-25 text-center text-white mt-3">SEARCH</button>
+            </div>
+        </form>
+
+    </div>
+
+    <div class="" style="width: 100%;">
+        <div id="carouselExampleCaptions" class="carousel slide  carousel-fade" data-bs-ride="carousel">
+            <div class="carousel-inner" style="height: 100vh;">
+                <div class="carousel-item active">
+                    <img src="assets/images/car_bg_home/car_reg2.jpg" class="d-block w-100 img-fluid shadow-2-strong center-block" alt="error loading" style="width: 100%; height: 100vh">
+                </div>
+                <div class="carousel-item">
+                    <img src="assets/images/car_bg_home/carbg_reg3.png" class="d-block w-100  img-fluid shadow-2-strong center-block" alt="error loading" style="width: 100%; height: 100vh">
+                </div>
+                <div class="carousel-item">
+                    <img src="assets/images/car_bg_home/car_reg1.jpg" class="d-block w-100  img-fluid shadow-2-strong center-block" alt="error loading" style="width: 100%; height: 100vh">
+                </div>
+                <div class="carousel-item">
+                    <img src="assets/images/car_bg_home/car_reg2.jpg" class="d-block w-100  img-fluid shadow-2-strong center-block" alt="error loading" style="width: 100%; height: 100vh">
+                </div>
+            </div>
+            <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide="prev">
+                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                <span class="visually-hidden">Previous</span>
+            </button>
+            <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide="next">
+                <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                <span class="visually-hidden">Next</span>
+            </button>
+        </div>
+
     </div>
 </section>
 

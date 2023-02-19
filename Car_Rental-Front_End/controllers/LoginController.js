@@ -92,11 +92,11 @@ function searchCustomerTable(userId) {
             alert("Successfully Login Customer Table....")
 
             /*  =======================Log in Customer car booking=========================================*/
-
+            bookingPage();
             /*     ***************************************************************       */
         },
         error: function (error) {
-            alert(JSON.parse(error.responseText).message);
+            alert("No Such Customer..! Please Check again");
         }
     });
 }
@@ -111,13 +111,14 @@ function searchDriverTable(userId) {
             logStatus = "Logged";
 
             /*  =======================Log in Driver schedules=========================================*/
-            // searchDriverSchedule();
+            searchSchedule();
             /*     ***************************************************************       */
 
             alert("Successfully Login Driver Table....")
         },
         error: function (error) {
-            alert(JSON.parse(error.responseText).message);
+           // alert(JSON.parse(error.responseText).message);
+            alert("No Such Driver..! Please Check again");
         }
     });
 }

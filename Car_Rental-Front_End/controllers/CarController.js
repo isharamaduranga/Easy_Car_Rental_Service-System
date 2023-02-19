@@ -279,9 +279,9 @@ function loadAllCars(){
                             ${responseKey.freeKmForDay} </td><td> 
                             ${responseKey.freeKmForMonth} </td><td> 
                             ${responseKey.pricePerExtraKM} </td><td>
-                            <span class="text-success">${responseKey.availableOrNot}</span></td><td> 
-                            <span class="text-danger">${responseKey.damageOrNot}</span></td><td> 
-                            <span class="text-info">${responseKey.underMaintainOrNot}</span> </td><td> 
+                            <span class="badge text-bg-success text-white">${responseKey.availableOrNot}</span></td><td> 
+                            <span class="badge text-bg-danger text-white">${responseKey.damageOrNot}</span></td><td> 
+                            <span class="badge text-bg-warning text-white">${responseKey.underMaintainOrNot}</span> </td><td> 
                             ${responseKey.totalDistanceTraveled} </td><td>
                             <div class="d-flex align-items-center">
                                 <img src="../assets/images/panel2.jpg" alt="" style="width: 45px; height: 45px" class="rounded-circle"/>
