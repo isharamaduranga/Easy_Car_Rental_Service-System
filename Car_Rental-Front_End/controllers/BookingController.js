@@ -116,3 +116,20 @@ $("#duration").keyup(function (event) {
         $("#errorDuration").text("Check this field whether correct !");
     }
 });
+
+$("#btnSearchForRent").click(function () {
+    if ($("#pickUpDate").val() == "" || $("#pickUpTime").val() == "" || $("#pickUpLocation").val() == "" || $("#returnDate").val() == "" ||
+        $("#returnTime").val() == "" || $("#returnLocation").val() == "" || $("#duration").val() == "" || $("#destination").val() == ""){
+        alert("All Fields Are Required !");
+       /* searchAvailableCars();*/
+        $('#btnSearchForRent').prop('disabled', false);
+    }else {
+        if ($("#errorPickupDate").text() != "" ||  $("#errorPickupTime").text() != "" || $("#errorPickupLocation").text() != "" || $("#errorReturnDate").text() != "" ||
+            $("#errorReturnTime").text() != "" || $("#errorReturnLocation").text() != "" || $("#errorDuration").text() != "" || $("#errorDestination").text() != ""){
+            alert("Check Input Fields Whether Correct !");
+        }else {
+                searchAvailableCars();
+                //pasteDate();
+        }
+    }
+});
