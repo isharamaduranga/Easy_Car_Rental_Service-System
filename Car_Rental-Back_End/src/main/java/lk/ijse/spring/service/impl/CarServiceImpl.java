@@ -85,4 +85,16 @@ public class CarServiceImpl implements CarService {
     public String searchRegNumberIsExists(String reg) {
         return carRepo.searchRegNumberIsExists(reg);
     }
+
+    @Override
+    public List<CarDTO> sortAccordingToPassengersByAscending() {
+        return null;
+    }
+
+    @Override
+    public List<CarDTO> sortAccordingToPassengersByDescending() {
+        List<Car> all = carRepo.sortAccordingToPassengersByAscending();
+        return mapper.map(all, new TypeToken<List<CarDTO>>(){
+        }.getType());
+    }
 }

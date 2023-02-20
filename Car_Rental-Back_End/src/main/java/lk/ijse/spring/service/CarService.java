@@ -18,4 +18,8 @@ public interface CarService {
     String generateCarIds();
 
     String searchRegNumberIsExists(String reg);
+
+    List<CarDTO> sortAccordingToPassengersByAscending();
+
+    List<CarDTO> sortAccordingToPassengersByDescending();
 }
