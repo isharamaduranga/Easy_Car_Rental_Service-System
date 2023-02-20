@@ -26,6 +26,7 @@ $('#CarManagePage').css('transform', 'scale(0)');
 $('#DriverManagePage').css('transform', 'scale(0)');
 $('#ChangeDriver').css('transform', 'scale(0)');
 $("#SchedulePageForDriver").css('display', 'none');
+$("#Reservation").css('display','none');
 
 
 $("#btnOpenRegisterForm").click(function () {
@@ -61,8 +62,8 @@ function openRegisterForm() {
     $('#DriverManagePage').css('transform', 'scale(0)');
     $('#ChangeDriver').css('transform', 'scale(0)');
     $('#PaymentAddPage').css('transform', 'scale(0)');
-
     $("#SchedulePageForDriver").css('display', 'none');
+    $("#Reservation").css('display','none');
 }
 
 $("#btnRegisterInLoginPage").click(function () {
@@ -97,6 +98,7 @@ $("#btnOpenCusLoginForm").click(function () {
     $('#ChangeDriver').css('transform', 'scale(0)');
     $('#PaymentAddPage').css('transform', 'scale(0)');
     $("#SchedulePageForDriver").css('display', 'none');
+    $("#Reservation").css('display','none');
 });
 
 
@@ -128,6 +130,7 @@ $("#btnOpenDriverLoginForm").click(function () {
     $('#ChangeDriver').css('transform', 'scale(0)');
     $('#PaymentAddPage').css('transform', 'scale(0)');
     $("#SchedulePageForDriver").css('display', 'none');
+    $("#Reservation").css('display','none');
 });
 
 
@@ -158,6 +161,7 @@ $("#btnOpenAdminLoginForm").click(function () {
     $('#ChangeDriver').css('transform', 'scale(0)');
     $('#PaymentAddPage').css('transform', 'scale(0)');
     $("#SchedulePageForDriver").css('display', 'none');
+    $("#Reservation").css('display','none');
 });
 
 
@@ -187,6 +191,8 @@ $("#forgetPasswordBtn").click(function () {
     $('#ChangeDriver').css('transform', 'scale(0)');
     $('#PaymentAddPage').css('transform', 'scale(0)');
     $("#SchedulePageForDriver").css('display', 'none');
+    $("#Reservation").css('display','none');
+
 });
 
 
@@ -216,6 +222,7 @@ $("#btnCancelToSystem,#btnCancelToDLogin,#btnCancelToAdmin,#btnCancelPW,#admin_l
     $('#ChangeDriver').css('transform', 'scale(0)');
     $('#PaymentAddPage').css('transform', 'scale(0)');
     $("#SchedulePageForDriver").css('display', 'none');
+    $("#Reservation").css('display','none');
 });
 
 
@@ -253,6 +260,7 @@ function registerToSystem() {
     $('#ChangeDriver').css('transform', 'scale(0)');
     $('#PaymentAddPage').css('transform', 'scale(0)');
     $("#SchedulePageForDriver").css('display', 'none');
+    $("#Reservation").css('display','none');
 }
 
 
@@ -284,6 +292,7 @@ function searchSchedule() {
     $('#DriverManagePage').css('transform', 'scale(0)');
     $('#ChangeDriver').css('transform', 'scale(0)');
     $('#PaymentAddPage').css('transform', 'scale(0)');
+    $("#Reservation").css('display','none');
 
 }
 
@@ -314,6 +323,7 @@ $("#btnLogOutFromDriverSchedule").click(function () {
     $('#ChangeDriver').css('transform', 'scale(0)');
     $('#PaymentAddPage').css('transform', 'scale(0)');
     $("#SchedulePageForDriver").css('display', 'none');
+    $("#Reservation").css('display','none');
 
 });
 
@@ -346,10 +356,19 @@ function bookingPage() {
     $('#admin_screen').css('display', 'none');
     $("#CustomerDashBoard").css('display', 'none');
     $("#moreSpace").css('display', 'none');
+    $("#Reservation").css('display','none');
 }
 
+$(".btnRentNow").click(function () {
+
+        searchAvailableCars();
+        //pasteDate();
+
+});
+
+
 function searchAvailableCars() {
-    loadAllCarsToSee();
+    loadAllCarsToDisplay();
 
     $("#nav_bar").css('display', 'block');
     $("#CustomerDashBoard").css('display', 'block');
@@ -382,6 +401,7 @@ function searchAvailableCars() {
     $('#ChangeDriver').css('transform', 'scale(0)');
     $('#PaymentAddPage').css('transform', 'scale(0)');
     $("#SchedulePageForDriver").css('display', 'none');
+    $("#Reservation").css('display','block');
 }
 
 
@@ -713,7 +733,6 @@ $("#btnAddPayment").click(function () {
 $("#btnCancelAddPayment").click(function () {
 
     $("#payment_dashboard").css('display', 'block');
-
     $("#driver_dashboard").css('display', 'npne');
     $("#car_dashboard").css('display', 'none');
     $('#admin_dashboard').css('display', 'none');
