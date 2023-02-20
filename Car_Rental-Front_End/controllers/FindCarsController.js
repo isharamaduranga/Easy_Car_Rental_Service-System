@@ -34,6 +34,35 @@ $("#PNIC").keyup(function (event) {
         $("#PNIC").css('border', '2px solid red');
     }
 });
+
+
+function pasteDate() {
+    $("#pickUpDateEdit").val($("#pickUpDate").val());
+    $("#pickUpTimeEdit").val($("#pickUpTime").val());
+    $("#returnDateEdit").val($("#returnDate").val());
+    $("#returnTimeEdit").val($("#returnTime").val());
+    $("#pickUpLocationEdit").val($("#pickUpLocation").val());
+    $("#returnLocationEdit").val($("#returnLocation").val());
+    $("#destinationEdit").val($("#destination").val());
+    $("#durationEdit").val($("#duration").val());
+
+    $("#pickUpDateEdit").prop("disabled", true);
+    $("#pickUpTimeEdit").prop("disabled", true);
+    $("#returnDateEdit").prop("disabled", true);
+    $("#returnTimeEdit").prop("disabled", true);
+    $("#pickUpLocationEdit").prop("disabled", true);
+    $("#returnLocationEdit").prop("disabled", true);
+    $("#destinationEdit").prop("disabled", true);
+    $("#durationEdit").prop("disabled", true);
+}
+
+
+
+
+
+
+
+
 var tblSelectCarRow = -1;
 
 
@@ -150,7 +179,7 @@ function loadAllCarsToDisplay() {
                         alert("This car is not available now! Choose another one!...");
                     }else {
                         alert("This car is not available now!");
-                        // pasteDataToReservationFields();
+                         pasteDataToReservationFields();
                         //loadSelectedCars(tblSelectCarRow.children()[1].innerText);
                     }
                 }
@@ -164,3 +193,21 @@ function loadAllCarsToDisplay() {
         }
     });
 }
+function pasteDataToReservationFields() {
+    $("#BPickupDate").val($("#pickUpDateEdit").val());
+    $("#BPickupTime").val($("#pickUpTimeEdit").val());
+    $("#BReturnDate").val($("#returnDateEdit").val());
+    $("#BReturnTime").val($("#returnTimeEdit").val());
+    $("#BPickupLocation").val($("#pickUpLocationEdit").val());
+    $("#BReturnLocation").val($("#returnLocationEdit").val());
+    $("#BDestination").val($("#destinationEdit").val());
+    $("#BDuration").val($("#durationEdit").val());
+}
+
+var lossPayment = 0;
+var tblRow = -1;
+var count = 1;
+var clickId="none";
+var clickName="none";
+var clickContact="none";
+

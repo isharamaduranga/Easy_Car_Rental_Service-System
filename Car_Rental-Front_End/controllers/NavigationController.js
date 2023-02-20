@@ -362,7 +362,7 @@ function bookingPage() {
 $(".btnRentNow").click(function () {
 
         searchAvailableCars();
-        //pasteDate();
+        pasteData();
 
 });
 

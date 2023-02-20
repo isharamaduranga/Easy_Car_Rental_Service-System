@@ -129,7 +129,7 @@ $("#btnSearchForRent").click(function () {
             alert("Check Input Fields Whether Correct !");
         }else {
                 searchAvailableCars();
-                //pasteDate();
+                pasteDate();
         }
     }
 });
