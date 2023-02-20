@@ -401,7 +401,7 @@ function searchAvailableCars() {
     $('#ChangeDriver').css('transform', 'scale(0)');
     $('#PaymentAddPage').css('transform', 'scale(0)');
     $("#SchedulePageForDriver").css('display', 'none');
-    $("#Reservation").css('display','block');
+    $("#Reservation").css('display','none');
 }
 
 

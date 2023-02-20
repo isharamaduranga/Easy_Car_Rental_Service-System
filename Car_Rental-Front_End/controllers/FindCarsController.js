@@ -86,13 +86,10 @@ function loadAllCarsToDisplay() {
 
                             <div class="card-title-wrapper">
                                 <span class="text-white" style="display: none;"><small>${key.carId}</small></span>
-                                <h4 class="h3 card-title">
-                                    ${key.brand} / ${key.type}
-                                </h4>
-
+                                <h4 class="h3 card-title">${key.brand}</h4>
                                 <data class="year" value="2021">${key.availableOrNot}</data>
                             </div>
-
+                            <h5 style="color: crimson">${key.type}</h5>
                             <ul class="card-list">
 
                                 <li class="card-list-item">
@@ -132,7 +129,7 @@ function loadAllCarsToDisplay() {
                                 <button aria-label="Add to favourite list" class="btn fav-btn">
                                     <ion-icon name="heart-outline"></ion-icon>
                                 </button>
-                                <button class="btn btn-info">Rent now</button>
+                                <button type="button" class="btn btn-info btnRent">Rent now</button>
                             </div>
                         </div>
                     </div>
@@ -143,28 +140,24 @@ function loadAllCarsToDisplay() {
 
             }
 
+            $(".btnRent").click(function () {
+                let text = "Do you want to rent this car?";
+                if (confirm(text)) {
 
-            /*           $(".btnRent").click(function () {
-                           $("#tblShowCars tbody > tr").off("click");
+                    let availableStatus = $(this).closest('li').find('data.year').text();
 
-                           let text = "Do you want to rent this car ?";
+                    if (availableStatus == "Not Available") {
+                        alert("This car is not available now! Choose another one!...");
+                    }else {
+                        alert("This car is not available now!");
+                        // pasteDataToReservationFields();
+                        //loadSelectedCars(tblSelectCarRow.children()[1].innerText);
+                    }
+                }
+                else {
 
-                           if (confirm(text) == true) {
-
-                               $("#tblShowCars tbody > tr").click(function () {
-                                   tblSelectCarRow = $(this).children();
-
-                                   if (tblSelectCarRow.children()[4].innerText == "Not Available") {
-                                       alert("This car is not available now! Choose another one!...");
-                                   } else {
-                                       //pasteDataToReservationFields();
-                                       //loadSelectedCars(tblSelectCarRow.children()[1].innerText);
-                                   }
-                               });
-                           } else {
-
-                           }
-                       });*/
+                }
+            });
         },
         error: function (ob) {
             alert(ob.responseJSON.message);
