@@ -65,4 +65,9 @@ public class CarController {
         return new ResponseUtil(200, "Ok", carService.sortAccordingToPassengersByAscending());
     }
 
+    @GetMapping(path = "/sortPassengerDsc/{passengerDscending}" ,produces = MediaType.APPLICATION_JSON_VALUE)
+    public ResponseUtil sortAccordingToPassengersByDescending(@PathVariable("passengerDscending") String passengerDscending ) {
+        return new ResponseUtil(200, "Ok", carService.sortAccordingToPassengersByDescending());
+    }
+
 }

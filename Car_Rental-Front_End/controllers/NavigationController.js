@@ -362,10 +362,82 @@ function bookingPage() {
 $(".btnRentNow").click(function () {
 
         searchAvailableCars();
-        pasteData();
+        pasteDate();
 
 });
 
+$("#btnBack").click(function () {
+    gotoSeeCars();
+});
+``
+function gotoSeeCars() {
+    $("#customer_dashboard").css('display', 'block');
+    $("#nav_bar").css('display', 'block');
+    $("#social_media").css('display', 'block');
+    $("#footer").css('display', 'block');
+
+    $("#banner").css('display', 'none');
+    $("#services").css('display', 'none');
+    $("#about_us").css('display', 'none');
+    $("#featured-car").css('display', 'none');
+    $("#testimonials").css('display', 'none');
+    $("#Contact_Page").css('display', 'none');
+
+
+    $('#CarManagePage').css('transform', 'scale(0)');
+    $('#DriverManagePage').css('transform', 'scale(0)');
+    $('#ChangeDriver').css('transform', 'scale(0)');
+    $('#PaymentAddPage').css('transform', 'scale(0)');
+    $("#SchedulePageForDriver").css('display', 'none');
+
+
+    $("#Reservation").css('display','none');
+    $("#BookingPage").css('display', 'none');
+    $('#RegisterPage').css('display', 'none');
+    $('#RegisterDriver').css('display', 'none');
+    $('#logInCustomer').css('display', 'none');
+    $('#logInDriver').css('display', 'none');
+    $('#logInAdmin').css('display', 'none');
+    $('#ForgotPasswordPage').css('display', 'none');
+    $('#admin_screen').css('display', 'none');
+    $("#CustomerDashBoard").css('display', 'none');
+    $("#moreSpace").css('display', 'none');
+
+}
+function openBookingPage() {
+   /* generateVReserveIds();
+    generateScheduleIds();*/
+
+    $("#nav_bar").css('display', 'none');
+    $("#Reservation").css('display','block');
+
+    $("#BookingPage").css('display', 'none');
+    $('#RegisterPage').css('display', 'none');
+    $('#RegisterDriver').css('display', 'none');
+    $('#logInCustomer').css('display', 'none');
+    $('#logInDriver').css('display', 'none');
+    $('#logInAdmin').css('display', 'none');
+    $('#ForgotPasswordPage').css('display', 'none');
+    $('#admin_screen').css('display', 'none');
+    $("#CustomerDashBoard").css('display', 'none');
+    $("#moreSpace").css('display', 'none');
+
+
+    $("#banner").css('display', 'none');
+    $("#services").css('display', 'none');
+    $("#about_us").css('display', 'none');
+    $("#featured-car").css('display', 'none');
+    $("#testimonials").css('display', 'none');
+    $("#Contact_Page").css('display', 'none');
+    $("#social_media").css('display', 'none');
+    $("#footer").css('display', 'none');
+
+    $('#CarManagePage').css('transform', 'scale(0)');
+    $('#DriverManagePage').css('transform', 'scale(0)');
+    $('#ChangeDriver').css('transform', 'scale(0)');
+    $('#PaymentAddPage').css('transform', 'scale(0)');
+    $("#SchedulePageForDriver").css('display', 'none');
+}
 
 function searchAvailableCars() {
     loadAllCarsToDisplay();
