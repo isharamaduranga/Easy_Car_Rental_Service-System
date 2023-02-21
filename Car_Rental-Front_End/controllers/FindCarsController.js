@@ -155,7 +155,6 @@ function loadAllCarsToDisplay() {
                                     <strong>${rentFeePerMonth}</strong> / Month
                                 </p>
                                 
-
                                 <button aria-label="Add to favourite list" class="btn fav-btn">
                                     <ion-icon name="heart-outline"></ion-icon>
                                 </button>
@@ -165,9 +164,7 @@ function loadAllCarsToDisplay() {
                     </div>
                 </li>
             </div>`;
-
                 $("#tblShowCars").append(newDiv);
-
             }
 
             $(".btnRent").click(function () {
@@ -179,7 +176,6 @@ function loadAllCarsToDisplay() {
                     if (availableStatus == "Not Available") {
                         alert("This car is not available now! Choose another one!...");
                     }else {
-                        alert("This car is not available now!");
                          pasteDataToReservationFields();
                         loadSelectedCars($(this).closest('li').find('span.cid').text());
                     }
@@ -304,7 +300,6 @@ function findPassengersAsc(passengerAscending) {
                     if (availableStatus == "Not Available") {
                         alert("This car is not available now! Choose another one!...");
                     }else {
-                        alert("This car is not available now!");
                         pasteDataToReservationFields();
                         loadSelectedCars($(this).closest('li').find('span.cid').text());
                     }
@@ -430,7 +425,6 @@ function findPassengersDsc(passengerDscending) {
                     if (availableStatus == "Not Available") {
                         alert("This car is not available now! Choose another one!...");
                     }else {
-                        alert("This car is not available now!");
                         pasteDataToReservationFields();
                         loadSelectedCars($(this).closest('li').find('span.cid').text());
                     }
@@ -556,7 +550,6 @@ function findDailyRateAsc(dailyRateAsc) {
                     if (availableStatus == "Not Available") {
                         alert("This car is not available now! Choose another one!...");
                     }else {
-                        alert("This car is not available now!");
                         pasteDataToReservationFields();
                         loadSelectedCars($(this).closest('li').find('span.cid').text());
                     }
@@ -681,7 +674,6 @@ function findDailyRateDsc(dailyRateDsc) {
                     if (availableStatus == "Not Available") {
                         alert("This car is not available now! Choose another one!...");
                     }else {
-                        alert("This car is not available now!");
                         pasteDataToReservationFields();
                         loadSelectedCars($(this).closest('li').find('span.cid').text());
                     }
@@ -806,7 +798,7 @@ function findMonthlyRateAsc(monthlyRateAsc) {
                     if (availableStatus == "Not Available") {
                         alert("This car is not available now! Choose another one!...");
                     }else {
-                        alert("This car is not available now!");
+
                         pasteDataToReservationFields();
                         loadSelectedCars($(this).closest('li').find('span.cid').text());
                     }
@@ -931,13 +923,11 @@ function findMonthlyRateDsc(monthlyRateDsc) {
                     if (availableStatus == "Not Available") {
                         alert("This car is not available now! Choose another one!...");
                     }else {
-                        alert("This car is not available now!");
                         pasteDataToReservationFields();
                         loadSelectedCars($(this).closest('li').find('span.cid').text());
                     }
                 }
                 else {
-
                 }
             });
         },
@@ -965,6 +955,7 @@ $("#sort").click(function () {
         loadAllCarsToDisplay();
     }
 });
+/** ========================== The End of Filtered Functions ======================================== */
 /** ================================================================================================== */
 
 
@@ -973,25 +964,610 @@ $("#sort").click(function () {
 
 
 
-function findTransmissionType(val) {
+function findTransmissionType(type) {
+    $.ajax({
 
+        url: baseURLForReservation + "car/schByTransmission"+type,
+        method: "GET",
+
+        success: function (resp) {
+            if (resp.data.length == 0) {
+                $("#noResult").css('display', 'block');
+            } else {
+                $("#noResult").css('display', 'none');
+            }
+
+            var rentFeePerDay;
+            var rentFeePerMonth;
+
+            $("#tblShowCars").empty();
+
+            for (let key of resp.data) {
+
+                if (key.type == "Luxury") {
+                    rentFeePerDay = 8000.00;
+                    rentFeePerMonth = 25000.00;
+                } else if (key.type = "premium") {
+                    rentFeePerDay = 5000.00;
+                    rentFeePerMonth = 20000.00;
+                } else if (key.type = "General") {
+                    rentFeePerDay = 3000.00;
+                    rentFeePerMonth = 10000.00;
+                }
+
+                let newDiv =
+                    `<div class="col-4">
+                <!-- card 01-->
+                <li>
+                    <div class="featured-car-card">
+                        <figure class="card-banner">
+                            <img alt="Toyota RAV4 2021" class="w-100" height="300" loading="lazy"
+                                 src="../assets/images/car_bg_home/car-1.jpg"
+                                 width="440">
+                        </figure>
+
+                        <div class="card-content">
+
+                            <div class="card-title-wrapper">
+                                <span class="cid text-white" style="display: none;">${key.carId}</span>
+                                <h4 class="h3 card-title">${key.brand}</h4>
+                                <data class="year" value="2021">${key.availableOrNot}</data>
+                            </div>
+                            <h5 style="color: crimson">${key.type}</h5>
+                            <ul class="card-list">
+
+                                <li class="card-list-item">
+                                    <ion-icon name="people-outline"></ion-icon>
+
+                                    <span class="card-item-text">${key.noOfPassengers}</span>
+                                </li>
+
+                                <li class="card-list-item">
+                                    <ion-icon name="flash-outline"></ion-icon>
+
+                                    <span class="card-item-text">${key.transmissionType}</span>
+                                </li>
+
+                                <li class="card-list-item">
+                                    <ion-icon name="speedometer-outline"></ion-icon>
+
+                                    <span class="card-item-text">${key.fuelType}-6.1km/1-lt</span>
+                                </li>
+
+                                <li class="card-list-item">
+                                    <ion-icon name="hardware-chip-outline"></ion-icon>
+
+                                    <span class="card-item-text">${key.colour}</span>
+                                </li>
+                            </ul>
+
+                            <div class="card-price-wrapper">
+                                <p class="card-price">
+                                    <strong>${rentFeePerDay}</strong> / Daily
+                                </p>
+                                <p class="card-price">
+                                    <strong>${rentFeePerMonth}</strong> / Month
+                                </p>
+                                
+                                <button aria-label="Add to favourite list" class="btn fav-btn">
+                                    <ion-icon name="heart-outline"></ion-icon>
+                                </button>
+                                <button type="button" class="btn btn-info btnRent">Rent now</button>
+                            </div>
+                        </div>
+                    </div>
+                </li>
+            </div>`;
+                $("#tblShowCars").append(newDiv);
+            }
+
+            $(".btnRent").click(function () {
+                let text = "Do you want to rent this car?";
+                if (confirm(text)) {
+
+                    let availableStatus = $(this).closest('li').find('data.year').text();
+
+                    if (availableStatus == "Not Available") {
+                        alert("This car is not available now! Choose another one!...");
+                    }else {
+                        pasteDataToReservationFields();
+                        loadSelectedCars($(this).closest('li').find('span.cid').text());
+                    }
+                }
+                else {
+
+                }
+            });
+        },
+        error: function (ob) {
+            alert(ob.responseJSON.message);
+        }
+    });
 }
 
-function findType(val) {
+function findType(carType) {
+    $.ajax({
 
+        url: baseURLForReservation + "car/schByCarType"+carType,
+        method: "GET",
+
+        success: function (resp) {
+            if (resp.data.length == 0) {
+                $("#noResult").css('display', 'block');
+            } else {
+                $("#noResult").css('display', 'none');
+            }
+
+            var rentFeePerDay;
+            var rentFeePerMonth;
+
+            $("#tblShowCars").empty();
+
+            for (let key of resp.data) {
+
+                if (key.type == "Luxury") {
+                    rentFeePerDay = 8000.00;
+                    rentFeePerMonth = 25000.00;
+                } else if (key.type = "premium") {
+                    rentFeePerDay = 5000.00;
+                    rentFeePerMonth = 20000.00;
+                } else if (key.type = "General") {
+                    rentFeePerDay = 3000.00;
+                    rentFeePerMonth = 10000.00;
+                }
+
+                let newDiv =
+                    `<div class="col-4">
+                <!-- card 01-->
+                <li>
+                    <div class="featured-car-card">
+                        <figure class="card-banner">
+                            <img alt="Toyota RAV4 2021" class="w-100" height="300" loading="lazy"
+                                 src="../assets/images/car_bg_home/car-1.jpg"
+                                 width="440">
+                        </figure>
+
+                        <div class="card-content">
+
+                            <div class="card-title-wrapper">
+                                <span class="cid text-white" style="display: none;">${key.carId}</span>
+                                <h4 class="h3 card-title">${key.brand}</h4>
+                                <data class="year" value="2021">${key.availableOrNot}</data>
+                            </div>
+                            <h5 style="color: crimson">${key.type}</h5>
+                            <ul class="card-list">
+
+                                <li class="card-list-item">
+                                    <ion-icon name="people-outline"></ion-icon>
+
+                                    <span class="card-item-text">${key.noOfPassengers}</span>
+                                </li>
+
+                                <li class="card-list-item">
+                                    <ion-icon name="flash-outline"></ion-icon>
+
+                                    <span class="card-item-text">${key.transmissionType}</span>
+                                </li>
+
+                                <li class="card-list-item">
+                                    <ion-icon name="speedometer-outline"></ion-icon>
+
+                                    <span class="card-item-text">${key.fuelType}-6.1km/1-lt</span>
+                                </li>
+
+                                <li class="card-list-item">
+                                    <ion-icon name="hardware-chip-outline"></ion-icon>
+
+                                    <span class="card-item-text">${key.colour}</span>
+                                </li>
+                            </ul>
+
+                            <div class="card-price-wrapper">
+                                <p class="card-price">
+                                    <strong>${rentFeePerDay}</strong> / Daily
+                                </p>
+                                <p class="card-price">
+                                    <strong>${rentFeePerMonth}</strong> / Month
+                                </p>
+                                
+                                <button aria-label="Add to favourite list" class="btn fav-btn">
+                                    <ion-icon name="heart-outline"></ion-icon>
+                                </button>
+                                <button type="button" class="btn btn-info btnRent">Rent now</button>
+                            </div>
+                        </div>
+                    </div>
+                </li>
+            </div>`;
+                $("#tblShowCars").append(newDiv);
+            }
+
+            $(".btnRent").click(function () {
+                let text = "Do you want to rent this car?";
+                if (confirm(text)) {
+
+                    let availableStatus = $(this).closest('li').find('data.year').text();
+
+                    if (availableStatus == "Not Available") {
+                        alert("This car is not available now! Choose another one!...");
+                    }else {
+                        pasteDataToReservationFields();
+                        loadSelectedCars($(this).closest('li').find('span.cid').text());
+                    }
+                }
+                else {
+
+                }
+            });
+        },
+        error: function (ob) {
+            alert(ob.responseJSON.message);
+        }
+    });
 }
 
 
-function findBrand(val) {
+function findBrand(brand) {
+    $.ajax({
 
+        url: baseURLForReservation + "car/schByCarBrand"+brand,
+        method: "GET",
+
+        success: function (resp) {
+            if (resp.data.length == 0) {
+                $("#noResult").css('display', 'block');
+            } else {
+                $("#noResult").css('display', 'none');
+            }
+
+            var rentFeePerDay;
+            var rentFeePerMonth;
+
+            $("#tblShowCars").empty();
+
+            for (let key of resp.data) {
+
+                if (key.type == "Luxury") {
+                    rentFeePerDay = 8000.00;
+                    rentFeePerMonth = 25000.00;
+                } else if (key.type = "premium") {
+                    rentFeePerDay = 5000.00;
+                    rentFeePerMonth = 20000.00;
+                } else if (key.type = "General") {
+                    rentFeePerDay = 3000.00;
+                    rentFeePerMonth = 10000.00;
+                }
+
+                let newDiv =
+                    `<div class="col-4">
+                <!-- card 01-->
+                <li>
+                    <div class="featured-car-card">
+                        <figure class="card-banner">
+                            <img alt="Toyota RAV4 2021" class="w-100" height="300" loading="lazy"
+                                 src="../assets/images/car_bg_home/car-1.jpg"
+                                 width="440">
+                        </figure>
+
+                        <div class="card-content">
+
+                            <div class="card-title-wrapper">
+                                <span class="cid text-white" style="display: none;">${key.carId}</span>
+                                <h4 class="h3 card-title">${key.brand}</h4>
+                                <data class="year" value="2021">${key.availableOrNot}</data>
+                            </div>
+                            <h5 style="color: crimson">${key.type}</h5>
+                            <ul class="card-list">
+
+                                <li class="card-list-item">
+                                    <ion-icon name="people-outline"></ion-icon>
+
+                                    <span class="card-item-text">${key.noOfPassengers}</span>
+                                </li>
+
+                                <li class="card-list-item">
+                                    <ion-icon name="flash-outline"></ion-icon>
+
+                                    <span class="card-item-text">${key.transmissionType}</span>
+                                </li>
+
+                                <li class="card-list-item">
+                                    <ion-icon name="speedometer-outline"></ion-icon>
+
+                                    <span class="card-item-text">${key.fuelType}-6.1km/1-lt</span>
+                                </li>
+
+                                <li class="card-list-item">
+                                    <ion-icon name="hardware-chip-outline"></ion-icon>
+
+                                    <span class="card-item-text">${key.colour}</span>
+                                </li>
+                            </ul>
+
+                            <div class="card-price-wrapper">
+                                <p class="card-price">
+                                    <strong>${rentFeePerDay}</strong> / Daily
+                                </p>
+                                <p class="card-price">
+                                    <strong>${rentFeePerMonth}</strong> / Month
+                                </p>
+                                
+                                <button aria-label="Add to favourite list" class="btn fav-btn">
+                                    <ion-icon name="heart-outline"></ion-icon>
+                                </button>
+                                <button type="button" class="btn btn-info btnRent">Rent now</button>
+                            </div>
+                        </div>
+                    </div>
+                </li>
+            </div>`;
+                $("#tblShowCars").append(newDiv);
+            }
+
+            $(".btnRent").click(function () {
+                let text = "Do you want to rent this car?";
+                if (confirm(text)) {
+
+                    let availableStatus = $(this).closest('li').find('data.year').text();
+
+                    if (availableStatus == "Not Available") {
+                        alert("This car is not available now! Choose another one!...");
+                    }else {
+                        pasteDataToReservationFields();
+                        loadSelectedCars($(this).closest('li').find('span.cid').text());
+                    }
+                }
+                else {
+
+                }
+            });
+        },
+        error: function (ob) {
+            alert(ob.responseJSON.message);
+        }
+    });
 }
 
-function findFuelType(val) {
+function findFuelType(fuelType) {
+    $.ajax({
 
+        url: baseURLForReservation + "car/schByFuelType"+fuelType,
+        method: "GET",
+
+        success: function (resp) {
+            if (resp.data.length == 0) {
+                $("#noResult").css('display', 'block');
+            } else {
+                $("#noResult").css('display', 'none');
+            }
+
+            var rentFeePerDay;
+            var rentFeePerMonth;
+
+            $("#tblShowCars").empty();
+
+            for (let key of resp.data) {
+
+                if (key.type == "Luxury") {
+                    rentFeePerDay = 8000.00;
+                    rentFeePerMonth = 25000.00;
+                } else if (key.type = "premium") {
+                    rentFeePerDay = 5000.00;
+                    rentFeePerMonth = 20000.00;
+                } else if (key.type = "General") {
+                    rentFeePerDay = 3000.00;
+                    rentFeePerMonth = 10000.00;
+                }
+
+                let newDiv =
+                    `<div class="col-4">
+                <!-- card 01-->
+                <li>
+                    <div class="featured-car-card">
+                        <figure class="card-banner">
+                            <img alt="Toyota RAV4 2021" class="w-100" height="300" loading="lazy"
+                                 src="../assets/images/car_bg_home/car-1.jpg"
+                                 width="440">
+                        </figure>
+
+                        <div class="card-content">
+
+                            <div class="card-title-wrapper">
+                                <span class="cid text-white" style="display: none;">${key.carId}</span>
+                                <h4 class="h3 card-title">${key.brand}</h4>
+                                <data class="year" value="2021">${key.availableOrNot}</data>
+                            </div>
+                            <h5 style="color: crimson">${key.type}</h5>
+                            <ul class="card-list">
+
+                                <li class="card-list-item">
+                                    <ion-icon name="people-outline"></ion-icon>
+
+                                    <span class="card-item-text">${key.noOfPassengers}</span>
+                                </li>
+
+                                <li class="card-list-item">
+                                    <ion-icon name="flash-outline"></ion-icon>
+
+                                    <span class="card-item-text">${key.transmissionType}</span>
+                                </li>
+
+                                <li class="card-list-item">
+                                    <ion-icon name="speedometer-outline"></ion-icon>
+
+                                    <span class="card-item-text">${key.fuelType}-6.1km/1-lt</span>
+                                </li>
+
+                                <li class="card-list-item">
+                                    <ion-icon name="hardware-chip-outline"></ion-icon>
+
+                                    <span class="card-item-text">${key.colour}</span>
+                                </li>
+                            </ul>
+
+                            <div class="card-price-wrapper">
+                                <p class="card-price">
+                                    <strong>${rentFeePerDay}</strong> / Daily
+                                </p>
+                                <p class="card-price">
+                                    <strong>${rentFeePerMonth}</strong> / Month
+                                </p>
+                                
+                                <button aria-label="Add to favourite list" class="btn fav-btn">
+                                    <ion-icon name="heart-outline"></ion-icon>
+                                </button>
+                                <button type="button" class="btn btn-info btnRent">Rent now</button>
+                            </div>
+                        </div>
+                    </div>
+                </li>
+            </div>`;
+                $("#tblShowCars").append(newDiv);
+            }
+
+            $(".btnRent").click(function () {
+                let text = "Do you want to rent this car?";
+                if (confirm(text)) {
+
+                    let availableStatus = $(this).closest('li').find('data.year').text();
+
+                    if (availableStatus == "Not Available") {
+                        alert("This car is not available now! Choose another one!...");
+                    }else {
+                        pasteDataToReservationFields();
+                        loadSelectedCars($(this).closest('li').find('span.cid').text());
+                    }
+                }
+                else {
+
+                }
+            });
+        },
+        error: function (ob) {
+            alert(ob.responseJSON.message);
+        }
+    });
 }
 
-function findColour(val) {
+function findColour(colour) {
+    $.ajax({
 
+        url: baseURLForReservation + "car/schByColour"+colour,
+        method: "GET",
+
+        success: function (resp) {
+            if (resp.data.length == 0) {
+                $("#noResult").css('display', 'block');
+            } else {
+                $("#noResult").css('display', 'none');
+            }
+
+            var rentFeePerDay;
+            var rentFeePerMonth;
+
+            $("#tblShowCars").empty();
+
+            for (let key of resp.data) {
+
+                if (key.type == "Luxury") {
+                    rentFeePerDay = 8000.00;
+                    rentFeePerMonth = 25000.00;
+                } else if (key.type = "premium") {
+                    rentFeePerDay = 5000.00;
+                    rentFeePerMonth = 20000.00;
+                } else if (key.type = "General") {
+                    rentFeePerDay = 3000.00;
+                    rentFeePerMonth = 10000.00;
+                }
+
+                let newDiv =
+                    `<div class="col-4">
+                <!-- card 01-->
+                <li>
+                    <div class="featured-car-card">
+                        <figure class="card-banner">
+                            <img alt="Toyota RAV4 2021" class="w-100" height="300" loading="lazy"
+                                 src="../assets/images/car_bg_home/car-1.jpg"
+                                 width="440">
+                        </figure>
+
+                        <div class="card-content">
+
+                            <div class="card-title-wrapper">
+                                <span class="cid text-white" style="display: none;">${key.carId}</span>
+                                <h4 class="h3 card-title">${key.brand}</h4>
+                                <data class="year" value="2021">${key.availableOrNot}</data>
+                            </div>
+                            <h5 style="color: crimson">${key.type}</h5>
+                            <ul class="card-list">
+
+                                <li class="card-list-item">
+                                    <ion-icon name="people-outline"></ion-icon>
+
+                                    <span class="card-item-text">${key.noOfPassengers}</span>
+                                </li>
+
+                                <li class="card-list-item">
+                                    <ion-icon name="flash-outline"></ion-icon>
+
+                                    <span class="card-item-text">${key.transmissionType}</span>
+                                </li>
+
+                                <li class="card-list-item">
+                                    <ion-icon name="speedometer-outline"></ion-icon>
+
+                                    <span class="card-item-text">${key.fuelType}-6.1km/1-lt</span>
+                                </li>
+
+                                <li class="card-list-item">
+                                    <ion-icon name="hardware-chip-outline"></ion-icon>
+
+                                    <span class="card-item-text">${key.colour}</span>
+                                </li>
+                            </ul>
+
+                            <div class="card-price-wrapper">
+                                <p class="card-price">
+                                    <strong>${rentFeePerDay}</strong> / Daily
+                                </p>
+                                <p class="card-price">
+                                    <strong>${rentFeePerMonth}</strong> / Month
+                                </p>
+                                
+                                <button aria-label="Add to favourite list" class="btn fav-btn">
+                                    <ion-icon name="heart-outline"></ion-icon>
+                                </button>
+                                <button type="button" class="btn btn-info btnRent">Rent now</button>
+                            </div>
+                        </div>
+                    </div>
+                </li>
+            </div>`;
+                $("#tblShowCars").append(newDiv);
+            }
+
+            $(".btnRent").click(function () {
+                let text = "Do you want to rent this car?";
+                if (confirm(text)) {
+
+                    let availableStatus = $(this).closest('li').find('data.year').text();
+
+                    if (availableStatus == "Not Available") {
+                        alert("This car is not available now! Choose another one!...");
+                    }else {
+                        pasteDataToReservationFields();
+                        loadSelectedCars($(this).closest('li').find('span.cid').text());
+                    }
+                }
+                else {
+
+                }
+            });
+        },
+        error: function (ob) {
+            alert(ob.responseJSON.message);
+        }
+    });
 }
 
 $("#btnSearchCarsToSort").click(function () {
