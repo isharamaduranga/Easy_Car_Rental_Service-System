@@ -43,4 +43,7 @@ public interface CarService {
     List<CarDTO> findByFuelType(String fuelType);
 
     List<Car> findByColour(String colour);
+
+    /** for find Available cars*/
+    int noOfAvailableOrReservedCars(String availability);
 }

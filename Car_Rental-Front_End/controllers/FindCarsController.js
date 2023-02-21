@@ -41,7 +41,7 @@ countAvailableCars();
 
 function countAvailableCars() {
     $.ajax({
-        url: baseURLForReservation+"car/AVAILABLECOUNT/" + "Available",
+        url: baseURLForReservation+"car/countOfAvailableCars/" + "Available",
         method: "GET",
         success: function (response) {
             $("#availableCars").text(response.data);

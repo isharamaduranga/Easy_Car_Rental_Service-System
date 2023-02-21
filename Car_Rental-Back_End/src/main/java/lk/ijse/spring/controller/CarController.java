@@ -82,7 +82,6 @@ public class CarController {
         return new ResponseUtil(200, "Ok", carService.sortAccordingToDailyRatePriceByDescending());
     }
 
-
     @GetMapping(path = "/sortMonthlyRateAsc/{monthlyRateAsc}" ,produces = MediaType.APPLICATION_JSON_VALUE)
     public ResponseUtil sortAccordingToMonthlyRatePriceByAscending(@PathVariable("monthlyRateAsc") String monthlyRateAsc) {
         return new ResponseUtil(200, "Ok", carService.sortAccordingToMonthlyRatePriceByAscending());
@@ -118,6 +117,14 @@ public class CarController {
     @GetMapping(path = "/schByColour/{colour}",produces = MediaType.APPLICATION_JSON_VALUE)
     public ResponseUtil findByColour(@PathVariable("colour") String colour) {
         return new ResponseUtil(200, "Ok", carService.findByColour(colour));
+    }
+
+
+    /** +++++++++++++++ for find Available cars count++++++++++++++ */
+
+    @GetMapping(path = "/countOfAvailableCars/{availability}")
+    public ResponseUtil findNoOfAvailableCars(@PathVariable("availability") String availability) {
+        return new ResponseUtil(200, "Ok", carService.noOfAvailableOrReservedCars(availability));
     }
 
 

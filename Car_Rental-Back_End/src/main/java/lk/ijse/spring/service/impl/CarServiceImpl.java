@@ -167,4 +167,9 @@ public class CarServiceImpl implements CarService {
         return mapper.map(all, new TypeToken<List<CarDTO>>(){
         }.getType());
     }
+
+    @Override
+    public int noOfAvailableOrReservedCars(String availability) {
+        return carRepo.noOfAvailableOrReservedCars(availability);
+    }
 }

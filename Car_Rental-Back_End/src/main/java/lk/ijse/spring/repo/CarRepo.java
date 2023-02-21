@@ -54,4 +54,10 @@ public interface CarRepo extends JpaRepository<Car,String> {
 
     @Query(value = "SELECT * FROM Car WHERE colour LIKE :colour% ", nativeQuery = true)
     List<Car> findByColour(@Param("colour") String colour);
+
+
+    /** ++++++++++++++++  Native Queries of Find Available or not cars Count ++++++++++++++++ */
+
+    @Query(value = "SELECT COUNT(*) FROM Car WHERE availableOrNot=:availableCount", nativeQuery = true)
+    int noOfAvailableOrReservedCars(@Param("availability") String availableCount);
 }
