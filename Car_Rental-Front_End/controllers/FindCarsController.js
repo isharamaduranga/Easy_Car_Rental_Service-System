@@ -967,7 +967,7 @@ $("#sort").click(function () {
 function findTransmissionType(type) {
     $.ajax({
 
-        url: baseURLForReservation + "car/schByTransmission"+type,
+        url: baseURLForReservation + "car/schByTransmission/"+type,
         method: "GET",
 
         success: function (resp) {
@@ -1088,7 +1088,7 @@ function findTransmissionType(type) {
 function findType(carType) {
     $.ajax({
 
-        url: baseURLForReservation + "car/schByCarType"+carType,
+        url: baseURLForReservation + "car/schByCarType/"+carType,
         method: "GET",
 
         success: function (resp) {
@@ -1206,11 +1206,10 @@ function findType(carType) {
     });
 }
 
-
 function findBrand(brand) {
     $.ajax({
 
-        url: baseURLForReservation + "car/schByCarBrand"+brand,
+        url: baseURLForReservation + "car/schByCarBrand/"+brand,
         method: "GET",
 
         success: function (resp) {
@@ -1331,7 +1330,7 @@ function findBrand(brand) {
 function findFuelType(fuelType) {
     $.ajax({
 
-        url: baseURLForReservation + "car/schByFuelType"+fuelType,
+        url: baseURLForReservation + "car/schByFuelType/"+fuelType,
         method: "GET",
 
         success: function (resp) {
@@ -1452,7 +1451,7 @@ function findFuelType(fuelType) {
 function findColour(colour) {
     $.ajax({
 
-        url: baseURLForReservation + "car/schByColour"+colour,
+        url: baseURLForReservation + "car/schByColour/"+colour,
         method: "GET",
 
         success: function (resp) {
