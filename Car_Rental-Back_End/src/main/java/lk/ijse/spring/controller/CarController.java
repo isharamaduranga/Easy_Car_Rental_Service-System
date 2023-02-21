@@ -60,6 +60,8 @@ public class CarController {
         return new ResponseUtil(200, "Ok", carService.searchRegNumberIsExists(reg));
     }
 
+            /** +++++++++++++  for sort and filter mappings ++++++++++++++ */
+
     @GetMapping(path = "/sortPassengerAsc/{passengerAscending}" ,produces = MediaType.APPLICATION_JSON_VALUE)
     public ResponseUtil sortAccordingToPassengersByAscending(@PathVariable("passengerAscending") String passengerAscending) {
         return new ResponseUtil(200, "Ok", carService.sortAccordingToPassengersByAscending());
@@ -91,6 +93,32 @@ public class CarController {
         return new ResponseUtil(200, "Ok", carService.sortAccordingToMonthlyRatePriceByDescending());
     }
 
+            /** +++++++++++++++ for search by properties mapping ++++++++++++++ */
+
+    @GetMapping(path = "/schByTransmission/{type}",produces = MediaType.APPLICATION_JSON_VALUE)
+    public ResponseUtil findByTransmissionType(@PathVariable("type") String type) {
+        return new ResponseUtil(200, "Ok", carService.findByTransmissionType(type));
+    }
+
+    @GetMapping(path = "/schByCarType/{type}",produces = MediaType.APPLICATION_JSON_VALUE)
+    public ResponseUtil findByType(@PathVariable("type") String type) {
+        return new ResponseUtil(200, "Ok", carService.findByType(type));
+    }
+
+    @GetMapping(path = "/schByCarBrand/{brand}",produces = MediaType.APPLICATION_JSON_VALUE)
+    public ResponseUtil findByBrand(@PathVariable("brand") String brand) {
+        return new ResponseUtil(200, "Ok", carService.findByBrand(brand));
+    }
+
+    @GetMapping(path = "/schByFuelType/{fuelType}",produces = MediaType.APPLICATION_JSON_VALUE)
+    public ResponseUtil findByFuelType(@PathVariable("fuelType") String fuelType) {
+        return new ResponseUtil(200, "Ok", carService.findByFuelType(fuelType));
+    }
+
+    @GetMapping(path = "/schByColour/{colour}",produces = MediaType.APPLICATION_JSON_VALUE)
+    public ResponseUtil findByColour(@PathVariable("colour") String colour) {
+        return new ResponseUtil(200, "Ok", carService.findByColour(colour));
+    }
 
 
 }

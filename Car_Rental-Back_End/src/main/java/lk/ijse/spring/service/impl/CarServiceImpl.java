@@ -93,6 +93,8 @@ public class CarServiceImpl implements CarService {
         }.getType());
     }
 
+    /** for sort and filter*/
+
     @Override
     public List<CarDTO> sortAccordingToPassengersByDescending() {
         List<Car> cars = carRepo.sortAccordingToPassengersByAscending();
@@ -128,28 +130,41 @@ public class CarServiceImpl implements CarService {
         }.getType());
     }
 
+
+            /** for search by prop*/
+
     @Override
     public List<CarDTO> findByTransmissionType(String type) {
-        return null;
+        List<Car> all = carRepo.findByTransmissionType(type);
+        return mapper.map(all, new TypeToken<List<CarDTO>>(){
+        }.getType());
     }
 
     @Override
     public List<CarDTO> findByBrand(String brand) {
-        return null;
+        List<Car> all = carRepo.findByBrand(brand);
+        return mapper.map(all, new TypeToken<List<CarDTO>>(){
+        }.getType());
     }
 
     @Override
     public List<CarDTO> findByType(String type) {
-        return null;
+        List<Car> all = carRepo.findByType(type);
+        return mapper.map(all, new TypeToken<List<CarDTO>>(){
+        }.getType());
     }
 
     @Override
     public List<CarDTO> findByFuelType(String fuelType) {
-        return null;
+        List<Car> all = carRepo.findByFuelType(fuelType);
+        return mapper.map(all, new TypeToken<List<CarDTO>>(){
+        }.getType());
     }
 
     @Override
     public List<Car> findByColour(String colour) {
-        return null;
+        List<Car> all = carRepo.findByColour(colour);
+        return mapper.map(all, new TypeToken<List<CarDTO>>(){
+        }.getType());
     }
 }
