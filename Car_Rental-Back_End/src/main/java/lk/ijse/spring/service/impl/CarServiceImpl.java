@@ -128,5 +128,28 @@ public class CarServiceImpl implements CarService {
         }.getType());
     }
 
+    @Override
+    public List<CarDTO> findByTransmissionType(String type) {
+        return null;
+    }
 
+    @Override
+    public List<CarDTO> findByBrand(String brand) {
+        return null;
+    }
+
+    @Override
+    public List<CarDTO> findByType(String type) {
+        return null;
+    }
+
+    @Override
+    public List<CarDTO> findByFuelType(String fuelType) {
+        return null;
+    }
+
+    @Override
+    public List<Car> findByColour(String colour) {
+        return null;
+    }
 }
