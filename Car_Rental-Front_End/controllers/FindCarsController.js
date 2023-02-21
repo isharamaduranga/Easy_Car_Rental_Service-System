@@ -63,10 +63,10 @@ var today = now.getFullYear() + "-" + (month) + "-" + (day);
 
 function generateVReserveIds() {
     $("#reserveId").val("RE00-0001");
-    var test = "id";
+    var tempId = "id";
 
     $.ajax({
-        url: baseURLForReservation+"reserve?test=" + test,
+        url: baseURLForReservation+"reserve?tempId=" + tempId,
         method: "GET",
         success: function (response) {
             var reserveId = response.data;
