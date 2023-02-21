@@ -19,4 +19,18 @@ public interface CarRepo extends JpaRepository<Car,String> {
 
     @Query(value = "SELECT * FROM Car ORDER BY noOfPassengers ASC", nativeQuery = true)
     List<Car> sortAccordingToPassengersByAscending();
+
+    @Query(value = "SELECT * FROM Car ORDER BY dailyRatePrice DESC", nativeQuery = true)
+    List<Car> sortAccordingToDailyRatePriceByDescending();
+
+    @Query(value = "SELECT * FROM Car ORDER BY dailyRatePrice ASC", nativeQuery = true)
+    List<Car> sortAccordingToDailyRatePriceByAscending();
+
+    @Query(value = "SELECT * FROM Car ORDER BY monthlyRatePrice DESC", nativeQuery = true)
+    List<Car> sortAccordingToMonthlyRatePriceByDescending();
+
+    @Query(value = "SELECT * FROM Car ORDER BY monthlyRatePrice ASC", nativeQuery = true)
+    List<Car> sortAccordingToMonthlyRatePriceByAscending();
+
+
 }

@@ -946,9 +946,6 @@ function findMonthlyRateDsc(monthlyRateDsc) {
     });
 }
 
-function loadAllCarsToSee(text) {
-
-}
 
 $("#sort").click(function () {
     if ($("#sort option:selected").text() == "Passengers - Ascending") {
@@ -964,7 +961,7 @@ $("#sort").click(function () {
     } else if ($("#sort option:selected").text() == "Monthly Rate Price - Descending") {
         findMonthlyRateDsc($("#sort option:selected").text());
     } else if ($("#sort option:selected").text() == "Recommended") {
-        loadAllCarsToSee();
+        loadAllCarsToDisplay();
     }
 });
 
