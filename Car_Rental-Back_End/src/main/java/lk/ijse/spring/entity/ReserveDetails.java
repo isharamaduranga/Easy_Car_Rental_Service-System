@@ -21,8 +21,8 @@ import javax.persistence.*;
 @AllArgsConstructor
 @Data
 @ToString
+@IdClass(ReserveCars.class)
 @Entity
-
 public class ReserveDetails {
 
     @Id
