@@ -51,7 +51,7 @@ function generateVReserveIds() {
     var test = "id";
 
     $.ajax({
-        url: "http://localhost:8080/Car_Rental_System_war/reserve?test=" + test,
+        url: baseURLForReservation+"reserve?test=" + test,
         method: "GET",
         success: function (response) {
             var reserveId = response.data;
@@ -67,6 +67,32 @@ function generateVReserveIds() {
                 } else {
                     $("#reserveId").val("RE00-" + tempId);
                 }
+            }
+        },
+        error: function (ob, statusText, error) {
+        }
+    });
+}
+
+function generateScheduleIds() {
+    $("#scheduleId").val("S00-0001");
+    var test = "id";
+
+    $.ajax({
+        url: baseURLForReservation+"schedule?test=" + test,
+        method: "GET",
+        success: function (response) {
+            var scheduleId = response.data;
+            var tempId = parseInt(scheduleId.split("-")[1]);
+            tempId = tempId + 1;
+            if (tempId <= 9) {
+                $("#scheduleId").val("S00-000" + tempId);
+            } else if (tempId <= 99) {
+                $("#scheduleId").val("S00-00" + tempId);
+            } else if (tempId <= 999) {
+                $("#scheduleId").val("S00-0" + tempId);
+            } else {
+                $("#scheduleId").val("S00-" + tempId);
             }
 
         },
