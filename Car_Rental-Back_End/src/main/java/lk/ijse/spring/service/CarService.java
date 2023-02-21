@@ -22,4 +22,12 @@ public interface CarService {
     List<CarDTO> sortAccordingToPassengersByAscending();
 
     List<CarDTO> sortAccordingToPassengersByDescending();
+
+    List<CarDTO> sortAccordingToDailyRatePriceByDescending();
+
+    List<CarDTO> sortAccordingToDailyRatePriceByAscending();
+
+    List<CarDTO> sortAccordingToMonthlyRatePriceByAscending();
+
+    List<CarDTO> sortAccordingToMonthlyRatePriceByDescending();
 }

@@ -31,6 +31,4 @@ public interface CarRepo extends JpaRepository<Car,String> {
 
     @Query(value = "SELECT * FROM Car ORDER BY monthlyRatePrice ASC", nativeQuery = true)
     List<Car> sortAccordingToMonthlyRatePriceByAscending();
-
-
 }
