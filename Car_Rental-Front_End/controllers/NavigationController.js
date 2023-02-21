@@ -371,7 +371,7 @@ $("#btnBack").click(function () {
 });
 ``
 function gotoSeeCars() {
-    $("#customer_dashboard").css('display', 'block');
+    $("#CustomerDashBoard").css('display', 'block');
     $("#nav_bar").css('display', 'block');
     $("#social_media").css('display', 'block');
     $("#footer").css('display', 'block');
@@ -400,7 +400,6 @@ function gotoSeeCars() {
     $('#logInAdmin').css('display', 'none');
     $('#ForgotPasswordPage').css('display', 'none');
     $('#admin_screen').css('display', 'none');
-    $("#CustomerDashBoard").css('display', 'none');
     $("#moreSpace").css('display', 'none');
 
 }
