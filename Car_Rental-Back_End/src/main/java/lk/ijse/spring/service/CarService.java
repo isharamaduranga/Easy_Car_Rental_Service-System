@@ -1,6 +1,7 @@
 package lk.ijse.spring.service;
 
 import lk.ijse.spring.dto.CarDTO;
+import lk.ijse.spring.entity.Car;
 
 import java.util.List;
 
@@ -19,6 +20,7 @@ public interface CarService {
 
     String searchRegNumberIsExists(String reg);
 
+     /** for sort and filter*/
     List<CarDTO> sortAccordingToPassengersByAscending();
 
     List<CarDTO> sortAccordingToPassengersByDescending();
@@ -30,4 +32,15 @@ public interface CarService {
     List<CarDTO> sortAccordingToMonthlyRatePriceByAscending();
 
     List<CarDTO> sortAccordingToMonthlyRatePriceByDescending();
+
+    /** for search by prop*/
+    List<CarDTO> findByTransmissionType(String type);
+
+    List<CarDTO> findByBrand(String brand);
+
+    List<CarDTO> findByType(String type);
+
+    List<CarDTO> findByFuelType(String fuelType);
+
+    List<Car> findByColour(String colour);
 }

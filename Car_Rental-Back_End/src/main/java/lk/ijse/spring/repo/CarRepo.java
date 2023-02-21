@@ -11,8 +11,13 @@ public interface CarRepo extends JpaRepository<Car,String> {
     @Query(value = "SELECT carId FROM Car ORDER BY carId DESC LIMIT 1", nativeQuery = true)
     String generateCarId();
 
+
     @Query(value = "SELECT registrationNo FROM Car WHERE registrationNo=:reg ", nativeQuery = true)
     String searchRegNumberIsExists(@Param("reg") String reg);
+
+
+
+    /** ++++++++++++++++ All Native Queries of Sorting & filter by car properties ++++++++++++++++ */
 
     @Query(value = "SELECT * FROM Car ORDER BY noOfPassengers DESC", nativeQuery = true)
     List<Car> sortAccordingToPassengersByDescending();
@@ -31,4 +36,22 @@ public interface CarRepo extends JpaRepository<Car,String> {
 
     @Query(value = "SELECT * FROM Car ORDER BY monthlyRatePrice ASC", nativeQuery = true)
     List<Car> sortAccordingToMonthlyRatePriceByAscending();
+
+
+    /** ++++++++++++++++ All Native Queries of Search by car properties ++++++++++++++++ */
+
+    @Query(value = "SELECT * FROM Car WHERE transmissionType LIKE :type% ", nativeQuery = true)
+    List<Car> findByTransmissionType(@Param("type") String type);
+
+    @Query(value = "SELECT * FROM Car WHERE brand LIKE :brand% ", nativeQuery = true)
+    List<Car> findByBrand(@Param("brand") String brand);
+
+    @Query(value = "SELECT * FROM Car WHERE type LIKE :type% ", nativeQuery = true)
+    List<Car> findByType(@Param("type") String type);
+
+    @Query(value = "SELECT * FROM Car WHERE fuelType LIKE :fuelType% ", nativeQuery = true)
+    List<Car> findByFuelType(@Param("fuelType") String fuelType);
+
+    @Query(value = "SELECT * FROM Car WHERE colour LIKE :colour% ", nativeQuery = true)
+    List<Car> findByColour(@Param("colour") String colour);
 }
