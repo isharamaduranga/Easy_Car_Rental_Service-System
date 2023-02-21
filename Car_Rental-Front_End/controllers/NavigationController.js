@@ -373,8 +373,10 @@ $("#btnBack").click(function () {
 function gotoSeeCars() {
     $("#CustomerDashBoard").css('display', 'block');
     $("#nav_bar").css('display', 'block');
+    $("#moreSpace").css('display', 'block');
     $("#social_media").css('display', 'block');
     $("#footer").css('display', 'block');
+
 
     $("#banner").css('display', 'none');
     $("#services").css('display', 'none');
@@ -400,7 +402,7 @@ function gotoSeeCars() {
     $('#logInAdmin').css('display', 'none');
     $('#ForgotPasswordPage').css('display', 'none');
     $('#admin_screen').css('display', 'none');
-    $("#moreSpace").css('display', 'none');
+
 
 }
 function openBookingPage() {

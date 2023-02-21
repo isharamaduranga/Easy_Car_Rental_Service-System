@@ -35,7 +35,22 @@ $("#PNIC").keyup(function (event) {
     }
 });
 
+$("#noResult").css('display', 'none');
 
+countAvailableCars();
+
+function countAvailableCars() {
+    $.ajax({
+        url: baseURLForReservation+"car/AVAILABLECOUNT/" + "Available",
+        method: "GET",
+        success: function (response) {
+            $("#availableCars").text(response.data);
+        },
+        error: function (ob) {
+            alert(ob.responseJSON.message);
+        }
+    });
+}
 
 
 var now = new Date();
@@ -125,19 +140,119 @@ function pasteDate() {
     $("#durationEdit").prop("disabled", true);
 }
 
+/*************************** For customer booking details edit and update *************************** */
+
+$("#pickUpDateEdit").keyup(function (event) {
+    let pickupDate = $("#pickUpDateEdit").val();
+    if (regExPickupDate.test(pickupDate)) {
+        $("#pickUpDateEdit").css('border', '2px solid #31d2f2');
+        $("#errorPickupDateAgain").text("");
+    } else {
+        $("#pickUpDateEdit").css('border', '2px solid red');
+        $("#errorPickupDateAgain").text("Check this field whether correct !");
+    }
+});
+
+$("#pickUpTimeEdit").keyup(function (event) {
+    let pickupTime = $("#pickUpTimeEdit").val();
+    if (regExPickupTime.test(pickupTime)) {
+        $("#pickUpTimeEdit").css('border', '2px solid #31d2f2');
+        $("#errorPickupTimeAgain").text("");
+    } else {
+        $("#pickUpTimeEdit").css('border', '2px solid red');
+        $("#errorPickupTimeAgain").text("Check this field whether correct !");
+    }
+});
+
+$("#returnDateEdit").keyup(function (event) {
+    let returnDate = $("#returnDateEdit").val();
+    if (regExReturnDate.test(returnDate)) {
+        $("#returnDateEdit").css('border', '2px solid #31d2f2');
+        $("#errorDropDateAgain").text("");
+    } else {
+        $("#returnDateEdit").css('border', '2px solid red');
+        $("#errorDropDateAgain").text("Check this field whether correct !");
+    }
+});
+
+$("#returnTimeEdit").keyup(function (event) {
+    let returnTime = $("#returnTimeEdit").val();
+    if (regExReturnTime.test(returnTime)) {
+        $("#returnTimeEdit").css('border', '2px solid #31d2f2');
+        $("#errorDroTimeAgain").text("");
+    } else {
+        $("#returnTimeEdit").css('border', '2px solid red');
+        $("#errorDroTimeAgain").text("Check this field whether correct !");
+    }
+});
+
+$("#pickUpLocationEdit").keyup(function (event) {
+    let pickupLocation = $("#pickUpLocationEdit").val();
+    if (regExPickupLocation.test(pickupLocation)) {
+        $("#pickUpLocationEdit").css('border', '2px solid #31d2f2');
+        $("#errorPickupLocationAgain").text("");
+    } else {
+        $("#pickUpLocationEdit").css('border', '2px solid red');
+        $("#errorPickupLocationAgain").text("Check this field whether correct !");
+    }
+});
+
+$("#returnLocationEdit").keyup(function (event) {
+    let returnLocation = $("#returnLocationEdit").val();
+    if (regExReturnLocation.test(returnLocation)) {
+        $("#returnLocationEdit").css('border', '2px solid #31d2f2');
+        $("#errorDropLocationAgain").text("");
+    } else {
+        $("#returnLocationEdit").css('border', '2px solid red');
+        $("#errorDropLocationAgain").text("Check this field whether correct !");
+    }
+});
+
+$("#destinationEdit").keyup(function (event) {
+    let destination = $("#destinationEdit").val();
+    if (regExDestination.test(destination)) {
+        $("#destinationEdit").css('border', '2px solid #31d2f2');
+        $("#errorDestinationAgain").text("");
+    } else {
+        $("#destinationEdit").css('border', '2px solid red');
+        $("#errorDestinationAgain").text("Check this field whether correct !");
+    }
+});
+
+$("#durationEdit").keyup(function (event) {
+    let duration = $("#durationEdit").val();
+    if (regExDuration.test(duration)) {
+        $("#durationEdit").css('border', '2px solid #31d2f2');
+        $("#errorDurationAgain").text("");
+    } else {
+        $("#durationEdit").css('border', '2px solid red');
+        $("#errorDurationAgain").text("Check this field whether correct !");
+    }
+});
+
+$("#editRentData").click(function () {
+    let text = "Do you want to Edit Data?";
+
+    if (confirm(text) == true) {
+        $("#pickUpDateEdit").prop("disabled", false);
+        $("#pickUpTimeEdit").prop("disabled", false);
+        $("#returnDateEdit").prop("disabled", false);
+        $("#returnTimeEdit").prop("disabled", false);
+        $("#pickUpLocationEdit").prop("disabled", false);
+        $("#returnLocationEdit").prop("disabled", false);
+        $("#destinationEdit").prop("disabled", false);
+        $("#durationEdit").prop("disabled", false);
+    }
+});
 
 
+/*************************** The End booking details edit  *************************** */
 
 
-
-
-
-var tblSelectCarRow = -1;
-loadAllCarsToDisplay();
 
 /** ====================  Fully car Filter proceed implement methods and function ===================== */
 /** ============================================================================= ===================== */
-
+loadAllCarsToDisplay();
 
 function loadAllCarsToDisplay() {
 
@@ -242,7 +357,7 @@ function loadAllCarsToDisplay() {
                 if (confirm(text)) {
 
                     let availableStatus = $(this).closest('li').find('data.year').text();
-
+                    console.log(availableStatus);
                     if (availableStatus == "Not Available") {
                         alert("This car is not available now! Choose another one!...");
                     }else {
@@ -1150,7 +1265,7 @@ function findTransmissionType(type) {
             });
         },
         error: function (ob) {
-            alert(ob.responseJSON.message);
+           /* alert(ob.responseJSON.message);*/
         }
     });
 }
@@ -1271,7 +1386,7 @@ function findType(carType) {
             });
         },
         error: function (ob) {
-            alert(ob.responseJSON.message);
+            /*alert(ob.responseJSON.message);*/
         }
     });
 }
@@ -1392,7 +1507,7 @@ function findBrand(brand) {
             });
         },
         error: function (ob) {
-            alert(ob.responseJSON.message);
+           /* alert(ob.responseJSON.message);*/
         }
     });
 }
@@ -1513,7 +1628,7 @@ function findFuelType(fuelType) {
             });
         },
         error: function (ob) {
-            alert(ob.responseJSON.message);
+            /*alert(ob.responseJSON.message);*/
         }
     });
 }
@@ -1634,7 +1749,7 @@ function findColour(colour) {
             });
         },
         error: function (ob) {
-            alert(ob.responseJSON.message);
+            /*alert(ob.responseJSON.message);*/
         }
     });
 }
@@ -1692,7 +1807,7 @@ function loadSelectedCars(carId) {
                                     </td>
                                     <td>
                                         <div class="d-flex align-items-center">
-                                            <img src="assets/images/1200x-1.jpg" alt="" style="width: 50px; height: 50px" class=""/>
+                                            <img src="../assets/images/panel3.png" alt="" style="width: 50px; height: 50px" class=""/>
                                         </div>
                                         <h6  id="id" class="id text-white">${response.data.carId}</h6>
                                     </td>
@@ -1707,8 +1822,8 @@ function loadSelectedCars(carId) {
                                     </td>
                                     <td>
                                         <div class="form-check">
-                                            <input class="form-check-input checkDriverIfWant" type="checkbox" value="" id="checkDriverIfWant" />
-                                            <label class="form-check-label fs-4" for="checkDriverIfWant">If you want a driver please click</label>
+                                            <input class="form-check-input checkDriverIfWant text-danger" type="checkbox" value="" id="checkDriverIfWant" />
+                                            <label class="form-check-label text-primary" for="checkDriverIfWant">If you want a driver please click</label>
                                         </div>
                                     </td>
                                      <td id="did" class="text-white" style="font-size: 2px">
@@ -1771,3 +1886,7 @@ function findDriverData() {
         }
     });
 }
+
+var dname;
+var dcontact;
+var did;
