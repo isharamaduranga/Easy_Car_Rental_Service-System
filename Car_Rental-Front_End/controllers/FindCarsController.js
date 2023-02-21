@@ -36,6 +36,49 @@ $("#PNIC").keyup(function (event) {
 });
 
 
+
+
+var now = new Date();
+
+var day = ("0" + now.getDate()).slice(-2);
+var month = ("0" + (now.getMonth() + 1)).slice(-2);
+var today = now.getFullYear() + "-" + (month) + "-" + (day);
+
+
+
+function generateVReserveIds() {
+    $("#reserveId").val("RE00-0001");
+    var test = "id";
+
+    $.ajax({
+        url: "http://localhost:8080/Car_Rental_System_war/reserve?test=" + test,
+        method: "GET",
+        success: function (response) {
+            var reserveId = response.data;
+            if (reserveId) {
+                var tempId = parseInt(reserveId.split("-")[1]);
+                tempId = tempId + 1;
+                if (tempId <= 9) {
+                    $("#reserveId").val("RE00-000" + tempId);
+                } else if (tempId <= 99) {
+                    $("#reserveId").val("RE00-00" + tempId);
+                } else if (tempId <= 999) {
+                    $("#reserveId").val("RE00-0" + tempId);
+                } else {
+                    $("#reserveId").val("RE00-" + tempId);
+                }
+            }
+
+        },
+        error: function (ob, statusText, error) {
+        }
+
+    });
+}
+
+
+
+
 function pasteDate() {
     $("#pickUpDateEdit").val($("#pickUpDate").val());
     $("#pickUpTimeEdit").val($("#pickUpTime").val());
@@ -64,10 +107,11 @@ function pasteDate() {
 
 
 var tblSelectCarRow = -1;
+loadAllCarsToDisplay();
 
 /** ====================  Fully car Filter proceed implement methods and function ===================== */
 /** ============================================================================= ===================== */
-loadAllCarsToDisplay();
+
 
 function loadAllCarsToDisplay() {
 
@@ -1577,16 +1621,11 @@ $("#btnSearchCarsToSort").click(function () {
     findColour($("#searchCarsToSort").val());
 });
 
+
+
+
 /** =====================================The End of Search Functions============================================== */
 /** ================================================================================================================ */
-
-
-
-
-
-
-
-
 
 function pasteDataToReservationFields() {
     $("#BPickupDate").val($("#pickUpDateEdit").val());
