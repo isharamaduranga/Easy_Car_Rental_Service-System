@@ -100,4 +100,31 @@ public class CarServiceImpl implements CarService {
         }.getType());
     }
 
+    @Override
+    public List<CarDTO> sortAccordingToDailyRatePriceByDescending() {
+        List<Car> cars = carRepo.sortAccordingToDailyRatePriceByDescending();
+        return mapper.map(cars,new TypeToken<List<CarDTO>>(){
+        }.getType());
+    }
+
+    @Override
+    public List<CarDTO> sortAccordingToDailyRatePriceByAscending() {
+        List<Car> cars = carRepo.sortAccordingToDailyRatePriceByAscending();
+        return mapper.map(cars, new TypeToken<List<CarDTO>>(){
+        }.getType());
+    }
+
+    @Override
+    public List<CarDTO> sortAccordingToMonthlyRatePriceByAscending() {
+        List<Car> cars = carRepo.sortAccordingToMonthlyRatePriceByAscending();
+        return mapper.map(cars, new TypeToken<List<CarDTO>>(){
+        }.getType());
+    }
+
+    @Override
+    public List<CarDTO> sortAccordingToMonthlyRatePriceByDescending() {
+        List<Car> cars = carRepo.sortAccordingToMonthlyRatePriceByDescending();
+        return mapper.map(cars, new TypeToken<List<CarDTO>>(){
+        }.getType());
+    }
 }
