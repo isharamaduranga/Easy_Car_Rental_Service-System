@@ -70,4 +70,27 @@ public class CarController {
         return new ResponseUtil(200, "Ok", carService.sortAccordingToPassengersByDescending());
     }
 
+    @GetMapping(path = "/sortDailyRateAsc/{dailyRateAsc}" ,produces = MediaType.APPLICATION_JSON_VALUE)
+    public ResponseUtil sortAccordingToDailyRatePriceByAscending(@PathVariable("dailyRateAsc") String dailyRateAsc) {
+        return new ResponseUtil(200, "Ok", carService.sortAccordingToDailyRatePriceByAscending());
+    }
+
+    @GetMapping(path = "/sortDailyRateDsc/{dailyRateDsc}" ,produces = MediaType.APPLICATION_JSON_VALUE)
+    public ResponseUtil sortAccordingToDailyRatePriceByDescending(@PathVariable("dailyRateDsc") String dailyRateDsc) {
+        return new ResponseUtil(200, "Ok", carService.sortAccordingToDailyRatePriceByDescending());
+    }
+
+
+    @GetMapping(path = "/sortMonthlyRateAsc/{monthlyRateAsc}" ,produces = MediaType.APPLICATION_JSON_VALUE)
+    public ResponseUtil sortAccordingToMonthlyRatePriceByAscending(@PathVariable("monthlyRateAsc") String monthlyRateAsc) {
+        return new ResponseUtil(200, "Ok", carService.sortAccordingToMonthlyRatePriceByAscending());
+    }
+
+    @GetMapping(path = "/sortMonthlyRateDsc/{monthlyRateDsc}" ,produces = MediaType.APPLICATION_JSON_VALUE)
+    public ResponseUtil sortAccordingToMonthlyRatePriceByDescending(@PathVariable("monthlyRateDsc") String monthlyRateDsc) {
+        return new ResponseUtil(200, "Ok", carService.sortAccordingToMonthlyRatePriceByDescending());
+    }
+
+
+
 }
