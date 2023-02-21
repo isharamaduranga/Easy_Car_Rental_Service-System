@@ -65,7 +65,8 @@ function pasteDate() {
 
 var tblSelectCarRow = -1;
 
-
+/** ====================  Fully car Filter proceed implement methods and function ===================== */
+/** ============================================================================= ===================== */
 loadAllCarsToDisplay();
 
 function loadAllCarsToDisplay() {
@@ -964,6 +965,49 @@ $("#sort").click(function () {
         loadAllCarsToDisplay();
     }
 });
+/** ================================================================================================== */
+
+
+/** ====================  Fully car Search by using different car properties  proceed implement  functions ===================== */
+/** ====================================================================================================================== */
+
+
+
+function findTransmissionType(val) {
+
+}
+
+function findType(val) {
+
+}
+
+
+function findBrand(val) {
+
+}
+
+function findFuelType(val) {
+
+}
+
+function findColour(val) {
+
+}
+
+$("#btnSearchCarsToSort").click(function () {
+    findTransmissionType($("#searchCarsToSort").val());
+    findType($("#searchCarsToSort").val());
+    findBrand($("#searchCarsToSort").val());
+    findFuelType($("#searchCarsToSort").val());
+    findColour($("#searchCarsToSort").val());
+});
+
+/** ====================================================================================================================== */
+/** ====================================================================================================================== */
+
+
+
+
 
 
 
@@ -979,6 +1023,7 @@ function pasteDataToReservationFields() {
     $("#BDestination").val($("#destinationEdit").val());
     $("#BDuration").val($("#durationEdit").val());
 }
+
 
 var lossPayment = 0;
 var tblRow = -1;
