@@ -6,7 +6,7 @@
  * Year        : 2023
  */
 
-package lk.ijse.spring.entity;
+package lk.ijse.spring.dto;
 
 import lombok.AllArgsConstructor;
 import lombok.Data;
