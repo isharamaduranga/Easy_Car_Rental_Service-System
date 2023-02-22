@@ -13,9 +13,12 @@ import lk.ijse.spring.entity.Schedule;
 import lk.ijse.spring.repo.ScheduleRepo;
 import lk.ijse.spring.service.ScheduleService;
 import org.modelmapper.ModelMapper;
+import org.modelmapper.TypeToken;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
+
+import java.util.List;
 
 @Service
 @Transactional
@@ -39,6 +42,13 @@ public class ScheduleServiceImpl implements ScheduleService {
         }else {
             throw new RuntimeException(scheduleDTO.getScheduleId()+" Schedule Already Exists..!");
         }
+    }
+
+    @Override
+    public List<ScheduleDTO> getAllSchedules() {
+        List<Schedule> scheduleList = scheduleRepo.findAll();
+        return mapper.map(scheduleList, new TypeToken<List<ScheduleDTO>>(){
+        }.getType());
     }
 
 

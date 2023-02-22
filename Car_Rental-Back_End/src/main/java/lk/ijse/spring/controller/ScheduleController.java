@@ -34,5 +34,10 @@ public class ScheduleController {
         return new ResponseUtil(200, "Successfully Saved.",null);
     }
 
+    @GetMapping(produces = MediaType.APPLICATION_JSON_VALUE)
+    public ResponseUtil getAllSchedules(){
+        return new ResponseUtil(200, "Ok", scheduleService.getAllSchedules());
+    }
+
 }
 
