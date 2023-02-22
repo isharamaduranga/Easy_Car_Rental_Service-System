@@ -96,7 +96,7 @@ public class CustomerServiceImpl implements CustomerService {
         Customer customer = repo.searchUserFromCustomer(id);
         return mapper.map(customer, CustomerDTO.class);
     }
-
+    /** Find Customer nic is valid */
     @Override
     public CustomerDTO findCustomerToReserve(String nic) {
         Customer customer = repo.findCustomerToReserve(nic);

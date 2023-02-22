@@ -73,7 +73,7 @@ public class CustomerController {
         return new ResponseUtil(200, "Ok.",customerService.searchUserFromCustomer(id));
     }
 
-    @GetMapping(path = "/FIND/{nic}",produces = MediaType.APPLICATION_JSON_VALUE)
+    @GetMapping(path = "/findValidNic/{nic}",produces = MediaType.APPLICATION_JSON_VALUE)
     public ResponseUtil findCustomerToReserve(@PathVariable("nic") String nic){
         return new ResponseUtil(200, "Ok.",customerService.findCustomerToReserve(nic));
     }

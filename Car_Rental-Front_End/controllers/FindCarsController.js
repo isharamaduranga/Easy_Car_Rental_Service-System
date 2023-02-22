@@ -1934,3 +1934,20 @@ $("#btnBook").click(function () {
     findCustomerToReserve(bookingDenyOrAccept)
 });
 
+function findCustomerToReserve(denyOrAccept) {
+
+    $.ajax({
+        url: baseURLForReservation+"customer/findValidNic/" + $("#PNIC").val(),
+        method: "GET",
+        success: function (response) {
+            reserve(response.data,denyOrAccept);
+        },
+        error: function (ob) {
+            if (ob.responseJSON && ob.responseJSON.message) {
+                alert(ob.responseJSON.message);
+            } else {
+                alert("Something went Wrong !!! while processing your request.");
+            }
+        }
+    });
+}
