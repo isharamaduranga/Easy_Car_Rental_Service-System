@@ -26,4 +26,8 @@ public class ReserveServiceImpl implements ReserveService {
     private ModelMapper modelMapper;
 
 
+    @Override
+    public String generateReserveId() {
+       return  reserveRepo.generateReserveId();
+    }
 }

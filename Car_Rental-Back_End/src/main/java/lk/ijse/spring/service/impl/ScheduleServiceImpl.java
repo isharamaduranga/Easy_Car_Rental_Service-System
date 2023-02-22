@@ -24,4 +24,5 @@ public class ScheduleServiceImpl implements ScheduleService {
 
     @Autowired
     ModelMapper mapper;
+
 }

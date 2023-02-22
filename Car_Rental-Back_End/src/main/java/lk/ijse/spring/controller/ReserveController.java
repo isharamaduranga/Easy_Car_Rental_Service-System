@@ -9,10 +9,9 @@
 package lk.ijse.spring.controller;
 
 import lk.ijse.spring.service.ReserveService;
+import lk.ijse.spring.util.ResponseUtil;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.CrossOrigin;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 @RestController
 @RequestMapping("reserve")
@@ -20,6 +19,11 @@ import org.springframework.web.bind.annotation.RestController;
 public class ReserveController {
     @Autowired
     ReserveService reserveService;
+
+    @GetMapping(params = {"tempId"})
+    public ResponseUtil generateReserveId(@RequestParam String tempId ){
+        return new ResponseUtil(200,"load",reserveService.generateReserveId());
+    }
 
 
 }

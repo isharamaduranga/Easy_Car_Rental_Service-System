@@ -1,4 +1,5 @@
 package lk.ijse.spring.service;
 
 public interface ReserveService {
+    String generateReserveId();
 }
