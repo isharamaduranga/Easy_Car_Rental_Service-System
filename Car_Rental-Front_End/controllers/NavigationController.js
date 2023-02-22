@@ -265,7 +265,7 @@ function registerToSystem() {
 
 
 function searchSchedule() {
-    //loadSchedule();
+    loadSchedule();
     $("#SchedulePageForDriver").css('display', 'block');
     $("#nav_bar").css('display', 'block');
 
@@ -645,7 +645,7 @@ $("#btn_payment").click(function () {
 
 
 $("#btn_shedule").click(function () {
-    //loadSchedule();
+    loadSchedule();
     $("#schedule_dashboard").css('display', 'block');
 
     $('#admin_dashboard').css('display', 'none');
