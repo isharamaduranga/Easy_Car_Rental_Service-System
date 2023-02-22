@@ -25,4 +25,8 @@ public class ScheduleServiceImpl implements ScheduleService {
     @Autowired
     ModelMapper mapper;
 
+    @Override
+    public String generateScheduleId() {
+       return scheduleRepo.generateScheduleId();
+    }
 }

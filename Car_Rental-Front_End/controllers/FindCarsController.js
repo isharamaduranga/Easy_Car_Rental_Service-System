@@ -91,10 +91,10 @@ function generateVReserveIds() {
 
 function generateScheduleIds() {
     $("#scheduleId").val("S00-0001");
-    var test = "id";
+    var tempId = "id";
 
     $.ajax({
-        url: baseURLForReservation+"schedule?test=" + test,
+        url: baseURLForReservation+"schedule?tempId=" + tempId,
         method: "GET",
         success: function (response) {
             var scheduleId = response.data;
