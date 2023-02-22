@@ -12,6 +12,7 @@ import lk.ijse.spring.dto.ReserveDTO;
 import lk.ijse.spring.service.ReserveService;
 import lk.ijse.spring.util.ResponseUtil;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.MediaType;
 import org.springframework.web.bind.annotation.*;
 
 @RestController
@@ -26,9 +27,10 @@ public class ReserveController {
         return new ResponseUtil(200,"load",reserveService.generateReserveId());
     }
 
-    @PostMapping
+    @PostMapping(produces = MediaType.APPLICATION_JSON_VALUE)
     public ResponseUtil saveReservation(@RequestBody ReserveDTO dto){
-
+        reserveService.saveReservationCars(dto);
+        return new ResponseUtil(200, "Your Booking Successfully.",null);
     }
 
 
