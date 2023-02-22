@@ -186,8 +186,8 @@ function loadAllDrivers() {
 
             $("#tblDriver tbody").empty();
             for (var responseKey of response.data) {
-                let raw = `<tr><td> ${responseKey.driverId} </td><td> ${responseKey.driverName} </td><td> ${responseKey.driverAddress} </td><td> ${responseKey.driverAge} </td><td> ${responseKey.driverContact} </td><td> <span class="badge badge-success rounded-pill d-inline">${responseKey.releaseOrNot}</span> </td>
-                <td><button type="button" id="btnEditDriver"  class="btn btn-warning btn-sm px-3" data-ripple-color="dark">
+                let raw = `<tr><td> ${responseKey.driverId} </td><td> ${responseKey.driverName} </td><td> ${responseKey.driverAddress} </td><td> ${responseKey.driverAge} </td><td> ${responseKey.driverContact} </td><td> <span class="badge rounded-pill text-bg-success fs-6">${responseKey.releaseOrNot}</span> </td>
+                <td><button type="button" id="btnEditDriver"  class="btn btn-danger btn-sm px-3" data-ripple-color="dark">
                      <i class="fas fa-pen-alt"></i>
                 </button></td></tr>`;
                 $("#tblDriver tbody").append(raw);

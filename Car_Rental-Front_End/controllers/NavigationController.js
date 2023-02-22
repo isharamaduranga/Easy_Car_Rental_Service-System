@@ -366,6 +366,16 @@ $(".btnRentNow").click(function () {
 
 });
 
+
+$("#newCar").click(function () {
+
+    let text = "Do you want to rent another car ?";
+
+    if (confirm(text) == true) {
+        gotoSeeCars();
+    }
+});
+
 $("#btnBack").click(function () {
     gotoSeeCars();
 });
@@ -439,6 +449,8 @@ function openBookingPage() {
     $('#PaymentAddPage').css('transform', 'scale(0)');
     $("#SchedulePageForDriver").css('display', 'none');
 }
+
+
 
 function searchAvailableCars() {
     loadAllCarsToDisplay();

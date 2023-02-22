@@ -2850,7 +2850,7 @@
     <img src="assets/images/car_bg_home/car_reg2.jpg" alt="bg image" style="width: 100%; height: 75vh" class="img-fluid">
 
     <!--heading-->
-    <div class="mask" style="background-color: rgba(0, 0, 0, 0.6);position: absolute;top: -50%;bottom: 0;left: 0;right: 0;margin: auto; height: 82%">
+    <div class="mask" style="background-color: rgba(0, 0, 0, 0.6);position: absolute;top: -50%;bottom: 0;left: 0;right: 0;margin: auto; height: 118%">
         <div class="w-75 h-25" style="position: absolute;top: 0;bottom: 0;left: 0;right: 0;margin: auto;">
             <figure class="text-center text-white">
                 <blockquote class="blockquote" style="border: 1px solid transparent">
@@ -2861,14 +2861,14 @@
 
         </div>
 
-        <div class="h-25 w-75 text-center" style="position: absolute;top: 75%;bottom: 0;left: 0;right: 0;margin: auto">
+        <div class="h-25 w-75 text-center" style="position: absolute;top: 47%;bottom: 0;left: 0;right: 0;margin: auto">
             <i class="fas fa-angle-double-down text-white fa-5x"></i>
         </div>
 
     </div>
 
     <!--edit reservation date and time-->
-    <div class="chooseData w-75 thumbnail shadow" style="background:rgba(255,255,255,0.91); box-shadow: 0px 0px 15px #ccc;height: 38%;position: absolute; padding: 8px; top: 67%;border-radius: 30px;margin-top: -7px; padding-top: 28px;">
+    <div class="chooseData w-75 thumbnail shadow" style="background:rgba(255,255,255,0.91); box-shadow: 0px 0px 15px #ccc;height: 38%;position: absolute; padding: 8px; top: 69%;border-radius: 30px;margin-top: -7px; padding-top: 28px;">
 
         <div class="row">
 
@@ -2969,7 +2969,7 @@
     <div class="row w-100 h-25 mt-3 text-center">
 
         <figure class="text-center mt-3 mb-3 text-black">
-            <blockquote class="blockquote" style="border: 1px solid transparent">
+            <blockquote class="blockquote mt-5" style="border: 1px solid transparent">
                 <p class="display-5" style="font-family: 'poppins', sans-serif; color:#2c2b2b ">SELECT VEHICLE YOU LIKE</p>
             </blockquote>
             <figcaption id="availableCars" class=" text-danger mt-0" style="font-size: 20px ;display: inline"></figcaption>
@@ -2982,7 +2982,7 @@
                 <div class="col">
                     <div>
                         <label for="sort" class="form-label" style="display: inline">SORT :</label>
-                        <select aria-label="Default select example" class="form-select fs-5 center-block w-50" style="height: 38px;z-index: 2;display: inline" id="sort">
+                        <select aria-label="Default select example" class="form-select  center-block w-50" style="height: 38px;border: 2px solid gold; z-index: 2;display: inline" id="sort">
                             <option selected value="0">Recommended</option>
                             <option value="1">Passengers - Ascending</option>
                             <option value="2">Passengers - Descending</option>
@@ -2996,19 +2996,19 @@
 
                 <div class="col">
                     <div class="row">
-                        <div class="col">
-                            <div class="input-group w-100">
-                                <div class="form-outline">
-                                    <input type="search" id="searchCarsToSort" class="form-control me-0"/>
-                                </div>
+                        <div class="input-group w-50 ">
+                            <div class="form-outline w-100">
+                                <input type="search" id="searchCarsToSort" class="form-control me-0 " style="border: 2px solid gold">
                             </div>
                         </div>
-
-                        <div class="col d-grid gap-2 d-md-flex justify-content-md-start">
-                            <button type="button" class="btn btn-primary " id="btnSearchCarsToSort">
+                        <div class="col-1">
+                            <button type="button" class="btn btn-success " id="btnSearchCarsToSort" fdprocessedid="uv2p5q">
                                 <i class="fas fa-search"></i>
                             </button>
-                        </div>
+                        </div><div class="col-10">
+                    </div>
+
+
                     </div>
                 </div>
 
@@ -3042,14 +3042,18 @@
 </section>
 
 <!--reservation-->
-<section id="Reservation" style="width: 100% ;background-color: white">
+<!--style="background-color: rgba(0, 0, 0, 0.6)-->
+<!--background:url(assets/images/car_bg_home/car_reg2.jpg)-->
+
+
+<section id="Reservation" style="width: 100%;/* background-color: rgb(0 0 0 / 17%); */display: block;">
 
     <div class="container center-block ">
 
         <div class="row w-100 h-25 text-center mt-2">
-            <figure class="text-center mt-2 text-black">
+            <figure class="text-center  text-black">
                 <blockquote class="blockquote" style="border: 1px solid transparent">
-                    <p class="display-4" style="font-family: emoji">BOOKING</p>
+                    <p class="display-4" style="font-family:'poppins', sans-serif;">~ Booking Form ~</p>
                 </blockquote>
             </figure>
         </div>
@@ -3059,32 +3063,32 @@
 
         <div class="row " style="width: 100%">
 
-            <div class="col w-75">
+            <div class="col-5">
                 <div class="row">
-                    <div class="col ms-5 me-5 h-25" style="background-color: #06357a">
+                    <div class="col ms-5 me-5 h-25" style="background-color: #7f00ff; border-radius:25px">
                         <h3 class="text-center text-white bg">Personal Details</h3>
                     </div>
                 </div>
 
-                <div class="row mb-5" >
-                    <div class="col ms-5 me-5 h-25" style="background-color: #20c997">
+                <div class="row mb-5">
+                    <div class="col ms-5 me-5 h-25 mt-1" style="background-color: #f3dc3933;border-radius:25px">
                         <div class="row">
                             <div class="col ms-3 me-3 mb-5 mt-2">
-                                <label class="form-label text-black" for="pickUpTimeEdit" >Name</label>
-                                <div >
-                                    <input class="form-control" type="text" id="PName" />
+                                <label class="form-label text-black" for="pickUpTimeEdit">Name</label>
+                                <div>
+                                    <input class="form-control" type="text" id="PName" fdprocessedid="12r0104">
                                 </div>
                             </div>
                             <div class="col ms-3 me-3 mb-5 mt-2">
-                                <label class="form-label text-black" for="pickUpTimeEdit" >Contact</label>
-                                <div >
-                                    <input class="form-control" type="text" id="PContact"/>
+                                <label class="form-label text-black" for="pickUpTimeEdit">Contact</label>
+                                <div>
+                                    <input class="form-control" type="text" id="PContact" fdprocessedid="mvhoxm">
                                 </div>
                             </div>
                             <div class="col ms-3 me-3 mb-5 mt-2">
-                                <label class="form-label text-black" for="pickUpTimeEdit" >NIC</label>
-                                <div >
-                                    <input class="form-control" type="text" id="PNIC" />
+                                <label class="form-label text-black" for="pickUpTimeEdit">NIC</label>
+                                <div>
+                                    <input class="form-control" type="text" id="PNIC" fdprocessedid="mvti2r">
                                 </div>
                             </div>
                         </div>
@@ -3093,69 +3097,69 @@
 
                 <div class="row">
 
-                    <div class="col ms-5 me-5 h-25" style="background-color: #06357a">
+                    <div class="col ms-5 me-5 h-25" style="background-color: #7f00ff; border-radius:25px">
                         <h3 class="text-center text-white bg">Booking Details</h3>
                     </div>
 
                 </div>
 
                 <div class="row">
-                    <div class="col ms-5 me-5"  style="background-color: #20c997">
+                    <div class="col ms-5 me-5 mt-1" style="background-color: #f3dc3933;border-radius:25px">
                         <div class="row mt-4">
-                            <label class="form-label text-white" id="reserveId" ></label>
-                            <label class="form-label text-white" id="scheduleId" ></label>
+                            <label class="form-label text-white" id="reserveId"></label>
+                            <label class="form-label text-white" id="scheduleId"></label>
                             <div class="col ms-3 me-3">
-                                <label class="form-label text-black" for="pickUpTimeEdit" >Pickup Date</label>
-                                <div >
-                                    <input class="form-control" type="text" id="BPickupDate" />
+                                <label class="form-label text-black" for="pickUpTimeEdit">Pickup Date</label>
+                                <div>
+                                    <input class="form-control" type="text" id="BPickupDate" fdprocessedid="jom5xs">
                                 </div>
                             </div>
                             <div class="col ms-3 me-3">
-                                <label class="form-label text-black" for="pickUpTimeEdit" >Pickup Time</label>
-                                <div >
-                                    <input class="form-control" type="text" id="BPickupTime"/>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="row mt-2">
-                            <div class="col ms-3 me-3">
-                                <label class="form-label text-black" for="pickUpTimeEdit" >Return Date</label>
-                                <div >
-                                    <input class="form-control" type="text" id="BReturnDate" />
-                                </div>
-                            </div>
-                            <div class="col ms-3 me-3">
-                                <label class="form-label text-black" for="pickUpTimeEdit" >Return Time</label>
-                                <div >
-                                    <input class="form-control" type="text" id="BReturnTime"/>
+                                <label class="form-label text-black" for="pickUpTimeEdit">Pickup Time</label>
+                                <div>
+                                    <input class="form-control" type="text" id="BPickupTime" fdprocessedid="gpv4mf">
                                 </div>
                             </div>
                         </div>
                         <div class="row mt-2">
                             <div class="col ms-3 me-3">
-                                <label class="form-label text-black" for="pickUpTimeEdit" >Pickup Location</label>
-                                <div >
-                                    <input class="form-control" type="text" id="BPickupLocation" />
+                                <label class="form-label text-black" for="pickUpTimeEdit">Return Date</label>
+                                <div>
+                                    <input class="form-control" type="text" id="BReturnDate" fdprocessedid="z4ny7c">
                                 </div>
                             </div>
                             <div class="col ms-3 me-3">
-                                <label class="form-label text-black" for="pickUpTimeEdit" >Return Location</label>
-                                <div >
-                                    <input class="form-control" type="text" id="BReturnLocation"/>
+                                <label class="form-label text-black" for="pickUpTimeEdit">Return Time</label>
+                                <div>
+                                    <input class="form-control" type="text" id="BReturnTime" fdprocessedid="c1ek7">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row mt-2">
+                            <div class="col ms-3 me-3">
+                                <label class="form-label text-black" for="pickUpTimeEdit">Pickup Location</label>
+                                <div>
+                                    <input class="form-control" type="text" id="BPickupLocation" fdprocessedid="4t3w5">
+                                </div>
+                            </div>
+                            <div class="col ms-3 me-3">
+                                <label class="form-label text-black" for="pickUpTimeEdit">Return Location</label>
+                                <div>
+                                    <input class="form-control" type="text" id="BReturnLocation" fdprocessedid="jcrtt">
                                 </div>
                             </div>
                         </div>
                         <div class="row mt-2 mb-4">
                             <div class="col ms-3 me-3">
-                                <label class="form-label text-black" for="pickUpTimeEdit" >Destination</label>
-                                <div >
-                                    <input class="form-control" type="text" id="BDestination"/>
+                                <label class="form-label text-black" for="pickUpTimeEdit">Destination</label>
+                                <div>
+                                    <input class="form-control" type="text" id="BDestination" fdprocessedid="od9v1p">
                                 </div>
                             </div>
                             <div class="col ms-3 me-3">
-                                <label class="form-label text-black" for="pickUpTimeEdit" >Duration</label>
-                                <div >
-                                    <input class="form-control" type="text" id="BDuration"/>
+                                <label class="form-label text-black" for="pickUpTimeEdit">Duration</label>
+                                <div>
+                                    <input class="form-control" type="text" id="BDuration" fdprocessedid="juzggm">
                                 </div>
                             </div>
                         </div>
@@ -3164,23 +3168,23 @@
 
                 <div class="row ">
                     <div class="col ms-5 me-5">
-                        <button type="button" class="btn  center-block w-100  mt-5 mb-5 bg-dark text-white" id="btnBook" >BOOK</button>
+                        <button type="button" class="btn  center-block w-100  mt-5 mb-5 bg-dark text-white" id="btnBook" fdprocessedid="esokr">BOOK</button>
                     </div>
                     <div class="col ms-5 me-5">
-                        <button type="button" class="btn  center-block w-100 mt-5 mb-5 bg-danger text-white" id="btnBack" >Back</button>
+                        <button type="button" class="btn  center-block w-100 mt-5 mb-5 bg-danger text-white" id="btnBack" fdprocessedid="i8m3w7">Back</button>
                     </div>
                 </div>
             </div>
 
-            <div class="col w-25">
+            <div class="col-7">
                 <div class="row mb-5">
-                    <div class="col ms-3 me-3 h-25" style="background-color: #06357a">
+                    <div class="col ms-3 me-3 h-25" style="background-color: #7f00ff;border-radius:25px">
                         <h3 class="text-center text-white bg">Selected Cars</h3>
                     </div>
                 </div>
 
                 <div class="row">
-                    <button type="button" class="btn btn-info btn-sm w-25 ms-5 mb-3" data-ripple-color="dark" id="newCar">
+                    <button type="button" class="btn btn-info btn-sm w-25 ms-5 mb-3" data-ripple-color="dark" id="newCar" fdprocessedid="g35mgp">
                         <i class="fas fa-plus"></i>
                         NEW
                     </button>
@@ -3188,8 +3192,8 @@
 
                 <form class="ms-3 me-3 ">
                     <div>
-                        <table class="table align-middle mb-0 bg-white" id="tblSelectedCars">
-                            <thead class="bg-light">
+                        <table class="table align-middle mb-0 bg-white" id="tblSelectedCars" style="border-radius:25px">
+                            <thead class="" style="background-color:#f3dc3933">
                             <tr>
                                 <th scope="row">#</th>
                                 <th>Car Image</th>

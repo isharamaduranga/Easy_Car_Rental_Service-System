@@ -1825,7 +1825,7 @@ function loadSelectedCars(carId) {
                                     <td>
                                         <div class="form-check">
                                             <input class="form-check-input checkDriverIfWant text-danger" type="checkbox" value="" id="checkDriverIfWant" />
-                                            <label class="form-check-label text-primary" for="checkDriverIfWant">If you want a driver please click</label>
+                                            <label class="form-check-label text-primary" for="checkDriverIfWant">Click Me: Need a Driver</label>
                                         </div>
                                     </td>
                                      <td id="did" class="text-white" style="font-size: 2px">
@@ -1911,6 +1911,7 @@ function load(id,name, contact) {
     });
 }
 
+/** for Check All Details condition are totally correct.. */
 var bookingDenyOrAccept;
 
 $("#btnBook").click(function () {
@@ -1944,7 +1945,7 @@ function findCustomerToReserve(bookingDenyOrAccept) {
         },
         error: function (ob) {
             if (ob.responseJSON && ob.responseJSON.message) {
-                alert(ob.responseJSON.message);
+                alert("Please check Your NIC number is Correct !!! ("+ob.responseJSON.message+")");
             } else {
                 alert("Something went Wrong !!! while processing your request.");
             }
@@ -1952,9 +1953,8 @@ function findCustomerToReserve(bookingDenyOrAccept) {
     });
 }
 
+/** for Check need a Driver or Not */
 var driverWantOrNot;
-
-
 
 function reserve(customer,bookingDenyOrAccept) {
 
