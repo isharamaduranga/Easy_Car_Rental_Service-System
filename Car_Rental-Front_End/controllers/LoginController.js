@@ -27,7 +27,7 @@ $("#loginpassword, #logindriverpassword").keyup(function (event) {
     }
 });
 
-var logStatus;
+
 
 /** For Customer Login the System*/
 $("#btnLogToSystem").click(function () {
@@ -88,7 +88,7 @@ function searchCustomerTable(userId) {
         url: baseURLLogin + "customer/USER/" + userId,
         method: "GET",
         success: function (response) {
-            logStatus = "Logged";
+
             alert("Successfully Login Customer Table....")
 
             /*  =======================Log in Customer car booking=========================================*/
@@ -108,7 +108,6 @@ function searchDriverTable(userId) {
         url: baseURLLogin + "driver/USER/" + userId,
         method: "GET",
         success: function (response) {
-            logStatus = "Logged";
 
             /*  =======================Log in Driver schedules=========================================*/
             searchSchedule();

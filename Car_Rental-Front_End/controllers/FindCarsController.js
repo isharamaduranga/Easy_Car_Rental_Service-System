@@ -1934,13 +1934,13 @@ $("#btnBook").click(function () {
     findCustomerToReserve(bookingDenyOrAccept)
 });
 
-function findCustomerToReserve(denyOrAccept) {
+function findCustomerToReserve(bookingDenyOrAccept) {
 
     $.ajax({
         url: baseURLForReservation+"customer/findValidNic/" + $("#PNIC").val(),
         method: "GET",
         success: function (response) {
-            reserve(response.data,denyOrAccept);
+            reserve(response.data,bookingDenyOrAccept);
         },
         error: function (ob) {
             if (ob.responseJSON && ob.responseJSON.message) {
@@ -1951,3 +1951,68 @@ function findCustomerToReserve(denyOrAccept) {
         }
     });
 }
+
+var driverWantOrNot;
+
+
+
+function reserve(customer,bookingDenyOrAccept) {
+
+    var AllDetails = new Array();
+    for (var i = 0; i < $("#tblSelectedCars tbody tr").length; i++) {
+
+        if ($('#checkDriverIfWant').is(':checked')) {
+            driverWantOrNot = "Want";
+        } else {
+            driverWantOrNot = "Not Want";
+        }
+
+        var reserveItems = {
+            reserveId: $("#reserveId").val(),
+            carId: $("#tblSelectedCars tbody tr").children(':nth-child(2)')[i].innerText,
+            driverId: $("#tblSelectedCars tbody tr").children(':nth-child(7)')[i].innerText,
+            type: $("#tblSelectedCars tbody tr").children(':nth-child(5)')[i].innerText,
+            colour: $("#tblSelectedCars tbody tr").children(':nth-child(4)')[i].innerText,
+            brand: $("#tblSelectedCars tbody tr").children(':nth-child(3)')[i].innerText,
+            driverWantOrNot:driverWantOrNot,
+            driverName: $("#tblSelectedCars tbody tr").children(':nth-child(8)')[i].innerText,
+            driverContact: $("#tblSelectedCars tbody tr").children(':nth-child(9)')[i].innerText,
+            loseDamageWaiverPayment: $("#tblSelectedCars tbody tr").children(':nth-child(10)')[i].innerText
+        }
+        AllDetails.push(reserveItems);
+    }
+
+    var reserveDetail = {
+        reserveId: $("#reserveId").val(),
+        customer: customer,
+        pickUpDate: $("#BPickupDate").val(),
+        reserveDate: today.toString(),
+        pickUpTime: $("#BPickupTime").val(),
+        destination: $("#BDestination").val(),
+        duration:parseInt($("#BDuration").val()),
+        pickUpVenue: $("#BPickupLocation").val(),
+        returnVenue: $("#BReturnLocation").val(),
+        returnDate: $("#BReturnDate").val(),
+        returnTime: $("#BReturnTime").val(),
+        requestAcceptOrDeny: bookingDenyOrAccept,
+        reserveDetails: AllDetails
+    }
+
+
+    $.ajax({
+        url: baseURLForReservation+"reserve",
+        method: "POST",
+        contentType: "application/json",
+        data: JSON.stringify(reserveDetail),
+        success: function (response) {
+            alert(response.message);
+           /** load Driver Schedule */
+           loadDriverSChedule();
+            gotoMainPage();
+        },
+        error: function (ob) {
+            alert(ob.responseJSON.message);
+        }
+    });
+}
+

@@ -1,4 +1,4 @@
-logStatus = "Not Logged";
+
 
 $('#logInCustomer').css('display', 'none');
 $('#RegisterPage').css('display', 'none');
@@ -473,6 +473,36 @@ function searchAvailableCars() {
     $('#DriverManagePage').css('transform', 'scale(0)');
     $('#ChangeDriver').css('transform', 'scale(0)');
     $('#PaymentAddPage').css('transform', 'scale(0)');
+    $("#SchedulePageForDriver").css('display', 'none');
+    $("#Reservation").css('display','none');
+}
+
+function gotoMainPage() {
+    $('#logInCustomer').css('display', 'none');
+    $('#RegisterPage').css('display', 'none');
+    $('#RegisterDriver').css('display', 'none');
+    $('#logInDriver').css('display', 'none');
+    $('#logInAdmin').css('display', 'none');
+    $('#ForgotPasswordPage').css('display', 'none');
+    $('#admin_screen').css('display', 'none');
+
+    $("#CustomerDashBoard").css('display', 'none');
+    $("#moreSpace").css('display', 'none');
+
+    $("#nav_bar").css('display', 'block');
+    $("#banner").css('display', 'block');
+    $("#services").css('display', 'block');
+    $("#about_us").css('display', 'block');
+    $("#featured-car").css('display', 'block');
+    $("#testimonials").css('display', 'block');
+    $("#Contact_Page").css('display', 'block');
+    $("#social_media").css('display', 'block');
+    $("#footer").css('display', 'block');
+
+    $('#PaymentAddPage').css('transform', 'scale(0)');
+    $('#CarManagePage').css('transform', 'scale(0)');
+    $('#DriverManagePage').css('transform', 'scale(0)');
+    $('#ChangeDriver').css('transform', 'scale(0)');
     $("#SchedulePageForDriver").css('display', 'none');
     $("#Reservation").css('display','none');
 }
