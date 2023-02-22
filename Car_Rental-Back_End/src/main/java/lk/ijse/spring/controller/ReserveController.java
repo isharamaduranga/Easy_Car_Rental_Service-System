@@ -8,6 +8,7 @@
 
 package lk.ijse.spring.controller;
 
+import lk.ijse.spring.dto.ReserveDTO;
 import lk.ijse.spring.service.ReserveService;
 import lk.ijse.spring.util.ResponseUtil;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -25,5 +26,11 @@ public class ReserveController {
         return new ResponseUtil(200,"load",reserveService.generateReserveId());
     }
 
+    @PostMapping
+    public ResponseUtil saveReservation(@RequestBody ReserveDTO dto){
+
+    }
+
 
 }
+

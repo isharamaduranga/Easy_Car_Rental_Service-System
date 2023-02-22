@@ -1961,7 +1961,7 @@ function reserve(customer,bookingDenyOrAccept) {
     var AllDetails = new Array();
     for (var i = 0; i < $("#tblSelectedCars tbody tr").length; i++) {
 
-        if ($('#checkDriverIfWant').is(':checked')) {
+        if ($('#checkDriverIfWant').is(':checked')){
             driverWantOrNot = "Want";
         } else {
             driverWantOrNot = "Not Want";
@@ -2007,12 +2007,72 @@ function reserve(customer,bookingDenyOrAccept) {
         success: function (response) {
             alert(response.message);
            /** load Driver Schedule */
-           loadDriverSChedule();
+           loadDriverSchedule();
             gotoMainPage();
         },
         error: function (ob) {
             alert(ob.responseJSON.message);
         }
     });
+}
+
+function loadDriverSchedule() {
+    console.log("schedule");
+    for (var i = 0; i < $("#tblSelectedCars tbody tr").length; i++) {
+
+        if ($('#checkDriverIfWant').is(':checked')) {
+            driverWantOrNot = "Want";
+        } else {
+            driverWantOrNot = "Not Want";
+        }
+
+        var reserveItems = {
+            reserveId: $("#reserveId").val(),
+            carId: $("#tblSelectedCars tbody tr").children(':nth-child(2)')[i].innerText,
+            driverId: $("#tblSelectedCars tbody tr").children(':nth-child(7)')[i].innerText,
+            type: $("#tblSelectedCars tbody tr").children(':nth-child(5)')[i].innerText,
+            colour: $("#tblSelectedCars tbody tr").children(':nth-child(4)')[i].innerText,
+            brand: $("#tblSelectedCars tbody tr").children(':nth-child(3)')[i].innerText,
+            driverWantOrNot:driverWantOrNot,
+            driverName: $("#tblSelectedCars tbody tr").children(':nth-child(8)')[i].innerText,
+            driverContact: $("#tblSelectedCars tbody tr").children(':nth-child(9)')[i].innerText,
+            loseDamageWaiverPayment: $("#tblSelectedCars tbody tr").children(':nth-child(10)')[i].innerText
+        }
+
+        console.log(reserveItems);
+
+        generateScheduleIds();
+
+        var schedule={
+            scheduleId:$("#scheduleId").val(),
+            pickUpDate:$("#BPickupDate").val(),
+            pickUpTime:$("#BPickupTime").val(),
+            returnDate:$("#BReturnDate").val(),
+            returnTime:$("#BReturnTime").val(),
+            pickUpVenue:$("#BPickupLocation").val(),
+            returnVenue:$("#BReturnLocation").val(),
+            releaseOrNot:"Not Release",
+            reserveDetails:reserveItems
+        }
+
+        console.log(schedule);
+
+        $.ajax({
+            url: baseURLForReservation+"schedule",
+            method: "POST",
+            contentType: "application/json",
+            data: JSON.stringify(schedule),
+            success: function (response) {
+                alert(response.message);
+                console.log("success");
+            },
+            error: function (ob) {
+                alert(ob.responseJSON.message);
+            }
+        });
+
+    }
+
+
 }
 
