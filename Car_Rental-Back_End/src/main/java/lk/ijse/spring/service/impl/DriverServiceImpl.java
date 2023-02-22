@@ -86,5 +86,11 @@ public class DriverServiceImpl implements DriverService {
         return mapper.map(driver,DriverDTO.class);
     }
 
+    @Override
+    public DriverDTO assignRandomlyDriver(String release) {
+        Driver driver = driverRepo.assignRandomlyDriver(release);
+        return mapper.map(driver,DriverDTO.class);
+    }
+
 
 }

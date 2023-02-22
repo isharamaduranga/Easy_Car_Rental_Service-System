@@ -23,7 +23,7 @@ public class ScheduleController {
 
     @GetMapping(params = {"tempId"})
     public ResponseUtil generateScheduleId(@RequestParam  String tempId){
-        return new ResponseUtil(200,"load",scheduleService.generateScheduleId())
+        return new ResponseUtil(200,"load",scheduleService.generateScheduleId());
     }
 
 }

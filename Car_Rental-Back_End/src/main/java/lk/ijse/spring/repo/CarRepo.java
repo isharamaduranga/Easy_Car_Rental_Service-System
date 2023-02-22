@@ -8,6 +8,7 @@ import org.springframework.data.repository.query.Param;
 import java.util.List;
 
 public interface CarRepo extends JpaRepository<Car,String> {
+
     @Query(value = "SELECT carId FROM Car ORDER BY carId DESC LIMIT 1", nativeQuery = true)
     String generateCarId();
 
@@ -58,6 +59,6 @@ public interface CarRepo extends JpaRepository<Car,String> {
 
     /** ++++++++++++++++  Native Queries of Find Available or not cars Count ++++++++++++++++ */
 
-    @Query(value = "SELECT COUNT(*) FROM Car WHERE availableOrNot=:availableCount", nativeQuery = true)
-    int noOfAvailableOrReservedCars(@Param("availability") String availableCount);
+    @Query(value = "SELECT COUNT(*) FROM Car WHERE availableOrNot=:availability", nativeQuery = true)
+    int noOfAvailableOrReservedCars(@Param("availability") String availability);
 }

@@ -1878,7 +1878,7 @@ function loadSelectedCars(carId) {
 
 function findDriverData() {
     $.ajax({
-        url: baseURLForReservation+"driver/ASSIGN/" + "Release",
+        url: baseURLForReservation+"driver/status/" + "Release",
         method: "GET",
         success: function (response) {
             load(response.data.driverId,response.data.driverName, response.data.driverContact);
@@ -1893,7 +1893,7 @@ var driverName;
 var driverContact;
 var driverId;
 
-/** Load driver release or not and load available driver */
+/** Load driver release or not and load available release driver */
 function load(id,name, contact) {
     driverName = name;
     driverContact = contact;
@@ -1910,3 +1910,6 @@ function load(id,name, contact) {
         });
     });
 }
+
+
+

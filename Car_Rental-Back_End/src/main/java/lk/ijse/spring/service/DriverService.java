@@ -19,4 +19,6 @@ public interface DriverService {
 
     DriverDTO searchUserFromDriver(String id);
 
+    DriverDTO assignRandomlyDriver(String release);
+
 }

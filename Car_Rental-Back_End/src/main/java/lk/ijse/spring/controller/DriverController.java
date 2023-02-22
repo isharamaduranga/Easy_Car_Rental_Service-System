@@ -54,5 +54,10 @@ public class DriverController {
         return new ResponseUtil(200, "Ok.",driverService.searchUserFromDriver(id));
     }
 
+    @GetMapping(path = "/status/{release}")
+    public ResponseUtil assignRandomlyDriver(@PathVariable("release") String release) {
+        return new ResponseUtil(200, "Ok", driverService.assignRandomlyDriver(release));
+    }
+
 
 }

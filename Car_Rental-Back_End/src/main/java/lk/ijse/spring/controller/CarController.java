@@ -123,7 +123,7 @@ public class CarController {
     /** +++++++++++++++ for find Available cars count++++++++++++++ */
 
     @GetMapping(path = "/countOfAvailableCars/{availability}")
-    public ResponseUtil findNoOfAvailableCars(@PathVariable("availability") String availability) {
+    public ResponseUtil noOfAvailableOrReservedCars(@PathVariable("availability") String availability) {
         return new ResponseUtil(200, "Ok", carService.noOfAvailableOrReservedCars(availability));
     }
 
