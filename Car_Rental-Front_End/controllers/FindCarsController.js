@@ -376,6 +376,8 @@ function loadAllCarsToDisplay() {
     });
 }
 
+
+
 function findPassengersAsc(passengerAscending) {
     $.ajax({
 

@@ -130,6 +130,7 @@ $("#btnSearchForRent").click(function () {
         }else {
                 searchAvailableCars();
                 pasteDate();
+
         }
     }
 });
