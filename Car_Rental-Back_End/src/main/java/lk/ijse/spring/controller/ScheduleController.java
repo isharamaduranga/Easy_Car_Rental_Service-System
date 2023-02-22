@@ -8,9 +8,11 @@
 
 package lk.ijse.spring.controller;
 
+import lk.ijse.spring.dto.ScheduleDTO;
 import lk.ijse.spring.service.ScheduleService;
 import lk.ijse.spring.util.ResponseUtil;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.MediaType;
 import org.springframework.web.bind.annotation.*;
 
 @RestController
@@ -26,4 +28,11 @@ public class ScheduleController {
         return new ResponseUtil(200,"load",scheduleService.generateScheduleId());
     }
 
+    @PostMapping(produces = MediaType.APPLICATION_JSON_VALUE)
+    public ResponseUtil saveSchedule(@RequestBody ScheduleDTO scheduleDTO){
+        scheduleService.saveSchedule(scheduleDTO);
+        return new ResponseUtil(200, "Successfully Saved.",null);
+    }
+
 }
+

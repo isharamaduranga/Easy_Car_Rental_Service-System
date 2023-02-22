@@ -2072,7 +2072,5 @@ function loadDriverSchedule() {
         });
 
     }
-
-
 }
 

@@ -8,6 +8,8 @@
 
 package lk.ijse.spring.service.impl;
 
+import lk.ijse.spring.dto.ScheduleDTO;
+import lk.ijse.spring.entity.Schedule;
 import lk.ijse.spring.repo.ScheduleRepo;
 import lk.ijse.spring.service.ScheduleService;
 import org.modelmapper.ModelMapper;
@@ -29,4 +31,16 @@ public class ScheduleServiceImpl implements ScheduleService {
     public String generateScheduleId() {
        return scheduleRepo.generateScheduleId();
     }
+
+    @Override
+    public void saveSchedule(ScheduleDTO scheduleDTO) {
+        if (!scheduleRepo.existsById(scheduleDTO.getScheduleId())) {
+            scheduleRepo.save(mapper.map(scheduleDTO, Schedule.class));
+        }else {
+            throw new RuntimeException(scheduleDTO.getScheduleId()+" Schedule Already Exists..!");
+        }
+    }
+
+
 }
+
