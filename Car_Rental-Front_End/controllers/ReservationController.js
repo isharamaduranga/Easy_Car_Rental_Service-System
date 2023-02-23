@@ -142,6 +142,23 @@ function relevantReservations() {
 }
 
 
+$("#chooseReservationIds").click(function () {
+    $("#CarIds").empty();
+    $("#CarIds").append($("<option></option>").attr("value", 0).text("Select ID"));
+
+
+    $.ajax({
+        url: baseURLForReserveDetails+"reserve/" + $("#chooseReservationIds option:selected").text(),
+        method: "GET",
+        success: function (response) {
+            for (let i = 0; i <response.data.reserveDetails.length ; i++) {
+                $("#CarIds").append($("<option></option>").attr("value", i+1).text(response.data.reserveDetails[i].carId));
+            }
+        },
+        error: function (ob) {
+        }
+    });
+});
 
 
 
