@@ -196,6 +196,18 @@ function chooseDriverIds() {
     });
 }
 
+$("#chooseNewDriverIds").click(function () {
+    $.ajax({
+        url: baseURLForReserveDetails+"driver/" + $("#chooseNewDriverIds option:selected").text(),
+        method: "GET",
+        success: function (response) {
+            $("#changedNewDriverName").val(response.data.driverName);
+            $("#changedNewDriverContact").val(response.data.driverContact);
+        },
+        error: function (ob) {
+        }
+    });
+});
 
 
 function clearReFields(){
