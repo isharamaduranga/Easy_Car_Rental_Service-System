@@ -143,6 +143,28 @@ function generatePaymentIds() {
     });
 }
 
+$("#calculateFullIncome").click(function () {
+    $("#tblPayment tbody > tr").off("click");
+
+    let text = "Do you want to make this payment ?";
+
+    if (confirm(text) == true) {
+        if ($("#paymentDate").val() == "" || $("#rentFee").val() == "" || $("#driverFee").val() == "" || $("#extraKm").val() == "" || $("#loseDamageWaiverPayment").val() == "" || $("#priceForTravelledExtraKm").val() == "" ||
+            $("#reducedLoseDamageWaiverPayment").val() == "" || $("#travelledDistance").val() == "" || $("#carHarmOrNot option:selected").val() == ""){
+            alert("All Fields Are Required !");
+        }else {
+            if ($("#errorPaymentDate").text() != "" || $("#errorRentFee").text() != "" || $("#errorDriverFee").text() != "" || $("#errorDamagePayment").text() != "" || $("#errorReduceDamagePayment").text() != "" || $("#errorTravelledDistance").text() != "" ||
+                $("#errorTravelledExtraKM").text() != "" || $("#errorPriceExtraKM").text() != ""){
+                alert("Check Input Fields Whether Correct !");
+            }else {
+                calculateIncome();
+            }
+        }
+    }else {
+
+    }
+});
+
 function calculateIncome() {
     var paymentDetail = {
         paymentId: $("#driverId").val(),
@@ -204,24 +226,4 @@ function loadPayments() {
 
 
 
-$("#calculateFullIncome").click(function () {
-    $("#tblPayment tbody > tr").off("click");
 
-    let text = "Do you want to make this payment ?";
-
-    if (confirm(text) == true) {
-        if ($("#paymentDate").val() == "" || $("#rentFee").val() == "" || $("#driverFee").val() == "" || $("#extraKm").val() == "" || $("#loseDamageWaiverPayment").val() == "" || $("#priceForTravelledExtraKm").val() == "" ||
-            $("#reducedLoseDamageWaiverPayment").val() == "" || $("#travelledDistance").val() == "" || $("#carHarmOrNot option:selected").val() == ""){
-            alert("All Fields Are Required !");
-        }else {
-            if ($("#errorPaymentDate").text() != "" || $("#errorRentFee").text() != "" || $("#errorDriverFee").text() != "" || $("#errorDamagePayment").text() != "" || $("#errorReduceDamagePayment").text() != "" || $("#errorTravelledDistance").text() != "" ||
-                $("#errorTravelledExtraKM").text() != "" || $("#errorPriceExtraKM").text() != ""){
-                alert("Check Input Fields Whether Correct !");
-            }else {
-                calculateIncome();
-            }
-        }
-    }else {
-
-    }
-});

@@ -8,12 +8,17 @@
 
 package lk.ijse.spring.service.impl;
 
+import lk.ijse.spring.dto.PaymentDTO;
+import lk.ijse.spring.entity.Payment;
 import lk.ijse.spring.repo.PaymentRepo;
 import lk.ijse.spring.service.PaymentService;
 import org.modelmapper.ModelMapper;
+import org.modelmapper.TypeToken;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
+
+import java.util.List;
 
 @Service
 @Transactional
@@ -28,5 +33,21 @@ public class PaymentServiceImpl implements PaymentService {
     @Override
     public String generatePaymentIds() {
         return paymentRepo.generatePaymentId();
+    }
+
+    @Override
+    public void savePayment(PaymentDTO paymentDTO) {
+        if (!paymentRepo.existsById(paymentDTO.getPaymentId())) {
+            paymentRepo.save(mapper.map(paymentDTO, Payment.class));
+        } else {
+            throw new RuntimeException(paymentDTO.getPaymentId() + " Payment Already Exists..!");
+        }
+    }
+
+    @Override
+    public List<PaymentDTO> getAllPayments() {
+        List<Payment> paymentList = paymentRepo.findAll();
+        return mapper.map(paymentList, new TypeToken<List<PaymentDTO>>() {
+        }.getType());
     }
 }
