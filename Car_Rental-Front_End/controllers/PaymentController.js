@@ -1,3 +1,7 @@
+
+/** Back end Request URL */
+let baseURLForPayment="http://localhost:8080/Car_Rental_Back_End_war/"
+
 var regExPrice = /^[0-9]{1,10}(.)[0-9]{2}$/;
 var regExDate = /^\d{2}\/\d{2}\/\d{4}$/;
 var regExDistance = /^[0-9]{1,5}$/;
@@ -110,3 +114,31 @@ $("#priceForTravelledExtraKm").keyup(function (event) {
         $("#errorPriceExtraKM").text("Check this field whether correct !");
     }
 });
+
+function generatePaymentIds() {
+    $("#paymentId").val("P00-0001");
+    var test = "id";
+
+    $.ajax({
+        url: baseURLForPayment+"payment?test="+test,
+        method: "GET",
+        success: function (response) {
+            var paymentId = response.data;
+            var tempId = parseInt(paymentId.split("-")[1]);
+            tempId = tempId + 1;
+            if (tempId <= 9) {
+                $("#paymentId").val("P00-000" + tempId);
+            } else if (tempId <= 99) {
+                $("#paymentId").val("P00-00" + tempId);
+            } else if (tempId <= 999) {
+                $("#paymentId").val("P00-0" + tempId);
+            } else {
+                $("#paymentId").val("P00-" + tempId);
+            }
+
+        },
+        error: function (ob, statusText, error) {
+        }
+
+    });
+}

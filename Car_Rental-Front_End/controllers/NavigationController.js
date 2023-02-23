@@ -863,6 +863,9 @@ $("#btnCancelChangeDriver").click(function () {
 
 
 $("#btnAddPayment").click(function () {
+    generatePaymentIds()
+    loadPayments();
+
     $('#PaymentAddPage').css('transform', 'scale(1)');
     $("#payment_dashboard").css('display', 'block');
 
