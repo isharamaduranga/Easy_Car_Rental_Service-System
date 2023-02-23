@@ -143,6 +143,42 @@ function generatePaymentIds() {
     });
 }
 
+function calculateIncome() {
+    var paymentDetail = {
+        paymentId: $("#driverId").val(),
+        paymentDate:$("#paymentDate").val(),
+        rentFee: $("#rentFee").val(),
+        harmOrNot: $("#driverReleaseOrNot option:selected").text(),
+        loseDamagePayment: $("#loseDamageWaiverPayment").val(),
+        reduceLoseDamagePayment: $("#reducedLoseDamageWaiverPayment").val(),
+        driverFee: $("#driverFee").val(),
+        travelledDistance: $("#travelledDistance").val(),
+        extraKm: $("#extraKm").val(),
+        extraKmPrice: $("#priceForTravelledExtraKm").val(),
+        fullPayment: $("#calculateFullIncome").val()
+    }
+
+    $.ajax({
+        url: "http://localhost:8080/Car_Rental_System_war/payment",
+        method: "POST",
+        contentType: "application/json",
+        data: JSON.stringify(paymentDetail),
+        success: function (response) {
+            if (response.code == 200){
+                alert($("#paymentId").val() + " "+ response.message);
+                generatePaymentIds();
+                loadPayments();
+
+            }
+        },
+        error: function (ob) {
+            alert(ob.responseJSON.message);
+        }
+    });
+}
+
+
+
 $("#calculateFullIncome").click(function () {
     $("#tblPayment tbody > tr").off("click");
 
