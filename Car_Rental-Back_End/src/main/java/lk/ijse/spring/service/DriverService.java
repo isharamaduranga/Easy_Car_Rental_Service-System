@@ -21,4 +21,7 @@ public interface DriverService {
 
     DriverDTO assignRandomlyDriver(String release);
 
+    List<DriverDTO> searchAvailableDriversOrReleaseDrivers(String release);
+
+
 }

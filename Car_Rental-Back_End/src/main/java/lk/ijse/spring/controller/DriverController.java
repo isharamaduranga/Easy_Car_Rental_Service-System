@@ -58,6 +58,10 @@ public class DriverController {
     public ResponseUtil assignRandomlyDriver(@PathVariable("release") String release) {
         return new ResponseUtil(200, "Ok", driverService.assignRandomlyDriver(release));
     }
+    @GetMapping(path = "/RELEASE/{release}",produces = MediaType.APPLICATION_JSON_VALUE)
+    public ResponseUtil searchAvailableDriversOrReleasedDrivers(@PathVariable("release") String release){
+        return new ResponseUtil(200, "Ok.",driverService.searchAvailableDriversOrReleaseDrivers(release));
+    }
 
 
 }

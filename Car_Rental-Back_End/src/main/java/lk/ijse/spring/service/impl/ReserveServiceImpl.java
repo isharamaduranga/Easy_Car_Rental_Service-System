@@ -90,4 +90,15 @@ public class ReserveServiceImpl implements ReserveService {
         }.getType());
 
     }
+
+    @Override
+    public ReserveDTO searchReservation(String rId) {
+        if (reserveRepo.existsById(rId)) {
+            Reserve reserve = reserveRepo.findById(rId).get();
+            return  modelMapper.map(reserve,ReserveDTO.class);
+        }else {
+            throw new RuntimeException(rId + " " + "No Such a Reservation..! Please Check The ID..!");
+        }
+
+    }
 }

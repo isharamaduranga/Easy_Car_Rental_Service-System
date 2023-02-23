@@ -39,5 +39,11 @@ public class ReserveController {
     }
 
 
+    @GetMapping(path = "/{id}",produces = MediaType.APPLICATION_JSON_VALUE)
+    public ResponseUtil searchReservation(@PathVariable String id){
+        return new ResponseUtil(200, "Ok.",reserveService.searchReservation(id));
+    }
+
+
 }
 

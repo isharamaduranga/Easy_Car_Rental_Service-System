@@ -8,5 +8,6 @@ public interface ReserveService {
     String generateReserveId();
     void saveReservationCars(ReserveDTO reserveDTO);
     List<ReserveDTO>getAllReservations();
+    ReserveDTO searchReservation(String rId);
 
 }

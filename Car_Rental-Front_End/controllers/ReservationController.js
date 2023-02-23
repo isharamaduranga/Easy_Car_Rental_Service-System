@@ -2,7 +2,6 @@
 /** Back end Request URL */
 let baseURLForReserveDetails = "http://localhost:8080/Car_Rental_Back_End_war/"
 
-
 function loadAllReservations() {
     $.ajax({
         url: baseURLForReserveDetails+"reserve",
@@ -33,37 +32,6 @@ function loadAllReservations() {
         },
         error: function (ob) {
             alert(ob.responseJSON.message);
-        }
-    });
-}
-
-var tblReserveRow =-1;
-function BindRowReserveTableClickEvent() {
-    $("#tblReserve tbody > tr").click(function () {
-
-        tblReserveRow = $(this);
-
-        $('#ReserveDetailsPage').css('transform','scale(1)');
-        loadCarIds($.trim(tblReserveRow.children(':nth-child(2)').text()));
-        $("#viewReserveId").val($.trim(tblReserveRow.children(':nth-child(2)').text()));
-        clearReFields();
-    });
-
-}
-
-function loadCarIds(reserveId) {
-    $("#viewCarId").empty();
-    $("#viewCarId").append($("<option></option>").attr("value", 0).text("Select ID"));
-
-    $.ajax({
-        url: baseURLForReserveDetails+"reserve/"+reserveId,
-        method: "GET",
-        success: function (response) {
-            for (let i = 0; i <response.data.reserveDetails.length ; i++) {
-                $("#viewCarId").append($("<option></option>").attr("value", i+1).text(response.data.reserveDetails[i].carId));
-            }
-        },
-        error: function (ob) {
         }
     });
 }
@@ -99,6 +67,65 @@ function loadCarIds(reserveId) {
         }
     });
 }*/
+
+var tblReserveRow =-1;
+function BindRowReserveTableClickEvent() {
+    $("#tblReserve tbody > tr").click(function () {
+
+        tblReserveRow = $(this);
+
+        $('#ReserveDetailsPage').css('transform','scale(1)');
+        loadCarIds($.trim(tblReserveRow.children(':nth-child(2)').text()));
+        $("#viewReserveId").val($.trim(tblReserveRow.children(':nth-child(2)').text()));
+        clearReFields();
+    });
+
+}
+
+function loadCarIds(reserveId) {
+    $("#viewCarId").empty();
+    $("#viewCarId").append($("<option></option>").attr("value", 0).text("Select ID"));
+
+    $.ajax({
+        url: baseURLForReserveDetails+"reserve/"+reserveId,
+        method: "GET",
+        success: function (response) {
+            for (let i = 0; i <response.data.reserveDetails.length ; i++) {
+                $("#viewCarId").append($("<option></option>").attr("value", i+1).text(response.data.reserveDetails[i].carId));
+            }
+
+        },
+        error: function (ob) {
+        }
+    });
+}
+
+
+function relevantReservations() {
+    $("#chooseReservationIds").empty();
+    $("#chooseReservationIds").append($("<option></option>").attr("value", 0).text("Select ID"));
+
+    var countReIds = 1;
+    $.ajax({
+        url: baseURLForReserveDetails+"reserve",
+        method: "GET",
+        success: function (response) {
+            for (var ids of response.data) {
+                $("#chooseReservationIds").append($("<option></option>").attr("value", countReIds).text(ids.reserveId));
+                countReIds++;
+            }
+        },
+        error: function (ob) {
+        }
+    });
+}
+
+
+
+
+
+
+
 
 function clearReFields(){
     $("#viewBrand").val("");

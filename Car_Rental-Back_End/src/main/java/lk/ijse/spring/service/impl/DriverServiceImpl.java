@@ -92,5 +92,12 @@ public class DriverServiceImpl implements DriverService {
         return mapper.map(driver,DriverDTO.class);
     }
 
+    @Override
+    public List<DriverDTO> searchAvailableDriversOrReleaseDrivers(String release) {
+        List<Driver> driverList = driverRepo.searchAvailableDriversOrReleasedDrivers(release);
+        return mapper.map(driverList,new TypeToken<List<DriverDTO>>(){
+        }.getType());
+    }
+
 
 }
