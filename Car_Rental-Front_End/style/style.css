@@ -1067,6 +1067,18 @@ hr {
     transform: scale(1);
     z-index: 6;
 }
+
+#ReserveDetailsPage{
+    min-height: 100vh;
+    width: 100vw;
+    position: fixed;
+    top: 0;
+    left: 0;
+    background-color: rgba(0,0,0,.4);
+    background-size: cover;
+    transform: scale(0);
+    z-index: 7;
+}
 #PaymentAddPage{
     min-height: 100vh;
     width: 100vw;

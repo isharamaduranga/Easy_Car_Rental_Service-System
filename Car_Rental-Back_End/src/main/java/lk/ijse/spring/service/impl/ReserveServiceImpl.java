@@ -18,9 +18,12 @@ import lk.ijse.spring.repo.DriverRepo;
 import lk.ijse.spring.repo.ReserveRepo;
 import lk.ijse.spring.service.ReserveService;
 import org.modelmapper.ModelMapper;
+import org.modelmapper.TypeToken;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
+
+import java.util.List;
 
 @Service
 @Transactional
@@ -78,5 +81,13 @@ public class ReserveServiceImpl implements ReserveService {
         }else{
             throw new RuntimeException(dto.getReserveId()+" Reservation Already Exist !!!");
         }
+    }
+
+    @Override
+    public List<ReserveDTO> getAllReservations() {
+        List<Reserve> reserveList = reserveRepo.findAll();
+        return modelMapper.map(reserveList, new TypeToken<List<ReserveDTO>>(){
+        }.getType());
+
     }
 }
