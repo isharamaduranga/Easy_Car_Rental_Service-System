@@ -160,8 +160,41 @@ $("#chooseReservationIds").click(function () {
     });
 });
 
+$("#CarIds").click(function () {
+    $.ajax({
+        url: baseURLForReserveDetails+"reserve/" + $("#chooseReservationIds option:selected").text(),
+        method: "GET",
+        success: function (response) {
+            for (let i = 0; i < response.data.reserveDetails.length; i++) {
+                if ($("#CarIds option:selected").text() == response.data.reserveDetails[i].carId){
+                    $("#selectedDriverId").val(response.data.reserveDetails[i].driverId);
+                    $("#selectedDriverName").val(response.data.reserveDetails[i].driverName);
+                }
+            }
+        },
+        error: function (ob) {
+        }
+    });
+});
 
+function chooseDriverIds() {
+    $("#chooseNewDriverIds").empty();
+    $("#chooseNewDriverIds").append($("<option></option>").attr("value", 0).text("Select ID"));
 
+    var countReIds = 1;
+    $.ajax({
+        url: baseURLForReserveDetails+"driver/RELEASE/"+"Release",
+        method: "GET",
+        success: function (response) {
+            for (var ids of response.data) {
+                $("#chooseNewDriverIds").append($("<option></option>").attr("value", countReIds).text(ids.driverId));
+                countReIds++;
+            }
+        },
+        error: function (ob) {
+        }
+    });
+}
 
 
 
