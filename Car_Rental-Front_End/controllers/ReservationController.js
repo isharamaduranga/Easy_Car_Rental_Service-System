@@ -100,6 +100,27 @@ function loadCarIds(reserveId) {
     });
 }
 
+$("#viewCarId").click(function () {
+    $.ajax({
+        url: baseURLForReserveDetails+"reserve/" + $.trim(tblReserveRow.children(':nth-child(2)').text()),
+        method: "GET",
+        success: function (response) {
+            for (let i = 0; i < response.data.reserveDetails.length; i++) {
+                if ($("#viewCarId option:selected").text() == response.data.reserveDetails[i].carId){
+                    $("#viewBrand").val(response.data.reserveDetails[i].brand);
+                    $("#viewColour").val(response.data.reserveDetails[i].colour);
+                    $("#viewType").val(response.data.reserveDetails[i].type);
+                    $("#viewDriverId").val(response.data.reserveDetails[i].driverId);
+                    $("#viewDriverName").val(response.data.reserveDetails[i].driverName);
+                    $("#viewDriverContact").val(response.data.reserveDetails[i].driverContact);
+                    $("#viewLoseDamagePayment").val(response.data.reserveDetails[i].loseDamageWaiverPayment);
+                }
+            }
+        },
+        error: function (ob) {
+        }
+    });
+});
 
 function relevantReservations() {
     $("#chooseReservationIds").empty();
