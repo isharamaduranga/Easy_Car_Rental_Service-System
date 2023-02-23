@@ -25,4 +25,8 @@ public class PaymentServiceImpl implements PaymentService {
     @Autowired
     ModelMapper mapper;
 
+    @Override
+    public String generatePaymentIds() {
+        return paymentRepo.generatePaymentId();
+    }
 }
