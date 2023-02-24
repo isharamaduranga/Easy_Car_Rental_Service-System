@@ -44,7 +44,9 @@ $("#btnLogToAdminPanel").click(function () {
         // Login Admin panel
 
         $("#admin_screen").css('display','block');
-        $("#logInAdmin").css('display', 'none')
+        $("#logInAdmin").css('display', 'none');
+
+        loadAllAdminPanelData();
 
 
 

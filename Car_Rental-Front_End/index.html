@@ -963,13 +963,13 @@
             </div>
             <div class="row row-cols-5 text-center" style="justify-content: center">
                 <button id="btnRegister"
-                        style="font-weight: 600; background:red;color: white;border: none; border-radius: 10px; padding: 8px; margin-right: 25px;"
+                        style="font-weight: 600; background:limegreen;color: white;border: none; border-radius: 10px; padding: 8px; margin-right: 25px;"
                         type="button">Submit Register Form
                 </button>
                 <label class="form-label text-danger visually-hidden" id="generateCusId"></label>
                 <label class="form-label text-danger visually-hidden" id="generateUserId"></label>
                 <button id="btnRegisterCancel"
-                        style="font-weight: 600; background:limegreen; border: none; border-radius: 10px; color: white; padding: 8px"
+                        style="font-weight: 600; background:red; border: none; border-radius: 10px; color: white; padding: 8px"
                         type="button">Cancel..
                 </button>
             </div>
@@ -2067,10 +2067,10 @@
             <!--   Main  dashboard-->
             <div id="admin_dashboard" style="height: 96%;">
                 <section id="mainForm">
-                    <div id="main" style="margin-top: 45px;width: 98%;">
+                    <div id="main" style="margin-top: 20px;width: 98%;">
                         <div class="container  me-3 ms-3">
 
-                            <h2 class="text-dark text-center mt-5 mb-5">~ Admin DashBoard ~</h2>
+                            <h2 class="text-dark text-center mt-2 mb-3">~ Admin DashBoard ~</h2>
 
                             <!--Section: statistics cards-->
                             <section>
@@ -2084,7 +2084,7 @@
 
                                                     </div>
                                                     <div>
-                                                        <h3 class="text-primary" id="totalRegUsers"></h3>
+                                                        <h3 style="color: crimson" class="text-center" id="totalRegUsers">0</h3>
                                                         <p class="mb-0">Total Registered Users</p>
                                                     </div>
 
@@ -2100,7 +2100,7 @@
                                                         <i class="fa-solid fa-users-gear text-success fa-3x"></i>
                                                     </div>
                                                     <div class="text-end">
-                                                        <h3 class="text-primary" id="totalNewUsers"></h3>
+                                                        <h3 style="color: crimson" class="text-center" id="totalNewUsers">0</h3>
                                                         <p class="mb-0">Total New Users</p>
                                                     </div>
                                                 </div>
@@ -2115,7 +2115,7 @@
                                                         <i class="fa-solid fa-list text-warning fa-3x "></i>
                                                     </div>
                                                     <div class="text-end">
-                                                        <h3 class="text-primary" id="todayReservations"></h3>
+                                                        <h3 style="color: crimson" class="text-center" id="todayReservations">0</h3>
                                                         <p class="mb-0">Today Reservations</p>
                                                     </div>
                                                 </div>
@@ -2131,8 +2131,8 @@
                                                         <i class="far fa-comment-alt text-warning fa-3x"></i>
                                                     </div>
                                                     <div class="text-end">
-                                                        <h3 class="text-primary" id="todayActiveBookings"></h3>
-                                                        <p class="mb-0">Active Bookings</p>
+                                                        <h3 style="color: crimson" class="text-center" id="todayActiveBookings">0</h3>
+                                                        <p class="mb-0">Total Active Bookings</p>
                                                     </div>
 
                                                 </div>
@@ -2150,8 +2150,8 @@
                                                     </div>
 
                                                     <div>
-                                                        <h3 class="text-primary" id="availableCar"></h3>
-                                                        <p class="mb-0">Available Cars</p>
+                                                        <h3 style="color: crimson" class="text-center" id="availableCar">0</h3>
+                                                        <p class="mb-0">Total Available Cars</p>
                                                     </div>
 
                                                 </div>
@@ -2166,8 +2166,8 @@
                                                         <i class="fas fa-car text-danger fa-3x"></i>
                                                     </div>
                                                     <div>
-                                                        <h3 class="text-primary" id="reservedCars"></h3>
-                                                        <p class="mb-0">Reserved Cars</p>
+                                                        <h3 style="color: crimson" class="text-center" id="reservedCars">0</h3>
+                                                        <p class="mb-0">Total Reserved Cars</p>
                                                     </div>
                                                 </div>
                                             </div>
@@ -2182,8 +2182,8 @@
 
                                                     </div>
                                                     <div>
-                                                        <h3 class="text-primary" id="availableDrivers"></h3>
-                                                        <p class="mb-0">Available drivers</p>
+                                                        <h3 style="color: crimson" class="text-center" id="availableDrivers">0</h3>
+                                                        <p class="mb-0">Total Available drivers</p>
                                                     </div>
                                                 </div>
                                             </div>
@@ -2197,15 +2197,16 @@
                                                         <i class="fa-solid fa-person-circle-check text-info fa-3x"></i>
                                                     </div>
                                                     <div>
-                                                        <h3 class="text-primary" id="occupiedDrivers"></h3>
-                                                        <p class="mb-0">Reserved drivers</p>
+                                                        <h3 style="color: crimson" class="text-center" id="occupiedDrivers">0</h3>
+                                                        <p class="mb-0">Total Reserved drivers</p>
                                                     </div>
 
                                                 </div>
                                             </div>
                                         </div>
                                     </div>
-                                    <div class="col-xl-3 col-sm-6 col-12 mb-4">
+                                    <div class="col-xl-3 mt-2 col-sm-6 col-12 mb-4"></div>
+                                    <div class="col-xl-3 mt-2 col-sm-6 col-12 mb-4">
                                         <div class="card border-2 border-info card_dash">
                                             <div class="card-body">
                                                 <div class="d-flex justify-content-between px-md-1">
@@ -2213,15 +2214,15 @@
                                                         <i class="fa-solid fa-car-rear text-info fa-3x"></i>
                                                     </div>
                                                     <div>
-                                                        <h3 class="text-primary" id="maintainedCars"></h3>
-                                                        <p class="mb-0">Maintained Cars</p>
+                                                        <h3 style="color: crimson" class="text-center" id="maintainedCars">0</h3>
+                                                        <p class="mb-0">Total Maintained Cars</p>
                                                     </div>
 
                                                 </div>
                                             </div>
                                         </div>
                                     </div>
-                                    <div class="col-xl-3 col-sm-6 col-12 mb-4">
+                                    <div class="col-xl-3 mt-2 col-sm-6 col-12 mb-4">
                                         <div class="card border-2 border-warning card_dash">
                                             <div class="card-body">
                                                 <div class="d-flex justify-content-between px-md-1">
@@ -2229,13 +2230,14 @@
                                                         <i class="fas fa-car-crash text-warning fa-3x"></i>
                                                     </div>
                                                     <div>
-                                                        <h3 class="text-primary" id="underMaintainedCars"></h3>
+                                                        <h3 style="color: crimson" class="text-center" id="underMaintainedCars">0</h3>
                                                         <p class="mb-0">Under Maintained Cars</p>
                                                     </div>
                                                 </div>
                                             </div>
                                         </div>
                                     </div>
+                                    <div class="col-xl-3 mt-2 col-sm-6 col-12 mb-4"></div>
                                 </div>
                             </section>
                             <!--Section: Minimal statistics cards-->
@@ -2257,14 +2259,14 @@
                                                         </div>
                                                     </div>
                                                     <div class="align-self-center">
-                                                        <h6 class="h1 mb-0 text-success" id="allReservation">52</h6>
+                                                        <h6 class="h2 mb-0 text-success" id="allReservation">52</h6>
                                                     </div>
                                                 </div>
                                             </div>
                                         </div>
                                     </div>
                                 </div>
-                                <div class="row">
+                                <div class="row ">
                                     <div class="col-12  bg-success">
                                         <div class="card card_dash">
                                             <div class="card-body">
@@ -2279,7 +2281,7 @@
                                                         </div>
                                                     </div>
                                                     <div class="align-self-center">
-                                                        <h6 class="h1 mb-0 me-4 me-2 text-danger" id="totalIncome">
+                                                        <h6 class="h2 mb-0 me-4 me-2 text-danger" id="totalIncome">
                                                             <span>Rs. </span>123000</h6>
                                                     </div>
                                                 </div>
