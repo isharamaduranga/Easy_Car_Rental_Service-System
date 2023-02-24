@@ -19,6 +19,7 @@ function loadAllAdminPanelData() {
     totalRegisterUsers();
     TodayAllReservations();
     TodayActiveBookings();
+    TotalIncome();
 }
 
 
@@ -201,6 +202,23 @@ function UnAvailableDrivers() {
                 $("#occupiedDrivers").text(0);
             }else {
                 $("#occupiedDrivers").text(response.data);
+            }
+        },
+        error: function (ob) {
+            alert(ob.responseJSON.message);
+        }
+    });
+}
+
+function TotalIncome() {
+    $.ajax({
+        url: baseURLAdminPanel+"payment/AllIncome/" + "amount",
+        method: "GET",
+        success: function (response) {
+            if (response.data == ""){
+                $("#totalIncome").text("Rs."+0);
+            }else {
+                $("#totalIncome").text("Rs. "+response.data);
             }
         },
         error: function (ob) {

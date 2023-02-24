@@ -12,5 +12,7 @@ public interface PaymentService {
 
     List<PaymentDTO> getAllPayments();
 
+    double totalIncome();
+
 
 }

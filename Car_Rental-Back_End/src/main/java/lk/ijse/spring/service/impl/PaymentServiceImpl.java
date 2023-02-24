@@ -50,4 +50,9 @@ public class PaymentServiceImpl implements PaymentService {
         return mapper.map(paymentList, new TypeToken<List<PaymentDTO>>() {
         }.getType());
     }
+
+    @Override
+    public double totalIncome() {
+        return paymentRepo.totalIncome();
+    }
 }
