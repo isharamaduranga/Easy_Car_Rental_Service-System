@@ -103,7 +103,22 @@ function AllReservation() {
     });
 }
 
-
+function AvailableCars() {
+    $.ajax({
+        url: baseURLAdminPanel+"car/countOfAvailableCars/"+"Available",
+        method: "GET",
+        success: function (response) {
+            if (response.data == ""){
+                $("#availableCar").text(0);
+            }else {
+                $("#availableCar").text(response.data);
+            }
+        },
+        error: function (ob) {
+            alert(ob.responseJSON.message);
+        }
+    });
+}
 
 
 
