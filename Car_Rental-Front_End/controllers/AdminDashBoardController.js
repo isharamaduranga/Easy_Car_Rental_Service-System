@@ -5,6 +5,7 @@ let baseURLAdminPanel ="http://localhost:8080/Car_Rental_Back_End_war/"
 
 function loadAllAdminPanelData() {
     totalRegisterUsers();
+    totalNewUsers();
 }
 
 function totalRegisterUsers() {
@@ -24,3 +25,19 @@ function totalRegisterUsers() {
     });
 }
 
+function totalNewUsers() {
+    $.ajax({
+        url: baseURLAdminPanel+"customer/NewUsers/" + today,
+        method: "GET",
+        success: function (response) {
+            if (response.data == ""){
+                $("#totalNewUsers").text(0);
+            }else {
+                $("#totalNewUsers").text(response.data);
+            }
+        },
+        error: function (ob) {
+            alert(ob.responseJSON.message);
+        }
+    });
+}

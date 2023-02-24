@@ -63,7 +63,7 @@ public class CustomerController {
     }
 
 
-    @GetMapping(path ="/COUNTDAILY/{date}")
+    @GetMapping(path ="/NewUsers/{date}")
     public ResponseUtil countDailyRegisteredCustomers(@PathVariable String date){
         return new ResponseUtil(200, "Ök", customerService.countDailyRegisteredCustomers(date));
     }
