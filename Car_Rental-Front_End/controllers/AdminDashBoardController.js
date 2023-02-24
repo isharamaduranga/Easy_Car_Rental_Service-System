@@ -1,21 +1,21 @@
-
 /** Back end Request URL */
-let baseURLAdminPanel ="http://localhost:8080/Car_Rental_Back_End_war/"
+let baseURLAdminPanel = "http://localhost:8080/Car_Rental_Back_End_war/"
 
 
 function loadAllAdminPanelData() {
     totalRegisterUsers();
     totalNewUsers();
+    TodayAllReservations();
 }
 
 function totalRegisterUsers() {
     $.ajax({
-        url: baseURLAdminPanel+"customer/COUNT/" + "count",
+        url: baseURLAdminPanel + "customer/COUNT/" + "count",
         method: "GET",
         success: function (response) {
-            if (response.data == ""){
+            if (response.data == "") {
                 $("#totalRegUsers").text(0);
-            }else {
+            } else {
                 $("#totalRegUsers").text(response.data);
             }
         },
@@ -27,13 +27,30 @@ function totalRegisterUsers() {
 
 function totalNewUsers() {
     $.ajax({
-        url: baseURLAdminPanel+"customer/NewUsers/" + today,
+        url: baseURLAdminPanel + "customer/NewUsers/" + today,
         method: "GET",
         success: function (response) {
-            if (response.data == ""){
+            if (response.data == "") {
                 $("#totalNewUsers").text(0);
-            }else {
+            } else {
                 $("#totalNewUsers").text(response.data);
+            }
+        },
+        error: function (ob) {
+            alert(ob.responseJSON.message);
+        }
+    });
+}
+
+function TodayAllReservations() {
+    $.ajax({
+        url: baseURLAdminPanel+"reserve/DailyReservation/" + today,
+        method: "GET",
+        success: function (response) {
+            if (response.data == "") {
+                $("#todayReservations").text(0);
+            } else {
+                $("#todayReservations").text(response.data);
             }
         },
         error: function (ob) {

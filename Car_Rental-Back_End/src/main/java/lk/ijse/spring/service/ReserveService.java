@@ -9,5 +9,6 @@ public interface ReserveService {
     void saveReservationCars(ReserveDTO reserveDTO);
     List<ReserveDTO>getAllReservations();
     ReserveDTO searchReservation(String rId);
+    int countDailyReservation(String date);
 
 }
