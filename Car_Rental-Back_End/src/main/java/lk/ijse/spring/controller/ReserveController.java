@@ -49,6 +49,11 @@ public class ReserveController {
         return new ResponseUtil(200, "Ök", reserveService.countDailyReservation(date));
     }
 
+    @GetMapping(path ="{date}/{accept}")
+    public ResponseUtil activeReservationPerDay(@PathVariable("date") String date, @PathVariable("accept") String accept){
+        return new ResponseUtil(200, "Ök", reserveService.activeReservationPerDay(date,accept));
+    }
+
 
 }
 
