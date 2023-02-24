@@ -130,5 +130,10 @@ public class CarController {
         return new ResponseUtil(200, "Ok", carService.noOfAvailableOrReservedCars(availability));
     }
 
+    @GetMapping(path = "/carMaintain/{maintain}")
+    public ResponseUtil needMaintenanceOrUnderMaintenanceCars(@PathVariable("maintain") String maintain) {
+        return new ResponseUtil(200, "Ok", carService.needMaintenanceOrUnderMaintenanceCars(maintain));
+    }
+
 
 }

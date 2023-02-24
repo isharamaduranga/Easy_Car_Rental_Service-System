@@ -46,4 +46,7 @@ public interface CarService {
 
     /** for find Available cars*/
     int noOfAvailableOrReservedCars(String availability);
+
+    /** for find Maintenance cars*/
+    int needMaintenanceOrUnderMaintenanceCars(String maintain);
 }
