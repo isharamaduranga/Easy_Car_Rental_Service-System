@@ -11,5 +11,6 @@ public interface ReserveService {
     ReserveDTO searchReservation(String rId);
     int countDailyReservation(String date);
     int activeReservationPerDay(String date, String accept);
+    int countAllReservation();
 
 }

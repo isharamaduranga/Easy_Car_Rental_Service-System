@@ -54,6 +54,12 @@ public class ReserveController {
         return new ResponseUtil(200, "Ök", reserveService.activeReservationPerDay(date,accept));
     }
 
+    @GetMapping(path ="/ReservationCount/{countAll}")
+    public ResponseUtil countAllReservation(@PathVariable("countAll") String countAll){
+        return new ResponseUtil(200, "Ök", reserveService.countAllReservation());
+    }
+
+
 
 }
 

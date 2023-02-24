@@ -8,28 +8,16 @@ var month = ("0" + (now.getMonth() + 1)).slice(-2);
 var today = now.getFullYear() + "-" + (month) + "-" + (day);
 
 function loadAllAdminPanelData() {
-    totalRegisterUsers();
+    AvailableCars();
+    ReservedCars();
+    AllReservation();
     totalNewUsers();
+    totalRegisterUsers();
     TodayAllReservations();
     TodayActiveBookings();
 }
 
-function totalRegisterUsers() {
-    $.ajax({
-        url: baseURLAdminPanel + "customer/COUNT/" + "count",
-        method: "GET",
-        success: function (response) {
-            if (response.data == "") {
-                $("#totalRegUsers").text(0);
-            } else {
-                $("#totalRegUsers").text(response.data);
-            }
-        },
-        error: function (ob) {
-            alert(ob.responseJSON.message);
-        }
-    });
-}
+
 
 function totalNewUsers() {
     $.ajax({
@@ -48,6 +36,22 @@ function totalNewUsers() {
     });
 }
 
+function totalRegisterUsers() {
+    $.ajax({
+        url: baseURLAdminPanel + "customer/COUNT/" + "count",
+        method: "GET",
+        success: function (response) {
+            if (response.data == "") {
+                $("#totalRegUsers").text(0);
+            } else {
+                $("#totalRegUsers").text(response.data);
+            }
+        },
+        error: function (ob) {
+            alert(ob.responseJSON.message);
+        }
+    });
+}
 function TodayAllReservations() {
     $.ajax({
         url: baseURLAdminPanel+"reserve/DailyReservation/" + today,
@@ -81,3 +85,27 @@ function TodayActiveBookings() {
         }
     });
 }
+
+function AllReservation() {
+    $.ajax({
+        url: baseURLAdminPanel+"reserve/ReservationCount/" + "countAll",
+        method: "GET",
+        success: function (response) {
+            if (response.data == ""){
+                $("#allReservation").text(0);
+            }else {
+                $("#allReservation").text(response.data);
+            }
+        },
+        error: function (ob) {
+            alert(ob.responseJSON.message);
+        }
+    });
+}
+
+
+
+
+
+
+

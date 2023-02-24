@@ -61,6 +61,8 @@ public class CarController {
         return new ResponseUtil(200, "Ok", carService.searchRegNumberIsExists(reg));
     }
 
+
+
             /** +++++++++++++  for sort and filter mappings ++++++++++++++ */
 
     @GetMapping(path = "/sortPassengerAsc/{passengerAscending}" ,produces = MediaType.APPLICATION_JSON_VALUE)

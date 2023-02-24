@@ -19,6 +19,8 @@ public interface ReserveRepo extends JpaRepository<Reserve,String> {
     @Query(value = "SELECT COUNT(*) FROM Reserve WHERE requestAcceptOrDeny=:accept AND reserveDate=:date", nativeQuery = true)
     int activeReservationPerDay(@Param("date") String date, @Param("accept") String accept);
 
+    @Query(value = "SELECT COUNT(*) FROM Reserve",nativeQuery = true)
+    int countAllReservation();
 
 }
 
