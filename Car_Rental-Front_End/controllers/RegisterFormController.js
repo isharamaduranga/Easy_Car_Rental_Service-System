@@ -22,7 +22,7 @@ $("#username").keyup(function (event) {
         }
     } else {
         $("#username").css('border', '2px solid red');
-        $("#errorUsername").text("Check this field whether correct !");
+        $("#errorUsername").text("Check field is correct !");
     }
 });
 
@@ -36,7 +36,7 @@ $("#password").keyup(function (event) {
         }
     } else {
         $("#password").css('border', '2px solid red');
-        $("#errorPassword").text("Check this field whether correct !");
+        $("#errorPassword").text("Check field is correct !");
     }
 });
 
@@ -50,7 +50,7 @@ $("#customername").keyup(function (event) {
         }
     } else {
         $("#customername").css('border', '2px solid red');
-        $("#errorFullName").text("Check this field whether correct !");
+        $("#errorFullName").text("Check field is correct !");
     }
 });
 
@@ -64,7 +64,7 @@ $("#contactnumber").keyup(function (event) {
         }
     } else {
         $("#contactnumber").css('border', '2px solid red');
-        $("#errorContact").text("Check this field whether correct !");
+        $("#errorContact").text("Check field is correct !");
     }
 });
 
@@ -92,7 +92,7 @@ $("#email").keyup(function (event) {
         }
     } else {
         $("#email").css('border', '2px solid red');
-        $("#errorEmail").text("Check this field whether correct !");
+        $("#errorEmail").text("");
     }
 });
 
@@ -106,7 +106,7 @@ $("#nic").keyup(function (event) {
         }
     } else {
         $("#nic").css('border', '2px solid red');
-        $("#errorNIC").text("Check this field whether correct !");
+        $("#errorNIC").text("Check field is correct !");
     }
 });
 
@@ -118,7 +118,7 @@ $("#drivinglicense").keyup(function (event) {
         $('#btnRegister').prop('disabled', false);
     } else {
         $("#drivinglicense").css('border', '2px solid red');
-        $("#errorDrivingLicense").text("Check this field whether correct !");
+        $("#errorDrivingLicense").text("Check field is correct !");
     }
 });
 

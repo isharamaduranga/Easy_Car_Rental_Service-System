@@ -18,7 +18,7 @@ $("#driverUsername").keyup(function (event) {
         }
     } else {
         $("#driverUsername").css('border', '2px solid red');
-        $("#errorDriverUsername").text("Check this field is that correct !");
+        $("#errorDriverUsername").text("Check field is that correct !");
     }
 });
 
@@ -32,7 +32,7 @@ $("#driverPassword").keyup(function (event) {
         }
     } else {
         $("#driverPassword").css('border', '2px solid red');
-        $("#errorDPassword").text("Check this field is that correct !");
+        $("#errorDPassword").text("Check field is that correct !");
     }
 });
 
@@ -46,7 +46,7 @@ $("#driverName").keyup(function (event) {
         }
     } else {
         $("#driverName").css('border', '2px solid red');
-        $("#errorDName").text("Check this field is that correct !");
+        $("#errorDName").text("Check field is that correct !");
     }
 });
 
@@ -60,7 +60,7 @@ $("#driverAddress").keyup(function (event) {
         }
     } else {
         $("#driverAddress").css('border', '2px solid red');
-        $("#errorDAddress").text("Check this field is that correct !");
+        $("#errorDAddress").text("Check field is that correct !");
     }
 });
 
@@ -74,7 +74,7 @@ $("#driverAge").keyup(function (event) {
         }
     } else {
         $("#driverAge").css('border', '2px solid red');
-        $("#errorDAge").text("Check this field is that correct !");
+        $("#errorDAge").text("Check field is that correct !");
     }
 });
 
@@ -86,7 +86,7 @@ $("#driverContact").keyup(function (event) {
 
     } else {
         $("#driverContact").css('border', '2px solid red');
-        $("#errorDContact").text("Check this field is that correct !");
+        $("#errorDContact").text("Check field is that correct !");
     }
 });
 

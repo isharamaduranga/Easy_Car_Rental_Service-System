@@ -167,7 +167,7 @@ $("#calculateFullIncome").click(function () {
 
 function calculateIncome() {
     var paymentDetail = {
-        paymentId: $("#driverId").val(),
+        paymentId: $("#paymentId").val(),
         paymentDate:$("#paymentDate").val(),
         rentFee: $("#rentFee").val(),
         harmOrNot: $("#driverReleaseOrNot option:selected").text(),
@@ -209,7 +209,7 @@ function loadPayments() {
             for (var responseKey of response.data) {
                 let raw = `<tr><td> ${responseKey.paymentId} </td><td> ${responseKey.paymentDate} </td><td> ${responseKey.rentFee} </td><td> ${responseKey.driverFee} </td>
                                <td> ${responseKey.loseDamagePayment} </td><td> ${responseKey.reduceLoseDamagePayment} </td><td>
-                                <span class="badge badge-success rounded-pill d-inline">${responseKey.harmOrNot}</span></td> 
+                                <span class="badge rounded-pill text-bg-warning">${responseKey.harmOrNot}</span></td> 
                                 <td>${responseKey.travelledDistance} </td><td> ${responseKey.extraKm} </td><td>${responseKey.extraKmPrice}</td><td>${responseKey.fullPayment}</td>
                                 <td><button type="button" class="btn btn-warning btn-sm px-3" data-ripple-color="dark">
                                     <i class="fas fa-pen-alt"></i>

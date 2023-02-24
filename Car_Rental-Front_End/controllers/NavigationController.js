@@ -674,6 +674,8 @@ $("#btnExistReDetails").click(function () {
 });
 
 $("#btn_payment").click(function () {
+    loadPayments();
+    generatePaymentIds();
     $("#payment_dashboard").css('display', 'block');
     $('#admin_dashboard').css('display', 'none');
     $("#car_dashboard").css('display', 'none');
