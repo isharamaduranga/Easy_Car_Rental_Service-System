@@ -21,4 +21,6 @@ public interface DriverRepo  extends JpaRepository<Driver,String> {
     @Query(value = "SELECT * FROM Driver WHERE releaseOrNot=:release", nativeQuery = true)
     List<Driver> searchAvailableDriversOrReleasedDrivers(@Param("release") String release);
 
+    @Query(value = "SELECT COUNT(*) FROM Driver WHERE releaseOrNot=:release", nativeQuery = true)
+    int availableDriversOrOccupiedDrivers(@Param("release") String release);
 }

@@ -99,5 +99,10 @@ public class DriverServiceImpl implements DriverService {
         }.getType());
     }
 
+    @Override
+    public int availableDriversOrOccupiedDrivers(String release) {
+        return driverRepo.availableDriversOrOccupiedDrivers(release);
+    }
+
 
 }

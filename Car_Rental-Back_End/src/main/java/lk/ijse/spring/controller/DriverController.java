@@ -64,4 +64,10 @@ public class DriverController {
     }
 
 
+    @GetMapping(path = "/countOfAvailableDrivers/{release}")
+    public ResponseUtil availableDriversOrOccupiedDrivers(@PathVariable("release") String release) {
+        return new ResponseUtil(200, "Ok", driverService.availableDriversOrOccupiedDrivers(release));
+    }
+
+
 }

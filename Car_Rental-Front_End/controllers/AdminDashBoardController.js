@@ -12,6 +12,7 @@ function loadAllAdminPanelData() {
     ReservedCars();
     MaintainedCars();
     UnderMaintainedCars();
+    AvailableDrivers();
     AllReservation();
     totalNewUsers();
     totalRegisterUsers();
@@ -165,6 +166,23 @@ function UnderMaintainedCars() {
                 $("#underMaintainedCars").text(0);
             }else {
                 $("#underMaintainedCars").text(response.data);
+            }
+        },
+        error: function (ob) {
+            alert(ob.responseJSON.message);
+        }
+    });
+}
+
+function AvailableDrivers() {
+    $.ajax({
+        url: baseURLAdminPanel+"driver/countOfAvailableDrivers/"+"Release",
+        method: "GET",
+        success: function (response) {
+            if (response.data == ""){
+                $("#availableDrivers").text(0);
+            }else {
+                $("#availableDrivers").text(response.data);
             }
         },
         error: function (ob) {

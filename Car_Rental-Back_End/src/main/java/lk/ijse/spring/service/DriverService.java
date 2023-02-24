@@ -23,5 +23,7 @@ public interface DriverService {
 
     List<DriverDTO> searchAvailableDriversOrReleaseDrivers(String release);
 
+    int availableDriversOrOccupiedDrivers(String release);
+
 
 }
