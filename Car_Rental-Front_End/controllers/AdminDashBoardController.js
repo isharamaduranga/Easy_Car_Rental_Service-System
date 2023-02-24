@@ -11,6 +11,7 @@ function loadAllAdminPanelData() {
     AvailableCars();
     ReservedCars();
     MaintainedCars();
+    UnderMaintainedCars();
     AllReservation();
     totalNewUsers();
     totalRegisterUsers();
@@ -140,7 +141,7 @@ function ReservedCars() {
 
 function MaintainedCars() {
     $.ajax({
-        url: "car/carMaintain/"+"Maintained",
+        url: baseURLAdminPanel+"car/carMaintain/"+"Maintained",
         method: "GET",
         success: function (response) {
             if (response.data == ""){
@@ -155,3 +156,19 @@ function MaintainedCars() {
     });
 }
 
+function UnderMaintainedCars() {
+    $.ajax({
+        url: baseURLAdminPanel+"car/carMaintain/"+"Under Maintain",
+        method: "GET",
+        success: function (response) {
+            if (response.data == ""){
+                $("#underMaintainedCars").text(0);
+            }else {
+                $("#underMaintainedCars").text(response.data);
+            }
+        },
+        error: function (ob) {
+            alert(ob.responseJSON.message);
+        }
+    });
+}
