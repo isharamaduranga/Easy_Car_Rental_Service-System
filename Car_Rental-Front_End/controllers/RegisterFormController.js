@@ -227,8 +227,8 @@ function register() {
         customerEmail: $("#email").val(),
         customerNicNo: $("#nic").val(),
         customerDrivingLicenseNo: $("#drivinglicense").val(),
-        NICImage: null,
-        DrivingLicenseImage: null
+        NICImage: $('#uploadnicimage')[0].files[0].name,
+        DrivingLicenseImage: $('#uploaddrivinglicence')[0].files[0].name
     }
 
     $.ajax({
@@ -290,10 +290,10 @@ function loadAllCustomer() {
                                 <img src="https://images.pexels.com/photos/2646119/pexels-photo-2646119.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1" alt="" style="width: 45px; height: 45px" class="rounded-circle"/>
                                 </div>  
                                 </td><td> ${responseKey.customerName} </td><td> ${responseKey.customerAddress} </td><td> ${responseKey.customerContact} </td><td> ${responseKey.customerNicNo} </td><td> ${responseKey.customerDrivingLicenseNo} </td><td><div class="d-flex align-items-center">
-                                <img src="https://images.pexels.com/photos/2646119/pexels-photo-2646119.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1" alt="" style="width: 45px; height: 45px" class="rounded-circle"/>
+                                <img src="https://support.flaticon.com/servlet/rtaImage?eid=ka03V000000kbmP&feoid=00N3V000001WcHX&refid=0EM3V000001891l" alt="" style="width: 45px; height: 45px" class="rounded-circle"/>
                                 </div>   
                                 </td><td> <div class="d-flex align-items-center">
-                                <img src="https://images.pexels.com/photos/2646119/pexels-photo-2646119.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1" alt="" style="width: 45px; height: 45px" class="rounded-circle"/>
+                                <img src="https://www.mass.gov/files/styles/820x/public/2018-03/REAL%20Adult.png?itok=R8njQqDp" alt="" style="width: 45px; height: 45px" class="rounded-circle"/>
                                 </div>   
                                 </td></tr>`;
                 $("#tblCustomers tbody").append(raw);

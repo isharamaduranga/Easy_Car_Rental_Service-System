@@ -9,6 +9,7 @@
 package lk.ijse.spring.service.impl;
 
 import lk.ijse.spring.dto.AdminDTO;
+import lk.ijse.spring.dto.UsersDTO;
 import lk.ijse.spring.entity.Admin;
 import lk.ijse.spring.repo.AdminRepo;
 import lk.ijse.spring.service.AdminService;
@@ -61,5 +62,11 @@ public class AdminServiceImpl implements AdminService {
         List<Admin> adminList = repo.findAll();
         return  mapper.map(adminList,new TypeToken<ArrayList<AdminDTO>>() {
         }.getType());
+    }
+
+    @Override
+    public AdminDTO findByPasswordAndUsername(String password, String name) {
+        Admin data = this.repo.findByPasswordAndName(password, name);
+        return mapper.map(data,AdminDTO.class);
     }
 }

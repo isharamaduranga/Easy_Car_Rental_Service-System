@@ -5,6 +5,7 @@ var regExDriverUsername = /^[A-Z|a-z\s]{3,20}$/;
 var regExDriverPassword = /^[A-Z|a-z\s|@|#|$|0-9]{6,10}$/;
 var regExDriverName = /^[A-Z|a-z\s]{3,20}$/;
 var regExDriverContact = /^(071-|077-|075-|078-|)[0-9]{7}$/;
+var regExContact = /^(071|077|075|078|076)[0-9]{7}$/;
 var regExDriverAge = /^[1-9]{1,2}$/;
 var regExDriverAddress = /^[0-9A-Z a-z,/:]{4,50}$/;
 
@@ -80,7 +81,7 @@ $("#driverAge").keyup(function (event) {
 
 $("#driverContact").keyup(function (event) {
     let contact = $("#driverContact").val();
-    if (regExDriverContact.test(contact)) {
+    if (regExContact.test(contact)) {
         $("#driverContact").css('border', '2px solid #31d2f2');
         $("#errorDContact").text("");
 

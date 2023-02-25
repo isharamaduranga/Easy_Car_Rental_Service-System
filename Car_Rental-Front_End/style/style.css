@@ -846,7 +846,8 @@ hr {
     margin-bottom: 3.8px;
 }
 
-#RegisterPage .container label > span {
+
+label >span{
     color: red;
     font-weight: bold;
 }
@@ -883,10 +884,7 @@ hr {
     padding: 0 15px 0 20px;
 }
 
-#logInCustomer .container label > span {
-    color: red;
-    font-weight: bold;
-}
+
 
 #logInCustomer .container h1 {
     color: #434444;
@@ -914,10 +912,7 @@ hr {
     margin: 20px;
 }
 
-#logInDriver .container label > span {
-    color: red;
-    font-weight: bold;
-}
+
 
 #logInDriver .container h1 {
     color: rgba(0, 0, 0, 0.62);
@@ -943,10 +938,7 @@ hr {
     margin: 20px;
 }
 
-#logInAdmin .container label > span {
-    color: red;
-    font-weight: bold;
-}
+
 
 #logInAdmin .container h1 {
     color: #434444;
@@ -973,10 +965,6 @@ hr {
     margin: 20px;
 }
 
-#ForgotPasswordPage .container label > span {
-    color: red;
-    font-weight: bold;
-}
 
 #ForgotPasswordPage .container h1 {
     color: #434444;

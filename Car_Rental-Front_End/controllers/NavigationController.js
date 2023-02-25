@@ -73,7 +73,7 @@ $("#btnRegisterInLoginPage").click(function () {
 });
 
 
-$("#btnOpenCusLoginForm").click(function () {
+$("#btnOpenCusLoginForm,#bookBtn").click(function () {
 
     $('#logInCustomer').css('display', 'block');
     $("#nav_bar").css('display', 'block');

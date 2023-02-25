@@ -60,7 +60,6 @@ var month = ("0" + (now.getMonth() + 1)).slice(-2);
 var today = now.getFullYear() + "-" + (month) + "-" + (day);
 
 
-
 function generateVReserveIds() {
     $("#reserveId").val("RE00-0001");
     var tempId = "id";
@@ -117,9 +116,6 @@ function generateScheduleIds() {
     });
 }
 
-
-
-
 function pasteDate() {
     $("#pickUpDateEdit").val($("#pickUpDate").val());
     $("#pickUpTimeEdit").val($("#pickUpTime").val());
@@ -138,6 +134,17 @@ function pasteDate() {
     $("#returnLocationEdit").prop("disabled", true);
     $("#destinationEdit").prop("disabled", true);
     $("#durationEdit").prop("disabled", true);
+}
+
+function pasteDataToReservationFields() {
+    $("#BPickupDate").val($("#pickUpDateEdit").val());
+    $("#BPickupTime").val($("#pickUpTimeEdit").val());
+    $("#BReturnDate").val($("#returnDateEdit").val());
+    $("#BReturnTime").val($("#returnTimeEdit").val());
+    $("#BPickupLocation").val($("#pickUpLocationEdit").val());
+    $("#BReturnLocation").val($("#returnLocationEdit").val());
+    $("#BDestination").val($("#destinationEdit").val());
+    $("#BDuration").val($("#durationEdit").val());
 }
 
 /*************************** For customer booking details edit and update *************************** */
@@ -254,6 +261,7 @@ $("#editRentData").click(function () {
 /** ============================================================================= ===================== */
 loadAllCarsToDisplay();
 
+
 function loadAllCarsToDisplay() {
 
     $.ajax({
@@ -261,83 +269,85 @@ function loadAllCarsToDisplay() {
         url: baseURLForReservation + "car",
         method: "GET",
 
-        success: function (resp) {
-            if (resp.data.length == 0) {
+        success: function (response) {
+            if (response.data.length == 0) {
                 $("#noResult").css('display', 'block');
             } else {
                 $("#noResult").css('display', 'none');
             }
 
-            var rentFeePerDay;
-            var rentFeePerMonth;
+            var rentFeeDay;
+            var rentFeeMonth;
 
             $("#tblShowCars").empty();
 
-            for (let key of resp.data) {
+            for (let responseKey of response.data) {
 
-                if (key.type == "Luxury") {
-                    rentFeePerDay = 8000.00;
-                    rentFeePerMonth = 25000.00;
-                } else if (key.type = "premium") {
-                    rentFeePerDay = 5000.00;
-                    rentFeePerMonth = 20000.00;
-                } else if (key.type = "General") {
-                    rentFeePerDay = 3000.00;
-                    rentFeePerMonth = 10000.00;
+                console.log(responseKey.type);
+
+                if (responseKey.type == "Luxury") {
+                    rentFeeDay = 8000.00;
+                    rentFeeMonth = 25000.00;
+                } else if (responseKey.type == "Premium") {
+                    rentFeeDay = 5000.00;
+                    rentFeeMonth = 20000.00;
+                } else if (responseKey.type == "General") {
+                    rentFeeDay = 3000.00;
+                    rentFeeMonth = 10000.00;
                 }
 
-                let newDiv =
-                    `<div class="col-4">
+                let newDiv = `<div class="col-4">
                 <!-- card 01-->
-                <li>
+                <li>                    
                     <div class="featured-car-card">
                         <figure class="card-banner">
+                     
                             <img alt="Toyota RAV4 2021" class="w-100" height="300" loading="lazy"
-                                 src="../assets/images/car_bg_home/car-1.jpg"
+                                 src="../assets/images/car_bg_home/${responseKey.fontViewImage}"
                                  width="440">
                         </figure>
 
                         <div class="card-content">
 
                             <div class="card-title-wrapper">
-                                <span class="cid text-white" style="display: none;">${key.carId}</span>
-                                <h4 class="h3 card-title">${key.brand}</h4>
-                                <data class="year" value="2021">${key.availableOrNot}</data>
+                                <span class="cid text-white" style="display: none;">${responseKey.carId}</span>
+                                <h4 class="h3 card-title">${responseKey.brand}</h4>
+                                <data class="year" value="2021">${responseKey.availableOrNot}</data>
                             </div>
-                            <h5 style="color: crimson">${key.type}</h5>
+                            <h5 style="color: crimson">${responseKey.type}</h5>
                             <ul class="card-list">
 
                                 <li class="card-list-item">
                                     <ion-icon name="people-outline"></ion-icon>
 
-                                    <span class="card-item-text">${key.noOfPassengers}</span>
+                                    <span class="card-item-text">${responseKey.noOfPassengers}</span>
                                 </li>
 
                                 <li class="card-list-item">
                                     <ion-icon name="flash-outline"></ion-icon>
 
-                                    <span class="card-item-text">${key.transmissionType}</span>
+                                    <span class="card-item-text">${responseKey.transmissionType}</span>
                                 </li>
 
                                 <li class="card-list-item">
                                     <ion-icon name="speedometer-outline"></ion-icon>
 
-                                    <span class="card-item-text">${key.fuelType}-6.1km/1-lt</span>
+                                    <span class="card-item-text">${responseKey.fuelType}-6.1km/1-lt</span>
                                 </li>
 
                                 <li class="card-list-item">
                                     <ion-icon name="hardware-chip-outline"></ion-icon>
 
-                                    <span class="card-item-text">${key.colour}</span>
+                                    <span class="card-item-text">${responseKey.colour}</span>
                                 </li>
                             </ul>
 
                             <div class="card-price-wrapper">
                                 <p class="card-price">
-                                    <strong>${rentFeePerDay}</strong> / Daily
+                                    <strong>${rentFeeDay}</strong> / Daily
                                 </p>
                                 <p class="card-price">
-                                    <strong>${rentFeePerMonth}</strong> / Month
+                                    <strong>${rentFeeMonth}</strong> / Month
                                 </p>
                                 
                                 <button aria-label="Add to favourite list" class="btn fav-btn">
@@ -377,6 +387,136 @@ function loadAllCarsToDisplay() {
 }
 
 
+var lossPayment = 0;
+var tblRow = -1;
+var count = 1;
+var clickId="none";
+var clickName="none";
+var clickContact="none";
+
+function loadSelectedCars(carId) {
+    $.ajax({
+        url: baseURLForReservation+"car/" + carId,
+        method: "GET",
+        success: function (response) {
+
+            if (response.data.type == "General") {
+                lossPayment += 10000.00;
+            } else if (response.data.type == "Premium") {
+                lossPayment += 15000.00;
+            } else if (response.data.type == "Luxury") {
+                lossPayment += 20000.00;
+            }
+
+            let raw = `<tr>
+                                    <td id="scope">
+                                        ${count}
+                                    </td>
+                                    <td>
+                                        <div class="d-flex align-items-center">
+                                            <img  src="../assets/images/car_bg_home/${response.data.fontViewImage}" alt="" style="width: 50px; height: 50px" class=""/>
+                                        </div>
+                                        <h6  id="id" class="id text-white">${response.data.carId}</h6>
+                                    </td>
+                                    <td>
+                                       ${response.data.brand}
+                                    </td>
+                                    <td>
+                                        ${response.data.colour}
+                                    </td>
+                                    <td>
+                                        ${response.data.type}
+                                    </td>
+                                    <td>
+                                        <div class="form-check">
+                                            <input class="form-check-input checkDriverIfWant text-danger" type="checkbox" value="" id="checkDriverIfWant" />
+                                            <label class="form-check-label text-primary" for="checkDriverIfWant">Click Me: Need a Driver</label>
+                                        </div>
+                                    </td>
+                                     <td id="did" class="text-white" style="font-size: 2px">
+                                        ${clickId}
+                                    </td>
+                                    <td id="dname">
+                                        ${clickName}
+                                    </td>
+                                    <td id="dcontact">
+                                        ${clickContact}
+                                    </td>
+                                    <td>
+                                        ${lossPayment}
+                                    </td>
+                                    <td>
+                                        <button type="button" class="btn btn-danger btn-sm px-3 btnCancelCar" data-ripple-color="dark" id="btnCancelCar">
+                                            <i class="fas fa-times"></i>
+                                        </button>
+                                    </td>
+                                </tr>`;
+            $("#tblSelectedCars tbody").append(raw);
+            count += 1;
+
+            /** Load ReserveID And Schedule ids */
+            openBookingPage();
+
+            $(".checkDriverIfWant").off("click");
+
+            findDriverData();
+
+            $("#tblSelectedCars tbody").on('click', '#btnCancelCar', function () {
+                $("#tblSelectedCars tbody > tr").off("click");
+
+                $("#tblSelectedCars tbody > tr").click(function () {
+                    let text = "Do you want to remove this car ?";
+
+                    if (confirm(text) == true) {
+                        tblRow = $(this);
+                        tblRow.remove();
+                    }else {
+
+                    }
+                });
+            });
+        },
+        error: function (ob) {
+            alert(ob.responseJSON.message);
+        }
+    });
+}
+
+function findDriverData() {
+    $.ajax({
+        url: baseURLForReservation+"driver/status/" + "Release",
+        method: "GET",
+        success: function (response) {
+            load(response.data.driverId,response.data.driverName, response.data.driverContact);
+        },
+        error: function (ob) {
+            alert(ob.responseJSON.message);
+        }
+    });
+}
+
+var driverName;
+var driverContact;
+var driverId;
+
+/** Load driver release or not and load available release driver */
+function load(id,name, contact) {
+    driverName = name;
+    driverContact = contact;
+    driverId = id;
+    $(".checkDriverIfWant").click(function () {
+        $("#tblSelectedCars tbody > tr").click(function () {
+            if ($('.checkDriverIfWant').is(':checked')) {
+                if ($(this).find(".checkDriverIfWant").is(":checked")) {
+                    $(this).find("td:eq(6)").text(driverId);
+                    $(this).find("td:eq(7)").text(driverName);
+                    $(this).find("td:eq(8)").text(driverContact);
+                }
+            }
+        });
+    });
+}
+
 
 function findPassengersAsc(passengerAscending) {
     $.ajax({
@@ -401,10 +541,10 @@ function findPassengersAsc(passengerAscending) {
                 if (key.type == "Luxury") {
                     rentFeePerDay = 8000.00;
                     rentFeePerMonth = 25000.00;
-                } else if (key.type = "premium") {
+                } else if (key.type == "Premium") {
                     rentFeePerDay = 5000.00;
                     rentFeePerMonth = 20000.00;
-                } else if (key.type = "General") {
+                } else if (key.type == "General") {
                     rentFeePerDay = 3000.00;
                     rentFeePerMonth = 10000.00;
                 }
@@ -416,7 +556,7 @@ function findPassengersAsc(passengerAscending) {
                     <div class="featured-car-card">
                         <figure class="card-banner">
                             <img alt="Toyota RAV4 2021" class="w-100" height="300" loading="lazy"
-                                 src="../assets/images/car_bg_home/car-1.jpg"
+                                  src="../assets/images/car_bg_home/${key.fontViewImage}"
                                  width="440">
                         </figure>
 
@@ -526,10 +666,10 @@ function findPassengersDsc(passengerDscending) {
                 if (key.type == "Luxury") {
                     rentFeePerDay = 8000.00;
                     rentFeePerMonth = 25000.00;
-                } else if (key.type = "premium") {
+                } else if (key.type == "Premium") {
                     rentFeePerDay = 5000.00;
                     rentFeePerMonth = 20000.00;
-                } else if (key.type = "General") {
+                } else if (key.type == "General") {
                     rentFeePerDay = 3000.00;
                     rentFeePerMonth = 10000.00;
                 }
@@ -541,7 +681,7 @@ function findPassengersDsc(passengerDscending) {
                     <div class="featured-car-card">
                         <figure class="card-banner">
                             <img alt="Toyota RAV4 2021" class="w-100" height="300" loading="lazy"
-                                 src="../assets/images/car_bg_home/car-1.jpg"
+                                  src="../assets/images/car_bg_home/${key.fontViewImage}"
                                  width="440">
                         </figure>
 
@@ -651,10 +791,10 @@ function findDailyRateAsc(dailyRateAsc) {
                 if (key.type == "Luxury") {
                     rentFeePerDay = 8000.00;
                     rentFeePerMonth = 25000.00;
-                } else if (key.type = "premium") {
+                } else if (key.type == "Premium") {
                     rentFeePerDay = 5000.00;
                     rentFeePerMonth = 20000.00;
-                } else if (key.type = "General") {
+                } else if (key.type == "General") {
                     rentFeePerDay = 3000.00;
                     rentFeePerMonth = 10000.00;
                 }
@@ -666,7 +806,7 @@ function findDailyRateAsc(dailyRateAsc) {
                     <div class="featured-car-card">
                         <figure class="card-banner">
                             <img alt="Toyota RAV4 2021" class="w-100" height="300" loading="lazy"
-                                 src="../assets/images/car_bg_home/car-1.jpg"
+                                 src="../assets/images/car_bg_home/${key.fontViewImage}"
                                  width="440">
                         </figure>
 
@@ -775,10 +915,10 @@ function findDailyRateDsc(dailyRateDsc) {
                 if (key.type == "Luxury") {
                     rentFeePerDay = 8000.00;
                     rentFeePerMonth = 25000.00;
-                } else if (key.type = "premium") {
+                } else if (key.type == "Premium") {
                     rentFeePerDay = 5000.00;
                     rentFeePerMonth = 20000.00;
-                } else if (key.type = "General") {
+                } else if (key.type == "General") {
                     rentFeePerDay = 3000.00;
                     rentFeePerMonth = 10000.00;
                 }
@@ -790,7 +930,7 @@ function findDailyRateDsc(dailyRateDsc) {
                     <div class="featured-car-card">
                         <figure class="card-banner">
                             <img alt="Toyota RAV4 2021" class="w-100" height="300" loading="lazy"
-                                 src="../assets/images/car_bg_home/car-1.jpg"
+                                 src="../assets/images/car_bg_home/${key.fontViewImage}"
                                  width="440">
                         </figure>
 
@@ -899,10 +1039,10 @@ function findMonthlyRateAsc(monthlyRateAsc) {
                 if (key.type == "Luxury") {
                     rentFeePerDay = 8000.00;
                     rentFeePerMonth = 25000.00;
-                } else if (key.type = "premium") {
+                } else if (key.type == "Premium") {
                     rentFeePerDay = 5000.00;
                     rentFeePerMonth = 20000.00;
-                } else if (key.type = "General") {
+                } else if (key.type == "General") {
                     rentFeePerDay = 3000.00;
                     rentFeePerMonth = 10000.00;
                 }
@@ -914,7 +1054,7 @@ function findMonthlyRateAsc(monthlyRateAsc) {
                     <div class="featured-car-card">
                         <figure class="card-banner">
                             <img alt="Toyota RAV4 2021" class="w-100" height="300" loading="lazy"
-                                 src="../assets/images/car_bg_home/car-1.jpg"
+                                  src="../assets/images/car_bg_home/${key.fontViewImage}"
                                  width="440">
                         </figure>
 
@@ -1024,10 +1164,10 @@ function findMonthlyRateDsc(monthlyRateDsc) {
                 if (key.type == "Luxury") {
                     rentFeePerDay = 8000.00;
                     rentFeePerMonth = 25000.00;
-                } else if (key.type = "premium") {
+                } else if (key.type == "Premium") {
                     rentFeePerDay = 5000.00;
                     rentFeePerMonth = 20000.00;
-                } else if (key.type = "General") {
+                } else if (key.type == "General") {
                     rentFeePerDay = 3000.00;
                     rentFeePerMonth = 10000.00;
                 }
@@ -1039,7 +1179,7 @@ function findMonthlyRateDsc(monthlyRateDsc) {
                     <div class="featured-car-card">
                         <figure class="card-banner">
                             <img alt="Toyota RAV4 2021" class="w-100" height="300" loading="lazy"
-                                 src="../assets/images/car_bg_home/car-1.jpg"
+                                  src="../assets/images/car_bg_home/${key.fontViewImage}"
                                  width="440">
                         </figure>
 
@@ -1174,10 +1314,10 @@ function findTransmissionType(type) {
                 if (key.type == "Luxury") {
                     rentFeePerDay = 8000.00;
                     rentFeePerMonth = 25000.00;
-                } else if (key.type = "premium") {
+                } else if (key.type == "Premium") {
                     rentFeePerDay = 5000.00;
                     rentFeePerMonth = 20000.00;
-                } else if (key.type = "General") {
+                } else if (key.type == "General") {
                     rentFeePerDay = 3000.00;
                     rentFeePerMonth = 10000.00;
                 }
@@ -1189,7 +1329,7 @@ function findTransmissionType(type) {
                     <div class="featured-car-card">
                         <figure class="card-banner">
                             <img alt="Toyota RAV4 2021" class="w-100" height="300" loading="lazy"
-                                 src="../assets/images/car_bg_home/car-1.jpg"
+                                 src="../assets/images/car_bg_home/${key.fontViewImage}"
                                  width="440">
                         </figure>
 
@@ -1295,10 +1435,10 @@ function findType(carType) {
                 if (key.type == "Luxury") {
                     rentFeePerDay = 8000.00;
                     rentFeePerMonth = 25000.00;
-                } else if (key.type = "premium") {
+                } else if (key.type == "Premium") {
                     rentFeePerDay = 5000.00;
                     rentFeePerMonth = 20000.00;
-                } else if (key.type = "General") {
+                } else if (key.type == "General") {
                     rentFeePerDay = 3000.00;
                     rentFeePerMonth = 10000.00;
                 }
@@ -1310,7 +1450,7 @@ function findType(carType) {
                     <div class="featured-car-card">
                         <figure class="card-banner">
                             <img alt="Toyota RAV4 2021" class="w-100" height="300" loading="lazy"
-                                 src="../assets/images/car_bg_home/car-1.jpg"
+                                 src="../assets/images/car_bg_home/${key.fontViewImage}"
                                  width="440">
                         </figure>
 
@@ -1416,10 +1556,10 @@ function findBrand(brand) {
                 if (key.type == "Luxury") {
                     rentFeePerDay = 8000.00;
                     rentFeePerMonth = 25000.00;
-                } else if (key.type = "premium") {
+                } else if (key.type == "Premium") {
                     rentFeePerDay = 5000.00;
                     rentFeePerMonth = 20000.00;
-                } else if (key.type = "General") {
+                } else if (key.type == "General") {
                     rentFeePerDay = 3000.00;
                     rentFeePerMonth = 10000.00;
                 }
@@ -1431,7 +1571,7 @@ function findBrand(brand) {
                     <div class="featured-car-card">
                         <figure class="card-banner">
                             <img alt="Toyota RAV4 2021" class="w-100" height="300" loading="lazy"
-                                 src="../assets/images/car_bg_home/car-1.jpg"
+                                  src="../assets/images/car_bg_home/${key.fontViewImage}"
                                  width="440">
                         </figure>
 
@@ -1537,10 +1677,10 @@ function findFuelType(fuelType) {
                 if (key.type == "Luxury") {
                     rentFeePerDay = 8000.00;
                     rentFeePerMonth = 25000.00;
-                } else if (key.type = "premium") {
+                } else if (key.type == "Premium") {
                     rentFeePerDay = 5000.00;
                     rentFeePerMonth = 20000.00;
-                } else if (key.type = "General") {
+                } else if (key.type == "General") {
                     rentFeePerDay = 3000.00;
                     rentFeePerMonth = 10000.00;
                 }
@@ -1552,7 +1692,7 @@ function findFuelType(fuelType) {
                     <div class="featured-car-card">
                         <figure class="card-banner">
                             <img alt="Toyota RAV4 2021" class="w-100" height="300" loading="lazy"
-                                 src="../assets/images/car_bg_home/car-1.jpg"
+                                 src="../assets/images/car_bg_home/${key.fontViewImage}"
                                  width="440">
                         </figure>
 
@@ -1658,10 +1798,10 @@ function findColour(colour) {
                 if (key.type == "Luxury") {
                     rentFeePerDay = 8000.00;
                     rentFeePerMonth = 25000.00;
-                } else if (key.type = "premium") {
+                } else if (key.type == "Premium") {
                     rentFeePerDay = 5000.00;
                     rentFeePerMonth = 20000.00;
-                } else if (key.type = "General") {
+                } else if (key.type == "General") {
                     rentFeePerDay = 3000.00;
                     rentFeePerMonth = 10000.00;
                 }
@@ -1673,7 +1813,7 @@ function findColour(colour) {
                     <div class="featured-car-card">
                         <figure class="card-banner">
                             <img alt="Toyota RAV4 2021" class="w-100" height="300" loading="lazy"
-                                 src="../assets/images/car_bg_home/car-1.jpg"
+                                 src="../assets/images/car_bg_home/${key.fontViewImage}"
                                  width="440">
                         </figure>
 
@@ -1770,148 +1910,15 @@ $("#btnSearchCarsToSort").click(function () {
 /** =====================================The End of Search Functions============================================== */
 /** ================================================================================================================ */
 
-function pasteDataToReservationFields() {
-    $("#BPickupDate").val($("#pickUpDateEdit").val());
-    $("#BPickupTime").val($("#pickUpTimeEdit").val());
-    $("#BReturnDate").val($("#returnDateEdit").val());
-    $("#BReturnTime").val($("#returnTimeEdit").val());
-    $("#BPickupLocation").val($("#pickUpLocationEdit").val());
-    $("#BReturnLocation").val($("#returnLocationEdit").val());
-    $("#BDestination").val($("#destinationEdit").val());
-    $("#BDuration").val($("#durationEdit").val());
-}
 
 
-var lossPayment = 0;
-var tblRow = -1;
-var count = 1;
-var clickId="none";
-var clickName="none";
-var clickContact="none";
 
-function loadSelectedCars(carId) {
-    $.ajax({
-        url: baseURLForReservation+"car/" + carId,
-        method: "GET",
-        success: function (response) {
 
-            if (response.data.type == "General") {
-                lossPayment += 10000.00;
-            } else if (response.data.type == "Premium") {
-                lossPayment += 15000.00;
-            } else if (response.data.type == "Luxury") {
-                lossPayment += 20000.00;
-            }
 
-            let raw = `<tr>
-                                    <td id="scope">
-                                        ${count}
-                                    </td>
-                                    <td>
-                                        <div class="d-flex align-items-center">
-                                            <img src="../assets/images/panel3.png" alt="" style="width: 50px; height: 50px" class=""/>
-                                        </div>
-                                        <h6  id="id" class="id text-white">${response.data.carId}</h6>
-                                    </td>
-                                    <td>
-                                       ${response.data.brand}
-                                    </td>
-                                    <td>
-                                        ${response.data.colour}
-                                    </td>
-                                    <td>
-                                        ${response.data.type}
-                                    </td>
-                                    <td>
-                                        <div class="form-check">
-                                            <input class="form-check-input checkDriverIfWant text-danger" type="checkbox" value="" id="checkDriverIfWant" />
-                                            <label class="form-check-label text-primary" for="checkDriverIfWant">Click Me: Need a Driver</label>
-                                        </div>
-                                    </td>
-                                     <td id="did" class="text-white" style="font-size: 2px">
-                                        ${clickId}
-                                    </td>
-                                    <td id="dname">
-                                        ${clickName}
-                                    </td>
-                                    <td id="dcontact">
-                                        ${clickContact}
-                                    </td>
-                                    <td>
-                                        ${lossPayment}
-                                    </td>
-                                    <td>
-                                        <button type="button" class="btn btn-danger btn-sm px-3 btnCancelCar" data-ripple-color="dark" id="btnCancelCar">
-                                            <i class="fas fa-times"></i>
-                                        </button>
-                                    </td>
-                                </tr>`;
-            $("#tblSelectedCars tbody").append(raw);
-            count += 1;
 
-            openBookingPage();
-
-            $(".checkDriverIfWant").off("click");
-
-            findDriverData();
-
-            $("#tblSelectedCars tbody").on('click', '#btnCancelCar', function () {
-                $("#tblSelectedCars tbody > tr").off("click");
-
-                $("#tblSelectedCars tbody > tr").click(function () {
-                    let text = "Do you want to remove this car ?";
-
-                    if (confirm(text) == true) {
-                        tblRow = $(this);
-                        tblRow.remove();
-                    }else {
-
-                    }
-                });
-            });
-        },
-        error: function (ob) {
-            alert(ob.responseJSON.message);
-        }
-    });
-}
-
-function findDriverData() {
-    $.ajax({
-        url: baseURLForReservation+"driver/status/" + "Release",
-        method: "GET",
-        success: function (response) {
-            load(response.data.driverId,response.data.driverName, response.data.driverContact);
-        },
-        error: function (ob) {
-            alert(ob.responseJSON.message);
-        }
-    });
-}
-
-var driverName;
-var driverContact;
-var driverId;
-
-/** Load driver release or not and load available release driver */
-function load(id,name, contact) {
-    driverName = name;
-    driverContact = contact;
-    driverId = id;
-    $(".checkDriverIfWant").click(function () {
-        $("#tblSelectedCars tbody > tr").click(function () {
-            if ($('.checkDriverIfWant').is(':checked')) {
-                if ($(this).find(".checkDriverIfWant").is(":checked")) {
-                    $(this).find("td:eq(6)").text(driverId);
-                    $(this).find("td:eq(7)").text(driverName);
-                    $(this).find("td:eq(8)").text(driverContact);
-                }
-            }
-        });
-    });
-}
 
 /** for Check All Details condition are totally correct.. */
+
 var bookingDenyOrAccept;
 
 $("#btnBook").click(function () {

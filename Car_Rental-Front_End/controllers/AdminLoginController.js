@@ -29,49 +29,46 @@ $("#loginAdminpassword").keyup(function (event) {
 
 $("#btnLogToAdminPanel").click(function () {
 
-  /*  if ($("#loginAdminname").val() == "" || $("#loginAdminpassword").val() == ""){
+    if ($("#loginAdminname").val() == "" || $("#loginAdminpassword").val() == ""){
         alert("All Fields Are Required To Log !");
     }else {
         isExistsAdmin($("#loginAdminname").val(),$("#loginAdminpassword").val());
-    }*/
-    /** Temporary Admin login logic (Nota Database Information)*/
+    }
+ /*   /!** Temporary Admin login logic (Nota Database Information)*!/
     let nameAdmin = $("#loginAdminname").val();
     let pwdAdmin = $("#loginAdminpassword").val();
 
     if ("" === nameAdmin && "" === pwdAdmin) {
-        alert("success to login admin panel..")
+
 
         // Login Admin panel
 
-        $("#admin_screen").css('display','block');
+      /!*  $("#admin_screen").css('display','block');
         $("#logInAdmin").css('display', 'none');
-
-        loadAllAdminPanelData();
+        loadAllAdminPanelData();*!/
 
 
 
 
     }else{
-        alert("Wrong login check all fields are correct !!!..")
-    }
+
+    }*/
 
 });
 
 
-/*===============================================*/
-/** tempory this delete after my workk */
-/*$("#admin_screen").css('display','block');*/
-/*===============================================*/
-
-
-function isExistsAdmin(val, val2) {
+function isExistsAdmin(name, password) {
     $.ajax({
-        url: baseURLAdminLogin+"admin/" + password +"/"+username,
+        url: baseURLAdminLogin+"admin/" + password +"/"+name,
         method: "GET",
         success: function (response) {
-            if (response.data.username == $("#loginAdminname").val() && response.data.password == $("#loginAdminpassword").val()) {
+            if (response.data.name == $("#loginAdminname").val() && response.data.password == $("#loginAdminpassword").val()) {
 
                 // Login Admin panel
+                alert("success to login admin panel..")
+                $("#admin_screen").css('display','block');
+                $("#logInAdmin").css('display', 'none');
+                loadAllAdminPanelData();
 
             }
         },

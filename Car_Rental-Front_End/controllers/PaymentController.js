@@ -165,6 +165,25 @@ $("#calculateFullIncome").click(function () {
     }
 });
 
+function loadReservationsIds() {
+    $("#rentalId").empty();
+    $("#rentalId").append($("<option></option>").attr("value", 0).text("Select ID"));
+
+    var countRentalIds = 1;
+    $.ajax({
+        url: baseURLForReserveDetails+"reserve",
+        method: "GET",
+        success: function (response) {
+            for (var ids of response.data) {
+                $("#rentalId").append($("<option></option>").attr("value", countRentalIds).text(ids.reserveId));
+                countRentalIds++;
+            }
+        },
+        error: function (ob) {
+        }
+    });
+}
+
 function calculateIncome() {
     var paymentDetail = {
         paymentId: $("#paymentId").val(),

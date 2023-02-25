@@ -19,6 +19,7 @@ function loadAllAdminPanelData() {
     totalRegisterUsers();
     TodayAllReservations();
     TodayActiveBookings();
+    loadReservationsIds();
     TotalIncome();
 }
 

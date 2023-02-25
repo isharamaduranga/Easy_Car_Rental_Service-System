@@ -232,10 +232,11 @@ function saveNewCar(){
         availableOrNot:$("#availableOrNot option:selected").text(),
         damageOrNot: $("#damageOrNot option:selected").text(),
         underMaintainOrNot: $("#underMaintainOrNot option:selected").text(),
-        fontViewImage: null,
-        backViewImage: null,
-        sideViewImage: null,
-        interiorViewImage: null
+        fontViewImage: $('#uploadFrontView')[0].files[0].name,
+        backViewImage: $('#uploadBackView')[0].files[0].name,
+        sideViewImage: $('#uploadSideView')[0].files[0].name,
+        interiorViewImage: $('#uploadInteriorView')[0].files[0].name
+
     }
 
     $.ajax({
@@ -284,16 +285,16 @@ function loadAllCars(){
                             <span class="badge rounded-pill text-bg-warning text-secondary">${responseKey.underMaintainOrNot}</span> </td><td> 
                             ${responseKey.totalDistanceTraveled} </td><td>
                             <div class="d-flex align-items-center">
-                                <img src="../assets/images/panel2.jpg" alt="" style="width: 45px; height: 45px" class="rounded-circle"/>
+                                <img src="../assets/images/car_bg_home/${responseKey.fontViewImage}" alt="" style="width: 45px; height: 45px" class="rounded-circle"/>
                              </div></td><td>
                              <div class="d-flex align-items-center">
-                                <img src="../assets/images/panel1.jpg" alt="" style="width: 45px; height: 45px" class="rounded-circle"/>
+                                <img src="../assets/images/car_bg_home/${responseKey.backViewImage}" alt="" style="width: 45px; height: 45px" class="rounded-circle"/>
                              </div></td><td>
                              <div class="d-flex align-items-center">
-                                <img src="../assets/images/panel3.png" alt="" style="width: 45px; height: 45px" class="rounded-circle"/>
+                                <img src="../assets/images/car_bg_home/${responseKey.sideViewImage}" alt="" style="width: 45px; height: 45px" class="rounded-circle"/>
                              </div></td><td>
                              <div class="d-flex align-items-center">
-                                <img src="../assets/images/panel4.jpg" alt="" style="width: 45px; height: 45px" class="rounded-circle"/>
+                                <img src="../assets/images/car_bg_home/${responseKey.interiorViewImage}" alt="" style="width: 45px; height: 45px" class="rounded-circle"/>
                              </div></td> 
                              <td><button type="button" id="btnEditCar"  class="btn btn-warning btn-sm px-3" data-ripple-color="dark">
                                 <i class="fas fa-pen-alt"></i>
@@ -331,10 +332,8 @@ function BindRowClickEvent() {
             var freeKmMonth = $.trim(tblClickRow.children(':nth-child(12)').text());
             var extraKm = $.trim(tblClickRow.children(':nth-child(13)').text());
             var totalDistance = $.trim(tblClickRow.children(':nth-child(17)').text());
-            var frontView = $.trim(tblClickRow.children(':nth-child(18)').text());
-            var backView = $.trim(tblClickRow.children(':nth-child(19)').text());
-            var sideView = $.trim(tblClickRow.children(':nth-child(20)').text());
-            var interiorView = $.trim(tblClickRow.children(':nth-child(21)').text());
+
+
 
             $("#brand").append($("<option selected></option>").attr("value", 14).text($.trim(tblClickRow.children(':nth-child(2)').text())));
             $("#colour").append($("<option selected></option>").attr("value", 11).text($.trim(tblClickRow.children(':nth-child(3)').text())));
@@ -355,6 +354,10 @@ function BindRowClickEvent() {
             $("#priceForExtraKM").val(extraKm);
             $("#totalDistanceTravelled").val(totalDistance);
             $("#transmissionType option:selected").val($.trim(tblClickRow.children(':nth-child(7)').text()));
+            $("#uploadFrontView").val('');
+            $("#uploadBackView").val('');
+            $("#uploadSideView").val('');
+            $("#uploadInteriorView").val('');
 
         } else {}
 
@@ -380,10 +383,10 @@ function updateCar() {
         availableOrNot:$("#availableOrNot option:selected").text(),
         damageOrNot: $("#damageOrNot option:selected").text(),
         underMaintainOrNot: $("#underMaintainOrNot option:selected").text(),
-        fontViewImage: null,
-        backViewImage: null,
-        sideViewImage: null,
-        interiorViewImage: null
+        fontViewImage: $('#uploadFrontView')[0].files[0].name,
+        backViewImage: $('#uploadBackView')[0].files[0].name,
+        sideViewImage: $('#uploadSideView')[0].files[0].name,
+        interiorViewImage: $('#uploadInteriorView')[0].files[0].name
     }
 
     $.ajax({

@@ -7,9 +7,7 @@
     <link href="style/style.css" rel="stylesheet">
     <!-- <link href="assets/bootstrap/css/bootstrap.min.css" rel="stylesheet">-->
     <link href="assets/icons/font/css/all.min.css" rel="stylesheet">
-    <!--
-    - google font link
-  -->
+    <!--- google font link-->
     <link href="https://fonts.googleapis.com" rel="preconnect">
     <link crossorigin href="https://fonts.gstatic.com" rel="preconnect">
     <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600&family=Open+Sans&display=swap"
@@ -19,7 +17,7 @@
 </head>
 <body>
 
-<!--section of Nav Bar-->
+<!---------------- section of Nav Bar ----------------->
 <section id="nav_bar">
     <nav class="navbar navbar-expand-lg ">
         <div class="container-fluid">
@@ -52,7 +50,7 @@
                                 </button>
                                 <ul class="dropdown-menu dropdown-menu-dark">
                                     <li><a class="dropdown-item" href="#featured-car">Car Listing</a></li>
-                                    <li><a class="dropdown-item" href="#">Car Booking</a></li>
+                                    <li><a class="dropdown-item" id="bookBtn">Car Booking</a></li>
                                 </ul>
                             </li>
                         </ul>
@@ -94,7 +92,7 @@
                                 </button>
 
                                 <ul class="dropdown-menu dropdown-menu-dark">
-                                        <button class="dropdown-item" id="btnOpenRegisterForm">As a Customer</button>
+                                    <button class="dropdown-item" id="btnOpenRegisterForm">As a Customer</button>
                                 </ul>
                             </li>
                         </ul>
@@ -106,8 +104,7 @@
     </nav>
 </section>
 
-<!------------- ---banner section--- ------------------>
-
+<!------------- ---banner section--------------------->
 <section id="banner">
     <div class="container">
         <div class="row">
@@ -167,27 +164,15 @@
 
                             </div>
                         </div>
-
                     </div>
-                    <!-- <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleDark" data-bs-slide="prev">
-                         <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-                         <span class="visually-hidden">Previous</span>
-                     </button>
-                     <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleDark" data-bs-slide="next">
-                         <span class="carousel-control-next-icon" aria-hidden="true"></span>
-                         <span class="visually-hidden">Next</span>
-                     </button>-->
                 </div>
-
-
             </div>
         </div>
     </div>
     <img class="bottom_img" src="assets/images/wave1.png">
 </section>
 
-
-<!------------- ---service section--- ------------------>
+<!------------- ---service section-------------------->
 <section id="services">
     <div class="container text-center">
         <h1 class="title">WHAT WE DO ?</h1>
@@ -220,8 +205,7 @@
     </div>
 </section>
 
-
-<!------------- ---About section--- ------------------>
+<!------------- ---About section---------------------->
 <section id="about_us">
     <div class="container">
         <h1 class="title text-center"> ABOUT US </h1>
@@ -295,8 +279,7 @@
     </div>
 </section>
 
-
-<!---------------- Rental Car section--- ------------------>
+<!---------------- Rental Car section------------------>
 <section class="section featured-car" id="featured-car">
 
     <div class="container text-center">
@@ -714,9 +697,7 @@
                                 <button class="btn btn-info">Rent now</button>
 
                             </div>
-
                         </div>
-
                     </div>
                 </li>
             </div>
@@ -724,8 +705,7 @@
     </div>
 </section>
 
-
-<!------------- ---Testimonials section--- ------------------>
+<!--Testimonials section-->
 <section id="testimonials">
     <div class="container">
         <h1 class="title text-center"> WHAT CLIENTS SAYS ...?</h1>
@@ -767,7 +747,6 @@
         </div>
     </div>
 </section>
-
 
 <!--Contact PageWindow-->
 <section id="Contact_Page"> <!--site Contact Page-->
@@ -820,13 +799,14 @@
 
                 <div class="container_contact">
 
-                    <form  id="form_getInTouch" onsubmit="sendEmail(); reset(); return false;">
+                    <form id="form_getInTouch" onsubmit="sendEmail(); reset(); return false;">
                         <h3> GET IN TOUCH</h3>
                         <input id="names" placeholder="Your Name" required type="text">
                         <input id="emails" placeholder="Email id" required type="email">
                         <input id="phone" placeholder="Phone No." required type="text">
                         <textarea id="message" placeholder="How Can I Help You ?" rows="4"> </textarea>
-                        <button class="btnGetInTouch" style="background-image: linear-gradient(to right, #1194e7, #0159e8);"
+                        <button class="btnGetInTouch"
+                                style="background-image: linear-gradient(to right, #1194e7, #0159e8);"
                                 type="submit"><i class="fa-solid fa-paper-plane"></i> Send
                         </button>
 
@@ -855,11 +835,11 @@
 </section>
 
 <!--Customer Sign Up Window-->
-
-<section id="RegisterPage" >
+<section id="RegisterPage">
     <div class="container" style="background: url(assets/images/car_bg_home/car_a.png) no-repeat center;">
         <h1 class="text-center">Customer Register</h1>
-        <div class="row" style="    background: rgba(8,98,194,0.56);!important: ;border-radius: 40px;padding: 20px;width: 73vw;margin: auto;">
+        <div class="row"
+             style="    background: rgba(8,98,194,0.56);!important: ;border-radius: 40px;padding: 20px;width: 73vw;margin: auto;">
             <div class="col-6">
                 <form id="customerForm">
                     <div class="row">
@@ -871,7 +851,7 @@
                         </div>
                         <div class="col-6">
                             <label for="password"><span>*</span> Password</label>
-                            <input class="form-control  border border-2 border-white bg-light rounded-3"  id="password"
+                            <input class="form-control  border border-2 border-white bg-light rounded-3" id="password"
                                    placeholder="Enter Password" type="password">
                             <p><small class="text-danger  pl-1 mt-0 mb-0" id="errorPassword"></small></p>
                         </div>
@@ -933,31 +913,35 @@
             <div class="col-6">
 
                 <div class="row">
-                    <form  style="border: 2px solid white; width: 510px; height: 120px;position: relative; top: 50px;">
-                        <label class="form-label mt-4 text-white  fw-light" for="uploadmyimage" style="font-family: 'poppins', sans-serif; font-size: 18px"><span>*</span>Upload your image</label>
-                        <input type="file" class="form-control rounded-5 bg-success" id="uploadmyimage" />
+                    <form style="border: 2px solid white; width: 510px; height: 120px;position: relative; top: 50px;">
+                        <label class="form-label mt-4 text-white  fw-light" for="uploadmyimage"
+                               style="font-family: 'poppins', sans-serif; font-size: 18px"><span>*</span>Upload your
+                            image</label>
+                        <input class="form-control rounded-5 bg-success" id="uploadmyimage" type="file"/>
                     </form>
                 </div>
 
                 <div class="row">
-                    <form  style="border: 2px solid white; width: 510px; height: 120px;position: relative; top: 84px;">
-                        <form  style="border: 2px solid white; border-radius: 20px;!important; width: 530px; height: 104px;;position: relative; top: 50px;">
-                            <label class="form-label mt-4 text-white  fw-light" for="uploadnicimage" style="font-family: 'poppins', sans-serif; font-size: 18px"><span>*</span>Upload your NIC image</label>
-                            <input type="file" class="form-control rounded-5 bg-warning" id="uploadnicimage" />
+                    <form style="border: 2px solid white; width: 510px; height: 120px;position: relative; top: 84px;">
+                        <form style="border: 2px solid white; border-radius: 20px;!important; width: 530px; height: 104px;;position: relative; top: 50px;">
+                            <label class="form-label mt-4 text-white  fw-light" for="uploadnicimage"
+                                   style="font-family: 'poppins', sans-serif; font-size: 18px"><span>*</span>Upload your
+                                NIC image</label>
+                            <input class="form-control rounded-5 bg-warning" id="uploadnicimage" type="file"/>
                         </form>
                     </form>
                 </div>
 
                 <div class="row">
-                    <form  style="border: 2px solid white; width: 510px; height: 120px;;position: relative; top: 120px;">
-                        <form  style="border: 2px solid white; width: 530px; height: 104px;;position: relative; top: 50px;">
-                            <label class="form-label mt-4 text-white fw-light" for="uploaddrivinglicence" style="font-family: 'poppins', sans-serif; font-size: 18px"><span>*</span>Upload your Driving Licence image</label>
-                            <input type="file" class="form-control rounded-5 bg-info" id="uploaddrivinglicence" />
+                    <form style="border: 2px solid white; width: 510px; height: 120px;;position: relative; top: 120px;">
+                        <form style="border: 2px solid white; width: 530px; height: 104px;;position: relative; top: 50px;">
+                            <label class="form-label mt-4 text-white fw-light" for="uploaddrivinglicence"
+                                   style="font-family: 'poppins', sans-serif; font-size: 18px"><span>*</span>Upload your
+                                Driving Licence image</label>
+                            <input class="form-control rounded-5 bg-info" id="uploaddrivinglicence" type="file"/>
                         </form>
                     </form>
                 </div>
-
-
 
 
             </div>
@@ -995,14 +979,16 @@
                     <div class="row">
                         <label class="text-white" for="newpassword"><span>*</span>New Password</label>
                         <input class="form-control" id="newpassword" placeholder="Enter New Password" type="password">
-                        <p><small class="text-info  pl-1 mt-0 mb-0" id="errorNewPW" style="font-weight: bold" ></small></p>
+                        <p><small class="text-info  pl-1 mt-0 mb-0" id="errorNewPW" style="font-weight: bold"></small>
+                        </p>
                     </div>
 
                     <div class="row">
                         <label class="text-white" for="confirmpassword"><span>*</span>Confirm password</label>
                         <input class="form-control" id="confirmpassword" placeholder="Enter Confirm password"
                                type="password">
-                        <p><small class="text-info  pl-1 mt-0 mb-0" id="errorConfirmPW" style="font-weight: bold"></small></p>
+                        <p><small class="text-info  pl-1 mt-0 mb-0" id="errorConfirmPW"
+                                  style="font-weight: bold"></small></p>
                     </div>
 
                     <div class="row">
@@ -1020,15 +1006,12 @@
                                     type="button">Cancel
                             </button>
                         </div>
-                        <!-- Submit button -->
-
                     </div>
                 </div>
             </form>
         </div>
     </div>
 </section>
-
 
 <!--Customer Log In Window-->
 <section id="logInCustomer"
@@ -1115,7 +1098,6 @@
     </div>
 </section>
 
-
 <!--Driver Log In Window-->
 <section id="logInDriver"
          style="margin-top: 20px;background: url(assets/images/car_bg_home/car_b.png) no-repeat center;">
@@ -1154,7 +1136,6 @@
         </div>
     </div>
 </section>
-
 
 <!--Admin Log In Window-->
 <section id="logInAdmin"
@@ -1196,329 +1177,331 @@
     </div>
 </section>
 
-<!--  *********************************************************************************** -->
+
+<!--  ************************************Fixed Pop Up Windows***************************** -->
+
 <!-- Add New Car Page ( Calling Admin Panel )-->
+<section id="CarManagePage">
 
- <section id="CarManagePage">
+    <div class="w-75  border border-3 border-white rounded-2 shadow bg-white"
+         style="position: relative;top: 70px;bottom: 0;right: 0;left: 112px;margin: auto;height: 678px;">
 
-     <div class="w-75  border border-3 border-white rounded-2 shadow bg-white"
-          style="position: relative;top: 70px;bottom: 0;right: 0;left: 112px;margin: auto;height: 678px;">
+        <div class="text-center  border-bottom border-2 " style="position: relative;top: 10px;">
+            <h1 class=" text-dark   mb-0 " style="font-family: 'poppins', sans-serif, serif;">~ Manage Car ~</h1>
+        </div>
 
-         <div class="text-center  border-bottom border-2 " style="position: relative;top: 10px;">
-             <h1 class=" text-dark   mb-0 " style="font-family: 'poppins', sans-serif, serif;">~ Manage Car ~</h1>
-         </div>
+        <div class="mt-0" style="position: relative;top: -3px;">
+            <form class="ms-5 me-5" style="position: relative; top: 50px;">
 
-         <div class="mt-0" style="position: relative;top: -3px;">
-             <form class="ms-5 me-5" style="position: relative; top: 50px;">
+                <div class="row">
+                    <div class="col">
+                        <!-- car id -->
+                        <div class="form-outline mb-2 ms-4 me-3">
+                            <label class="form-label text-dark fw-light" for="carId">* Car Id</label>
+                            <input class="form-control bg-white rounded-3" id="carId" style="height: 37px" type="text"/>
+                        </div>
+                    </div>
+                    <div class="col">
+                        <!-- brand -->
+                        <div class="form-outline mb-2 ms-4 me-3">
+                            <label class="form-label text-dark fw-light " for="brand">* Brand</label>
+                            <select aria-label="Default select example" class="form-select"
+                                    id="brand" style="height: 37px">
+                                <option selected value="0">None</option>
+                                <option value="1">Suzuki Alto</option>
+                                <option value="2">Suzuki Alto K10</option>
+                                <option value="3">Perodua (Daihatsu)</option>
+                                <option value="4">Toyota Prius/Aqua</option>
+                                <option value="5">Suzuki Celerio</option>
+                                <option value="6">Toyota Corolla Axio</option>
+                                <option value="7">Perodua Bezza Prime Sedan</option>
+                                <option value="8">Toyota Allion NZT</option>
+                                <option value="9">Toyota Axio NKR</option>
+                                <option value="10">Toyota Axio NKR</option>
+                                <option value="11">Mercedes</option>
+                                <option value="12">BMW i8</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="col">
+                        <!-- colour -->
+                        <div class="form-outline mb-2 ms-4 me-3">
+                            <label class="form-label text-dark fw-light " for="colour">* Colour</label>
+                            <select aria-label="Default select example" class="form-select "
+                                    id="colour" style="height: 37px">
+                                <option selected value="0">None</option>
+                                <option value="1">White/white pearl</option>
+                                <option value="2">Black/black effect</option>
+                                <option value="3">Silver</option>
+                                <option value="4">Gray</option>
+                                <option value="5">Red</option>
+                                <option value="6">Blue</option>
+                                <option value="7">Brown/beige</option>
+                                <option value="8">Yellow/Gold</option>
+                                <option value="9">Green</option>
+                                <option value="10">Others</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="col">
+                        <!-- type -->
+                        <div class="form-outline mb-2 ms-4 me-3">
+                            <label class="form-label text-dark fw-light " for="type">* Type</label>
+                            <select aria-label="Default select example" class="form-select"
+                                    id="type" style="height: 37px">
+                                <option selected value="0">None</option>
+                                <option value="1">General</option>
+                                <option value="2">Premium</option>
+                                <option value="3">Luxury</option>
+                            </select>
+                        </div>
+                    </div>
+                </div>
 
-                 <div class="row">
-                     <div class="col">
-                         <!-- car id -->
-                         <div class="form-outline mb-2 ms-4 me-3">
-                             <label class="form-label text-dark fw-light" for="carId">* Car Id</label>
-                             <input class="form-control bg-white rounded-3" id="carId" type="text" style="height: 37px"/>
-                         </div>
-                     </div>
-                     <div class="col">
-                         <!-- brand -->
-                         <div class="form-outline mb-2 ms-4 me-3">
-                             <label class="form-label text-dark fw-light " for="brand">* Brand</label>
-                             <select aria-label="Default select example" class="form-select"
-                                     id="brand" style="height: 37px">
-                                 <option selected value="0">None</option>
-                                 <option value="1">Suzuki Alto </option>
-                                 <option value="2">Suzuki Alto K10</option>
-                                 <option value="3">Perodua (Daihatsu)</option>
-                                 <option value="4">Toyota Prius/Aqua</option>
-                                 <option value="5">Suzuki Celerio</option>
-                                 <option value="6">Toyota Corolla Axio</option>
-                                 <option value="7">Perodua Bezza Prime Sedan</option>
-                                 <option value="8">Toyota Allion NZT</option>
-                                 <option value="9">Toyota Axio NKR</option>
-                                 <option value="10">Toyota Axio NKR</option>
-                                 <option value="11">Mercedes</option>
-                                 <option value="12">BMW i8 </option>
-                             </select>
-                         </div>
-                     </div>
-                     <div class="col">
-                         <!-- colour -->
-                         <div class="form-outline mb-2 ms-4 me-3">
-                             <label class="form-label text-dark fw-light " for="colour">* Colour</label>
-                             <select aria-label="Default select example" class="form-select "
-                                     id="colour" style="height: 37px">
-                                 <option selected value="0">None</option>
-                                 <option value="1">White/white pearl</option>
-                                 <option value="2">Black/black effect</option>
-                                 <option value="3">Silver</option>
-                                 <option value="4">Gray</option>
-                                 <option value="5">Red</option>
-                                 <option value="6">Blue</option>
-                                 <option value="7">Brown/beige</option>
-                                 <option value="8">Yellow/Gold</option>
-                                 <option value="9">Green</option>
-                                 <option value="10">Others</option>
-                             </select>
-                         </div>
-                     </div>
-                     <div class="col">
-                         <!-- type -->
-                         <div class="form-outline mb-2 ms-4 me-3">
-                             <label class="form-label text-dark fw-light " for="type">* Type</label>
-                             <select aria-label="Default select example" class="form-select"
-                                     id="type" style="height: 37px">
-                                 <option selected value="0">None</option>
-                                 <option value="1">General</option>
-                                 <option value="2">Premium</option>
-                                 <option value="3">Luxury</option>
-                             </select>
-                         </div>
-                     </div>
-                 </div>
+                <div class="row">
+                    <div class="col">
+                        <!-- registration no -->
+                        <div class="form-outline mb-2 ms-4 me-3">
+                            <label class="form-label text-dark fw-light " for="registrationNo">*
+                                Registration NO</label>
+                            <input class="form-control  bg-white rounded-3 " id="registrationNo"
+                                   style="height: 37px" type="text"/>
+                            <p><small class="text-danger  pl-1 mt-0 mb-0 " id="errorRegNo"></small></p>
+                        </div>
+                    </div>
+                    <div class="col">
+                        <!-- fuel type -->
+                        <div class="form-outline mb-2 ms-4 me-3">
+                            <label class="form-label text-dark fw-light" for="fuelType">* Fuel
+                                Type</label>
+                            <select aria-label="Default select example" class="form-select"
+                                    id="fuelType" style="height: 37px">
+                                <option selected value="0">None</option>
+                                <option value="1">Petrol</option>
+                                <option value="2">Diesel</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="col">
+                        <!-- transmission type -->
+                        <div class="form-outline mb-2 ms-4 me-3">
+                            <label class="form-label text-dark fw-light " for="transmissionType">*
+                                Transmission Type</label>
+                            <select aria-label="Default select example" class="form-select"
+                                    id="transmissionType" style="height: 37px">
+                                <option selected value="0">None</option>
+                                <option value="1">Manual</option>
+                                <option value="2">Auto</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="col">
+                        <!-- no of passengers -->
+                        <div class="form-outline mb-2 ms-4 me-3">
+                            <label class="form-label text-dark fw-light" for="noOfPassengers">* NO Of
+                                Passenagers</label>
+                            <input class="form-control  bg-white rounded-3" id="noOfPassengers"
+                                   style="height: 37px" type="number"/>
+                            <p><small class="text-danger  pl-1 mt-0 mb-0" id="errorPassengers"></small>
+                            </p>
+                        </div>
+                    </div>
+                </div>
 
-                 <div class="row">
-                     <div class="col">
-                         <!-- registration no -->
-                         <div class="form-outline mb-2 ms-4 me-3">
-                             <label class="form-label text-dark fw-light " for="registrationNo">*
-                                 Registration NO</label>
-                             <input class="form-control  bg-white rounded-3 " id="registrationNo"
-                                    type="text" style="height: 37px"/>
-                             <p><small class="text-danger  pl-1 mt-0 mb-0 " id="errorRegNo"></small></p>
-                         </div>
-                     </div>
-                     <div class="col">
-                         <!-- fuel type -->
-                         <div class="form-outline mb-2 ms-4 me-3">
-                             <label class="form-label text-dark fw-light" for="fuelType">* Fuel
-                                 Type</label>
-                             <select aria-label="Default select example" class="form-select"
-                                     id="fuelType" style="height: 37px">
-                                 <option selected value="0">None</option>
-                                 <option value="1">Petrol</option>
-                                 <option value="2">Diesel</option>
-                             </select>
-                         </div>
-                     </div>
-                     <div class="col">
-                         <!-- transmission type -->
-                         <div class="form-outline mb-2 ms-4 me-3">
-                             <label class="form-label text-dark fw-light " for="transmissionType">*
-                                 Transmission Type</label>
-                             <select aria-label="Default select example" class="form-select"
-                                     id="transmissionType" style="height: 37px">
-                                 <option selected value="0">None</option>
-                                 <option value="1">Manual</option>
-                                 <option value="2">Auto</option>
-                             </select>
-                         </div>
-                     </div>
-                     <div class="col">
-                         <!-- no of passengers -->
-                         <div class="form-outline mb-2 ms-4 me-3">
-                             <label class="form-label text-dark fw-light" for="noOfPassengers">* NO Of
-                                 Passenagers</label>
-                             <input class="form-control  bg-white rounded-3" id="noOfPassengers"
-                                    type="number" style="height: 37px"/>
-                             <p><small class="text-danger  pl-1 mt-0 mb-0" id="errorPassengers"></small>
-                             </p>
-                         </div>
-                     </div>
-                 </div>
+                <div class="row">
+                    <div class="col">
+                        <!-- daily rate price -->
+                        <div class="form-outline mb-2 ms-4 me-3">
+                            <label class="form-label text-dark fw-light " for="dailyRatePrice">* Daily
+                                Rate Price</label>
+                            <input class="form-control bg-white rounded-3" id="dailyRatePrice" style="height: 37px"
+                                   type="text"/>
+                            <p><small class="text-danger  pl-1 mt-0 mb-0" id="errorDailyRate"></small>
+                            </p>
+                        </div>
+                    </div>
+                    <div class="col">
+                        <!-- monthly rate price -->
+                        <div class="form-outline mb-2 ms-4 me-3">
+                            <label class="form-label text-dark fw-light " for="monthlyRatePrice">*
+                                Monthly Rate Price</label>
+                            <input class="form-control  bg-white rounded-3" id="monthlyRatePrice"
+                                   style="height: 37px " type="text"/>
+                            <p><small class="text-danger  pl-1 mt-0 mb-0" id="errorMonthlyRate"></small>
+                            </p>
+                        </div>
+                    </div>
+                    <div class="col">
+                        <!-- free km per day -->
+                        <div class="form-outline mb-2 ms-4 me-3">
+                            <label class="form-label text-dark fw-light " for="freeKMPerDay">* Free KM
+                                Per Day</label>
+                            <input class="form-control  bg-white rounded-3" id="freeKMPerDay"
+                                   style="height: 37px" type="number"/>
+                            <p><small class="text-danger  pl-1 mt-0 mb-0" id="errorFeeKMDay"></small>
+                            </p>
+                        </div>
+                    </div>
+                    <div class="col">
+                        <!-- free km per month -->
+                        <div class="form-outline mb-2 ms-4 me-3">
+                            <label class="form-label text-dark fw-light " for="freeKMPerMonth">* Free KM
+                                Per Month</label>
+                            <input class="form-control  bg-white rounded-3" id="freeKMPerMonth"
+                                   style="height: 37px" type="number"/>
+                            <p><small class="text-danger  pl-1 mt-0 mb-0" id="errorFreeKMMonth"></small>
+                            </p>
+                        </div>
+                    </div>
+                </div>
 
-                 <div class="row">
-                     <div class="col">
-                         <!-- daily rate price -->
-                         <div class="form-outline mb-2 ms-4 me-3">
-                             <label class="form-label text-dark fw-light " for="dailyRatePrice">* Daily
-                                 Rate Price</label>
-                             <input class="form-control bg-white rounded-3" id="dailyRatePrice" type="text" style="height: 37px"/>
-                             <p><small class="text-danger  pl-1 mt-0 mb-0" id="errorDailyRate"></small>
-                             </p>
-                         </div>
-                     </div>
-                     <div class="col">
-                         <!-- monthly rate price -->
-                         <div class="form-outline mb-2 ms-4 me-3">
-                             <label class="form-label text-dark fw-light " for="monthlyRatePrice">*
-                                 Monthly Rate Price</label>
-                             <input class="form-control  bg-white rounded-3" id="monthlyRatePrice"
-                                    type="text" style="height: 37px "/>
-                             <p><small class="text-danger  pl-1 mt-0 mb-0" id="errorMonthlyRate"></small>
-                             </p>
-                         </div>
-                     </div>
-                     <div class="col">
-                         <!-- free km per day -->
-                         <div class="form-outline mb-2 ms-4 me-3">
-                             <label class="form-label text-dark fw-light " for="freeKMPerDay">* Free KM
-                                 Per Day</label>
-                             <input class="form-control  bg-white rounded-3" id="freeKMPerDay"
-                                    type="number" style="height: 37px"/>
-                             <p><small class="text-danger  pl-1 mt-0 mb-0" id="errorFeeKMDay"></small>
-                             </p>
-                         </div>
-                     </div>
-                     <div class="col">
-                         <!-- free km per month -->
-                         <div class="form-outline mb-2 ms-4 me-3">
-                             <label class="form-label text-dark fw-light " for="freeKMPerMonth">* Free KM
-                                 Per Month</label>
-                             <input class="form-control  bg-white rounded-3" id="freeKMPerMonth"
-                                    type="number" style="height: 37px"/>
-                             <p><small class="text-danger  pl-1 mt-0 mb-0" id="errorFreeKMMonth"></small>
-                             </p>
-                         </div>
-                     </div>
-                 </div>
+                <div class="row">
+                    <div class="col">
+                        <!-- price for extra km -->
+                        <div class="form-outline mb-2 ms-4 me-3">
+                            <label class="form-label text-dark fw-light " for="priceForExtraKM">* Price
+                                For Extra KM</label>
+                            <input class="form-control  bg-white rounded-3" id="priceForExtraKM"
+                                   style="height: 37px" type="text"/>
+                            <p><small class="text-danger  pl-1 mt-0 mb-0"
+                                      id="errorExtraKMPrice"></small></p>
+                        </div>
+                    </div>
+                    <div class="col">
+                        <!-- available or not -->
+                        <div class="form-outline mb-2 ms-4 me-3">
+                            <label class="form-label text-dark fw-light " for="availableOrNot">*
+                                Available Or Not</label>
+                            <select aria-label="Default select example" class="form-select text-dark"
+                                    id="availableOrNot" style="height: 37px">
+                                <option selected value="0">None</option>
+                                <option value="1">Available</option>
+                                <option value="2">Not Available</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="col">
+                        <!-- damage or not -->
+                        <div class="form-outline mb-2 ms-4 me-3">
+                            <label class="form-label text-dark fw-light " for="damageOrNot">* Damage Or
+                                Not</label>
+                            <select aria-label="Default select example" class="form-select text-dark"
+                                    id="damageOrNot" style="height: 37px">
+                                <option class="text-dark" selected value="0">None</option>
+                                <option class="text-dark" value="1">Damage</option>
+                                <option class="text-dark" value="2">Not Damage</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="col">
+                        <!-- under maintain or not -->
+                        <div class="form-outline mb-2 ms-4 me-3">
+                            <label class="form-label text-dark fw-light" for="underMaintainOrNot">*
+                                Under Maintain Or Not</label>
+                            <select aria-label="Default select example" class="form-select"
+                                    id="underMaintainOrNot" style="height: 37px">
+                                <option selected value="0">None</option>
+                                <option value="1">Maintained</option>
+                                <option value="2">Under Maintain</option>
+                            </select>
+                        </div>
+                    </div>
+                </div>
 
-                 <div class="row">
-                     <div class="col">
-                         <!-- price for extra km -->
-                         <div class="form-outline mb-2 ms-4 me-3">
-                             <label class="form-label text-dark fw-light " for="priceForExtraKM">* Price
-                                 For Extra KM</label>
-                             <input class="form-control  bg-white rounded-3" id="priceForExtraKM"
-                                    type="text" style="height: 37px"/>
-                             <p><small class="text-danger  pl-1 mt-0 mb-0"
-                                       id="errorExtraKMPrice"></small></p>
-                         </div>
-                     </div>
-                     <div class="col">
-                         <!-- available or not -->
-                         <div class="form-outline mb-2 ms-4 me-3">
-                             <label class="form-label text-dark fw-light " for="availableOrNot">*
-                                 Available Or Not</label>
-                             <select aria-label="Default select example" class="form-select text-dark"
-                                     id="availableOrNot" style="height: 37px">
-                                 <option selected value="0">None</option>
-                                 <option value="1">Available</option>
-                                 <option value="2">Not Available</option>
-                             </select>
-                         </div>
-                     </div>
-                     <div class="col">
-                         <!-- damage or not -->
-                         <div class="form-outline mb-2 ms-4 me-3">
-                             <label class="form-label text-dark fw-light " for="damageOrNot">* Damage Or
-                                 Not</label>
-                             <select aria-label="Default select example" class="form-select text-dark"
-                                     id="damageOrNot" style="height: 37px">
-                                 <option class="text-dark" selected value="0">None</option>
-                                 <option class="text-dark" value="1">Damage</option>
-                                 <option class="text-dark" value="2">Not Damage</option>
-                             </select>
-                         </div>
-                     </div>
-                     <div class="col">
-                         <!-- under maintain or not -->
-                         <div class="form-outline mb-2 ms-4 me-3">
-                             <label class="form-label text-dark fw-light" for="underMaintainOrNot">*
-                                 Under Maintain Or Not</label>
-                             <select aria-label="Default select example" class="form-select"
-                                     id="underMaintainOrNot" style="height: 37px">
-                                 <option selected value="0">None</option>
-                                 <option value="1">Maintained</option>
-                                 <option value="2">Under Maintain</option>
-                             </select>
-                         </div>
-                     </div>
-                 </div>
+                <div class="row mb-0">
+                    <div class="col">
+                        <!-- total distance travelled -->
+                        <div class="form-outline ms-4 me-3">
+                            <label class="form-label text-dark fw-light " for="totalDistanceTravelled">*
+                                Total Distance Travelled</label>
+                            <input class="form-control bg-white rounded-3" id="totalDistanceTravelled"
+                                   style="height: 35px" type="number"/>
+                            <p><small class="text-danger  pl-1 mt-0 mb-0"
+                                      id="errorTotalDistance"></small></p>
+                        </div>
+                    </div>
+                    <div class="col"></div>
+                    <div class="col"></div>
+                    <div class="col"></div>
+                </div>
 
-                 <div class="row mb-0">
-                     <div class="col">
-                         <!-- total distance travelled -->
-                         <div class="form-outline ms-4 me-3">
-                             <label class="form-label text-dark fw-light " for="totalDistanceTravelled">*
-                                 Total Distance Travelled</label>
-                             <input class="form-control bg-white rounded-3" id="totalDistanceTravelled"
-                                    type="number" style="height: 35px"/>
-                             <p><small class="text-danger  pl-1 mt-0 mb-0"
-                                       id="errorTotalDistance"></small></p>
-                         </div>
-                     </div>
-                     <div class="col"></div>
-                     <div class="col"></div>
-                     <div class="col"></div>
-                 </div>
+                <div class="row mt-0">
 
-                 <div class="row mt-0">
+                    <div class="col w-25 me-3 ms-3 mb-4 border border-1 border-white">
+                        <form class="h-100" style="border: 2px solid white;">
+                            <label class="form-label mt-2 text-dark fw-light " for="uploadFrontView">Upload
+                                front view</label>
+                            <input class="form-control" id="uploadFrontView" style="height: 32px" type="file"/>
+                        </form>
+                    </div>
+                    <div class="col w-25 me-3 ms-3 mb-4 border border-1 border-white">
+                        <form class="h-100">
+                            <label class="form-label mt-2 text-dark fw-light " for="uploadBackView">Upload
+                                back view</label>
+                            <input class="form-control" id="uploadBackView" style="height: 32px" type="file"/>
+                        </form>
+                    </div>
+                    <div class="col w-25 me-3 ms-3 mb-4 border border-1 border-white">
+                        <form class="h-100">
+                            <label class="form-label mt-2 text-dark fw-light " for="uploadSideView">Upload
+                                side view</label>
+                            <input class="form-control" id="uploadSideView" style="height: 32px" type="file"/>
+                        </form>
+                    </div>
+                    <div class="col w-25 me-3 ms-3 mb-4 border border-1 border-white">
+                        <form class="h-100">
+                            <label class="form-label mt-2 text-dark fw-light " for="uploadInteriorView">Upload
+                                interior view</label>
+                            <input class="form-control" id="uploadInteriorView" style="height: 32px" type="file"/>
+                        </form>
+                    </div>
 
-                     <div class="col w-25 me-3 ms-3 mb-4 border border-1 border-white">
-                         <form class="h-100" style="border: 2px solid white;">
-                             <label class="form-label mt-2 text-dark fw-light " for="uploadFrontView">Upload
-                                 front view</label>
-                             <input class="form-control" id="uploadFrontView" type="file" style="height: 32px"/>
-                         </form>
-                     </div>
-                     <div class="col w-25 me-3 ms-3 mb-4 border border-1 border-white">
-                         <form class="h-100">
-                             <label class="form-label mt-2 text-dark fw-light " for="uploadBackView">Upload
-                                 back view</label>
-                             <input class="form-control" id="uploadBackView" type="file" style="height: 32px"/>
-                         </form>
-                     </div>
-                     <div class="col w-25 me-3 ms-3 mb-4 border border-1 border-white">
-                         <form class="h-100">
-                             <label class="form-label mt-2 text-dark fw-light " for="uploadSideView">Upload
-                                 side view</label>
-                             <input class="form-control" id="uploadSideView" type="file" style="height: 32px"/>
-                         </form>
-                     </div>
-                     <div class="col w-25 me-3 ms-3 mb-4 border border-1 border-white">
-                         <form class="h-100">
-                             <label class="form-label mt-2 text-dark fw-light " for="uploadInteriorView">Upload
-                                 interior view</label>
-                             <input class="form-control" id="uploadInteriorView" type="file" style="height: 32px"/>
-                         </form>
-                     </div>
-
-                 </div>
-
+                </div>
 
 
-                 <!--button panel-->
-                 <div class="row">
-                     <div class="col text-center">
+                <!--button panel-->
+                <div class="row">
+                    <div class="col text-center">
 
-                     </div>
-                     <div class="col text-center" style="margin-top: 50px;">
-                         <div class="col">
-                             <button class="btn btn-warning btn-lg btn-floating ms-2 me-4  shadow"
-                                     id="btnUpdateCar"
-                                     type="button">
-                                  <i class="fa-sharp fa-solid fa-pen-nib text-white"></i>
-                             </button>
-                             <button class="btn btn-primary btn-lg btn-floating ms-2 me-4 shadow" id="btnAddNewCar"
-                                     type="button">
-                                 <i class="fa-sharp fa-solid fa-circle-plus text-white"></i>
-                             </button>
-                             <button class="btn btn-danger btn-lg btn-floating ms-2 me-4 shadow"
-                                     id="btnCancelAddCar"
-                                     type="button">
-                                 <i class="fa-sharp fa-solid fa-delete-left"></i>
-                             </button>
-                         </div>
-                     </div>
-                     <div class="col text-center">
-                     </div>
-                 </div>
-             </form>
-         </div>
-     </div>
- </section>
+                    </div>
+                    <div class="col text-center" style="margin-top: 50px;">
+                        <div class="col">
+                            <button class="btn btn-warning btn-lg btn-floating ms-2 me-4  shadow"
+                                    id="btnUpdateCar"
+                                    type="button">
+                                <i class="fa-sharp fa-solid fa-pen-nib text-white"></i>
+                            </button>
+                            <button class="btn btn-primary btn-lg btn-floating ms-2 me-4 shadow" id="btnAddNewCar"
+                                    type="button">
+                                <i class="fa-sharp fa-solid fa-circle-plus text-white"></i>
+                            </button>
+                            <button class="btn btn-danger btn-lg btn-floating ms-2 me-4 shadow"
+                                    id="btnCancelAddCar"
+                                    type="button">
+                                <i class="fa-sharp fa-solid fa-delete-left"></i>
+                            </button>
+                        </div>
+                    </div>
+                    <div class="col text-center">
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+</section>
 
 <!-- Add New Driver Page ( Calling Admin Panel )-->
 <section id="DriverManagePage" style="width: 100%; height: 100vh ;background-color: rgba(0, 0, 0, 0.6);">
 
-    <div class="border border-3 border-white rounded-1 shadow bg-white" style="width: 500px; position: relative;top: 60px;bottom: 0;right: 0;left: 0;margin: auto;height: 620px;">
+    <div class="border border-3 border-white rounded-1 shadow bg-white"
+         style="width: 500px; position: relative;top: 60px;bottom: 0;right: 0;left: 0;margin: auto;height: 620px;">
 
         <div class="mb-0 text-center  border-bottom border-2 " style="position: relative;top: 20px;">
             <h1 class="mt-1 text-dark fw-bold  " style="font-family: 'PT Serif', serif;">~ Manage Driver ~</h1>
         </div>
 
         <div class=" mt-0 ms-2 me-5">
-            <form id="formDrivers" class="ms-1 me-1" style="position: relative; top: 30px;">
+            <form class="ms-1 me-1" id="formDrivers" style="position: relative; top: 30px;">
 
                 <div class="row">
                     <div class="col">
@@ -1526,16 +1509,16 @@
                         <div class="form-outline mb-2 ms-3 ">
                             <label class="form-label text-dark fw-light" id="driverUserId"></label>
                             <label class="form-label text-dark fw-light " for="driverUsername">* Username</label>
-                            <input type="text" id="driverUsername" class="form-control bg-white rounded-3" name=""/>
-                            <p><small id="errorDriverUsername" class="text-danger  pl-1 mt-0 mb-0"></small></p>
+                            <input class="form-control bg-white rounded-3" id="driverUsername" name="" type="text"/>
+                            <p><small class="text-danger  pl-1 mt-0 mb-0" id="errorDriverUsername"></small></p>
                         </div>
                     </div>
                     <div class="col">
                         <!-- driver password -->
                         <div class="form-outline mb-2 ms-3 ">
                             <label class="form-label text-dark fw-light" for="driverPassword">* Password</label>
-                            <input type="password" id="driverPassword" class="form-control bg-white rounded-3" name=""/>
-                            <p><small id="errorDPassword" class="text-danger  pl-1 mt-0 mb-0"></small></p>
+                            <input class="form-control bg-white rounded-3" id="driverPassword" name="" type="password"/>
+                            <p><small class="text-danger  pl-1 mt-0 mb-0" id="errorDPassword"></small></p>
                         </div>
                     </div>
                 </div>
@@ -1545,15 +1528,15 @@
                         <!-- driver id -->
                         <div class="form-outline mb-2 ms-3 ">
                             <label class="form-label text-dark fw-light " for="driverId">* Driver Id</label>
-                            <input type="text" id="driverId" class="form-control bg-white rounded-3" name=""/>
+                            <input class="form-control bg-white rounded-3" id="driverId" name="" type="text"/>
                         </div>
                     </div>
                     <div class="col">
                         <!-- driver name -->
                         <div class="form-outline mb-2 ms-3 ">
                             <label class="form-label text-dark fw-light " for="driverName">* Name</label>
-                            <input type="text" id="driverName" class="form-control bg-white rounded-3" />
-                            <p><small id="errorDName" class="text-danger  pl-1 mt-0 mb-0"></small></p>
+                            <input class="form-control bg-white rounded-3" id="driverName" type="text"/>
+                            <p><small class="text-danger  pl-1 mt-0 mb-0" id="errorDName"></small></p>
                         </div>
                     </div>
                 </div>
@@ -1562,8 +1545,8 @@
                     <!-- driver address -->
                     <div class="form-outline mb-2 ms-3 me-3">
                         <label class="form-label text-dark fw-light " for="driverAddress">* Address</label>
-                        <input type="text" id="driverAddress" class="form-control bg-white rounded-3" />
-                        <p><small id="errorDAddress" class="text-danger  pl-1 mt-0 mb-0"></small></p>
+                        <input class="form-control bg-white rounded-3" id="driverAddress" type="text"/>
+                        <p><small class="text-danger  pl-1 mt-0 mb-0" id="errorDAddress"></small></p>
                     </div>
                 </div>
 
@@ -1572,16 +1555,16 @@
                         <!-- driver age -->
                         <div class="form-outline mb-2 ms-3 ">
                             <label class="form-label text-dark fw-light" for="driverAge">* Age</label>
-                            <input type="number" id="driverAge" class="form-control bg-white rounded-3" />
-                            <p><small id="errorDAge" class="text-danger  pl-1 mt-0 mb-0"></small></p>
+                            <input class="form-control bg-white rounded-3" id="driverAge" type="number"/>
+                            <p><small class="text-danger  pl-1 mt-0 mb-0" id="errorDAge"></small></p>
                         </div>
                     </div>
                     <div class="col">
                         <!-- driver contact -->
                         <div class="form-outline mb-2 ms-3 ">
                             <label class="form-label text-dark fw-light " for="driverContact">* Contact</label>
-                            <input type="tel" id="driverContact" class="form-control bg-white rounded-3" />
-                            <p><small id="errorDContact" class="text-danger  pl-1 mt-0 mb-0"></small></p>
+                            <input class="form-control bg-white rounded-3" id="driverContact" type="tel"/>
+                            <p><small class="text-danger  pl-1 mt-0 mb-0" id="errorDContact"></small></p>
                         </div>
                     </div>
                 </div>
@@ -1590,7 +1573,8 @@
                     <!-- driver release or not -->
                     <div class="form-outline mb-2 ms-3 me-3">
                         <label class="form-label text-dark fw-light " for="driverReleaseOrNot">* Release Or Not</label>
-                        <select aria-label="Default select example" class="form-select " style="height: 38px" id="driverReleaseOrNot">
+                        <select aria-label="Default select example" class="form-select " id="driverReleaseOrNot"
+                                style="height: 38px">
                             <option selected value="0">None</option>
                             <option value="1">Release</option>
                             <option value="2">Not Release</option>
@@ -1606,13 +1590,16 @@
                     </div>
                     <div class="col text-center ">
                         <div class="col" style="width: 250px;">
-                            <button id="btnEditPreDriver" type="button" class="btn btn-warning btn-lg btn-floating ms-2 me-2 shadow">
+                            <button class="btn btn-warning btn-lg btn-floating ms-2 me-2 shadow" id="btnEditPreDriver"
+                                    type="button">
                                 <i class="fa-sharp fa-solid fa-pen-nib text-white"></i>
                             </button>
-                            <button id="btnAddNewDriver" type="button" class="btn btn-primary btn-lg btn-floating ms-2 me-2 shadow">
+                            <button class="btn btn-primary btn-lg btn-floating ms-2 me-2 shadow" id="btnAddNewDriver"
+                                    type="button">
                                 <i class="fa-sharp fa-solid fa-circle-plus text-white"></i>
                             </button>
-                            <button type="button" class="btn btn-danger btn-lg btn-floating ms-2 me-2 shadow" id="btnCancelAddDriver">
+                            <button class="btn btn-danger btn-lg btn-floating ms-2 me-2 shadow" id="btnCancelAddDriver"
+                                    type="button">
                                 <i class="fa-sharp fa-solid fa-delete-left"></i>
                             </button>
                         </div>
@@ -1630,11 +1617,11 @@
 
 </section>
 
-
 <!--Change Driver Page-->
 <section id="ChangeDriver" style="width: 100%; height: 100vh ;background-color: rgba(0, 0, 0, 0.6);">
 
-    <div class="h-75 border border-3 border-white rounded-1 shadow bg-white" style="width: 500px; position: relative;top: 70px;bottom: 0;right: -10px;left: 0;margin: auto;">
+    <div class="h-75 border border-3 border-white rounded-1 shadow bg-white"
+         style="width: 500px; position: relative;top: 70px;bottom: 0;right: -10px;left: 0;margin: auto;">
 
         <div class="mb-0 text-center  border-bottom border-2 " style="position: relative;top: 10px;">
             <h1 class="mt-1 text-dark fw-bold " style="font-family: 'PT Serif', serif;">~ Change Driver ~</h1>
@@ -1647,8 +1634,10 @@
                     <div class="col">
                         <!-- select reservation number -->
                         <div class="form-outline mb-2 ms-4 me-2">
-                            <label class="form-label text-dark fw-light " for="chooseReservationIds">* Reservation Ids</label>
-                            <select aria-label="Default select example" class="form-select " style="height: 38px" id="chooseReservationIds">
+                            <label class="form-label text-dark fw-light " for="chooseReservationIds">* Reservation
+                                Ids</label>
+                            <select aria-label="Default select example" class="form-select " id="chooseReservationIds"
+                                    style="height: 38px">
                                 <option selected value="0">None</option>
                             </select>
                         </div>
@@ -1657,7 +1646,8 @@
                     <div class="col">
                         <div class="form-outline mb-2 ms-4 w-100">
                             <label class="form-label text-dark fw-light " for="CarIds">* Car Ids</label>
-                            <select aria-label="Default select example" class="form-select " style="height: 37px" id="CarIds">
+                            <select aria-label="Default select example" class="form-select " id="CarIds"
+                                    style="height: 37px">
                                 <option selected value="0"></option>
                             </select>
 
@@ -1670,7 +1660,7 @@
                         <!-- selected driver id -->
                         <div class="form-outline mb-2 ms-4  mt-3">
                             <label class="form-label text-dark fw-light " for="selectedDriverId">* Old Driver Id</label>
-                            <input type="text" id="selectedDriverId" class="form-control bg-white rounded-3" />
+                            <input class="form-control bg-white rounded-3" id="selectedDriverId" type="text"/>
                         </div>
                     </div>
 
@@ -1678,7 +1668,7 @@
                         <!-- selected driver name -->
                         <div class="form-outline mb-2 ms-4  mt-3">
                             <label class="form-label text-dark fw-light " for="selectedDriverName">* Old Name</label>
-                            <input type="text" id="selectedDriverName" class="form-control bg-white rounded-3" />
+                            <input class="form-control bg-white rounded-3" id="selectedDriverName" type="text"/>
                         </div>
                     </div>
                 </div>
@@ -1687,8 +1677,10 @@
                 <div class="row">
                     <!-- select new driver id -->
                     <div class="form-outline mb-2 ms-4 me-4 mt-3">
-                        <label class="form-label text-dark fw-light " for="chooseNewDriverIds">* Choose New Driver</label>
-                        <select aria-label="Default select example" class="form-select " style="height: 38px" id="chooseNewDriverIds">
+                        <label class="form-label text-dark fw-light " for="chooseNewDriverIds">* Choose New
+                            Driver</label>
+                        <select aria-label="Default select example" class="form-select " id="chooseNewDriverIds"
+                                style="height: 38px">
                             <option selected value="0">None</option>
                         </select>
                     </div>
@@ -1698,16 +1690,18 @@
                     <div class="col">
                         <!-- new driver name -->
                         <div class="form-outline mb-2 ms-4  mt-3">
-                            <label class="form-label text-dark fw-light " for="changedNewDriverName">* New Driver Name</label>
-                            <input type="text" id="changedNewDriverName" class="form-control bg-white rounded-3" />
+                            <label class="form-label text-dark fw-light " for="changedNewDriverName">* New Driver
+                                Name</label>
+                            <input class="form-control bg-white rounded-3" id="changedNewDriverName" type="text"/>
                         </div>
                     </div>
 
                     <div class="col">
                         <!-- new driver contact -->
                         <div class="form-outline mb-2 ms-4  mt-3">
-                            <label class="form-label text-dark fw-light " for="changedNewDriverContact">* New Driver Contact</label>
-                            <input type="text" id="changedNewDriverContact" class="form-control bg-white rounded-3" />
+                            <label class="form-label text-dark fw-light " for="changedNewDriverContact">* New Driver
+                                Contact</label>
+                            <input class="form-control bg-white rounded-3" id="changedNewDriverContact" type="text"/>
                         </div>
                     </div>
                 </div>
@@ -1719,11 +1713,12 @@
                     </div>
                     <div class="col text-center ">
                         <div class="col" style="width: 250px;">
-                            <button type="button" class="btn btn-success  btn-floating ms-2 me-2 shadow">
+                            <button class="btn btn-success  btn-floating ms-2 me-2 shadow" type="button">
                                 <i class="fa-solid fa-pen-nib text-white"></i>
                                 Change
                             </button>
-                            <button type="button" class="btn btn-danger  btn-floating ms-2 me-2 shadow" id="btnCancelChangeDriver">
+                            <button class="btn btn-danger  btn-floating ms-2 me-2 shadow" id="btnCancelChangeDriver"
+                                    type="button">
                                 <i class="fas fa-times"></i>
                                 Cancel
                             </button>
@@ -1745,7 +1740,8 @@
 <!--Reserve Detail Page-->
 <section id="ReserveDetailsPage" style="width: 100%; height: 100vh ;background-color: rgba(0, 0, 0, 0.6);">
 
-    <div class=" border border-3 border-white rounded-1 shadow" style="width: 500px; position: relative;top: 90px;bottom: 0;right: 0;left: 0;margin: auto;height: 620px;background-color: white">
+    <div class=" border border-3 border-white rounded-1 shadow"
+         style="width: 500px; position: relative;top: 90px;bottom: 0;right: 0;left: 0;margin: auto;height: 620px;background-color: white">
 
         <div class="mb-0 text-center  border-bottom border-2 " style="position: relative;top: 20px;">
             <h1 class="mt-1 text-dark   " style="font-family: 'poppins', sans-serif">~ Reserve Details ~</h1>
@@ -1758,7 +1754,7 @@
                     <!-- reserve id -->
                     <div class="form-outline mb-2 ms-4 me-4">
                         <label class="form-label text-dark fw-light" for="viewReserveId">* Reserve Id</label>
-                        <input type="text" id="viewReserveId" class="form-control bg-white rounded-3" />
+                        <input class="form-control bg-white rounded-3" id="viewReserveId" type="text"/>
                     </div>
                 </div>
 
@@ -1767,7 +1763,8 @@
                         <!-- car id -->
                         <div class="form-outline mb-2 ms-4 w-100">
                             <label class="form-label text-dark fw-light " for="viewCarId">* Car Id</label>
-                            <select aria-label="Default select example" class="form-select " style="height: 37px" id="viewCarId">
+                            <select aria-label="Default select example" class="form-select " id="viewCarId"
+                                    style="height: 37px">
                                 <option selected value="0"></option>
                             </select>
 
@@ -1778,7 +1775,7 @@
                         <!-- brand -->
                         <div class="form-outline mb-2 ms-4 w-100">
                             <label class="form-label text-dark fw-light " for="viewBrand">* Brand</label>
-                            <input type="text" id="viewBrand" class="form-control bg-white rounded-3" />
+                            <input class="form-control bg-white rounded-3" id="viewBrand" type="text"/>
                         </div>
                     </div>
                 </div>
@@ -1788,7 +1785,7 @@
                         <!-- colour -->
                         <div class="form-outline mb-2 ms-4 w-100">
                             <label class="form-label text-dark fw-light " for="viewColour">* Colour</label>
-                            <input type="text" id="viewColour" class="form-control bg-white rounded-3" />
+                            <input class="form-control bg-white rounded-3" id="viewColour" type="text"/>
                         </div>
                     </div>
 
@@ -1796,7 +1793,7 @@
                         <!-- type -->
                         <div class="form-outline mb-2 ms-4 w-100">
                             <label class="form-label text-dark fw-light" for="viewType">* Type</label>
-                            <input type="text" id="viewType" class="form-control bg-white rounded-3" />
+                            <input class="form-control bg-white rounded-3" id="viewType" type="text"/>
                         </div>
                     </div>
                 </div>
@@ -1806,7 +1803,7 @@
                         <!-- driver Id -->
                         <div class="form-outline mb-2 ms-4 w-100">
                             <label class="form-label text-dark fw-light " for="viewDriverId">* Driver Id</label>
-                            <input type="text" id="viewDriverId" class="form-control bg-white rounded-3" />
+                            <input class="form-control bg-white rounded-3" id="viewDriverId" type="text"/>
                         </div>
                     </div>
 
@@ -1814,7 +1811,7 @@
                         <!-- driver name -->
                         <div class="form-outline mb-2 ms-4 w-100">
                             <label class="form-label text-dark fw-light " for="viewDriverName">* Driver Name</label>
-                            <input type="text" id="viewDriverName" class="form-control bg-white rounded-3" />
+                            <input class="form-control bg-white rounded-3" id="viewDriverName" type="text"/>
                         </div>
                     </div>
                 </div>
@@ -1823,16 +1820,18 @@
                     <div class="col">
                         <!-- driver contact -->
                         <div class="form-outline mb-2 ms-4 w-100">
-                            <label class="form-label text-dark fw-light " for="viewDriverContact">* Driver Contact</label>
-                            <input type="text" id="viewDriverContact" class="form-control bg-white rounded-3" />
+                            <label class="form-label text-dark fw-light " for="viewDriverContact">* Driver
+                                Contact</label>
+                            <input class="form-control bg-white rounded-3" id="viewDriverContact" type="text"/>
                         </div>
                     </div>
 
                     <div class="col">
                         <!-- lose damage payment -->
                         <div class="form-outline mb-2 ms-4 w-100">
-                            <label class="form-label text-dark fw-light " for="viewLoseDamagePayment">* Lose Damage</label>
-                            <input type="text" id="viewLoseDamagePayment" class="form-control bg-white rounded-3" />
+                            <label class="form-label text-dark fw-light " for="viewLoseDamagePayment">* Lose
+                                Damage</label>
+                            <input class="form-control bg-white rounded-3" id="viewLoseDamagePayment" type="text"/>
                         </div>
                     </div>
                 </div>
@@ -1845,7 +1844,8 @@
                     </div>
                     <div class="col text-center ">
                         <div class="col" style="width: 200px;">
-                            <button type="button" class="btn btn-danger btn-lg btn-floating ms-2 me-2 shadow" id="btnExistReDetails" style="width: 150px!important;">
+                            <button class="btn btn-danger btn-lg btn-floating ms-2 me-2 shadow" id="btnExistReDetails"
+                                    style="width: 150px!important;" type="button">
                                 <i class="fa-solid fa-delete-left"></i>
                             </button>
                         </div>
@@ -1866,32 +1866,47 @@
 <!--Make Payment Page-->
 <section id="PaymentAddPage" style="width: 100%; height: 100vh ;background-color: rgba(0, 0, 0, 0.6);">
 
-    <div class="border border-3 border-white rounded-1 shadow bg-white" style="width: 50%; position: relative;top: 70px;bottom: 0;right: 0;left: 0;margin: auto;height: 88%;">
+    <div class="border border-3 border-white rounded-1 shadow bg-white"
+         style="width: 60%; position: relative;top: 70px;bottom: 0;right: 0;left: 15px;margin: auto;height: 88%;">
 
-        <div class="mb-0 text-center  border-bottom border-2 " style="position: relative;top: 20px;">
+        <div class="mb-0 text-center  border-bottom border-2 " style="position: relative;top: 5px;">
             <h1 class="mt-1 text-dark fw-bold  " style="font-family: 'PT Serif', serif;">~ Make Payment ~</h1>
         </div>
 
         <div class=" mt-0 ms-2 me-5">
-            <form class="ms-5 me-5" style="position: relative; top: 45px;">
-
+            <form class="ms-5 me-5" style="position: relative; top: 10px;">
                 <div class="row">
+
+                    <!-- select reservation number -->
                     <div class="col">
                         <!-- payment id -->
                         <div class="form-outline  ms-4 me-4">
-                            <label class="form-label text-dark fw-light " for="paymentId">* Payment Id</label>
-                            <input type="text" id="paymentId" class="form-control bg-white rounded-3" style="height: 35px" />
+                            <label class="form-label text-dark fw-light " for="rentalId"><span>*</span>Reservation Id</label>
+                            <select class="form-control bg-white rounded-3  form-select " id="rentalId" style="height: 35px;font-size: 14px;"
+                                    type="text">
+                                <option selected value="0">None</option>
+                            </select>
+                        </div>
+                    </div>
+
+                    <div class="col">
+                        <!-- payment id -->
+                        <div class="form-outline  ms-4 me-4">
+                            <label class="form-label text-dark fw-light " for="paymentId"><span>*</span> Payment Id</label>
+                            <input class="form-control bg-white rounded-3" id="paymentId" style="height: 35px"
+                                   type="text"/>
                         </div>
                     </div>
 
                     <div class="col">
                         <!-- payment date -->
                         <div class="form-outline  ms-4 me-4">
-                            <label class="form-label text-dark fw-light " for="paymentDate" >* Payment Date</label>
-                            <div class="input-group date" >
-                                <input type="date" id="paymentDate" class="form-control bg-white rounded-3" style="height: 35px">
+                            <label class="form-label text-dark fw-light " for="paymentDate">* Payment Date</label>
+                            <div class="input-group date">
+                                <input class="form-control bg-white rounded-3" id="paymentDate" style="height: 35px"
+                                       type="date">
                                 <span class="input-group-addon"><i class="glyphicon glyphicon-calendar"></i></span>
-                                <p><small id="errorPaymentDate" class="text-danger  pl-1 mt-0 mb-0"></small></p>
+                                <p><small class="text-danger  pl-1 mt-0 mb-0" id="errorPaymentDate"></small></p>
                             </div>
                         </div>
                     </div>
@@ -1902,8 +1917,9 @@
                         <!-- rent fee -->
                         <div class="form-outline  ms-4 me-4 mt-1">
                             <label class="form-label text-dark fw-light " for="rentFee">* Rent Fee</label>
-                            <input type="text" id="rentFee" class="form-control bg-white rounded-3" style="height: 35px" />
-                            <p><small id="errorRentFee" class="text-danger  pl-1 mt-0 mb-0"></small></p>
+                            <input class="form-control bg-white rounded-3" id="rentFee" style="height: 35px"
+                                   type="text"/>
+                            <p><small class="text-danger  pl-1 mt-0 mb-0" id="errorRentFee"></small></p>
                         </div>
                     </div>
 
@@ -1911,8 +1927,9 @@
                         <!-- driver fee -->
                         <div class="form-outline  ms-4 me-4 mt-1">
                             <label class="form-label text-dark fw-light " for="driverFee">* Driver Fee</label>
-                            <input type="text" id="driverFee" class="form-control bg-white rounded-3" style="height: 35px" />
-                            <p><small id="errorDriverFee" class="text-danger  pl-1 mt-0 mb-0"></small></p>
+                            <input class="form-control bg-white rounded-3" id="driverFee" style="height: 35px"
+                                   type="text"/>
+                            <p><small class="text-danger  pl-1 mt-0 mb-0" id="errorDriverFee"></small></p>
                         </div>
                     </div>
                 </div>
@@ -1920,19 +1937,24 @@
                 <div class="row">
                     <div class="col">
                         <!-- lose damage payment -->
-                        <div class="form-outline  ms-4 me-4 mt-1">
-                            <label class="form-label text-dark fw-light " for="loseDamageWaiverPayment">* Lose Damage Waiver Payment</label>
-                            <input type="text" id="loseDamageWaiverPayment" class="form-control bg-white rounded-3" style="height: 35px" />
-                            <p><small id="errorDamagePayment" class="text-danger  pl-1 mt-0 mb-0"></small></p>
+                        <div class="form-outline  ms-4 me-4 ">
+                            <label class="form-label text-dark fw-light " for="loseDamageWaiverPayment">* Lose Damage
+                                Waiver Payment</label>
+                            <input class="form-control bg-white rounded-3" id="loseDamageWaiverPayment"
+                                   style="height: 35px"
+                                   type="text"/>
+                            <p><small class="text-danger  pl-1 mt-0 mb-0" id="errorDamagePayment"></small></p>
                         </div>
                     </div>
 
                     <div class="col">
                         <!-- reduced lose damage payment -->
-                        <div class="form-outline  ms-4 me-4 mt-1">
-                            <label class="form-label text-dark fw-light " for="reducedLoseDamageWaiverPayment">* Reduced Lose Damage Payment</label>
-                            <input type="text" id="reducedLoseDamageWaiverPayment" class="form-control bg-white rounded-3" style="height: 35px" />
-                            <p><small id="errorReduceDamagePayment" class="text-danger  pl-1 mt-0 mb-0"></small></p>
+                        <div class="form-outline  ms-4 me-4 ">
+                            <label class="form-label text-dark fw-light " for="reducedLoseDamageWaiverPayment">* Reduced
+                                Lose Damage Payment</label>
+                            <input class="form-control bg-white rounded-3" id="reducedLoseDamageWaiverPayment"
+                                   style="height: 35px" type="text"/>
+                            <p><small class="text-danger  pl-1 mt-0 mb-0" id="errorReduceDamagePayment"></small></p>
                         </div>
                     </div>
                 </div>
@@ -1940,9 +1962,10 @@
                 <div class="row">
                     <div class="col">
                         <!-- car harm or not -->
-                        <div class="form-outline  ms-4 me-4 mt-1">
+                        <div class="form-outline  ms-4 me-4 ">
                             <label class="form-label text-dark fw-light " for="carHarmOrNot">* Harm Or Not</label>
-                            <select aria-label="Default select example" class="form-select " style="height: 35px" id="carHarmOrNot">
+                            <select aria-label="Default select example" class="form-select " id="carHarmOrNot"
+                                    style="height: 35px; font-size: 14px;">
                                 <option selected value="0">None</option>
                                 <option value="1">Harm</option>
                                 <option value="2">Not Harm</option>
@@ -1952,10 +1975,12 @@
 
                     <div class="col">
                         <!-- travelled distance -->
-                        <div class="form-outline  ms-4 me-4 mt-1">
-                            <label class="form-label text-dark fw-light " for="travelledDistance">* Travelled Distance</label>
-                            <input type="number" id="travelledDistance" class="form-control bg-white rounded-3 " style="height: 35px" />
-                            <p><small id="errorTravelledDistance" class="text-danger  pl-1 mt-0 mb-0"></small></p>
+                        <div class="form-outline  ms-4 me-4 ">
+                            <label class="form-label text-dark fw-light " for="travelledDistance">* Travelled
+                                Distance</label>
+                            <input class="form-control bg-white rounded-3 " id="travelledDistance" style="height: 35px"
+                                   type="number"/>
+                            <p><small class="text-danger  pl-1 mt-0 mb-0" id="errorTravelledDistance"></small></p>
                         </div>
                     </div>
                 </div>
@@ -1963,19 +1988,23 @@
                 <div class="row">
                     <div class="col">
                         <!-- extra km -->
-                        <div class="form-outline  ms-4 me-4 mt-1">
-                            <label class="form-label text-dark fw-light " for="extraKm" >* Extra KM</label>
-                            <input type="number" id="extraKm" class="form-control bg-white rounded-3" style="height: 35px"/>
-                            <p><small id="errorTravelledExtraKM" class="text-danger  pl-1 mt-0 mb-0"></small></p>
+                        <div class="form-outline  ms-4 me-4 ">
+                            <label class="form-label text-dark fw-light " for="extraKm">* Extra KM</label>
+                            <input class="form-control bg-white rounded-3" id="extraKm" style="height: 35px"
+                                   type="number"/>
+                            <p><small class="text-danger  pl-1 mt-0 mb-0" id="errorTravelledExtraKM"></small></p>
                         </div>
                     </div>
 
                     <div class="col">
                         <!-- price for extra km -->
-                        <div class="form-outline  ms-4 me-4 mt-1">
-                            <label class="form-label text-dark fw-light " for="priceForTravelledExtraKm">* Price For Extra KM</label>
-                            <input type="text" id="priceForTravelledExtraKm" class="form-control bg-white rounded-3" style="height: 34px"/>
-                            <p><small id="errorPriceExtraKM" class="text-danger  pl-1 mt-0 mb-0"></small></p>
+                        <div class="form-outline  ms-4 me-4 ">
+                            <label class="form-label text-dark fw-light " for="priceForTravelledExtraKm">* Price For
+                                Extra KM</label>
+                            <input class="form-control bg-white rounded-3" id="priceForTravelledExtraKm"
+                                   style="height: 34px"
+                                   type="text"/>
+                            <p><small class="text-danger  pl-1 mt-0 mb-0" id="errorPriceExtraKM"></small></p>
                         </div>
                     </div>
                 </div>
@@ -1983,8 +2012,22 @@
 
                 <div class="row">
                     <div class="col">
+
                         <div class="col">
-                            <button style="font-weight: 600" type="button" class="btn btn-warning btn-floating  me-2 shadow w-100 mt-4" id="calculateFullIncome">
+                            <button class="btn btn-primary btn-floating  shadow  ms-5 me-2 w-75 mt-1"
+                                    id="vehicle_Return"
+                                    style="font-weight: 600"
+                                    type="button">
+                                <i class="fa-solid fa-right-left"></i>
+                                Vehicle Return
+                            </button>
+                        </div>
+
+                        <div class="col">
+                            <button class="btn btn-warning btn-floating  hadow ms-5 me-2 w-75 mt-2"
+                                    id="calculateFullIncome"
+                                    style="font-weight: 600"
+                                    type="button">
                                 <i class="fas fa-plus-circle text-white"></i>
                                 Find Total Price
                             </button>
@@ -1995,22 +2038,25 @@
                         <!-- full payment -->
                         <div class="form-outline  ms-4 me-4 ">
                             <label class="form-label text-dark fw-light " for="fullPayment">* Full Payment</label>
-                            <input type="text" id="fullPayment" class="form-control bg-white rounded-3" style="height: 35px" />
+                            <input class="form-control bg-white rounded-3" id="fullPayment" style="height: 35px"
+                                   type="text"/>
                         </div>
                     </div>
                 </div>
 
                 <!--button panel-->
-                <div class="row mt-2">
+                <div class="row mt-3">
                     <div class="col text-center">
 
                     </div>
                     <div class="col text-center ">
-                        <div class="col" style="width: 250px;">
-                            <button type="button" class="btn btn-success w-25 btn-lg btn-floating ms-2 me-2 shadow ">
+                        <div class="col" style="width: 400px;">
+                            <button class="btn btn-success w-25 btn-lg btn-floating ms-2 me-2 shadow " type="button">
                                 <i class="fas fa-pen-nib"></i>
                             </button>
-                            <button type="button" class="btn btn-danger w-25 btn-lg btn-floating ms-2 me-2 shadow" id="btnCancelAddPayment">
+                            <button class="btn btn-danger w-25 btn-lg btn-floating ms-2 me-2 shadow"
+                                    id="btnCancelAddPayment"
+                                    type="button">
                                 <i class="fas fa-times"></i>
                             </button>
                         </div>
@@ -2029,6 +2075,7 @@
 </section>
 
 <!--  *********************************************************************************** -->
+
 
 <!--admin dashboard Panel-->
 <section id="admin_screen" style="height: 90vh;">
@@ -2056,7 +2103,7 @@
                 <button class="mt-2" id="btn_income" style="height: 33px">INCOME DETAILS</button>
             </div>
             <hr style="border-right: 1px solid black">
-            <div  style="text-align: center; border-right: 1px solid black ">
+            <div style="text-align: center; border-right: 1px solid black ">
                 <button class="mt-2" id="admin_logout" style="height: 33px;"><i
                         class="fa-solid fa-right-from-bracket"></i> LOG OUT
                 </button>
@@ -2084,7 +2131,8 @@
 
                                                     </div>
                                                     <div>
-                                                        <h3 style="color: crimson" class="text-center" id="totalRegUsers">0</h3>
+                                                        <h3 class="text-center" id="totalRegUsers"
+                                                            style="color: crimson">0</h3>
                                                         <p class="mb-0">Total Registered Users</p>
                                                     </div>
 
@@ -2100,7 +2148,8 @@
                                                         <i class="fa-solid fa-users-gear text-success fa-3x"></i>
                                                     </div>
                                                     <div class="text-end">
-                                                        <h3 style="color: crimson" class="text-center" id="totalNewUsers">0</h3>
+                                                        <h3 class="text-center" id="totalNewUsers"
+                                                            style="color: crimson">0</h3>
                                                         <p class="mb-0">Today Total New Users</p>
                                                     </div>
                                                 </div>
@@ -2115,7 +2164,8 @@
                                                         <i class="fa-solid fa-list text-warning fa-3x "></i>
                                                     </div>
                                                     <div class="text-end">
-                                                        <h3 style="color: crimson" class="text-center" id="todayReservations">0</h3>
+                                                        <h3 class="text-center" id="todayReservations"
+                                                            style="color: crimson">0</h3>
                                                         <p class="mb-0">Today Reservations</p>
                                                     </div>
                                                 </div>
@@ -2131,7 +2181,8 @@
                                                         <i class="far fa-comment-alt text-warning fa-3x"></i>
                                                     </div>
                                                     <div class="text-end">
-                                                        <h3 style="color: crimson" class="text-center" id="todayActiveBookings">0</h3>
+                                                        <h3 class="text-center" id="todayActiveBookings"
+                                                            style="color: crimson">0</h3>
                                                         <p class="mb-0">Total Active Bookings</p>
                                                     </div>
 
@@ -2150,7 +2201,8 @@
                                                     </div>
 
                                                     <div>
-                                                        <h3 style="color: crimson" class="text-center" id="availableCar">0</h3>
+                                                        <h3 class="text-center" id="availableCar"
+                                                            style="color: crimson">0</h3>
                                                         <p class="mb-0">Total Available Cars</p>
                                                     </div>
 
@@ -2166,7 +2218,8 @@
                                                         <i class="fas fa-car text-danger fa-3x"></i>
                                                     </div>
                                                     <div>
-                                                        <h3 style="color: crimson" class="text-center" id="reservedCars">0</h3>
+                                                        <h3 class="text-center" id="reservedCars"
+                                                            style="color: crimson">0</h3>
                                                         <p class="mb-0">Total Reserved Cars</p>
                                                     </div>
                                                 </div>
@@ -2182,7 +2235,8 @@
 
                                                     </div>
                                                     <div>
-                                                        <h3 style="color: crimson" class="text-center" id="availableDrivers">0</h3>
+                                                        <h3 class="text-center" id="availableDrivers"
+                                                            style="color: crimson">0</h3>
                                                         <p class="mb-0">Total Available drivers</p>
                                                     </div>
                                                 </div>
@@ -2197,7 +2251,8 @@
                                                         <i class="fa-solid fa-person-circle-check text-info fa-3x"></i>
                                                     </div>
                                                     <div>
-                                                        <h3 style="color: crimson" class="text-center" id="occupiedDrivers">0</h3>
+                                                        <h3 class="text-center" id="occupiedDrivers"
+                                                            style="color: crimson">0</h3>
                                                         <p class="mb-0">Total Reserved drivers</p>
                                                     </div>
 
@@ -2214,7 +2269,8 @@
                                                         <i class="fa-solid fa-car-rear text-info fa-3x"></i>
                                                     </div>
                                                     <div>
-                                                        <h3 style="color: crimson" class="text-center" id="maintainedCars">0</h3>
+                                                        <h3 class="text-center" id="maintainedCars"
+                                                            style="color: crimson">0</h3>
                                                         <p class="mb-0">Total Maintained Cars</p>
                                                     </div>
 
@@ -2230,7 +2286,8 @@
                                                         <i class="fas fa-car-crash text-warning fa-3x"></i>
                                                     </div>
                                                     <div>
-                                                        <h3 style="color: crimson" class="text-center" id="underMaintainedCars">0</h3>
+                                                        <h3 class="text-center" id="underMaintainedCars"
+                                                            style="color: crimson">0</h3>
                                                         <p class="mb-0">Under Maintained Cars</p>
                                                     </div>
                                                 </div>
@@ -2303,34 +2360,38 @@
                     <form id="adminForm">
                         <div class="row">
                             <div class="mb-3 col-6">
-                                <label for="adminId" class="form-label">Admin ID</label>
-                                <input type="text" class="form-control admin_form" id="adminId" placeholder="ADM-001 "name="id">
+                                <label class="form-label" for="adminId">Admin ID</label>
+                                <input class="form-control admin_form" id="adminId" name="id" placeholder="ADM-001 "
+                                       type="text">
 
                             </div>
                             <div class="mb-3 col-6">
-                                <label for="adminName" class="form-label">Admin Name</label>
-                                <input type="text" class="form-control admin_form" id="adminName" placeholder="Ishara Maduranga" name="name">
+                                <label class="form-label" for="adminName">Admin Name</label>
+                                <input class="form-control admin_form" id="adminName" name="name"
+                                       placeholder="Ishara Maduranga" type="text">
                                 <span class="control-error" id="lblAdminName"></span>
                             </div>
                         </div>
                         <div class="row">
                             <div class="mb-3 col-6">
-                                <label for="adminPassword" class="form-label">Admin Password</label>
-                                <input type="password" class="form-control admin_form" id="adminPassword" placeholder="******" name="password">
+                                <label class="form-label" for="adminPassword">Admin Password</label>
+                                <input class="form-control admin_form" id="adminPassword" name="password"
+                                       placeholder="******" type="password">
                                 <span class="control-error" id="lblAdminAddress"></span>
                             </div>
                             <div class="mb-3 col-6">
-                                <label for="adminContact" class="form-label">Admin Contact</label>
-                                <input type="text" class="form-control admin_form" id="adminContact" placeholder="0776127572" name="contact">
+                                <label class="form-label" for="adminContact">Admin Contact</label>
+                                <input class="form-control admin_form" id="adminContact" name="contact"
+                                       placeholder="0776127572" type="text">
                                 <span class="control-error" id="lblAdminContact"></span>
                             </div>
                         </div>
 
-                        <button type="button" class="btn btn-primary" id="addBtn">Add</button>
-                        <button type="button" class="btn btn-secondary" id="updateBtn">Update</button>
-                        <button type="button" class="btn btn-danger" id="deleteBtn">Delete</button>
-                        <button type="button" class="btn btn-success" id="getAllBtn">Get All</button>
-                        <button type="button" class="btn btn-warning" id="clearBtn">Clear</button>
+                        <button class="btn btn-primary" id="addBtn" type="button">Add</button>
+                        <button class="btn btn-secondary" id="updateBtn" type="button">Update</button>
+                        <button class="btn btn-danger" id="deleteBtn" type="button">Delete</button>
+                        <button class="btn btn-success" id="getAllBtn" type="button">Get All</button>
+                        <button class="btn btn-warning" id="clearBtn" type="button">Clear</button>
                     </form>
                     <div class="container" id="container_admin_table">
                         <table class="table table-striped table-bordered table-hover">
@@ -2363,11 +2424,11 @@
 
                     <div>
 
-                        <div class="text-center" style="position: relative;top: 80px">
+                        <div class="text-center" style="position: relative;top: 50px">
                             <h1 class="mt-1 fw-light" style="font-family: 'PT Serif', serif;">~ Car Details ~</h1>
                         </div>
 
-                        <div class="text-center" style="position: relative;top: 116px;">
+                        <div class="text-center" style="position: relative;top: 70px;">
                             <h1 class="mt-1 fw-light" style="font-family: 'PT Serif', serif; font-size: 25px">
                                 <i class="fas fa-taxi fa-1x text-success"></i>
                                 Car Information
@@ -2380,7 +2441,7 @@
                         </div>
 
                         <div class="table-responsive "
-                             style="width: 80vw; height: 60vh;position: relative; top: 120px;right: 0;bottom: 0;left: 0;margin: auto">
+                             style="width: 80vw; height: 62vh;position: relative; top: 80px;right: 0;bottom: 0;left: 0;margin: auto">
 
                             <table class="table align-middle mb-0 bg-white table table-responsive table-bordered table-hover w-auto text-nowrap text-primary"
                                    id="tblCars"
@@ -2428,7 +2489,7 @@
                 <!--View Driver Details Page-->
                 <section id="DriverDetailsPage" style="width: 100%; height: 90vh ;">
 
-                    <div >
+                    <div>
 
                         <div class="text-center" style="position: relative;top: 56px">
                             <h1 class="mt-1 fw-light" style="font-family: 'PT Serif', serif;">~ Driver Details ~</h1>
@@ -2447,9 +2508,12 @@
 
                         </div>
 
-                        <div style="width: 83vw; height: 65vh;position: relative; top: 75px;right: 0;bottom: 0;left: 0;margin: auto" class="table-responsive text-nowrap">
+                        <div class="table-responsive text-nowrap"
+                             style="width: 83vw; height: 65vh;position: relative; top: 75px;right: 0;bottom: 0;left: 0;margin: auto">
 
-                            <table id="tblDriver" class="table align-middle mb-0 bg-white table-bordered table table-hover" style="position: relative;left: 10px;top: 44px;">
+                            <table class="table align-middle mb-0 bg-white table-bordered table table-hover"
+                                   id="tblDriver"
+                                   style="position: relative;left: 10px;top: 44px;">
                                 <thead class="bg-light text-primary">
                                 <tr>
                                     <th>Driver Id</th>
@@ -2479,7 +2543,7 @@
                 <!--View Customer Details Page-->
                 <section id="ViewCustomerInformationPage" style="width: 100%;height: 90vh ; ">
 
-                    <div >
+                    <div>
 
                         <div class="text-center" style="position: relative;top: 80px">
                             <h1 class="mt-1 fw-light" style="font-family: 'PT Serif', serif;">~ Customer Details ~</h1>
@@ -2493,9 +2557,12 @@
 
                         </div>
 
-                        <div style="width: 80vw; height: 65vh;position: relative; top: 90px;right: 0;bottom: 0;left: 0;margin: auto"  class="table-responsive text-nowrap">
+                        <div class="table-responsive text-nowrap"
+                             style="width: 80vw; height: 65vh;position: relative; top: 90px;right: 0;bottom: 0;left: 0;margin: auto">
 
-                            <table id="tblCustomers" class="table align-middle mb-0 bg-white table table-hover table-bordered" style="position: relative;left: -1px;top: 44px;">
+                            <table class="table align-middle mb-0 bg-white table table-hover table-bordered"
+                                   id="tblCustomers"
+                                   style="position: relative;left: -1px;top: 44px;">
                                 <thead class="bg-light text-primary">
                                 <tr>
                                     <th>Registered Date</th>
@@ -2528,7 +2595,7 @@
 
                 <section id="ViewReserveDetailsPage" style="width: 100%; height: 90vh ;">
 
-                    <div >
+                    <div>
 
                         <div class="text-center" style="position: relative;top: 80px">
                             <h1 class="mt-1 fw-light" style="font-family: 'PT Serif', serif;">~ Reservations ~</h1>
@@ -2540,15 +2607,20 @@
                                 <i class="fas fa-list-alt text-danger"></i>
                                 Reservation Information
                             </h1>
-                            <button class="btn ms-5 btn-warning" style="left: 246px;position: relative;top: -42px;" id="btnChangeDriver">
+                            <button class="btn ms-5 btn-warning" id="btnChangeDriver"
+                                    style="left: 246px;position: relative;top: -42px;">
                                 <i class="fas fa-edit text-primary"></i>
-                                Change Driver</button>
+                                Change Driver
+                            </button>
 
                         </div>
 
-                        <div style="width: 80vw; height: 60vh;position: relative; top: 67px;right: 0;bottom: 0;left: 0;margin: auto"  class="table-responsive text-nowrap">
+                        <div class="table-responsive text-nowrap"
+                             style="width: 80vw; height: 60vh;position: relative; top: 67px;right: 0;bottom: 0;left: 0;margin: auto">
 
-                            <table id="tblReserve" class="table align-middle mb-0 bg-white table table-hover table-bordered" style="position: relative;left: 5px;top: 44px;">
+                            <table class="table align-middle mb-0 bg-white table table-hover table-bordered"
+                                   id="tblReserve"
+                                   style="position: relative;left: 5px;top: 44px;">
                                 <thead class="bg-light text-primary">
                                 <tr>
                                     <th>Reserve Date</th>
@@ -2587,7 +2659,7 @@
                 <!--View Schedule Page-->
                 <section id="SchedulePage" style="width: 100%; height: 90vh ;">
 
-                    <div >
+                    <div>
 
                         <div class="text-center" style="position: relative;top: 80px">
                             <h1 class="mt-1 fw-light" style="font-family: 'PT Serif', serif;">~ Schedule ~</h1>
@@ -2600,9 +2672,11 @@
                             </h1>
                         </div>
 
-                        <div style="width: 82vw; height: 65vh;position: relative; top: 90px;right: 0;bottom: 0;left: 0;margin: auto" class="table-responsive text-nowrap">
+                        <div class="table-responsive text-nowrap"
+                             style="width: 82vw; height: 65vh;position: relative; top: 90px;right: 0;bottom: 0;left: 0;margin: auto">
 
-                            <table class="tblSchedule table align-middle mb-0 bg-white table table-hover table-bordered" style="position: relative;left: 5px;top: 44px;">
+                            <table class="tblSchedule table align-middle mb-0 bg-white table table-hover table-bordered"
+                                   style="position: relative;left: 5px;top: 44px;">
                                 <thead class="bg-light text-primary">
                                 <tr>
                                     <th>Schedule Id</th>
@@ -2636,7 +2710,7 @@
             <div id="payment_dashboard" style="height: 100%;">
                 <section id="PaymentPage" style="width: 100%; height: 90vh ;">
 
-                    <div >
+                    <div>
 
                         <div class="text-center" style="position: relative;top: 70px">
                             <h1 class="mt-1 fw-light" style="font-family: 'PT Serif', serif;">~ Payment ~</h1>
@@ -2648,13 +2722,17 @@
                                 Payment Details
                                 <button class="btn btn-info ms-5" id="btnAddPayment">
                                     <i class="fas fa-plus-circle text-white"></i>
-                                    Make Payment</button>
+                                    Make Payment
+                                </button>
                             </h1>
                         </div>
 
-                        <div style="width: 82vw; height: 62vh;position: relative; top: 90px;right: 0;bottom: 0;left: 0;margin: auto" class="table-responsive text-nowrap">
+                        <div class="table-responsive text-nowrap"
+                             style="width: 82vw; height: 62vh;position: relative; top: 90px;right: 0;bottom: 0;left: 0;margin: auto">
 
-                            <table id="tblPayment" class="table align-middle mb-0 bg-white table table-hover table-bordered" style="position: relative;left: 5px;top: 44px;">
+                            <table class="table align-middle mb-0 bg-white table table-hover table-bordered"
+                                   id="tblPayment"
+                                   style="position: relative;left: 5px;top: 44px;">
                                 <thead class="bg-light text-primary">
                                 <tr>
                                     <th>Payment Id</th>
@@ -2697,30 +2775,32 @@
 
                     </div>
 
-                    <div class="container-fluid" style="position: relative;top: 80px;left: 260px;width: 87vw;height: 50px">
+                    <div class="container-fluid"
+                         style="position: relative;top: 80px;left: 260px;width: 87vw;height: 50px">
                         <div class="row center-block" style="width: 61%;">
                             <div class="col mb-0 img-responsive">
-                                <div class="btn-group btn-group-xm center-block center-block" role="group" aria-label="Basic example">
-                                    <button type="button" class="btn btn-primary btn-lg">Daily Income</button>
-                                    <button type="button" class="btn btn-success btn-lg">Weekly Income</button>
-                                    <button type="button" class="btn btn-danger btn-lg">Monthly Income</button>
-                                    <button type="button" class="btn btn-warning btn-lg">Annually Income</button>
+                                <div aria-label="Basic example" class="btn-group btn-group-xm center-block center-block"
+                                     role="group">
+                                    <button class="btn btn-primary btn-lg" type="button">Daily Income</button>
+                                    <button class="btn btn-success btn-lg" type="button">Weekly Income</button>
+                                    <button class="btn btn-danger btn-lg" type="button">Monthly Income</button>
+                                    <button class="btn btn-warning btn-lg" type="button">Annually Income</button>
                                 </div>
                             </div>
                         </div>
                         <div class="row" style="position: relative; right: 100px;">
                             <div class="col-6 mt-2 bg-white img-responsive mb-0 ">
-                                <label style="font-size: 15px" for="startDate" class="text-black">Start Date</label>
+                                <label class="text-black" for="startDate" style="font-size: 15px">Start Date</label>
                                 <div class="input-group date" style="width: 220px">
-                                    <input type="date" id="startDate" class="form-control" placeholder="Start Date">
+                                    <input class="form-control" id="startDate" placeholder="Start Date" type="date">
                                     <span class="input-group-addon"><i class="glyphicon glyphicon-calendar"></i></span>
                                 </div>
 
                             </div>
                             <div class="col-6 mt-2 img-responsive mb-0 ">
-                                <label style="font-size: 15px" for="endDate" class="text-black">End Date</label>
+                                <label class="text-black" for="endDate" style="font-size: 15px">End Date</label>
                                 <div class="input-group date" style="width: 220px">
-                                    <input type="date" id="endDate" class="form-control" placeholder="End Date">
+                                    <input class="form-control" id="endDate" placeholder="End Date" type="date">
                                     <span class="input-group-addon"><i class="glyphicon glyphicon-calendar"></i></span>
                                 </div>
 
@@ -2728,9 +2808,11 @@
                         </div>
                     </div>
 
-                    <div style="width: 82vw; height: 55vh;position: relative; top: 140px;right: 0;bottom: 0;left: 0;margin: auto" class="table-responsive text-nowrap">
+                    <div class="table-responsive text-nowrap"
+                         style="width: 82vw; height: 55vh;position: relative; top: 140px;right: 0;bottom: 0;left: 0;margin: auto">
 
-                        <table class="table align-middle mb-0 bg-white table table-hover table-bordered" style="position: relative;left: 10px;top: 44px;">
+                        <table class="table align-middle mb-0 bg-white table table-hover table-bordered"
+                               style="position: relative;left: 10px;top: 44px;">
                             <thead class="bg-light">
                             <tr>
                                 <th>Reserve Id</th>
@@ -2805,8 +2887,10 @@
 <!--View Schedule For Driver-->
 <section id="SchedulePageForDriver" style="width: 100%; height: 85vh ;">
 
-    <div >
-        <button class="btn btn-outline-danger border border-3 border-danger mt-3 ms-3" id="btnLogOutFromDriverSchedule">Log Out</button>
+    <div>
+        <button class="btn btn-outline-danger border border-3 border-danger mt-3 ms-3" id="btnLogOutFromDriverSchedule">
+            Log Out
+        </button>
 
         <div class="text-center" style="position: relative;">
             <h1 class="mt-1 fw-light" style="font-family: 'poppins', sans-serif;">~ Driver Schedule ~</h1>
@@ -2821,7 +2905,8 @@
 
         <div style="width: 98vw; height: 61vh;position: relative; top: 70px;right: 0;bottom: 0;left: 0;margin: auto">
 
-            <table class="tblSchedule table align-middle mb-0 bg-white table table-bordered table-hover table-striped " style="position: relative;left: 0;top: 0">
+            <table class="tblSchedule table align-middle mb-0 bg-white table table-bordered table-hover table-striped "
+                   style="position: relative;left: 0;top: 0">
                 <thead class="bg-secondary text-white">
                 <tr>
                     <th>Schedule Id</th>
@@ -2852,29 +2937,38 @@
 <!--Booking Page-->
 <section id="BookingPage" style="width: 100%;"><dfn id="homePage"></dfn>
 
-    <div class="heading d-flex justify-content-center align-items-center" style="position: absolute; left: 0; right: 0; z-index: 2; top: 110px;">
-        <p class="text-white mb-0" style="font-size: 45px; font-weight: 650; color: rgba(3,207,196,0.78)  !important; font-family:'poppins', sans-serif;">FIND THE RIGHT CAR FOR YOU</p>
+    <div class="heading d-flex justify-content-center align-items-center"
+         style="position: absolute; left: 0; right: 0; z-index: 2; top: 110px;">
+        <p class="text-white mb-0"
+           style="font-size: 45px; font-weight: 650; color: rgba(3,207,196,0.78)  !important; font-family:'poppins', sans-serif;">
+            FIND THE RIGHT CAR FOR YOU</p>
     </div>
 
-    <div class="chooseData shadow-lg" style="z-index: 5; width: 80%;height:45%;background-color: rgba(255,255,255,0.49); border-radius: 40px; " >
+    <div class="chooseData shadow-lg"
+         style="z-index: 5; width: 80%;height:45%;background-color: rgba(255,255,255,0.49); border-radius: 40px; ">
 
         <form class="g-3 ms-5 mt-5">
             <div class="row">
                 <div class="col w-50 mt-3 ">
                     <div class="container">
                         <div class="input-group date" style="width: 90%">
-                            <input type="date" id="pickUpDate" class="form-control form-control-lg form-floating" placeholder="Pickup date" required/>
-                            <span class="input-group-addon bg-dark"><i class="glyphicon glyphicon-calendar text-white"></i></span>
-                            <p><small id="errorPickupDate" class="text-danger pl-1 mt-0 mb-0" style="font-size: 10%"></small></p>
+                            <input class="form-control form-control-lg form-floating" id="pickUpDate"
+                                   placeholder="Pickup date"
+                                   required type="date"/>
+                            <span class="input-group-addon bg-dark"><i
+                                    class="glyphicon glyphicon-calendar text-white"></i></span>
+                            <p><small class="text-danger pl-1 mt-0 mb-0" id="errorPickupDate"
+                                      style="font-size: 10%"></small></p>
                         </div>
                     </div>
                 </div>
 
                 <div class="col w-50 mt-3">
                     <div class="container">
-                        <div style="position: relative;width: 90%" >
-                            <input class="form-control form-control-lg" type="time" id="pickUpTime" placeholder="Pickup time" required/>
-                            <p><small id="errorPickupTime" class="text-danger  pl-1 mt-0 mb-0"></small></p>
+                        <div style="position: relative;width: 90%">
+                            <input class="form-control form-control-lg" id="pickUpTime" placeholder="Pickup time"
+                                   required type="time"/>
+                            <p><small class="text-danger  pl-1 mt-0 mb-0" id="errorPickupTime"></small></p>
                         </div>
                     </div>
                 </div>
@@ -2882,18 +2976,21 @@
                 <div class="col w-50 mt-3">
                     <div class="container">
                         <div class="input-group date" style="width: 90%">
-                            <input type="date" id="returnDate" class="form-control form-control-lg" placeholder="Return date" required/>
-                            <span class="input-group-addon bg-dark"><i class="fa-solid fa-calendar-lines-pen"></i></span>
-                            <p><small id="errorReturnDate" class="text-danger  pl-1 mt-0 mb-0"></small></p>
+                            <input class="form-control form-control-lg" id="returnDate" placeholder="Return date"
+                                   required type="date"/>
+                            <span class="input-group-addon bg-dark"><i
+                                    class="fa-solid fa-calendar-lines-pen"></i></span>
+                            <p><small class="text-danger  pl-1 mt-0 mb-0" id="errorReturnDate"></small></p>
                         </div>
                     </div>
                 </div>
 
                 <div class="col w-50 mt-3">
                     <div class="container">
-                        <div style="position: relative;width: 90%" >
-                            <input class="form-control form-control-lg" type="time" id="returnTime" placeholder="Return time" required/>
-                            <p><small id="errorReturnTime" class="text-danger  pl-1 mt-0 mb-0"></small></p>
+                        <div style="position: relative;width: 90%">
+                            <input class="form-control form-control-lg" id="returnTime" placeholder="Return time"
+                                   required type="time"/>
+                            <p><small class="text-danger  pl-1 mt-0 mb-0" id="errorReturnTime"></small></p>
                         </div>
                     </div>
                 </div>
@@ -2904,61 +3001,79 @@
 
                 <div class="col w-50 mt-3">
                     <div class="form-outline me-5">
-                        <input type="text" id="pickUpLocation" class="form-control form-control-lg" placeholder="Your pickup location"/>
-                        <p><small id="errorPickupLocation" class="text-danger  pl-1 mt-0 mb-0" ></small></p>
+                        <input class="form-control form-control-lg" id="pickUpLocation"
+                               placeholder="Your pickup location"
+                               type="text"/>
+                        <p><small class="text-danger  pl-1 mt-0 mb-0" id="errorPickupLocation"></small></p>
                     </div>
                 </div>
 
                 <div class="col w-50 mt-3">
                     <div class="form-outline me-5">
-                        <input type="text" id="returnLocation" class="form-control form-control-lg" placeholder="Your drop location"/>
-                        <p><small id="errorReturnLocation" class="text-danger  pl-1 mt-0 mb-0"></small></p>
+                        <input class="form-control form-control-lg" id="returnLocation" placeholder="Your drop location"
+                               type="text"/>
+                        <p><small class="text-danger  pl-1 mt-0 mb-0" id="errorReturnLocation"></small></p>
                     </div>
                 </div>
 
                 <div class="col w-50 mt-3">
                     <div class="form-outline me-5">
-                        <input type="text" id="destination" class="form-control form-control-lg" placeholder="Your destination"/>
-                        <p><small id="errorDestination" class="text-danger  pl-1 mt-0 mb-0"></small></p>
+                        <input class="form-control form-control-lg" id="destination" placeholder="Your destination"
+                               type="text"/>
+                        <p><small class="text-danger  pl-1 mt-0 mb-0" id="errorDestination"></small></p>
                     </div>
                 </div>
 
                 <div class="col w-50 mt-3">
                     <div class="form-outline me-5">
-                        <input type="text" id="duration" class="form-control form-control-lg" placeholder="Journey duration"/>
-                        <p><small id="errorDuration" class="text-danger  pl-1 mt-0 mb-0"></small></p>
+                        <input class="form-control form-control-lg" id="duration" placeholder="Journey duration"
+                               type="text"/>
+                        <p><small class="text-danger  pl-1 mt-0 mb-0" id="errorDuration"></small></p>
                     </div>
                 </div>
 
             </div>
 
             <div class="d-flex justify-content-center">
-                <button type="button" id="btnSearchForRent" class="btn btn-info btn-lg rounded-4 w-25 text-center text-white mt-3">SEARCH</button>
+                <button class="btn btn-info btn-lg rounded-4 w-25 text-center text-white mt-3" id="btnSearchForRent"
+                        type="button">SEARCH
+                </button>
             </div>
         </form>
 
     </div>
 
     <div class="" style="width: 100%;">
-        <div id="carouselExampleCaptions" class="carousel slide  carousel-fade" data-bs-ride="carousel">
+        <div class="carousel slide  carousel-fade" data-bs-ride="carousel" id="carouselExampleCaptions">
             <div class="carousel-inner" style="height: 100vh;">
                 <div class="carousel-item active">
-                    <img src="assets/images/car_bg_home/car_reg2.jpg" class="d-block w-100 img-fluid shadow-2-strong center-block" alt="error loading" style="width: 100%; height: 100vh">
+                    <img alt="error loading"
+                         class="d-block w-100 img-fluid shadow-2-strong center-block"
+                         src="assets/images/car_bg_home/car_reg2.jpg"
+                         style="width: 100%; height: 100vh">
                 </div>
                 <div class="carousel-item">
-                    <img src="assets/images/car_bg_home/carReg3.jpg" class="d-block w-100  img-fluid shadow-2-strong center-block" alt="error loading" style="width: 100%; height: 100vh">
+                    <img alt="error loading"
+                         class="d-block w-100  img-fluid shadow-2-strong center-block"
+                         src="assets/images/car_bg_home/carReg3.jpg"
+                         style="width: 100%; height: 100vh">
                 </div>
                 <div class="carousel-item">
-                    <img src="assets/images/car_bg_home/carReg4.jpg" class="d-block w-100  img-fluid shadow-2-strong center-block" alt="error loading" style="width: 100%; height: 100vh">
+                    <img alt="error loading"
+                         class="d-block w-100  img-fluid shadow-2-strong center-block"
+                         src="assets/images/car_bg_home/carReg4.jpg"
+                         style="width: 100%; height: 100vh">
                 </div>
 
             </div>
-            <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide="prev">
-                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+            <button class="carousel-control-prev" data-bs-slide="prev" data-bs-target="#carouselExampleCaptions"
+                    type="button">
+                <span aria-hidden="true" class="carousel-control-prev-icon"></span>
                 <span class="visually-hidden">Previous</span>
             </button>
-            <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide="next">
-                <span class="carousel-control-next-icon" aria-hidden="true"></span>
+            <button class="carousel-control-next" data-bs-slide="next" data-bs-target="#carouselExampleCaptions"
+                    type="button">
+                <span aria-hidden="true" class="carousel-control-next-icon"></span>
                 <span class="visually-hidden">Next</span>
             </button>
         </div>
@@ -2970,16 +3085,19 @@
 <!--Customer Dashboard-->
 <section id="CustomerDashBoard" style="width: 100%; height: 100% ;background-color: white;">
 
-    <img src="assets/images/car_bg_home/car_reg2.jpg" alt="bg image" style="width: 100%; height: 75vh" class="img-fluid">
+    <img alt="bg image" class="img-fluid" src="assets/images/car_bg_home/car_reg2.jpg"
+         style="width: 100%; height: 75vh">
 
     <!--heading-->
-    <div class="mask" style="background-color: rgba(0, 0, 0, 0.6);position: absolute;top: -50%;bottom: 0;left: 0;right: 0;margin: auto; height: 118%">
+    <div class="mask"
+         style="background-color: rgba(0, 0, 0, 0.6);position: absolute;top: -50%;bottom: 0;left: 0;right: 0;margin: auto; height: 118%">
         <div class="w-75 h-25" style="position: absolute;top: 0;bottom: 0;left: 0;right: 0;margin: auto;">
             <figure class="text-center text-white">
                 <blockquote class="blockquote" style="border: 1px solid transparent">
                     <p style="font-family: emoji; font-size: 60px">RENT A CAR</p>
                 </blockquote>
-                <p class="blockquote-footer text-white" style="font-size: 25px">~ Better Customer Service For a Safe Destination. ~</p>
+                <p class="blockquote-footer text-white" style="font-size: 25px">~ Better Customer Service For a Safe
+                    Destination. ~</p>
             </figure>
 
         </div>
@@ -2991,48 +3109,53 @@
     </div>
 
     <!--edit reservation date and time-->
-    <div class="chooseData w-75 thumbnail shadow" style="background:rgb(255,255,255); border: 2px solid #00ff58; box-shadow: 0px 0px 15px #ccc;height: 38%;position: absolute; padding: 8px; top: 69%;border-radius: 30px;margin-top: -7px; padding-top: 28px;">
+    <div class="chooseData w-75 thumbnail shadow"
+         style="background:rgb(255,255,255); border: 2px solid #00ff58; box-shadow: 0px 0px 15px #ccc;height: 38%;position: absolute; padding: 8px; top: 69%;border-radius: 30px;margin-top: -7px; padding-top: 28px;">
 
         <div class="row">
 
             <div class="col w-25 ">
                 <div class="container ">
-                    <label style="font-size: 15px" for="pickUpDateEdit" class="form-label text-black">Pickeup Date</label>
+                    <label class="form-label text-black" for="pickUpDateEdit" style="font-size: 15px">Pickeup
+                        Date</label>
                     <div class="input-group date" style="width: 250px">
-                        <input type="text" id="pickUpDateEdit" class="form-control" placeholder="xxxx/xx/xx">
+                        <input class="form-control" id="pickUpDateEdit" placeholder="xxxx/xx/xx" type="text">
                         <span class="input-group-addon bg-dark"><i class="glyphicon glyphicon-calendar text-white"></i></span>
-                        <p><small id="errorPickupDateAgain" class="text-danger  pl-1 mt-0 mb-0"></small></p>
+                        <p><small class="text-danger  pl-1 mt-0 mb-0" id="errorPickupDateAgain"></small></p>
                     </div>
                 </div>
             </div>
 
             <div class="col w-25 ">
                 <div class="container">
-                    <label class="form-label text-black" for="pickUpTimeEdit"  style="font-size: 15px">Pickup Time</label>
-                    <div style="position: relative;width: 250px" >
-                        <input class="form-control" type="text" id="pickUpTimeEdit" placeholder="xx:xx"/>
-                        <p><small id="errorPickupTimeAgain" class="text-danger  pl-1 mt-0 mb-0"></small></p>
+                    <label class="form-label text-black" for="pickUpTimeEdit" style="font-size: 15px">Pickup
+                        Time</label>
+                    <div style="position: relative;width: 250px">
+                        <input class="form-control" id="pickUpTimeEdit" placeholder="xx:xx" type="text"/>
+                        <p><small class="text-danger  pl-1 mt-0 mb-0" id="errorPickupTimeAgain"></small></p>
                     </div>
                 </div>
             </div>
 
             <div class="col w-25 ">
                 <div class="container">
-                    <label style="font-size: 15px" for="returnDateEdit" class=" form-label text-black">Return Date</label>
+                    <label class=" form-label text-black" for="returnDateEdit" style="font-size: 15px">Return
+                        Date</label>
                     <div class="input-group date" style="width: 250px">
-                        <input type="text" id="returnDateEdit" class="form-control" placeholder="xxxx/xx/xx">
+                        <input class="form-control" id="returnDateEdit" placeholder="xxxx/xx/xx" type="text">
                         <span class="input-group-addon bg-dark"><i class="glyphicon glyphicon-calendar text-white"></i></span>
-                        <p><small id="errorDropDateAgain" class="text-danger  pl-1 mt-0 mb-0"></small></p>
+                        <p><small class="text-danger  pl-1 mt-0 mb-0" id="errorDropDateAgain"></small></p>
                     </div>
                 </div>
             </div>
 
             <div class="col w-25 ">
                 <div class="container">
-                    <label class="form-label text-black" for="returnTimeEdit"  style="font-size: 15px">Return Time</label>
-                    <div style="position: relative;width: 250px" >
-                        <input class="form-control" type="text" id="returnTimeEdit" placeholder="xx:xx"/>
-                        <p><small id="errorDroTimeAgain" class="text-danger  pl-1 mt-0 mb-0"></small></p>
+                    <label class="form-label text-black" for="returnTimeEdit" style="font-size: 15px">Return
+                        Time</label>
+                    <div style="position: relative;width: 250px">
+                        <input class="form-control" id="returnTimeEdit" placeholder="xx:xx" type="text"/>
+                        <p><small class="text-danger  pl-1 mt-0 mb-0" id="errorDroTimeAgain"></small></p>
                     </div>
                 </div>
             </div>
@@ -3044,32 +3167,32 @@
             <div class="col w-50 ">
                 <label class="form-label text-black" for="pickUpLocationEdit">Pickup Location</label>
                 <div class="form-outline " style="position: relative;width: 250px">
-                    <input type="text" id="pickUpLocationEdit" class="form-control" placeholder="xxxxxx"/>
-                    <p><small id="errorPickupLocationAgain" class="text-danger  pl-1 mt-0 mb-0"></small></p>
+                    <input class="form-control" id="pickUpLocationEdit" placeholder="xxxxxx" type="text"/>
+                    <p><small class="text-danger  pl-1 mt-0 mb-0" id="errorPickupLocationAgain"></small></p>
                 </div>
             </div>
 
             <div class="col w-50 ">
                 <label class="form-label text-black" for="returnLocationEdit">Return Location</label>
                 <div class="form-outline" style="position: relative;width: 250px">
-                    <input type="text" id="returnLocationEdit" class="form-control" placeholder="xxxxxx"/>
-                    <p><small id="errorDropLocationAgain" class="text-danger  pl-1 mt-0 mb-0"></small></p>
+                    <input class="form-control" id="returnLocationEdit" placeholder="xxxxxx" type="text"/>
+                    <p><small class="text-danger  pl-1 mt-0 mb-0" id="errorDropLocationAgain"></small></p>
                 </div>
             </div>
 
             <div class="col w-50 ">
                 <label class="form-label text-black" for="destinationEdit">Destination</label>
                 <div class="form-outline" style="position: relative;width: 250px">
-                    <input type="text" id="destinationEdit" class="form-control" placeholder="xxxxxx"/>
-                    <p><small id="errorDestinationAgain" class="text-danger  pl-1 mt-0 mb-0"></small></p>
+                    <input class="form-control" id="destinationEdit" placeholder="xxxxxx" type="text"/>
+                    <p><small class="text-danger  pl-1 mt-0 mb-0" id="errorDestinationAgain"></small></p>
                 </div>
             </div>
 
             <div class="col w-50 ">
                 <label class="form-label text-black" for="durationEdit">Duration</label>
                 <div class="form-outline" style="position: relative;width: 250px">
-                    <input type="text" id="durationEdit" class="form-control" placeholder="x"/>
-                    <p><small id="errorDurationAgain" class="text-danger  pl-1 mt-0 mb-0"></small></p>
+                    <input class="form-control" id="durationEdit" placeholder="x" type="text"/>
+                    <p><small class="text-danger  pl-1 mt-0 mb-0" id="errorDurationAgain"></small></p>
                 </div>
             </div>
 
@@ -3077,7 +3200,7 @@
 
         <div class="row mt-3 ">
             <div class="text-center">
-                <button id="editRentData" type="button" class="btn btn-info btn-rounded w-25">EDIT</button>
+                <button class="btn btn-info btn-rounded w-25" id="editRentData" type="button">EDIT</button>
             </div>
         </div>
 
@@ -3085,7 +3208,8 @@
 
 </section>
 
-<!--More Space to view car-->
+
+<!--Load all rent cars using More Space to view car-->
 <section id="moreSpace" style="width: 100%; ;background-color: #ffffff; margin-top: 175px;">
 
     <!--sort section and available cars-->
@@ -3093,9 +3217,11 @@
 
         <figure class="text-center mt-3 mb-3 text-black">
             <blockquote class="blockquote mt-5" style="border: 1px solid transparent">
-                <p class="display-5" style="font-family: 'poppins', sans-serif; color:#8f8e8e; font-weight: 600; ">SELECT VEHICLE YOU LIKE</p>
+                <p class="display-5" style="font-family: 'poppins', sans-serif; color:#8f8e8e; font-weight: 600; ">
+                    SELECT VEHICLE YOU LIKE</p>
             </blockquote>
-            <figcaption id="availableCars" class=" text-danger mt-0" style="font-size: 20px ;display: inline"></figcaption>
+            <figcaption class=" text-danger mt-0" id="availableCars"
+                        style="font-size: 20px ;display: inline"></figcaption>
             <figcaption class=" text-black mt-0" style="font-size: 20px;display: inline">
                 - Cars Available
             </figcaption>
@@ -3104,8 +3230,9 @@
 
                 <div class="col">
                     <div>
-                        <label for="sort" class="form-label" style="display: inline">SORT :</label>
-                        <select aria-label="Default select example" class="form-select  center-block w-50" style="height: 38px;border: 2px solid gold; z-index: 2;display: inline" id="sort">
+                        <label class="form-label" for="sort" style="display: inline">SORT :</label>
+                        <select aria-label="Default select example" class="form-select  center-block w-50"
+                                id="sort" style="height: 38px;border: 2px solid gold; z-index: 2;display: inline">
                             <option selected value="0">Recommended</option>
                             <option value="1">Passengers - Ascending</option>
                             <option value="2">Passengers - Descending</option>
@@ -3121,15 +3248,18 @@
                     <div class="row">
                         <div class="input-group w-50 ">
                             <div class="form-outline w-100">
-                                <input type="search" id="searchCarsToSort" class="form-control me-0 " style="border: 2px solid gold">
+                                <input class="form-control me-0 " id="searchCarsToSort" style="border: 2px solid gold"
+                                       type="search">
                             </div>
                         </div>
                         <div class="col-1">
-                            <button type="button" class="btn btn-success " id="btnSearchCarsToSort" fdprocessedid="uv2p5q">
+                            <button class="btn btn-success " id="btnSearchCarsToSort"
+                                    type="button">
                                 <i class="fas fa-search"></i>
                             </button>
-                        </div><div class="col-10">
-                    </div>
+                        </div>
+                        <div class="col-10">
+                        </div>
 
 
                     </div>
@@ -3151,9 +3281,8 @@
 
         <section class="section featured-car">
 
-            <div class="container text-center" >
+            <div class="container text-center">
                 <div class="row" id="tblShowCars">
-
 
 
                 </div>
@@ -3164,13 +3293,11 @@
 
 </section>
 
+
 <!--reservation-->
-<!--style="background-color: rgba(0, 0, 0, 0.6)-->
-<!--background:url(assets/images/car_bg_home/car_reg2.jpg)-->
-
-
-<section id="Reservation" style="width: 100%;/* background-color: rgb(0 0 0 / 17%); */display: block;">
-
+<section id="Reservation" style="width: 100%;display: block;">
+    <!--style="background-color: rgba(0, 0, 0, 0.6)-->
+    <!--background:url(assets/images/car_bg_home/car_reg2.jpg)-->
     <div class="container center-block ">
 
         <div class="row w-100 h-25 text-center mt-2">
@@ -3199,19 +3326,19 @@
                             <div class="col ms-3 me-3 mb-5 mt-2">
                                 <label class="form-label text-black" for="pickUpTimeEdit">Name</label>
                                 <div>
-                                    <input class="form-control" type="text" id="PName" fdprocessedid="12r0104">
+                                    <input class="form-control" fdprocessedid="12r0104" id="PName" type="text">
                                 </div>
                             </div>
                             <div class="col ms-3 me-3 mb-5 mt-2">
                                 <label class="form-label text-black" for="pickUpTimeEdit">Contact</label>
                                 <div>
-                                    <input class="form-control" type="text" id="PContact" fdprocessedid="mvhoxm">
+                                    <input class="form-control" fdprocessedid="mvhoxm" id="PContact" type="text">
                                 </div>
                             </div>
                             <div class="col ms-3 me-3 mb-5 mt-2">
                                 <label class="form-label text-black" for="pickUpTimeEdit">NIC</label>
                                 <div>
-                                    <input class="form-control" type="text" id="PNIC" fdprocessedid="mvti2r">
+                                    <input class="form-control" fdprocessedid="mvti2r" id="PNIC" type="text">
                                 </div>
                             </div>
                         </div>
@@ -3234,13 +3361,13 @@
                             <div class="col ms-3 me-3">
                                 <label class="form-label text-black" for="pickUpTimeEdit">Pickup Date</label>
                                 <div>
-                                    <input class="form-control" type="text" id="BPickupDate" fdprocessedid="jom5xs">
+                                    <input class="form-control" fdprocessedid="jom5xs" id="BPickupDate" type="text">
                                 </div>
                             </div>
                             <div class="col ms-3 me-3">
                                 <label class="form-label text-black" for="pickUpTimeEdit">Pickup Time</label>
                                 <div>
-                                    <input class="form-control" type="text" id="BPickupTime" fdprocessedid="gpv4mf">
+                                    <input class="form-control" fdprocessedid="gpv4mf" id="BPickupTime" type="text">
                                 </div>
                             </div>
                         </div>
@@ -3248,13 +3375,13 @@
                             <div class="col ms-3 me-3">
                                 <label class="form-label text-black" for="pickUpTimeEdit">Return Date</label>
                                 <div>
-                                    <input class="form-control" type="text" id="BReturnDate" fdprocessedid="z4ny7c">
+                                    <input class="form-control" fdprocessedid="z4ny7c" id="BReturnDate" type="text">
                                 </div>
                             </div>
                             <div class="col ms-3 me-3">
                                 <label class="form-label text-black" for="pickUpTimeEdit">Return Time</label>
                                 <div>
-                                    <input class="form-control" type="text" id="BReturnTime" fdprocessedid="c1ek7">
+                                    <input class="form-control" fdprocessedid="c1ek7" id="BReturnTime" type="text">
                                 </div>
                             </div>
                         </div>
@@ -3262,13 +3389,13 @@
                             <div class="col ms-3 me-3">
                                 <label class="form-label text-black" for="pickUpTimeEdit">Pickup Location</label>
                                 <div>
-                                    <input class="form-control" type="text" id="BPickupLocation" fdprocessedid="4t3w5">
+                                    <input class="form-control" fdprocessedid="4t3w5" id="BPickupLocation" type="text">
                                 </div>
                             </div>
                             <div class="col ms-3 me-3">
                                 <label class="form-label text-black" for="pickUpTimeEdit">Return Location</label>
                                 <div>
-                                    <input class="form-control" type="text" id="BReturnLocation" fdprocessedid="jcrtt">
+                                    <input class="form-control" fdprocessedid="jcrtt" id="BReturnLocation" type="text">
                                 </div>
                             </div>
                         </div>
@@ -3276,13 +3403,13 @@
                             <div class="col ms-3 me-3">
                                 <label class="form-label text-black" for="pickUpTimeEdit">Destination</label>
                                 <div>
-                                    <input class="form-control" type="text" id="BDestination" fdprocessedid="od9v1p">
+                                    <input class="form-control" fdprocessedid="od9v1p" id="BDestination" type="text">
                                 </div>
                             </div>
                             <div class="col ms-3 me-3">
                                 <label class="form-label text-black" for="pickUpTimeEdit">Duration</label>
                                 <div>
-                                    <input class="form-control" type="text" id="BDuration" fdprocessedid="juzggm">
+                                    <input class="form-control" fdprocessedid="juzggm" id="BDuration" type="text">
                                 </div>
                             </div>
                         </div>
@@ -3291,10 +3418,15 @@
 
                 <div class="row ">
                     <div class="col ms-5 me-5">
-                        <button type="button" class="btn  center-block w-100  mt-5 mb-5 bg-dark text-white" id="btnBook" fdprocessedid="esokr">BOOK</button>
+                        <button class="btn  center-block w-100  mt-5 mb-5 bg-dark text-white" fdprocessedid="esokr"
+                                id="btnBook"
+                                type="button">BOOK
+                        </button>
                     </div>
                     <div class="col ms-5 me-5">
-                        <button type="button" class="btn  center-block w-100 mt-5 mb-5 bg-danger text-white" id="btnBack" fdprocessedid="i8m3w7">Back</button>
+                        <button class="btn  center-block w-100 mt-5 mb-5 bg-danger text-white" fdprocessedid="i8m3w7"
+                                id="btnBack" type="button">Back
+                        </button>
                     </div>
                 </div>
             </div>
@@ -3307,7 +3439,8 @@
                 </div>
 
                 <div class="row">
-                    <button type="button" class="btn btn-info btn-sm w-25 ms-5 mb-3" data-ripple-color="dark" id="newCar" fdprocessedid="g35mgp">
+                    <button class="btn btn-info btn-sm w-25 ms-5 mb-3" data-ripple-color="dark" fdprocessedid="g35mgp"
+                            id="newCar" type="button">
                         <i class="fas fa-plus"></i>
                         NEW
                     </button>
@@ -3343,6 +3476,7 @@
         </div>
     </div>
 </section>
+
 
 <!---Social Media section-->
 <section id="social_media">
@@ -3444,9 +3578,6 @@
                 <p><i class="fa-solid fa-envelope"></i> abcd@gmail.com</p>
             </div>
         </div>
-        <!--     <p><b>SUBSCRIBE NEWSLETTER</b></p>
-             <input type="email" class="form-control" placeholder="Your Email ..">
-             <button type="button" class="btn btn-primary"> Subscribe</button>-->
         <hr>
         <p class="copyRight"><small> CopyRight © 2023 All Right Reserved . <br> ~ Website Developed by Ishara Maduranga.
             ~ </small></p>
@@ -3481,7 +3612,6 @@
 <script src="./controllers/ReservationController.js"></script>
 <script src="./controllers/PaymentController.js"></script>
 <script src="./controllers/AdminDashBoardController.js"></script>
-
 
 
 <!-- - iron-icon link-->
