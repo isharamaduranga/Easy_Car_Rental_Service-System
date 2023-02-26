@@ -1914,17 +1914,6 @@
 
                 <div class="row">
                     <div class="col">
-
-                        <!--////////////////////////////////////////////////////////////////-->
-                       <!-- <div class="form-outline mb-2 ms-4 w-100">
-                            <label class="form-label text-dark fw-light " for="CarIds">* Car Ids</label>
-                            <select aria-label="Default select example" class="form-select " id="CarIds"
-                                    style="height: 37px">
-                                <option selected value="0"></option>
-                            </select>
-
-                        </div>-->
-                        <!--////////////////////////////////////////////////////////////////-->
                         <!-- rent fee -->
                         <div class="form-outline  ms-4 me-4 mt-1">
                             <label class="form-label text-dark fw-light " for="reserveCarId"><span>*</span> Car Id</label>
@@ -1959,28 +1948,13 @@
                     <div class="col">
                         <!-- lose damage payment -->
                         <div class="form-outline  ms-4 me-4 ">
-                            <label class="form-label text-dark fw-light " for="loseDamageWaiverPayment"><span>*</span> Lose Damage
-                                Waiver Payment</label>
+                            <label class="form-label text-dark fw-light " for="loseDamageWaiverPayment"><span>*</span> Lose Damage Payment</label>
                             <input class="form-control bg-white rounded-3" id="loseDamageWaiverPayment"
                                    style="height: 35px"
                                    type="text"/>
                             <p><small class="text-danger  pl-1 mt-0 mb-0" id="errorDamagePayment"></small></p>
                         </div>
                     </div>
-
-                    <div class="col">
-                        <!-- reduced lose damage payment -->
-                        <div class="form-outline  ms-4 me-4 ">
-                            <label class="form-label text-dark fw-light " for="reducedLoseDamageWaiverPayment"><span>*</span>Reduced
-                                Lose Damage Payment</label>
-                            <input class="form-control bg-white rounded-3" id="reducedLoseDamageWaiverPayment"
-                                   style="height: 35px" type="text"/>
-                            <p><small class="text-danger  pl-1 mt-0 mb-0" id="errorReduceDamagePayment"></small></p>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="row">
                     <div class="col">
                         <!-- car harm or not -->
                         <div class="form-outline  ms-4 me-4 ">
@@ -1993,6 +1967,22 @@
                             </select>
                         </div>
                     </div>
+                    <div class="col">
+                        <!-- reduced lose damage payment -->
+                        <div class="form-outline  ms-4 me-4 ">
+                            <label class="form-label text-dark fw-light " for="reducedLoseDamageWaiverPayment"><span>*</span>Reduced
+                                Lose Damage</label>
+                            <input class="form-control bg-white rounded-3" id="reducedLoseDamageWaiverPayment"
+                                   style="height: 35px" type="text"/>
+                            <p><small class="text-danger  pl-1 mt-0 mb-0" id="errorReduceDamagePayment"></small></p>
+                        </div>
+                    </div>
+
+
+                </div>
+
+                <div class="row">
+
 
                     <div class="col">
                         <!-- travelled distance -->
@@ -2004,6 +1994,16 @@
                             <p><small class="text-danger  pl-1 mt-0 mb-0" id="errorTravelledDistance"></small></p>
                         </div>
                     </div>
+
+                    <div class="col">
+                        <!-- travelled distance -->
+                        <div class="form-outline  ms-4 me-4 ">
+                            <label class="form-label text-dark fw-light " for="pricePerExKm"><span>*</span> Price Per Extra (KM)</label>
+                            <input class="form-control bg-white rounded-3 " id="pricePerExKm" style="height: 35px"
+                                   type="number"/>
+                        </div>
+                    </div>
+
                 </div>
 
                 <div class="row">
@@ -2020,8 +2020,8 @@
                     <div class="col">
                         <!-- price for extra km -->
                         <div class="form-outline  ms-4 me-4 ">
-                            <label class="form-label text-dark fw-light " for="priceForTravelledExtraKm"><span>*</span> Price For
-                                Extra KM</label>
+                            <label class="form-label text-dark fw-light " for="priceForTravelledExtraKm"><span>*</span>Total Price For
+                                Extra KMs</label>
                             <input class="form-control bg-white rounded-3" id="priceForTravelledExtraKm"
                                    style="height: 34px"
                                    type="text"/>

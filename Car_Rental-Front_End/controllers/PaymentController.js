@@ -149,7 +149,7 @@ $("#calculateFullIncome").click(function () {
     let text = "Do you want to make this payment ?";
 
     if (confirm(text) == true) {
-        if ($("#paymentDate").val() == "" || $("#rentFee").val() == "" || $("#driverFee").val() == "" || $("#extraKm").val() == "" || $("#loseDamageWaiverPayment").val() == "" || $("#priceForTravelledExtraKm").val() == "" ||
+        if ($("#rentalId").val() == ""||$("#reserveCarId").val() == ""||$("#paymentDate").val() == "" || $("#rentFee").val() == "" || $("#driverFee").val() == "" || $("#extraKm").val() == "" || $("#loseDamageWaiverPayment").val() == "" || $("#priceForTravelledExtraKm").val() == "" ||
             $("#reducedLoseDamageWaiverPayment").val() == "" || $("#travelledDistance").val() == "" || $("#carHarmOrNot option:selected").val() == ""){
             alert("All Fields Are Required !");
         }else {
@@ -184,22 +184,6 @@ function loadReservationsIds() {
     });
 }
 
-/** Function of Set Customer Data to fields after the Search */
-$("#selectCusID").change(function () {
-    let cusId = $("#selectCusID").val();
-
-    $("#orderCustomerID").val(cusId);
-    let response = searchCustomer(cusId);
-
-    if (response.length > 0) {
-        $("#orderCustomerName").val(response[0].name);
-        $("#orderCustomerSalary").val(response[0].salary);
-        $("#orderCustomerAddress").val(response[0].address);
-
-        console.log(response);
-    }
-    textFieldColorChange_customer();
-});
 
 $("#rentalId").change(function () {
     let rentId = $("#rentalId option:selected").text();
@@ -225,6 +209,26 @@ $("#rentalId").change(function () {
         }
     });
 });
+
+$("#reserveCarId").change(function () {
+    let newCarId = $("#reserveCarId option:selected").text();
+    $("#pricePerExKm").val('0');
+    $.ajax({
+        url: baseURLForReserveDetails+"car/" + newCarId,
+        method: "GET",
+        success: function (response) {
+
+                console.log(response.data.pricePerExtraKM);
+                $("#pricePerExKm").val(response.data.pricePerExtraKM);
+
+        },
+        error: function (ob) {
+            $("#pricePerExKm").val('0');
+        }
+    });
+});
+
+
 
 function calculateIncome() {
     var paymentDetail = {
