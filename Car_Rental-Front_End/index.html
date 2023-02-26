@@ -152,7 +152,7 @@
                             </div>
                         </div>
                         <div class="carousel-item" data-bs-interval="2000">
-                            <img alt="..." class="d-block w-100" src="assets/images/car_bg_home/car_d.png">
+                            <img alt="..." class="d-block w-100" src="assets/images/car_bg_home/car_f.png">
                             <div class="carousel-caption d-none d-md-block">
 
                             </div>
@@ -1901,7 +1901,7 @@
                     <div class="col">
                         <!-- payment date -->
                         <div class="form-outline  ms-4 me-4">
-                            <label class="form-label text-dark fw-light " for="paymentDate">* Payment Date</label>
+                            <label class="form-label text-dark fw-light " for="paymentDate"><span>*</span> Payment Date</label>
                             <div class="input-group date">
                                 <input class="form-control bg-white rounded-3" id="paymentDate" style="height: 35px"
                                        type="date">
@@ -1914,9 +1914,30 @@
 
                 <div class="row">
                     <div class="col">
+
+                        <!--////////////////////////////////////////////////////////////////-->
+                       <!-- <div class="form-outline mb-2 ms-4 w-100">
+                            <label class="form-label text-dark fw-light " for="CarIds">* Car Ids</label>
+                            <select aria-label="Default select example" class="form-select " id="CarIds"
+                                    style="height: 37px">
+                                <option selected value="0"></option>
+                            </select>
+
+                        </div>-->
+                        <!--////////////////////////////////////////////////////////////////-->
                         <!-- rent fee -->
                         <div class="form-outline  ms-4 me-4 mt-1">
-                            <label class="form-label text-dark fw-light " for="rentFee">* Rent Fee</label>
+                            <label class="form-label text-dark fw-light " for="reserveCarId"><span>*</span> Car Id</label>
+                            <select class="form-select bg-white rounded-3" id="reserveCarId" style="height: 35px; font-size: 14px">
+                            <option selected value="0"></option>
+                            </select>
+                        </div>
+
+                    </div>
+                    <div class="col">
+                        <!-- rent fee -->
+                        <div class="form-outline  ms-4 me-4 mt-1">
+                            <label class="form-label text-dark fw-light " for="rentFee"><span>*</span>Rent Fee</label>
                             <input class="form-control bg-white rounded-3" id="rentFee" style="height: 35px"
                                    type="text"/>
                             <p><small class="text-danger  pl-1 mt-0 mb-0" id="errorRentFee"></small></p>
@@ -1926,7 +1947,7 @@
                     <div class="col">
                         <!-- driver fee -->
                         <div class="form-outline  ms-4 me-4 mt-1">
-                            <label class="form-label text-dark fw-light " for="driverFee">* Driver Fee</label>
+                            <label class="form-label text-dark fw-light " for="driverFee"><span>*</span> Driver Fee</label>
                             <input class="form-control bg-white rounded-3" id="driverFee" style="height: 35px"
                                    type="text"/>
                             <p><small class="text-danger  pl-1 mt-0 mb-0" id="errorDriverFee"></small></p>
@@ -1938,7 +1959,7 @@
                     <div class="col">
                         <!-- lose damage payment -->
                         <div class="form-outline  ms-4 me-4 ">
-                            <label class="form-label text-dark fw-light " for="loseDamageWaiverPayment">* Lose Damage
+                            <label class="form-label text-dark fw-light " for="loseDamageWaiverPayment"><span>*</span> Lose Damage
                                 Waiver Payment</label>
                             <input class="form-control bg-white rounded-3" id="loseDamageWaiverPayment"
                                    style="height: 35px"
@@ -1950,7 +1971,7 @@
                     <div class="col">
                         <!-- reduced lose damage payment -->
                         <div class="form-outline  ms-4 me-4 ">
-                            <label class="form-label text-dark fw-light " for="reducedLoseDamageWaiverPayment">* Reduced
+                            <label class="form-label text-dark fw-light " for="reducedLoseDamageWaiverPayment"><span>*</span>Reduced
                                 Lose Damage Payment</label>
                             <input class="form-control bg-white rounded-3" id="reducedLoseDamageWaiverPayment"
                                    style="height: 35px" type="text"/>
@@ -1963,7 +1984,7 @@
                     <div class="col">
                         <!-- car harm or not -->
                         <div class="form-outline  ms-4 me-4 ">
-                            <label class="form-label text-dark fw-light " for="carHarmOrNot">* Harm Or Not</label>
+                            <label class="form-label text-dark fw-light " for="carHarmOrNot"><span>*</span> Harm Or Not</label>
                             <select aria-label="Default select example" class="form-select " id="carHarmOrNot"
                                     style="height: 35px; font-size: 14px;">
                                 <option selected value="0">None</option>
@@ -1976,7 +1997,7 @@
                     <div class="col">
                         <!-- travelled distance -->
                         <div class="form-outline  ms-4 me-4 ">
-                            <label class="form-label text-dark fw-light " for="travelledDistance">* Travelled
+                            <label class="form-label text-dark fw-light " for="travelledDistance"><span>*</span> Travelled
                                 Distance</label>
                             <input class="form-control bg-white rounded-3 " id="travelledDistance" style="height: 35px"
                                    type="number"/>
@@ -1989,7 +2010,7 @@
                     <div class="col">
                         <!-- extra km -->
                         <div class="form-outline  ms-4 me-4 ">
-                            <label class="form-label text-dark fw-light " for="extraKm">* Extra KM</label>
+                            <label class="form-label text-dark fw-light " for="extraKm"><span>*</span> Extra KM</label>
                             <input class="form-control bg-white rounded-3" id="extraKm" style="height: 35px"
                                    type="number"/>
                             <p><small class="text-danger  pl-1 mt-0 mb-0" id="errorTravelledExtraKM"></small></p>
@@ -1999,7 +2020,7 @@
                     <div class="col">
                         <!-- price for extra km -->
                         <div class="form-outline  ms-4 me-4 ">
-                            <label class="form-label text-dark fw-light " for="priceForTravelledExtraKm">* Price For
+                            <label class="form-label text-dark fw-light " for="priceForTravelledExtraKm"><span>*</span> Price For
                                 Extra KM</label>
                             <input class="form-control bg-white rounded-3" id="priceForTravelledExtraKm"
                                    style="height: 34px"
@@ -2037,7 +2058,7 @@
                     <div class="col">
                         <!-- full payment -->
                         <div class="form-outline  ms-4 me-4 ">
-                            <label class="form-label text-dark fw-light " for="fullPayment">* Full Payment</label>
+                            <label class="form-label text-dark fw-light " for="fullPayment"><span>*</span> Full Payment</label>
                             <input class="form-control bg-white rounded-3" id="fullPayment" style="height: 35px"
                                    type="text"/>
                         </div>

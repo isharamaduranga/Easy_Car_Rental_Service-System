@@ -21,7 +21,7 @@ $("#Contact_Page").css('display', 'block');
 $("#social_media").css('display', 'block');
 $("#footer").css('display', 'block');
 
-$('#PaymentAddPage').css('transform', 'scale(0)');
+$('#PaymentAddPage').css('transform', 'scale(1)');
 $('#CarManagePage').css('transform', 'scale(0)');
 $('#DriverManagePage').css('transform', 'scale(0)');
 $('#ChangeDriver').css('transform', 'scale(0)');

@@ -184,6 +184,48 @@ function loadReservationsIds() {
     });
 }
 
+/** Function of Set Customer Data to fields after the Search */
+$("#selectCusID").change(function () {
+    let cusId = $("#selectCusID").val();
+
+    $("#orderCustomerID").val(cusId);
+    let response = searchCustomer(cusId);
+
+    if (response.length > 0) {
+        $("#orderCustomerName").val(response[0].name);
+        $("#orderCustomerSalary").val(response[0].salary);
+        $("#orderCustomerAddress").val(response[0].address);
+
+        console.log(response);
+    }
+    textFieldColorChange_customer();
+});
+
+$("#rentalId").change(function () {
+    let rentId = $("#rentalId option:selected").text();
+    $("#loseDamageWaiverPayment").val(0);
+    $("#reserveCarId").empty();
+    $("#reserveCarId").append($("<option></option>").attr("value", 0).text("Select ID"));
+    console.log(rentId);
+    $.ajax({
+        url: baseURLForReserveDetails+"reserve/" + rentId,
+        method: "GET",
+        success: function (response) {
+            for (let i = 0; i < response.data.reserveDetails.length; i++) {
+                if ($("#rentalId option:selected").text() == response.data.reserveDetails[i].reserveId){
+                    $("#reserveCarId").append($("<option></option>").attr("value", i+1).text(response.data.reserveDetails[i].carId));
+                    $("#loseDamageWaiverPayment").val(response.data.reserveDetails[i].loseDamageWaiverPayment);
+                }else{
+                    $("#reserveCarId").append($("<option></option>").attr("value", 0).text("Select ID"));
+                    $("#loseDamageWaiverPayment").val("0");
+                }
+            }
+        },
+        error: function (ob) {
+        }
+    });
+});
+
 function calculateIncome() {
     var paymentDetail = {
         paymentId: $("#paymentId").val(),
