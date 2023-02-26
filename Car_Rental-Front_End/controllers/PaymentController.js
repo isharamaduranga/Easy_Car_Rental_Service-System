@@ -210,6 +210,24 @@ $("#rentalId").change(function () {
     });
 });
 
+$("#reducedLoseDamageWaiverPayment").val('0');
+$("#carHarmOrNot").change(function () {
+
+    if ($("#carHarmOrNot option:selected").text() == "None"){
+
+        $("#reducedLoseDamageWaiverPayment").val('0');
+
+    }else if($("#carHarmOrNot option:selected").text() == "Harm"){
+        let reduce_price = $("#loseDamageWaiverPayment").val();
+        $("#reducedLoseDamageWaiverPayment").val(reduce_price);
+
+    }else if($("#carHarmOrNot option:selected").text() == "Not Harm"){
+        $("#reducedLoseDamageWaiverPayment").val('0');
+    }
+
+});
+extraKm
+
 $("#reserveCarId").change(function () {
     let newCarId = $("#reserveCarId option:selected").text();
     $("#pricePerExKm").val('0');
