@@ -1,6 +1,5 @@
-
 /** Back end Request URL */
-let baseURLForPayment="http://localhost:8080/Car_Rental_Back_End_war/"
+let baseURLForPayment = "http://localhost:8080/Car_Rental_Back_End_war/"
 
 var regExPrice = /^[0-9]{1,10}(.)[0-9]{2}$/;
 var regExDate = /^\d{2}\/\d{2}\/\d{4}$/;
@@ -120,7 +119,7 @@ function generatePaymentIds() {
     var test = "id";
 
     $.ajax({
-        url: baseURLForPayment+"payment?test="+test,
+        url: baseURLForPayment + "payment?test=" + test,
         method: "GET",
         success: function (response) {
             var paymentId = response.data;
@@ -149,18 +148,20 @@ $("#calculateFullIncome").click(function () {
     let text = "Do you want to make this payment ?";
 
     if (confirm(text) == true) {
-        if ($("#rentalId").val() == ""||$("#reserveCarId").val() == ""||$("#paymentDate").val() == "" || $("#rentFee").val() == "" || $("#driverFee").val() == "" || $("#extraKm").val() == "" || $("#loseDamageWaiverPayment").val() == "" || $("#priceForTravelledExtraKm").val() == "" ||
-            $("#reducedLoseDamageWaiverPayment").val() == "" || $("#travelledDistance").val() == "" || $("#carHarmOrNot option:selected").val() == ""){
+        if ($("#rentalId").val() == "" || $("#reserveCarId").val() == "" || $("#paymentDate").val() == "" || $("#rentFee").val() == "" || $("#driverFee").val() == "" || $("#extraKm").val() == "" || $("#loseDamageWaiverPayment").val() == "" || $("#priceForTravelledExtraKm").val() == "" ||
+            $("#reducedLoseDamageWaiverPayment").val() == "" || $("#travelledDistance").val() == "" || $("#carHarmOrNot option:selected").val() == "") {
             alert("All Fields Are Required !");
-        }else {
+        } else {
             if ($("#errorPaymentDate").text() != "" || $("#errorRentFee").text() != "" || $("#errorDriverFee").text() != "" || $("#errorDamagePayment").text() != "" || $("#errorReduceDamagePayment").text() != "" || $("#errorTravelledDistance").text() != "" ||
-                $("#errorTravelledExtraKM").text() != "" || $("#errorPriceExtraKM").text() != ""){
+                $("#errorTravelledExtraKM").text() != "" || $("#errorPriceExtraKM").text() != "") {
                 alert("Check Input Fields Whether Correct !");
-            }else {
+            } else {
+
                 calculateIncome();
+
             }
         }
-    }else {
+    } else {
 
     }
 });
@@ -171,7 +172,7 @@ function loadReservationsIds() {
 
     var countRentalIds = 1;
     $.ajax({
-        url: baseURLForReserveDetails+"reserve",
+        url: baseURLForReserveDetails + "reserve",
         method: "GET",
         success: function (response) {
             for (var ids of response.data) {
@@ -192,14 +193,14 @@ $("#rentalId").change(function () {
     $("#reserveCarId").append($("<option></option>").attr("value", 0).text("Select ID"));
     console.log(rentId);
     $.ajax({
-        url: baseURLForReserveDetails+"reserve/" + rentId,
+        url: baseURLForReserveDetails + "reserve/" + rentId,
         method: "GET",
         success: function (response) {
             for (let i = 0; i < response.data.reserveDetails.length; i++) {
-                if ($("#rentalId option:selected").text() == response.data.reserveDetails[i].reserveId){
-                    $("#reserveCarId").append($("<option></option>").attr("value", i+1).text(response.data.reserveDetails[i].carId));
+                if ($("#rentalId option:selected").text() == response.data.reserveDetails[i].reserveId) {
+                    $("#reserveCarId").append($("<option></option>").attr("value", i + 1).text(response.data.reserveDetails[i].carId));
                     $("#loseDamageWaiverPayment").val(response.data.reserveDetails[i].loseDamageWaiverPayment);
-                }else{
+                } else {
                     $("#reserveCarId").append($("<option></option>").attr("value", 0).text("Select ID"));
                     $("#loseDamageWaiverPayment").val("0");
                 }
@@ -208,50 +209,83 @@ $("#rentalId").change(function () {
         error: function (ob) {
         }
     });
+
 });
 
-$("#reducedLoseDamageWaiverPayment").val('0');
+$("#reducedLoseDamageWaiverPayment").val("0");
+$("#priceForTravelledExtraKm").val("0");
+
 $("#carHarmOrNot").change(function () {
 
-    if ($("#carHarmOrNot option:selected").text() == "None"){
+    if ($("#carHarmOrNot option:selected").text() == "None") {
 
-        $("#reducedLoseDamageWaiverPayment").val('0');
+        $("#reducedLoseDamageWaiverPayment").val("0");
 
-    }else if($("#carHarmOrNot option:selected").text() == "Harm"){
+    } else if ($("#carHarmOrNot option:selected").text() == "Harm") {
         let reduce_price = $("#loseDamageWaiverPayment").val();
         $("#reducedLoseDamageWaiverPayment").val(reduce_price);
 
-    }else if($("#carHarmOrNot option:selected").text() == "Not Harm"){
-        $("#reducedLoseDamageWaiverPayment").val('0');
+    } else if ($("#carHarmOrNot option:selected").text() == "Not Harm") {
+        $("#reducedLoseDamageWaiverPayment").val("0");
     }
-
 });
-extraKm
+
 
 $("#reserveCarId").change(function () {
     let newCarId = $("#reserveCarId option:selected").text();
-    $("#pricePerExKm").val('0');
+    $("#pricePerExKm").val("0");
     $.ajax({
-        url: baseURLForReserveDetails+"car/" + newCarId,
+        url: baseURLForReserveDetails + "car/" + newCarId,
         method: "GET",
         success: function (response) {
 
-                console.log(response.data.pricePerExtraKM);
-                $("#pricePerExKm").val(response.data.pricePerExtraKM);
+            console.log(response.data.pricePerExtraKM);
+            $("#pricePerExKm").val(response.data.pricePerExtraKM);
 
         },
         error: function (ob) {
-            $("#pricePerExKm").val('0');
+            $("#pricePerExKm").val("0");
         }
     });
+
 });
 
+$("#extraKm").on('keydown keyup', function (event) {
+    let kmCount = $("#extraKm").val();
+    let pricePerOneKm = $("#pricePerExKm").val();
+
+    $("#priceForTravelledExtraKm").val(kmCount * pricePerOneKm);
+
+});
+
+
+$("#fullPayment").prop("readonly", true);
+    $("#cal_full_Tot").click(function () {
+
+        calculateTotalPrice();
+    })
+
+
+function calculateTotalPrice() {
+    /* for subtraction */
+    let loseDamagePayment = parseFloat($("#loseDamageWaiverPayment").val());
+
+    /* for addition */
+    let rentPrice = parseFloat($("#rentFee").val());
+    let drivePrice = parseFloat($("#driverFee").val());
+    let reduceLosDamage = parseFloat($("#reducedLoseDamageWaiverPayment").val());
+    let totalOfExKmPrice = parseFloat($("#priceForTravelledExtraKm").val());
+
+    let totPrice = rentPrice + drivePrice + reduceLosDamage + totalOfExKmPrice - loseDamagePayment;
+
+    $("#fullPayment").val(totPrice.toString());
+}
 
 
 function calculateIncome() {
     var paymentDetail = {
         paymentId: $("#paymentId").val(),
-        paymentDate:$("#paymentDate").val(),
+        paymentDate: $("#paymentDate").val(),
         rentFee: $("#rentFee").val(),
         harmOrNot: $("#driverReleaseOrNot option:selected").text(),
         loseDamagePayment: $("#loseDamageWaiverPayment").val(),
@@ -264,13 +298,13 @@ function calculateIncome() {
     }
 
     $.ajax({
-        url: baseURLForPayment+"payment",
+        url: baseURLForPayment + "payment",
         method: "POST",
         contentType: "application/json",
         data: JSON.stringify(paymentDetail),
         success: function (response) {
-            if (response.code == 200){
-                alert($("#paymentId").val() + " "+ response.message);
+            if (response.code == 200) {
+                alert($("#paymentId").val() + " " + response.message);
                 generatePaymentIds();
                 loadPayments();
 
@@ -282,9 +316,10 @@ function calculateIncome() {
     });
 }
 
+
 function loadPayments() {
     $.ajax({
-        url: baseURLForPayment+"payment",
+        url: baseURLForPayment + "payment",
         method: "GET",
         success: function (response) {
 
