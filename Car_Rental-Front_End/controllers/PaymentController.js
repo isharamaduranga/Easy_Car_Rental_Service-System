@@ -110,6 +110,8 @@ function generatePaymentIds() {
     });
 }
 
+
+
 $("#calculateFullIncome").click(function () {
     $("#tblPayment tbody > tr").off("click");
 
@@ -127,12 +129,17 @@ $("#calculateFullIncome").click(function () {
 
                 calculateIncome();
 
+
             }
         }
     } else {
 
     }
 });
+
+function loadAllIncomeTable() {
+
+}
 
 function loadReservationsIds() {
     $("#rentalId").empty();
@@ -311,6 +318,11 @@ function updateDriver() {
 
 
 function calculateIncome() {
+    var rDetail= {
+        carId:$("#reserveCarId option:selected").text(),
+        driverId:$("#rentDriverId").val(),
+        reserveId:$("#rentalId option:selected").text()
+    }
     var paymentDetail = {
         paymentId: $("#paymentId").val(),
         paymentDate: $("#paymentDate").val(),
@@ -322,7 +334,8 @@ function calculateIncome() {
         travelledDistance: $("#travelledDistance").val(),
         extraKm: $("#extraKm").val(),
         extraKmPrice: $("#priceForTravelledExtraKm").val(),
-        fullPayment: $("#fullPayment").val()
+        fullPayment: $("#fullPayment").val(),
+        reserveDetails:rDetail
     }
 
     $.ajax({
@@ -352,16 +365,27 @@ function loadPayments() {
         success: function (response) {
 
             $("#tblPayment tbody").empty();
+            $("#tblIncome tbody").empty();
             for (var responseKey of response.data) {
-                let raw = `<tr><td> ${responseKey.paymentId} </td><td> ${responseKey.paymentDate} </td><td> ${responseKey.rentFee} </td><td> ${responseKey.driverFee} </td>
+                let raw1 = `<tr><td> ${responseKey.paymentId} </td><td> ${responseKey.paymentDate} </td><td> ${responseKey.rentFee} </td><td> ${responseKey.driverFee} </td>
                                <td> ${responseKey.loseDamagePayment} </td><td> ${responseKey.reduceLoseDamagePayment} </td><td>
                                 <span class="badge rounded-pill text-bg-warning">${responseKey.harmOrNot}</span></td> 
                                 <td>${responseKey.travelledDistance} </td><td> ${responseKey.extraKm} </td><td>${responseKey.extraKmPrice}</td><td>${responseKey.fullPayment}</td>
                                 <td><button type="button" class="btn btn-warning btn-sm px-3" data-ripple-color="dark">
                                     <i class="fas fa-pen-alt"></i>
                                 </button></td></tr>`;
-                $("#tblPayment tbody").append(raw);
+
+
+                let raw2 = `<tr><td> ${responseKey.reserveDetails.reserveId} </td><td> ${responseKey.paymentDate} </td><td> ${responseKey.rentFee} </td><td> ${responseKey.driverFee} </td>
+                               <td>${responseKey.extraKmPrice}</td><td> ${responseKey.loseDamagePayment}</td> <td>${responseKey.fullPayment}</td> </tr>`;
+
+
+                $("#tblPayment tbody").append(raw1);
+                $("#tblIncome tbody").append(raw2);
             }
+
+
+
             generatePaymentIds();
         },
         error: function (ob) {
