@@ -61,6 +61,12 @@ public class CarController {
         return new ResponseUtil(200, "Ok", carService.searchRegNumberIsExists(reg));
     }
 
+    @GetMapping(path = "/AVAILABLE/{available}/{carId}",produces = MediaType.APPLICATION_JSON_VALUE)
+    public ResponseUtil carAvailableOrNot(@PathVariable("available") String available, @PathVariable("carId") String carId) {
+        carService.carAvailableOrNot(available,carId);
+        return new ResponseUtil(200, "Ok", null);
+    }
+
 
 
             /** +++++++++++++  for sort and filter mappings ++++++++++++++ */

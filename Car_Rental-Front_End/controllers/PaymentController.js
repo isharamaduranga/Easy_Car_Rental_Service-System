@@ -47,33 +47,8 @@ $("#driverFee").keyup(function (event) {
     }
 });
 
-$("#loseDamageWaiverPayment").keyup(function (event) {
-    let damage = $("#loseDamageWaiverPayment").val();
-    if (regExPrice.test(damage)) {
-        $("#loseDamageWaiverPayment").css('border', '2px solid #31d2f2');
-        $("#errorDamagePayment").text("");
-        if (event.key == "Enter") {
-            $("#reducedLoseDamageWaiverPayment").focus();
-        }
-    } else {
-        $("#loseDamageWaiverPayment").css('border', '2px solid red');
-        $("#errorDamagePayment").text("Check this field whether correct !");
-    }
-});
 
-$("#reducedLoseDamageWaiverPayment").keyup(function (event) {
-    let damage = $("#reducedLoseDamageWaiverPayment").val();
-    if (regExPrice.test(damage)) {
-        $("#reducedLoseDamageWaiverPayment").css('border', '2px solid #31d2f2');
-        $("#errorReduceDamagePayment").text("");
-        if (event.key == "Enter") {
-            $("#travelledDistance").focus();
-        }
-    } else {
-        $("#reducedLoseDamageWaiverPayment").css('border', '2px solid red');
-        $("#errorReduceDamagePayment").text("Check this field whether correct !");
-    }
-});
+
 
 $("#travelledDistance").keyup(function (event) {
     let distance = $("#travelledDistance").val();
@@ -103,15 +78,8 @@ $("#extraKm").keyup(function (event) {
     }
 });
 
-$("#priceForTravelledExtraKm").keyup(function (event) {
-    let price = $("#priceForTravelledExtraKm").val();
-    if (regExPrice.test(price)) {
-        $("#priceForTravelledExtraKm").css('border', '2px solid #31d2f2');
-        $("#errorPriceExtraKM").text("");
-    } else {
-        $("#priceForTravelledExtraKm").css('border', '2px solid red');
-        $("#errorPriceExtraKM").text("Check this field whether correct !");
-    }
+$(document).ready(function() {
+    $("#vehicle_Return").prop("disabled", true);
 });
 
 function generatePaymentIds() {
@@ -200,9 +168,11 @@ $("#rentalId").change(function () {
                 if ($("#rentalId option:selected").text() == response.data.reserveDetails[i].reserveId) {
                     $("#reserveCarId").append($("<option></option>").attr("value", i + 1).text(response.data.reserveDetails[i].carId));
                     $("#loseDamageWaiverPayment").val(response.data.reserveDetails[i].loseDamageWaiverPayment);
+                    $("#rentDriverId").val(response.data.reserveDetails[i].driverId);
                 } else {
                     $("#reserveCarId").append($("<option></option>").attr("value", 0).text("Select ID"));
                     $("#loseDamageWaiverPayment").val("0");
+                    $("#rentDriverId").val("0");
                 }
             }
         },
@@ -258,8 +228,15 @@ $("#extraKm").on('keydown keyup', function (event) {
 
 });
 
+/** Editable false  fields*/
 
 $("#fullPayment").prop("readonly", true);
+$("#loseDamageWaiverPayment").prop("readonly", true);
+$("#pricePerExKm").prop("readonly", true);
+$("#priceForTravelledExtraKm").prop("readonly", true);
+$("#reducedLoseDamageWaiverPayment").prop("readonly", true);
+
+
     $("#cal_full_Tot").click(function () {
 
         calculateTotalPrice();
@@ -279,6 +256,57 @@ function calculateTotalPrice() {
     let totPrice = rentPrice + drivePrice + reduceLosDamage + totalOfExKmPrice - loseDamagePayment;
 
     $("#fullPayment").val(totPrice.toString());
+
+    if ($("#fullPayment").val().length > 0){
+        $("#vehicle_Return").prop("disabled", false);
+    }
+}
+
+var tempuser;
+var UpdateDriver;
+let releaseStatus = "Release";
+
+$("#vehicle_Return").click(function () {
+    let dId = $("#rentDriverId").val();
+    $.ajax({
+        url: baseURLDriverControl + "driver/" + dId,
+        method: "GET",
+        success: function (response) {
+            var driverDetail = {
+                driverId: response.data.driverId,
+                users: response.data.users,
+                driverName: response.data.driverName,
+                driverAddress: response.data.driverAddress,
+                driverAge: response.data.driverAge,
+                driverContact: response.data.driverContact,
+                releaseOrNot: releaseStatus,
+            };
+            UpdateDriver = driverDetail;
+            updateDriver(); // call updateDriver function here
+        },
+        error: function (ob) {
+            alert(ob.responseJSON.message);
+        },
+    });
+});
+
+
+function updateDriver() {
+
+    $.ajax({
+        url: baseURLDriverControl+"driver",
+        method: "PUT",
+        contentType: "application/json",
+        data: JSON.stringify(UpdateDriver),
+        success: function (response) {
+            if (response.code == 200) {
+                alert($("#driverId").val() + " " + response.message);
+            }
+        },
+        error: function (ob) {
+            alert(ob.responseJSON.message);
+        }
+    });
 }
 
 
@@ -294,7 +322,7 @@ function calculateIncome() {
         travelledDistance: $("#travelledDistance").val(),
         extraKm: $("#extraKm").val(),
         extraKmPrice: $("#priceForTravelledExtraKm").val(),
-        fullPayment: $("#calculateFullIncome").val()
+        fullPayment: $("#fullPayment").val()
     }
 
     $.ajax({

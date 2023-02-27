@@ -1981,6 +1981,10 @@ function reserve(customer,bookingDenyOrAccept) {
         AllDetails.push(reserveItems);
     }
 
+
+
+
+
     var reserveDetail = {
         reserveId: $("#reserveId").val(),
         customer: customer,
@@ -2013,7 +2017,10 @@ function reserve(customer,bookingDenyOrAccept) {
             alert(ob.responseJSON.message);
         }
     });
+
 }
+
+
 
 function loadDriverSchedule() {
     console.log("schedule");

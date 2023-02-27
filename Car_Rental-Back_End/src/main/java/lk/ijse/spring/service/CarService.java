@@ -20,6 +20,8 @@ public interface CarService {
 
     String searchRegNumberIsExists(String reg);
 
+    void carAvailableOrNot(String available, String id);
+
      /** for sort and filter*/
     List<CarDTO> sortAccordingToPassengersByAscending();
 

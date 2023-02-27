@@ -17,6 +17,8 @@ public interface CarRepo extends JpaRepository<Car,String> {
     String searchRegNumberIsExists(@Param("reg") String reg);
 
 
+    @Query(value = "UPDATE Car SET availableOrNot=:available WHERE carId=:carId", nativeQuery = true)
+    void carAvailableOrNot(@Param("available") String available, @Param("carId") String carId);
 
     /** ++++++++++++++++ All Native Queries of Sorting & filter by car properties ++++++++++++++++ */
 
