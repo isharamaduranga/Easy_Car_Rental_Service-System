@@ -97,18 +97,19 @@ function generateScheduleIds() {
         method: "GET",
         success: function (response) {
             var scheduleId = response.data;
-            var tempId = parseInt(scheduleId.split("-")[1]);
-            tempId = tempId + 1;
-            if (tempId <= 9) {
-                $("#scheduleId").val("S00-000" + tempId);
-            } else if (tempId <= 99) {
-                $("#scheduleId").val("S00-00" + tempId);
-            } else if (tempId <= 999) {
-                $("#scheduleId").val("S00-0" + tempId);
-            } else {
-                $("#scheduleId").val("S00-" + tempId);
+            if(scheduleId){
+                var tempId = parseInt(scheduleId.split("-")[1]);
+                tempId = tempId + 1;
+                if (tempId <= 9) {
+                    $("#scheduleId").val("S00-000" + tempId);
+                } else if (tempId <= 99) {
+                    $("#scheduleId").val("S00-00" + tempId);
+                } else if (tempId <= 999) {
+                    $("#scheduleId").val("S00-0" + tempId);
+                } else {
+                    $("#scheduleId").val("S00-" + tempId);
+                }
             }
-
         },
         error: function (ob, statusText, error) {
         }
@@ -1915,6 +1916,8 @@ var bookingDenyOrAccept;
 
 $("#btnBook").click(function () {
 
+
+
     if ($("#PName").val() == "" || $("#PContact").val() == "" || $("#PNIC").val() == "") {
         alert("Some personal details are not completed. So your booking is deny!..");
         bookingDenyOrAccept = "Deny";
@@ -2044,10 +2047,7 @@ function loadDriverSchedule() {
             driverContact: $("#tblSelectedCars tbody tr").children(':nth-child(9)')[i].innerText,
             loseDamageWaiverPayment: $("#tblSelectedCars tbody tr").children(':nth-child(10)')[i].innerText
         }
-
         console.log(reserveItems);
-
-        generateScheduleIds();
 
         var schedule={
             scheduleId:$("#scheduleId").val(),

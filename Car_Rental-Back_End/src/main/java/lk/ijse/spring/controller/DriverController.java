@@ -21,7 +21,7 @@ import org.springframework.web.bind.annotation.*;
 public class DriverController {
 
     @Autowired
-    private DriverService driverService;
+     DriverService driverService;
 
     @PostMapping(produces = MediaType.APPLICATION_JSON_VALUE)
     public ResponseUtil saveDriver(@RequestBody DriverDTO driverDTO){
@@ -49,6 +49,7 @@ public class DriverController {
         driverService.updateDriver(driverDTO);
         return new ResponseUtil(200, "Successfully Updated.",null);
     }
+
     @GetMapping(path = "/USER/{id}",produces = MediaType.APPLICATION_JSON_VALUE)
     public ResponseUtil searchUserFromDriver(@PathVariable("id") String id){
         return new ResponseUtil(200, "Ok.",driverService.searchUserFromDriver(id));

@@ -270,9 +270,7 @@ $("#btnEditPreDriver").click(function () {
                 updateDriver();
             }
         }
-    }else {
-
-    }
+    }else {}
 
 });
 
