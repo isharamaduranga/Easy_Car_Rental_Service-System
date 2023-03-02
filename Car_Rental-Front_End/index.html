@@ -3286,10 +3286,10 @@
     <!--background:url(assets/images/car_bg_home/car_reg2.jpg)-->
     <div class="container center-block ">
 
-        <div class="row w-100 h-25 text-center mt-2">
+        <div class="row w-100  text-center mt-1">
             <figure class="text-center  text-black">
                 <blockquote class="blockquote" style="border: 1px solid transparent">
-                    <p class="display-4" style="font-family:'poppins', sans-serif;">~ Booking Form ~</p>
+                    <p class="display-5" style="font-family:'poppins', sans-serif;">~ Booking Form ~</p>
                 </blockquote>
             </figure>
         </div>
@@ -3301,7 +3301,7 @@
 
             <div class="col-5">
                 <div class="row">
-                    <div class="col ms-5 me-5 h-25" style="background-color: #7f00ff; border-radius:25px">
+                    <div class="col ms-5 me-5 h-25" style="background-color: #1194e7; border-radius:25px">
                         <h3 class="text-center text-white bg">Personal Details</h3>
                     </div>
                 </div>
@@ -3309,31 +3309,36 @@
                 <div class="row mb-5">
                     <div class="col ms-5 me-5 h-25 mt-1" style="background-color: #f3dc3933;border-radius:25px">
                         <div class="row">
-                            <div class="col ms-3 me-3 mb-5 mt-2">
+                            <div class="col ms-3 me-3 mb-3 mt-2">
                                 <label class="form-label text-black" for="pickUpTimeEdit">Name</label>
                                 <div>
                                     <input class="form-control" fdprocessedid="12r0104" id="PName" type="text">
                                 </div>
                             </div>
-                            <div class="col ms-3 me-3 mb-5 mt-2">
+                            <div class="col ms-3 me-3 mb-3 mt-2">
                                 <label class="form-label text-black" for="pickUpTimeEdit">Contact</label>
                                 <div>
                                     <input class="form-control" fdprocessedid="mvhoxm" id="PContact" type="text">
                                 </div>
                             </div>
-                            <div class="col ms-3 me-3 mb-5 mt-2">
+                            <div class="col ms-3 me-3 mb-3 mt-2">
                                 <label class="form-label text-black" for="pickUpTimeEdit">NIC</label>
                                 <div>
                                     <input class="form-control" fdprocessedid="mvti2r" id="PNIC" type="text">
                                 </div>
                             </div>
+                            <form class="row" style=" margin-left:10px;">
+                                <label class="form-label mt-1 text-black" for="uploadpaymentSlip" style="font-family: 'poppins', sans-serif;"><span>*</span>Upload Payment
+                                    Slip</label>
+                                <input class="form-control rounded-5 bg-info mb-2 w-75 ms-3 me-3" id="uploadpaymentSlip" type="file">
+                            </form>
                         </div>
                     </div>
                 </div>
 
                 <div class="row">
 
-                    <div class="col ms-5 me-5 h-25" style="background-color: #7f00ff; border-radius:25px">
+                    <div class="col ms-5 me-5 h-25" style="background-color: #1194e7; border-radius:25px">
                         <h3 class="text-center text-white bg">Booking Details</h3>
                     </div>
 
@@ -3404,14 +3409,15 @@
 
                 <div class="row ">
                     <div class="col ms-5 me-5">
-                        <button class="btn  center-block w-100  mt-5 mb-5 bg-dark text-white" fdprocessedid="esokr"
+                        <button class="btn  center-block w-100  mt-3 mb-3 bg-success text-white" fdprocessedid="esokr"
                                 id="btnBook"
                                 type="button">BOOK
                         </button>
                     </div>
                     <div class="col ms-5 me-5">
-                        <button class="btn  center-block w-100 mt-5 mb-5 bg-danger text-white" fdprocessedid="i8m3w7"
-                                id="btnBack" type="button">Back
+                        <button class="btn  center-block w-100 mt-3 mb-3 bg-danger text-white" fdprocessedid="i8m3w7"
+                                id="btnBack"
+                                type="button">BACK
                         </button>
                     </div>
                 </div>
@@ -3419,13 +3425,13 @@
 
             <div class="col-7">
                 <div class="row mb-5">
-                    <div class="col ms-3 me-3 h-25" style="background-color: #7f00ff;border-radius:25px">
+                    <div class="col ms-3 me-3 h-25" style="background-color: #1194e7;border-radius:25px">
                         <h3 class="text-center text-white bg">Selected Cars</h3>
                     </div>
                 </div>
 
                 <div class="row">
-                    <button class="btn btn-info btn-sm w-25 ms-5 mb-3" data-ripple-color="dark" fdprocessedid="g35mgp"
+                    <button class="btn btn-warning btn-sm w-25 ms-5 mb-3" data-ripple-color="dark" fdprocessedid="g35mgp"
                             id="newCar" type="button">
                         <i class="fas fa-plus"></i>
                         NEW
