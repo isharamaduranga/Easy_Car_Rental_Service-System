@@ -18,6 +18,12 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
+import java.time.DayOfWeek;
+import java.time.LocalDate;
+import java.time.LocalDateTime;
+import java.time.LocalTime;
+import java.util.ArrayList;
+import java.util.Date;
 import java.util.List;
 
 @Service
@@ -55,4 +61,32 @@ public class PaymentServiceImpl implements PaymentService {
     public double totalIncome() {
         return paymentRepo.totalIncome();
     }
+
+    @Override
+    public List<PaymentDTO> getPaymentsBetweenDates(String startDate, String endDate) {
+        List<Payment> allPaymentsBetweenDates = paymentRepo.findAllPaymentsBetweenDates(startDate, endDate);
+        return mapper.map(allPaymentsBetweenDates,new TypeToken<List<PaymentDTO>>(){}.getType());
+    }
+
+
+    @Override
+    public double dailyIncome() {
+        return paymentRepo.dailyIncome();
+    }
+
+    @Override
+    public double weeklyIncome() {
+        return paymentRepo.weeklyIncome();
+    }
+
+    @Override
+    public double monthlyIncome() {
+        return paymentRepo.monthlyIncome();
+    }
+
+    @Override
+    public double yearlyIncome() {
+        return paymentRepo.yearlyIncome();
+    }
+
 }

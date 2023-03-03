@@ -356,6 +356,93 @@ function calculateIncome() {
         }
     });
 }
+$("#btnDailyIncome").click(function () {
+    //Daily FullPayment
+    $.ajax({
+        url: baseURLForPayment+'payment/daily',
+        type: 'GET',
+        success: function(response) {
+            $("#daily").text(response.data);
+        }
+    });
+});
+
+$("#btnWeeklyIncome").click(function () {
+    //Weekly FullPayment
+    $.ajax({
+        url: baseURLForPayment+'payment/weekly',
+        type: 'GET',
+        success: function(response) {
+            $("#weekly").text(response.data);
+        }
+    });
+});
+
+$("#btnMonthlyIncome").click(function () {
+    //Monthly FullPayment
+    $.ajax({
+        url: baseURLForPayment+'payment/monthly',
+        type: 'GET',
+        success: function(response) {
+            $("#monthly").text(response.data);
+        }
+    });
+});
+
+$("#btnAnnuallyIncome").click(function () {
+    //Annually FullPayment
+    $.ajax({
+        url: baseURLForPayment+'payment/yearly',
+        type: 'GET',
+        success: function(response) {
+            $("#yearly").text(response.data);
+        }
+    });
+});
+
+
+
+
+
+$("#btnFindAllPaymentDetails").click(function () {
+    let startDay = $("#startDate").val();
+    let endDay = $("#endDate").val();
+    $.ajax({
+        url: baseURLForPayment+"payment/payments",
+        method: "GET",
+        data: {
+            startDate:startDay,
+            endDate: endDay
+        },
+        success: function(response) {
+            $("#tblIncome tbody").empty();
+
+            for (var responseKey of response.data) {
+
+                let rawDayBetween = `<tr><td> ${responseKey.reserveDetails.reserveId} </td><td> ${responseKey.paymentDate} </td><td> ${responseKey.rentFee} </td><td> ${responseKey.driverFee} </td>
+                               <td>${responseKey.extraKmPrice}</td><td> ${responseKey.loseDamagePayment}</td> <td>${responseKey.fullPayment}</td> </tr>`;
+
+                $("#tblIncome tbody").append(rawDayBetween);
+            }
+            loadFullIncome();
+
+        },
+        error: function(xhr, status, error) {
+            console.log("Error:", error);
+        }
+    });
+    loadFullIncome();
+});
+
+
+function loadFullIncome() {
+    var totalFullPayment = 0;
+    $("#tblIncome tbody tr").each(function() {
+        var fullPayment = parseFloat($(this).find("td:last").text());
+        totalFullPayment += fullPayment;
+    });
+    $("#RangeOfIncome").text(totalFullPayment);
+}
 
 
 function loadPayments() {
@@ -383,9 +470,7 @@ function loadPayments() {
                 $("#tblPayment tbody").append(raw1);
                 $("#tblIncome tbody").append(raw2);
             }
-
-
-
+            loadFullIncome();
             generatePaymentIds();
         },
         error: function (ob) {

@@ -20,6 +20,7 @@ $("#testimonials").css('display', 'block');
 $("#Contact_Page").css('display', 'block');
 $("#social_media").css('display', 'block');
 $("#footer").css('display', 'block');
+$("#income_dashboard").css('display', 'none');
 
 $('#PaymentAddPage').css('transform', 'scale(0)');
 $('#CarManagePage').css('transform', 'scale(0)');

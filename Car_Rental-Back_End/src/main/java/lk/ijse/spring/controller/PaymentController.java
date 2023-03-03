@@ -15,6 +15,10 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.MediaType;
 import org.springframework.web.bind.annotation.*;
 
+import java.time.DayOfWeek;
+import java.time.LocalDate;
+import java.time.temporal.TemporalAdjusters;
+
 @RestController
 @RequestMapping("payment")
 @CrossOrigin
@@ -41,5 +45,34 @@ public class PaymentController {
     public ResponseUtil totalIncome(@PathVariable("income") String income) {
         return new ResponseUtil(200, "Ok", paymentService.totalIncome());
     }
+
+    @GetMapping("/payments")
+    public ResponseUtil calculateIncomeDetails(@RequestParam("startDate") String startDate,
+                                               @RequestParam("endDate") String endDate) {
+        return new ResponseUtil(200, "Ok", paymentService.getPaymentsBetweenDates(startDate, endDate));
+    }
+
+    @GetMapping(path = "/daily")
+    public ResponseUtil dailyIncome() {
+        return new ResponseUtil(200, "Ok", paymentService.dailyIncome());
+    }
+
+    @GetMapping(path = "/weekly")
+    public ResponseUtil weeklyIncome() {
+        return new ResponseUtil(200, "Ok", paymentService.weeklyIncome());
+    }
+
+    @GetMapping(path = "/monthly")
+    public ResponseUtil monthlyIncome() {
+        return new ResponseUtil(200, "Ok", paymentService.monthlyIncome());
+    }
+
+    @GetMapping(path = "/yearly")
+    public ResponseUtil yearlyIncome() {
+        return new ResponseUtil(200, "Ok", paymentService.yearlyIncome());
+    }
+
+
+
 
 }

@@ -2797,39 +2797,58 @@
             <!--   admin income dashboard-->
             <div id="income_dashboard" style="height: 100%;">
                 <!--Income Page-->
-                <section id="IncomePage" style="width: 100%; height: 90vh ;background-color: white">
+                <section id="IncomePage" style="width: 100%; height: 90vh ;background-color: #ffffff">
 
                     <div>
 
-                        <div class="text-center" style="position: relative;top: 52px">
-                            <h1 class="mt-1 fw-light" style="font-family: 'PT Serif', serif;">Income Report</h1>
+                        <div class="text-center" style="position: relative;top: 10px">
+                            <h1 class="mt-1 fw-light" style="font-family: 'PT Serif', serif;">~ Income Report ~</h1>
                         </div>
 
                     </div>
 
                     <div class="container-fluid"
-                         style="position: relative;top: 80px;left: 260px;width: 87vw;height: 50px">
-                        <div class="row center-block" style="width: 61%;">
+                         style="position: relative;top: 40px;left: 260px;width: 87vw;height: 50px">
+
+                        <div class="row text-success ms-2" style="padding: 10px;width: 40vw;right: -30px;position: relative;font-size: 22px; margin: 5px;">
+                            <span class="col-3 badge rounded-pill text-bg-light text-primary " id="daily"  style="border: 2px solid dodgerblue;">0.00</span>
+                            <span class="col-3 badge rounded-pill text-bg-light text-success " id="weekly" style="border: 2px solid green;">0.00</span>
+                            <span class="col-3 badge rounded-pill text-bg-light text-danger " id="monthly" style="border: 2px solid red;">0.00</span>
+                            <span class="col-3 badge rounded-pill text-bg-light text-warning " id="yearly" style="border: 2px solid goldenrod;">0.00</span>
+                        </div>
+
+                        <div class="ms-5">
+                            <button type="button" class="btn btn btn-primary" id="btnDailyIncome">Daily Income</button>
+                            <button type="button" class="btn btn-success" id="btnWeeklyIncome">Weekly Income</button>
+                            <button type="button" class="btn btn-danger" id="btnMonthlyIncome">Monthly Income</button>
+                            <button type="button" class="btn btn-warning" id="btnAnnuallyIncome">Annually Income</button>
+                        </div>
+
+                        <div class="row center-block mt-4  mb-2" style="width: 61%;">
                             <div class="col mb-0 img-responsive">
-                                <div aria-label="Basic example" class="btn-group btn-group-xm center-block center-block"
+                                <div aria-label="Basic example" class="btn-group btn-group-xm center-block center-block"style="left:205px; font-size: 35px"
                                      role="group">
-                                    <button class="btn btn-primary btn-lg" type="button">Daily Income</button>
-                                    <button class="btn btn-success btn-lg" type="button">Weekly Income</button>
-                                    <button class="btn btn-danger btn-lg" type="button">Monthly Income</button>
-                                    <button class="btn btn-warning btn-lg" type="button">Annually Income</button>
+                                   <label class="text-primary text-center">Total Income : <span  id="RangeOfIncome">0.00</span></label>
+
                                 </div>
                             </div>
                         </div>
-                        <div class="row" style="position: relative; right: 100px;">
-                            <div class="col-6 mt-2 bg-white img-responsive mb-0 ">
+
+
+                        <div class="row" style="position: relative; width: 73vw; right: 200px;border-radius: 20px; border: 2px solid deeppink;padding: 10px; margin: 10px">
+
+
+
+                            <div class="col-4 mt-2  img-responsive mb-0 ">
                                 <label class="text-black" for="startDate" style="font-size: 15px">Start Date</label>
                                 <div class="input-group date" style="width: 220px">
                                     <input class="form-control" id="startDate" placeholder="Start Date" type="date">
                                     <span class="input-group-addon"><i class="glyphicon glyphicon-calendar"></i></span>
                                 </div>
-
                             </div>
-                            <div class="col-6 mt-2 img-responsive mb-0 ">
+
+
+                            <div class="col-4 mt-2 img-responsive mb-0 ">
                                 <label class="text-black" for="endDate" style="font-size: 15px">End Date</label>
                                 <div class="input-group date" style="width: 220px">
                                     <input class="form-control" id="endDate" placeholder="End Date" type="date">
@@ -2837,15 +2856,21 @@
                                 </div>
 
                             </div>
+
+                            <div class="col-4 mt-3 mb-0">
+                                <button class="btn btn-info btn-lg" id="btnFindAllPaymentDetails" type="button" style="">Find Payments</button>
+                            </div>
                         </div>
+
+
                     </div>
 
-                    <div class="table-responsive text-nowrap"
-                         style="width: 82vw; height: 55vh;position: relative; top: 140px;right: 0;bottom: 0;left: 0;margin: auto">
 
-                        <table class="table align-middle mb-0 bg-white table table-hover table-bordered"
-                               style="position: relative;left: 10px;top: 44px;" id="tblIncome">
-                            <thead class="bg-light">
+
+                    <div class="table-responsive text-nowrap" style="width: 82vw;height: 41vh;position: relative;top: 255px;right: 0;bottom: 0;left: 0;margin: auto">
+
+                        <table class="table align-middle mb-0  table table-hover table-striped table-bordered" style="position: relative;left: 10px;top: 44px;" id="tblIncome">
+                            <thead class="bg-secondary text-white">
                             <tr>
                                 <th>Reserve Id</th>
                                 <th>Reserve Date</th>
@@ -2856,7 +2881,7 @@
                                 <th>Full Payment</th>
                             </tr>
                             </thead>
-                            <tbody>
+                            <tbody class="table-light">
 
                             </tbody>
                         </table>
