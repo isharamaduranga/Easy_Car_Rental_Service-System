@@ -304,7 +304,9 @@ function loadAllCarsToDisplay() {
                         <figure class="card-banner">
                      
                             <img alt="Toyota RAV4 2021" class="w-100" height="300" loading="lazy"
-                                 src="../assets/images/car_bg_home/${responseKey.fontViewImage}"
+                           
+                               src="http://localhost:8080/Car_Rental_Back_End_war/uploads/${responseKey.fontViewImage}"
+                                                  
                                  width="440">
                         </figure>
 
@@ -415,7 +417,10 @@ function loadSelectedCars(carId) {
                                     </td>
                                     <td>
                                         <div class="d-flex align-items-center">
-                                            <img  src="../assets/images/car_bg_home/${response.data.fontViewImage}" alt="" style="width: 50px; height: 50px" class=""/>
+                                        
+                                            <img  src="http://localhost:8080/Car_Rental_Back_End_war/uploads/${response.fontViewImage}"
+                                             alt="" 
+                                             style="width: 50px; height: 50px" class=""/>
                                         </div>
                                         <h6  id="id" class="id text-white">${response.data.carId}</h6>
                                     </td>
@@ -559,7 +564,7 @@ function findPassengersAsc(passengerAscending) {
                     <div class="featured-car-card">
                         <figure class="card-banner">
                             <img alt="Toyota RAV4 2021" class="w-100" height="300" loading="lazy"
-                                  src="../assets/images/car_bg_home/${key.fontViewImage}"
+                                  <img   src="http://localhost:8080/Car_Rental_Back_End_war/uploads/${key.fontViewImage}"
                                  width="440">
                         </figure>
 
@@ -684,7 +689,7 @@ function findPassengersDsc(passengerDscending) {
                     <div class="featured-car-card">
                         <figure class="card-banner">
                             <img alt="Toyota RAV4 2021" class="w-100" height="300" loading="lazy"
-                                  src="../assets/images/car_bg_home/${key.fontViewImage}"
+                                 src="http://localhost:8080/Car_Rental_Back_End_war/uploads/${key.fontViewImage}"
                                  width="440">
                         </figure>
 
@@ -809,7 +814,7 @@ function findDailyRateAsc(dailyRateAsc) {
                     <div class="featured-car-card">
                         <figure class="card-banner">
                             <img alt="Toyota RAV4 2021" class="w-100" height="300" loading="lazy"
-                                 src="../assets/images/car_bg_home/${key.fontViewImage}"
+                                 src="http://localhost:8080/Car_Rental_Back_End_war/uploads/${key.fontViewImage}"
                                  width="440">
                         </figure>
 
@@ -933,7 +938,7 @@ function findDailyRateDsc(dailyRateDsc) {
                     <div class="featured-car-card">
                         <figure class="card-banner">
                             <img alt="Toyota RAV4 2021" class="w-100" height="300" loading="lazy"
-                                 src="../assets/images/car_bg_home/${key.fontViewImage}"
+                                 src="http://localhost:8080/Car_Rental_Back_End_war/uploads/${key.fontViewImage}"
                                  width="440">
                         </figure>
 
@@ -1057,7 +1062,7 @@ function findMonthlyRateAsc(monthlyRateAsc) {
                     <div class="featured-car-card">
                         <figure class="card-banner">
                             <img alt="Toyota RAV4 2021" class="w-100" height="300" loading="lazy"
-                                  src="../assets/images/car_bg_home/${key.fontViewImage}"
+                                  src="http://localhost:8080/Car_Rental_Back_End_war/uploads/${key.fontViewImage}"
                                  width="440">
                         </figure>
 
@@ -1182,7 +1187,7 @@ function findMonthlyRateDsc(monthlyRateDsc) {
                     <div class="featured-car-card">
                         <figure class="card-banner">
                             <img alt="Toyota RAV4 2021" class="w-100" height="300" loading="lazy"
-                                  src="../assets/images/car_bg_home/${key.fontViewImage}"
+                                 src="http://localhost:8080/Car_Rental_Back_End_war/uploads/${key.fontViewImage}"
                                  width="440">
                         </figure>
 
@@ -1331,7 +1336,7 @@ function findTransmissionType(type) {
                     <div class="featured-car-card">
                         <figure class="card-banner">
                             <img alt="Toyota RAV4 2021" class="w-100" height="300" loading="lazy"
-                                 src="../assets/images/car_bg_home/${key.fontViewImage}"
+                                src="http://localhost:8080/Car_Rental_Back_End_war/uploads/${key.fontViewImage}"
                                  width="440">
                         </figure>
 
@@ -1452,7 +1457,7 @@ function findType(carType) {
                     <div class="featured-car-card">
                         <figure class="card-banner">
                             <img alt="Toyota RAV4 2021" class="w-100" height="300" loading="lazy"
-                                 src="../assets/images/car_bg_home/${key.fontViewImage}"
+                                src="http://localhost:8080/Car_Rental_Back_End_war/uploads/${key.fontViewImage}"
                                  width="440">
                         </figure>
 
@@ -1573,7 +1578,7 @@ function findBrand(brand) {
                     <div class="featured-car-card">
                         <figure class="card-banner">
                             <img alt="Toyota RAV4 2021" class="w-100" height="300" loading="lazy"
-                                  src="../assets/images/car_bg_home/${key.fontViewImage}"
+                                  src="http://localhost:8080/Car_Rental_Back_End_war/uploads/${key.fontViewImage}"
                                  width="440">
                         </figure>
 
@@ -1694,7 +1699,7 @@ function findFuelType(fuelType) {
                     <div class="featured-car-card">
                         <figure class="card-banner">
                             <img alt="Toyota RAV4 2021" class="w-100" height="300" loading="lazy"
-                                 src="../assets/images/car_bg_home/${key.fontViewImage}"
+                                 src="http://localhost:8080/Car_Rental_Back_End_war/uploads/${key.fontViewImage}"
                                  width="440">
                         </figure>
 
@@ -1815,7 +1820,7 @@ function findColour(colour) {
                     <div class="featured-car-card">
                         <figure class="card-banner">
                             <img alt="Toyota RAV4 2021" class="w-100" height="300" loading="lazy"
-                                 src="../assets/images/car_bg_home/${key.fontViewImage}"
+                                 src="http://localhost:8080/Car_Rental_Back_End_war/uploads/${key.fontViewImage}"
                                  width="440">
                         </figure>
 

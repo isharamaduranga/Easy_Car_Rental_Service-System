@@ -137,9 +137,7 @@ $("#calculateFullIncome").click(function () {
     }
 });
 
-function loadAllIncomeTable() {
 
-}
 
 function loadReservationsIds() {
     $("#rentalId").empty();

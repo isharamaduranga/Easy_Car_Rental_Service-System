@@ -147,6 +147,7 @@ function generateVehicleIds() {
 
 
 
+
 $("#btnAddNewCar").click(function () {
     $("#tblCars tbody > tr").off("click");
 
@@ -168,6 +169,7 @@ $("#btnAddNewCar").click(function () {
                     alert("No Images Inserted !");
                 }else {
                     isExistsRegistrationNumber();
+                    uploadCarImages();
                 }
             }
         }
@@ -213,6 +215,26 @@ function clearFieldsFromCarPage() {
     $("#totalDistanceTravelled").css('border', '1px solid #e9ecef');
 }
 
+function uploadCarImages() {
+    var data = new FormData();
+    let file = $("#uploadFrontView")[0].files[0];
+    let fileName = $("#uploadFrontView")[0].files[0].name;
+    data.append("myFile", file, fileName);
+
+    $.ajax({
+        url: baseURLCarControle + "api/v1/upload",
+        method: 'post',
+        async: true,
+        contentType: false,
+        processData: false,
+        data: data,
+        success: function (resp) {
+        },
+        error: function (err) {
+            console.log(err);
+        }
+    });
+}
 function saveNewCar(){
     var newCarData = {
         carId: $("#carId").val(),
@@ -285,16 +307,16 @@ function loadAllCars(){
                             <span class="badge rounded-pill text-bg-warning text-secondary">${responseKey.underMaintainOrNot}</span> </td><td> 
                             ${responseKey.totalDistanceTraveled} </td><td>
                             <div class="d-flex align-items-center">
-                                <img src="../assets/images/car_bg_home/${responseKey.fontViewImage}" alt="" style="width: 45px; height: 45px" class="rounded-circle"/>
+                                <img src="http://localhost:8080/Car_Rental_Back_End_war/uploads/${responseKey.fontViewImage}" alt="" style="width: 45px; height: 45px" class="rounded-circle"/>
                              </div></td><td>
                              <div class="d-flex align-items-center">
-                                <img src="../assets/images/car_bg_home/${responseKey.backViewImage}" alt="" style="width: 45px; height: 45px" class="rounded-circle"/>
+                                <img src="http://localhost:8080/Car_Rental_Back_End_war/uploads/${responseKey.backViewImage}" alt="" style="width: 45px; height: 45px" class="rounded-circle"/>
                              </div></td><td>
                              <div class="d-flex align-items-center">
-                                <img src="../assets/images/car_bg_home/${responseKey.sideViewImage}" alt="" style="width: 45px; height: 45px" class="rounded-circle"/>
+                                <img src="http://localhost:8080/Car_Rental_Back_End_war/uploads/${responseKey.sideViewImage}" alt="" style="width: 45px; height: 45px" class="rounded-circle"/>
                              </div></td><td>
                              <div class="d-flex align-items-center">
-                                <img src="../assets/images/car_bg_home/${responseKey.interiorViewImage}" alt="" style="width: 45px; height: 45px" class="rounded-circle"/>
+                                <img src="http://localhost:8080/Car_Rental_Back_End_war/uploads/${responseKey.interiorViewImage}" alt="" style="width: 45px; height: 45px" class="rounded-circle"/>
                              </div></td> 
                              <td><button type="button" id="btnEditCar"  class="btn btn-warning btn-sm px-3" data-ripple-color="dark">
                                 <i class="fas fa-pen-alt"></i>
@@ -426,6 +448,7 @@ $("#btnUpdateCar").click(function () {
                     alert("No Images Inserted !");
                 }else {
                     updateCar();
+                    uploadCarImages();
                 }
             }
         }
