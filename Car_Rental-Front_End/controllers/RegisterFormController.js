@@ -313,10 +313,10 @@ function loadAllCustomer() {
                                 <img src="https://images.pexels.com/photos/2646119/pexels-photo-2646119.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1" alt="" style="width: 45px; height: 45px" class="rounded-circle"/>
                                 </div>  
                                 </td><td> ${responseKey.customerName} </td><td> ${responseKey.customerAddress} </td><td> ${responseKey.customerContact} </td><td> ${responseKey.customerNicNo} </td><td> ${responseKey.customerDrivingLicenseNo} </td><td><div class="d-flex align-items-center">
-                                <img src="http://localhost:8080/Car_Rental_Back_End_war/uploads/${responseKey.NICImage}" alt="" style="width: 45px; height: 45px" class="rounded-circle"/>
+                                <img src="https://www.service.nsw.gov.au/sites/default/files/2019-05/Evidence%20of%20Immigration%20Status%20%28EIS%29%20ImmiCard.jpg" alt="" style="width: 45px; height: 45px" class="rounded-circle"/>
                                 </div>   
                                 </td><td> <div class="d-flex align-items-center">
-                                <img src="http://localhost:8080/Car_Rental_Back_End_war/uploads/${responseKey.DrivingLicenseImage}" alt="" style="width: 45px; height: 45px" class="rounded-circle"/>
+                                <img src="https://www.americanpress.com/wp-content/uploads/sites/65/2021/12/Autism-license.jpg" alt="" style="width: 45px; height: 45px" class="rounded-circle"/>
                                 </div>   
                                 </td></tr>`;
                 $("#tblCustomers tbody").append(raw);

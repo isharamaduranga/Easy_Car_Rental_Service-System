@@ -889,6 +889,7 @@ $("#btnAddPayment").click(function () {
 
 
 $("#btnCancelAddPayment").click(function () {
+    loadAllAdminPanelData();
 
     $("#payment_dashboard").css('display', 'block');
     $("#driver_dashboard").css('display', 'npne');

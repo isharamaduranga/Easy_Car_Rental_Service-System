@@ -217,13 +217,13 @@ function TotalIncome() {
         method: "GET",
         success: function (response) {
             if (response.data == ""){
-                $("#totalIncome").text("Rs."+0);
+                $("#totalIncome").text("Rs."+0.00);
             }else {
                 $("#totalIncome").text("Rs. "+response.data);
             }
         },
         error: function (ob) {
-            alert(ob.responseJSON.message);
+           /* alert(ob.responseJSON.message);*/
         }
     });
 }

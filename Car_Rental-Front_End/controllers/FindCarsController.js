@@ -418,7 +418,7 @@ function loadSelectedCars(carId) {
                                     <td>
                                         <div class="d-flex align-items-center">
                                         
-                                            <img  src="http://localhost:8080/Car_Rental_Back_End_war/uploads/${response.fontViewImage}"
+                                            <img  src="http://localhost:8080/Car_Rental_Back_End_war/uploads/${response.data.fontViewImage}"
                                              alt="" 
                                              style="width: 50px; height: 50px" class=""/>
                                         </div>
@@ -1992,9 +1992,6 @@ function reserve(customer,bookingDenyOrAccept) {
         }
         AllDetails.push(reserveItems);
     }
-
-
-
 
 
     var reserveDetail = {
