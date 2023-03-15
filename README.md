@@ -60,22 +60,22 @@ This System to develop the software solution for easy car rentals private limite
 
 ## Technology used
 ✅Technology of Back-End
-🌱Spring Web MVC
-🌱Java
-🌱Maven
-🌱Spring Data JPA
-🌱Hibernate
-🌱MySQL
-🌱Tomcat Server
+* 📌 Spring Web MVC
+* 📌 Java
+* 📌 Maven
+* 📌 Spring Data JPA
+* 📌 Hibernate
+* 📌 MySQL
+* 📌 Tomcat Server
 
 ✅Technology of Front-End
-🌱Html
-🌱CSS
-🌱Bootstrap V5.3
-🌱Sass
-🌱JavaScript
-🌱jQuery
-🌱Ajax
+* 📌 Html
+* 📌 CSS
+* 📌 Bootstrap V5.3
+* 📌 Scss
+* 📌 JavaScript
+* 📌 jQuery
+* 📌 Ajax
 
 ## License
 **Copyright @ 2023 Car Rental System All Right Reserved By Ishara Maduranga**
