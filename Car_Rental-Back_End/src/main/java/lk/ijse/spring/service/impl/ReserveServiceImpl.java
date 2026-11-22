@@ -10,10 +10,11 @@ package lk.ijse.spring.service.impl;
 
 import lk.ijse.spring.dto.ReserveDTO;
 import lk.ijse.spring.entity.Car;
+import lk.ijse.spring.entity.Customer;
 import lk.ijse.spring.entity.Driver;
 import lk.ijse.spring.entity.Reserve;
 import lk.ijse.spring.entity.ReserveDetails;
-import lk.ijse.spring.repo.CarRepo;
+import lk.ijse.spring.entity.Schedule;
 import lk.ijse.spring.repo.DriverRepo;
 import lk.ijse.spring.repo.ReserveRepo;
 import lk.ijse.spring.service.ReserveService;
@@ -23,6 +24,8 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
+import javax.persistence.EntityManager;
+import javax.persistence.PersistenceContext;
 import java.util.List;
 
 @Service
@@ -35,8 +38,8 @@ public class ReserveServiceImpl implements ReserveService {
     @Autowired
     private ModelMapper modelMapper;
 
-    @Autowired
-    private CarRepo carRepo;
+    @PersistenceContext
+    private EntityManager entityManager;
 
     @Autowired
     private DriverRepo driverRepo;
@@ -49,37 +52,37 @@ public class ReserveServiceImpl implements ReserveService {
 
     @Override
     public void saveReservationCars(ReserveDTO dto) {
+        if (dto.getReserveDetails() == null || dto.getReserveDetails().isEmpty()) {
+            throw new IllegalArgumentException("Please select at least one car.");
+        }
+        if (reserveRepo.existsById(dto.getReserveId())) {
+            throw new IllegalArgumentException(dto.getReserveId() + " Reservation Already Exists.");
+        }
+
         Reserve reserve = modelMapper.map(dto, Reserve.class);
-
-        if (!reserveRepo.existsById(dto.getReserveId())) {
-            if (dto.getReserveDetails().size() < 1) {
-                throw new RuntimeException("No Such Cars In Reservation..!");
-            }else{
-                reserveRepo.save(reserve);
-
-                for (ReserveDetails details : reserve.getReserveDetails()) {
-
-                 /** find reserve car and Change available status using carRepo*/
-                    Car foundCar = carRepo.findById(details.getCarId()).get();
-                    carRepo.save(foundCar);
-
-                 /** find reserve Driver and Change his Release or Not status using driverRepo*/
-
-                    if (driverRepo.existsById(details.getDriverId())) {
-                        Driver driver = driverRepo.findById(details.getDriverId()).get();
-                        /** for customer choose a driver, change driver status */
-                        driver.setReleaseOrNot("Not Release");
-                        driverRepo.save(driver);
-
-                    }else if (details.getDriverId().equals("none")){
-
-                        /** for not choose a driver situation */
-                        reserveRepo.updateDriverId("none",reserve.getReserveId(),details.getCarId());
-                    }
-                }
+        reserve.setCustomer(entityManager.getReference(Customer.class, dto.getCustomer().getCustomerId()));
+        for (ReserveDetails details : reserve.getReserveDetails()) {
+            details.setReserveId(reserve.getReserveId());
+            details.setReserve(reserve);
+            details.setCar(entityManager.getReference(Car.class, details.getCarId()));
+            if ("none".equals(details.getDriverId())) {
+                details.setDriver(null);
+            } else {
+                Driver driver = driverRepo.findById(details.getDriverId())
+                        .orElseThrow(() -> new IllegalArgumentException("Unknown driver " + details.getDriverId()));
+                details.setDriver(driver);
+                driver.setReleaseOrNot("Not Release");
             }
-        }else{
-            throw new RuntimeException(dto.getReserveId()+" Reservation Already Exist !!!");
+        }
+        entityManager.persist(reserve);
+
+        int item = 0;
+        for (ReserveDetails details : reserve.getReserveDetails()) {
+            String scheduleId = reserve.getReserveId() + "-S" + (++item);
+            Schedule schedule = new Schedule(scheduleId, reserve.getPickUpDate(), reserve.getPickUpTime(),
+                    reserve.getReturnDate(), reserve.getReturnTime(), reserve.getPickUpVenue(),
+                    reserve.getReturnVenue(), "Not Release", details);
+            entityManager.persist(schedule);
         }
     }
 

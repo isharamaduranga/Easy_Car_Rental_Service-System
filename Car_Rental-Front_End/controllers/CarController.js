@@ -306,18 +306,9 @@ function loadAllCars(){
                             <span class="badge rounded-pill text-bg-danger text-white">${responseKey.damageOrNot}</span></td><td> 
                             <span class="badge rounded-pill text-bg-warning text-secondary">${responseKey.underMaintainOrNot}</span> </td><td> 
                             ${responseKey.totalDistanceTraveled} </td><td>
-                            <div class="d-flex align-items-center">
-                                <img src="http://localhost:8080/Car_Rental_Back_End_war/uploads/${responseKey.fontViewImage}" alt="" style="width: 45px; height: 45px" class="rounded-circle"/>
-                             </div></td><td>
-                             <div class="d-flex align-items-center">
-                                <img src="http://localhost:8080/Car_Rental_Back_End_war/uploads/${responseKey.backViewImage}" alt="" style="width: 45px; height: 45px" class="rounded-circle"/>
-                             </div></td><td>
-                             <div class="d-flex align-items-center">
-                                <img src="http://localhost:8080/Car_Rental_Back_End_war/uploads/${responseKey.sideViewImage}" alt="" style="width: 45px; height: 45px" class="rounded-circle"/>
-                             </div></td><td>
-                             <div class="d-flex align-items-center">
-                                <img src="http://localhost:8080/Car_Rental_Back_End_war/uploads/${responseKey.interiorViewImage}" alt="" style="width: 45px; height: 45px" class="rounded-circle"/>
-                             </div></td> 
+                            ${[responseKey.fontViewImage, responseKey.backViewImage, responseKey.sideViewImage, responseKey.interiorViewImage]
+                                .map(image => image ? `<img src="${carImageUrl(image)}" alt="" width="45" height="45" class="rounded-circle">` : '—')
+                                .join('</td><td>')}</td>
                              <td><button type="button" id="btnEditCar"  class="btn btn-warning btn-sm px-3" data-ripple-color="dark">
                                 <i class="fas fa-pen-alt"></i>
                               </button></td></tr>`;

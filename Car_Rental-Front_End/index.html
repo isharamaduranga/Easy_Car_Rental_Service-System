@@ -3293,10 +3293,32 @@
         <section class="section featured-car">
 
             <div class="container text-center">
-                <div class="row" id="tblShowCars">
-
-
-                </div>
+                <div class="row g-4 text-start" id="tblShowCars"></div>
+                <template id="rentalCarCard">
+                    <div class="col-12 col-md-6 col-xl-4">
+                        <article class="featured-car-card h-100 d-flex flex-column">
+                            <figure class="card-banner position-relative mb-0">
+                                <img class="w-100" loading="lazy" width="440" height="294" alt="">
+                                <span class="car-status badge rounded-pill position-absolute top-0 end-0 m-3"></span>
+                            </figure>
+                            <div class="card-content d-flex flex-column flex-grow-1">
+                                <small class="car-category text-primary fw-semibold"></small>
+                                <h3 class="car-model h4 mt-1 mb-3"></h3>
+                                <ul class="card-list list-unstyled ps-0">
+                                    <li><i class="fas fa-user-friends text-primary me-2" aria-hidden="true"></i><span class="car-seats"></span></li>
+                                    <li><i class="fas fa-cog text-primary me-2" aria-hidden="true"></i><span class="car-transmission"></span></li>
+                                    <li><i class="fas fa-gas-pump text-primary me-2" aria-hidden="true"></i><span class="car-fuel"></span></li>
+                                    <li><i class="fas fa-palette text-primary me-2" aria-hidden="true"></i><span class="car-colour"></span></li>
+                                </ul>
+                                <div class="d-flex flex-wrap justify-content-between gap-2 mt-auto mb-3">
+                                    <div><small>Per day</small><strong class="car-daily d-block"></strong></div>
+                                    <div><small>Per month</small><strong class="car-monthly d-block"></strong></div>
+                                </div>
+                                <button type="button" class="btn btn-info btnRent">Rent now</button>
+                            </div>
+                        </article>
+                    </div>
+                </template>
             </div>
         </section>
 
@@ -3373,7 +3395,6 @@
                     <div class="col ms-5 me-5 mt-1" style="background-color: #f3dc3933;border-radius:25px">
                         <div class="row mt-4">
                             <label class="form-label text-white" id="reserveId"></label>
-                            <label class="form-label text-white" id="scheduleId"></label>
                             <div class="col ms-3 me-3">
                                 <label class="form-label text-black" for="pickUpTimeEdit">Pickup Date</label>
                                 <div>
@@ -3621,6 +3642,7 @@
 <script src="./controllers/LoginController.js"></script>
 <script src="./controllers/AdminLoginController.js"></script>
 <script src="controllers/AdminCrudController.js"></script>
+<script src="./controllers/carImages.js"></script>
 <script src="./controllers/CarController.js"></script>
 <script src="./controllers/DriverController.js"></script>
 <script src="./controllers/BookingController.js"></script>

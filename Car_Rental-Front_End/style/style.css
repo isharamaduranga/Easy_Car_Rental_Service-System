@@ -469,6 +469,11 @@ a {
     gap: 8px;
 }
 
+#tblShowCars .card-list {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 10px;
+}
+
 .featured-car-card .card-list-item ion-icon {
     font-size: 20px;
     color: var(--carolina-blue);
